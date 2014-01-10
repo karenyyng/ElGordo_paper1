@@ -1,0 +1,133 @@
+The strength of the Monte Carlo simulation by \citep(D13) is its ability
+to detect and rule out extreme input values that would result in
+unphysical realizations. 
+Our default Monte Carlo filters are described in D13 and they are applied to ensure 
+unphysical realizations in the simulation are ruled out. 
+In addition to the default filters, we also examine the effects of applying 
+two filters derived based on the position and the integrated polarization
+fraction of the radio relic of El Gordo respectively. 
+%(See Appendix \ref{tab:priors} for a complete list of filters used in this paper.) 
+
+\textbf{El Gordo shows remarkable double radio relics on the periphery
+(M11)} The radio relic  of El Gordo was first mentioned in the Sydney University
+Molonglo Sky Survey (SUMSS) data in low resolution at 843 MHz
+\cite{Mauch03} as shown in
+M11. The higher resolution radio observation conducted by \cite{L13} at 610
+\mega Hz and 2.1 \giga Hz confirms that those radio emission correspond to
+radio relic after removing effects of radio point sources.
+%\begin{itemize}
+%\item talks about the observable, which is the comoving kinetic power through each shock surface
+%\item refer to diffussive shock acceleration (DSA) mechanism?
+%\item Kang \& Jones treatment of Mach number-dependent efficiency
+%considering the possibility of having an non-isotropic magnetic field  
+%$KJ_BparallelRadial$ model
+%\end{itemize}
+
+Radio relics have been suggested to be able to constrain the
+mass ratios, the projection and the merger configuration. (Cite one of Reinout's paper) 
+Ever since the first detection of radio relic,cosmological hydrodynamical simulations of
+merging clusters have been used to model their emission spectrum and
+geometry. (Vazza et al. 2011, van Weeren and Bruggen 2011 et al., Bonafede
+et al. 2013, En{\ss}lin et al. 1997, Br\"{u}ggen et al.,  Skillman et al.
+2013) While such cosmological simulations have provided valuable insights
+to verifying the physical models, they are expensive both in terms of
+computational power and novel techniques have to be invented in order to
+analyze the large amount of simulated data so progress has been slow. 
+Our Monte Carlo simulation can make use of known physics combined with the
+preliminary results from such cosmological simulations to use properties of
+the radio relic to constrain merger dynamics. 
+Compared to hydrodynamical simulations or cosmological simulations, this
+    Monte Carlo simulation is not demanding in terms of CPU time, therefore, we
+    can run many realizations in order to probe how the input variables
+affect the output variables. 
+
+%\begin{figure}
+%	\includegraphics[width=\linewidth]{d_3d_prior1.png}
+%	\caption{The marginalized output PDFs of the observed 3D separation
+%		($d_{3D}$) 
+%		with and without the radio prior applied. 
+%		(maybe I should replot this more nicely without too many
+%		distracting lines but only the lines showing the location)
+%		%The vertical
+%		%lines denote, dashed line: biweight location, dash-dot
+%		%line: 68\% credible limit, dotted line: 95\% credible
+%		%limit.
+%	\label{fig:radioprior}}
+%\end{figure}
+
+
+%\subsubsection{Weighting function based on the observed position of the radio relic}\label{sec:relic} 
+%-----------------------------------------------------------------------
+%Among the known galaxy cluster mergers that are associated with radio
+%relics, \cite{Vazza12} noted that most of them have radio relic located
+%more than 800 \kilo pc away from the merger center. \cite{Vazza12} then
+%conducted hydrodynamical simulations of twenty of known galaxy mergers with 
+%radio relic to investigate this observed trend. They found a radial
+%trend of kinetic power dissipation increasing up to around half the virial
+%radius (r$_{vir}$) of the cluster. Summarizing the results from the proposed model for energy dissipation of the radio relic, \cite{Vazza12} gives the range of highest kinetic power emission in a range of 
+%$.2 ~r_{\mathrm{vir}} < d_{\mathrm{3D}} < .5~r_{\mathrm{vir}}$.
+%
+%
+%% In particular, Vazza et al. (2011) showed dependence of observed
+%%location of radio relic: when the clusters are at small separation, the
+%%Mach number is too high for a radio shock to form and the steep fall off of
+%%the emission power of the radio relic as a function of separation makes it
+%%difficult to observe a radio relic when it has propagated beyond a certain
+%%separation.  
+%
+%%\textbf{We take into account the uncertainties of their modeling and 
+%% construct prior probability on a range of 3D separation for which the kinetic
+%%power dissipation of the radio relic is more than 10\% of the peak value.} 
+%Since we do not have information on how the probability of
+%being able to observe the relic would fall off as a function of emission power, we adopt a conservative approach and designed a uniform prior. 
+%%and contrast that to a flat prior to test the effect of the prior on the output variables. 
+%We also take into account the uncertainties of the different proposed power
+%emission model and come up with a prior of:
+%\[
+% \text{P}({d_{3D}}) = 
+%\begin{cases} 
+%\text{constant,} & \text{for 1.0  Mpc} < d_{3D}(t_{\mathrm{obs}}) < 3.0 \text{ Mpc}\\
+%0, & \text{otherwise}
+%\end{cases}
+%\]
+% for El Gordo.\par 
+%%\begin{equation}  
+%%P(d_{3D}(t_{\mathrm{obs}})) = 
+%%\begin{cases}
+%%1/C, \text{ if }1.0 \text{ Mpc } < d_{3D}(t_{\mathrm{obs}}) < 3.0 \text{ Mpc} \\ 0, \text{ otherwise}
+%%\end{cases}
+%%\end{equation}
+%
+%\begin{figure}
+%	\includegraphics[width=\linewidth]{alpha_pdf_prior_diff.png}
+%	\caption{The projection angle with and without the radio relic
+%prior applied. (Needs to update and label the figure better)} 
+%\end{figure}
+
+\begin{table*} 
+\begin{minipage}{180mm} 
+\caption{Table of the output PDF properties of the model variables and
+output variables from Monte Carlo simulation
+\label{tab:outputs}} 
+\begin{tabular}{@{}lccccccc@{}}
+\toprule 
+&&&Default priors & & &Default + position priors  \\ 
+\hline
+Variables & Units & Location & 68$\%$ CI $^{\dagger}$ & 95$\%$ 
+CI & Location & 68$\%$ CI  & 95$\%$ CI \\
+\hline
+$\alpha$ &(degree)&&&&&&\\ 
+\hline
+$TSC_0$&Gyr&&&&&&\\
+$TSC_1$&Gyr&&&&&&\\
+$T$&Gyr&&&&&&\\
+$d_{max}$ &Mpc&&&&&&\\
+$v_{3D}(t_{obs})$ & \kilo \meter~\second$^{-1}$ &&&&&&\\
+$v_{3D}(t_{col})$ & \kilo \meter~\second$^{-1}$ &&&&&&\\
+$d_{max}$ &Mpc&&&&&&\\
+$d_{3D}$ &Mpc&&&&&&\\
+\bottomrule 
+\end{tabular} 
+\footnotesize{\\$\dagger$ CI stands for credible interval} \\ 
+\end{minipage} 
+\end{table*} 

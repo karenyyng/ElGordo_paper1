@@ -1,0 +1,325 @@
+% mn2esample.tex
+%
+% v2.1 released 22nd May 2002 (G. Hutton)
+%
+% The mnsample.tex file has been amended to highlight the proper use of
+% LaTeX2e code with the class file and using natbib cross-referencing.
+% These changes do not reflect the original paper by A. V. Raveendran.
+%
+% Previous versions of this sample document were compatible with the LaTeX
+% 2.09 style file mn.sty v1.2 released 5th September 1994 (M. Reed) v1.1
+% released 18th July 1994 v1.0 released 28th January 1994
+
+\documentclass[letterpaper,useAMS,usenatbib]{"mn2e"}
+%\documentclass[letterpaper,useAMS]{"mn2e"}
+%LINUX version of the path
+%\documentclass[useAMS,usenatbib,letterpaper]{"/media/blank/Macintosh
+%HD/Users/karenyng/Library/texmf/tex/latex/commonstuff/mn2e"}
+
+% If your system does not have the AMS fonts version 2.0 installed, then
+% remove the useAMS option.
+%
+% useAMS allows you to obtain upright Greek characters.  e.g. \umu, \upi
+% etc.  See the section on "Upright Greek characters" in this guide for
+% further information.
+%
+% If you are using AMS 2.0 fonts, bold math letters/symbols are available
+% at a larger range of sizes for NFSS release 1 and 2 (using \boldmath or
+% preferably \bmath).
+%
+% The usenatbib command allows the use of Patrick Daly's natbib.sty for
+% cross-referencing.
+%
+% If you wish to typeset the paper in Times font (if you do not have the
+% PostScript Type 1 Computer Modern fonts you will need to do this to get
+% smoother fonts in a PDF file) then uncomment the next line 
+%\usepackage{Times}
+
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[amssymb]{SIunits} 
+\usepackage{booktabs}
+\usepackage{breqn}
+\usepackage{standalone}
+\graphicspath{{graphics/}}
+%-----------------------------------------------------------------------
+\input{bib_alias}
+
+%-----------------------------------------------------------------------
+\title[El Gordo]{The dynamics and the merging scenario of the galaxy cluster 
+ACT-CL J0102-4915, 
+El Gordo}
+\author[author]{K. Y. Ng$^{1}$, W. A. Dawson$^{2}$, D. Wittman$^{1}$, J.
+Jee$^{1}$, J. Hughes$^{3}$, F. Menanteau$^{3}$, C. Sif\'{o}n$^{4}$\\
+(temporary order)\\
+$^{1}$Department of Physics, University of California Davis, One Shields
+Avenue, Davis, CA 95616, USA\\ 
+$^{2}$Lawrence Livermore National Laboratory, P.O. Box 808, Livermore, CA
+94551-0808, USA \\
+$^3$Department of Physics \& Astronomy,
+Rutgers University, 136 Frelinghysen Rd., Piscataway, NJ 08854, USA\\
+$^{4}$Leiden Observatory, Leiden University, PO Box 9513, NL-2300 RA
+Leiden, Netherlands\\}
+
+\begin{document}
+%%---------to adjust for the weird bottom margin-----------
+%\voffset=-.8in \hoffset=.15in
+
+\date{arXiV 666} \pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\pubyear{1988} \maketitle \label{firstpage}
+%-----------------------------------------------------------------------
+\begin{abstract} 
+    \input{abstract}
+\end{abstract}
+%-----------------------------------------------------------------------
+
+\begin{keywords}
+gravitational lensing -- dark matter -- cosmology: observations -- X-rays:
+galaxies: clusters -- galaxies: clusters: individual (ACT-CL J0102-4915) --
+galaxies: high redshift 
+\end{keywords}
+
+%-----------------------------------------------------------------------
+\section{Introduction} 
+\input{1_intro}
+
+%-----------------------------------------------------------------------
+\section[]{METHOD -- Monte Carlo simulation} 
+\input{2.0_montecarlo_framework}
+
+\subsection{Inputs of the Monte Carlo simulation}
+\label{sec: inputs}
+\setcounter{table}{0} 
+\begin{table} 
+\caption{Properties of the sampling PDFs of the Monte Carlo simulation }  
+\begin{center} 
+\begin{tabular}{@{}lcccc}
+\hline Data & Units & $\mu$ & $\sigma$ & Ref\\ \hline
+$M_{200c_{\mathrm{NW}}}$ & $10^{14}$ M$_{\odot}$ & & & \citetalias{Jee13}\\ 
+c$_{\mathrm{NW}}$ & / & & & \citetalias{Jee13} \\ 
+$M_{200c_{\mathrm{SE}}}$ & $10^{14}$ M$_{\odot}$ & & & \citetalias{Jee13}\\
+$c_{\mathrm{SE}}$ & / & & & \citetalias{Jee13}\\ 
+$z_{\mathrm{NW}}$ & / & 0.86901 & 0.00017$^b$  & \citetalias{M11},
+\citetalias{Sifon13}\\
+$z_{\mathrm{SE}}$ & / & 0.87175 & 0.00019$^b$  & \citetalias{M11},
+\citetalias{Sifon13}\\ 
+d$_{\mathrm{proj}}$ & Mpc & & & \citetalias{Jee13} \\ 
+\hline
+\end{tabular} 
+\end{center} 
+\label{tab:inputs} 
+\footnotesize{
+$^a$This $\sigma$ corresponds to the $68\%$ central Bayesian
+credible interval computed from the posterior probability of our MCMC
+analysis.\\
+$^b$This $\sigma$ corresponds to the biweight scale. \\
+$^c$We use the full PDFs as the inputs of our simulation so
+different ways of denoting the uncertainties do not affect the simulation.\\ 
+%\textbf{References:} (1) Jee et al. 2013 (2) Menanteau et al. 2011}
+}
+\end{table}
+
+
+%-----------------------------------------------------------------------
+\subsubsection{Membership selection and redshift estimation of subclusters}
+\input{2.1_1_membership_redshift}
+
+\begin{figure}
+	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
+	\caption{\label{fig:membership} The division of
+the member galaxies among the two subclusters of El Gordo by a spatial cut
+(green line) that is approximately perpendicular to the 2D merger axis.
+The color bar shows the color mapping of the spectroscopic redshift of the
+member galaxies. The spatial cut is done after mapping the world coordinates to
+pixel coordinates to avoid anamorphic distortion.}
+\end{figure}
+
+%-----------------------------------------------------------------------
+\subsubsection{Weak lensing mass estimation} 
+\input{2.1_2_WL}
+
+%----------------------------------------------------------------------
+
+\subsubsection{Estimation of projected separation ($d_{proj}$) } 
+To be consistent with our MCMC mass inference, our Monte Carlo simulation takes 
+the projected separation of the NFW halos to be those of the two aforementioned 
+luminosity peaks.
+%A iterative centroiding method is used to find the centers of the two
+%subclusters of El Gordo.
+
+\subsection{Outputs of the Monte Carlo simulation}
+\label{sec: outputs}
+\input{2.2_0_monte_carlo_outputs}
+
+%-----------------------------------------------------------------------
+\subsection{Design and application of priors} 
+\label{sec:priors}
+\input{2.3_prior}
+
+%---------------------------------------------------------------------------
+\subsubsection{Monte Carlo filters based on the integrated polarization fraction of the radio relic}
+\input{2.3_1_polarization_prior}
+
+%---------------------------------------------------------------------------
+\subsection{Extension to the Monte Carlo simulation - Determining merger scenario with radio relic position}
+\label{sec: positionprior}
+\input{2.4_extend_montecarlo}
+
+%\begin{table*} 
+%\begin{minipage}{180mm} 
+%\caption{Table of comparison of PDFs of the data in the Monte Carlo
+%simulation with different applied priors
+%\label{tab:predictiveposteriorchecking}} 
+%\begin{tabular}{@{}lccccccc@{}}
+%\toprule 
+%&&& Original PDF & & & PDF of data after applying polarization priors \\ 
+%\hline
+%%\multicolumn{3-5}{c}{Default Priors} \multicolumn{6-8}{c}{Default + radio prior} \\
+%%\cmidrule(r){1-3} \cmidrule(r){4-6}
+%Data & Units & Location & 68$\%$ CI$^{\dagger}$ & 95$\%$ 
+%CI & Location & 68$\%$ CI  & 95$\%$ CI \\
+%\hline 
+%$M_{200c_{NW}}$ &$10^{14}$ M$_{\odot}$&&&&&&\\
+%$M_{200c_{SE}}$ &$10^{14}$ M$_{\odot}$&&&&&&\\
+%$z_{NW}$ &/&&&&&&\\
+%$z_{SE}$ &/&&&&&&\\
+%$d_{proj}$ &Mpc&&&&&&\\
+%\bottomrule 
+%\end{tabular} 
+%\footnotesize{\\$\dagger$ CI stands for credible interval } \\ 
+%\end{minipage} 
+%\end{table*} 
+
+%----------------------------------------------------------------------
+%\section{Sensitivity analysis}
+%\subsection{Effects of prior on output estimates}
+%\textbf{The application of uniform radio relic prior truncates the long
+%tail of 3D separation PDF, leading to a notable reduction in the
+%uncertainties of the estimates some of the output variables (See Figure
+%\ref{fig:radioprior})}. The variables that are affected the most by the
+%prior show simple relationship with the $d_{3D}$. 
+%(For details see Appendix \ref{app:results}).
+%The variables that benefit the most from reduced uncertainties include
+%$TSC_0$ and $\alpha$. The 68\% credible interval of $TSC_0$ and $\alpha$ are
+%reduced by $X \%$ and $X \%$ respectively. The uncertainties of other
+%variables are also reduced but not as notable.The variables with mild
+%uncertainty reduction include $v_{3D}(t_{obs})$ and $v_{3D}(t_{col})$, and
+%they show more complicated bimodal marginalized output probability. 
+%(See Figure \ref{fig:TSC_v3D})\par
+%\textbf{On the other hand, the estimated locations of the output variables
+%are only mildly affected by the application of the uniform prior.} The
+%variable X shows most discrepant estimated location with the application
+%of the radio prior, but only up to X\% and the estimated value after
+%applying the prior is well within the 68\%
+%credible interval. This shows that our choice of prior has not
+%introduced serious bias in our results. (See Table \ref{tab:predictiveposteriorchecking}) 
+%
+%\subsection{Effects of prior on the likelihood}
+%We compare the change to the likelihood as predicted by the simulation.
+%(See columns across table \ref{})
+
+%The differences between subsequent application of our proposed priors are
+%negligible. 
+%%The application of prior also 
+
+%-----------------------------------------------------------------------
+
+\section{RESULTS} 
+\begin{figure} 
+	\includegraphics[width =\linewidth]{elGordoTSCwithBullet_revC.png}
+	\caption{The marginalized time-since-collision (TSC) vs 3D
+velocities ($v_{3D}$) of El Gordo and the Bullet Cluster. (to add
+descriptions of the different filters used) }
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{TSC_0_vs_v_3d_col_histplot2d_combine2.png}
+	\caption{The marginalized output PDF of the time-since-collision
+(TSC$_0$) vs. the 3D velocity at the time of collision for El Gordo. (to
+add more description about contours) }
+	\label{fig:TSC_v3D}
+\end{figure}
+
+%-----------------------------------------------------------------------
+\subsection{Relative merger speed}
+\input{3.1_merger_speed}
+
+%-----------------------------------------------------------------------
+\subsection{Time-since-collision}  
+\input{3.2_TSC}
+
+%\begin{figure} 
+%	\includegraphics[width =\linewidth]{r_relic_4300.png}
+%	\caption{Posterior PDF of likely location of relic based on the
+%    outgoing and incoming scenario.}
+%\end{figure}
+%-----------------------------------------------------------------------
+%\subsection{Galaxy centroid from spectroscopic data} The galaxy
+%distribution is bimodal (M12).
+
+
+%-----------------------------------------------------------------------
+\section{DISCUSSION}
+%-----------------------------------------------------------------------
+
+\subsection{Three-dimensional (3D) configuration of El Gordo}
+\input{4.1_3D_config}
+
+\subsection{Our finding in the context of other studies of El Gordo}
+\input{4.2_other_studies}
+
+\subsection{Comparison to other merger clusters of galaxies}
+\input{4.3_comparison_merger}
+
+\subsection{Uncertainties of the radio relic prior}
+\subsection{Limitations of our model and future work} 
+\input{4.5_limitations}
+
+%-----------------------------------------------------------------------
+
+\section{SUMMARY \& CONCLUSION}
+This paper presents one of the first examples of using the observed radio
+relic emission to constrain cluster merger properties.
+While we have demonstrated how to use the physical properties of the radio
+relic emission to constrain merger dynamics and configurations, many
+improvements can still be made as more studies of radio relic are being
+done from both cosmological simulations and observations.
+
+Currently, there are only a few studies of the
+ radio relic available for a range of viewing angles (\citealt{S13}, one of
+Bruggen's paper). As more cosmological simulations inform us  
+if the relic is observable at certain viewing angles will help us 
+come up with better Monte Carlo filters. 
+
+\section{ACKNOWLEDGEMENTS}
+We thank Franco Vazza and Marcus Br\"{u}ggen for sharing their knowledge on
+the simulated properties of radio relic. We
+extend our gratitude to Reinout Van Weeren for first proposing the use of
+radio relic as prior. We appreciate the comments from Maru\v{s}a
+Brada\v{c} about using the position of the relic to break degeneracy
+of the merger scenario. 
+%KN is grateful to Paul Baines for
+%the discussion of the design of Monte Carlo filters and sensitivity tests.   
+
+
+%-----------------------------------------------------------------------
+\bibliographystyle{mn2e}
+%\begin{thebibliography}{}
+\bibliography{bib}
+
+\section{RESULT PLOTS OF MONTE CARLO SIMULATION} 
+\label{app: plots}
+\input{app_d_MCMAC_result_plots}
+
+\appendix
+\section{Bayesian formalism of Dawson's Monte Carlo simulation}
+\input{app_a_MCMAC_stat_formalism}
+
+\section{Details and tests for the MCMC mass inference}\label{app:MCMC}
+\input{app_b_MCMC}
+
+\bsp 
+\label{lastpage} 
+\end{document}

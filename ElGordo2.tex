@@ -1,0 +1,216 @@
+% mn2esample.tex
+%
+% v2.1 released 22nd May 2002 (G. Hutton)
+%
+% The mnsample.tex file has been amended to highlight
+% the proper use of LaTeX2e code with the class file
+% and using natbib cross-referencing. These changes
+% do not reflect the original paper by A. V. Raveendran.
+%
+% Previous versions of this sample document were
+% compatible with the LaTeX 2.09 style file mn.sty
+% v1.2 released 5th September 1994 (M. Reed)
+% v1.1 released 18th July 1994
+% v1.0 released 28th January 1994
+
+\documentclass[useAMS,usenatbib]{mn2e}
+
+
+
+% If your system does not have the AMS fonts version 2.0 installed, then
+% remove the useAMS option.
+%
+% useAMS allows you to obtain upright Greek characters.
+% e.g. \umu, \upi etc.  See the section on "Upright Greek characters" in
+% this guide for further information.
+%
+% If you are using AMS 2.0 fonts, bold math letters/symbols are available
+% at a larger range of sizes for NFSS release 1 and 2 (using \boldmath or
+% preferably \bmath).
+%
+% The usenatbib command allows the use of Patrick Daly's natbib.sty for
+% cross-referencing.
+%
+% If you wish to typeset the paper in Times font (if you do not have the
+% PostScript Type 1 Computer Modern fonts you will need to do this to get
+% smoother fonts in a PDF file) then uncomment the next line
+% \usepackage{Times}
+
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[El Gordo]{Dynamics of the merging galaxy cluster El Gordo --- the higher-redshift analog of the Bullet cluster}
+\author[author]{Ng, Y. K.$^{1}$, Dawson W.A.$^{1}$, Jee J.$^{1}$, Hughs, J.$^{2}$,
+Menanteau F.$^{2}$,Wittman, D.$^{1}$\footnotemark[1]\thanks{blah blah}\\
+$^{1}$Department of Physics, University of California Davis, One Shields Avenue, Davis, CA 95616, USA\\
+$^{2}$Department of Physics \& Astronomy, Rutgers University, 136 Frelinghysen Rd., Piscataway, NJ 08854, USA}
+\begin{document}
+
+\date{arXiV 666}
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2002}
+
+\maketitle
+
+\label{firstpage}
+
+\begin{abstract}
+\textbf{Context}\\
+ %Context - what properties do we know about El Gordo 
+%Why El Gordo is interesting? 
+We present a Monte-Carlo analysis of the three-dimensional configuration and dynamics of the merging galaxy cluster ACT-CL J0102-4915. At a redshift of 0.87, El Gordo(\(\sim 10^{15} M_{\sun}\)) is one of the most massive clusters discovered above a redshift of 0.6. Since the more massive a cluster is, the mass density of the cluster is higher under known dark matter(DM) halo models, El Gordo is one of the best probes of the properties of dark matter.  
+%Mergers of clusters proceed on the time-scale of millions of year, each observation only provides a snapshot of a particular type of merger, large number of merger statistics is therefore needed to reconstruct the picture of merger history.  
+%El Gordo has properties analogous to the famous Bullet cluster. 
+%What has enabled this study? 
+%cold core passing through a lower density region 
+%   enables analytical modeling through Monte Carlo analysis. Furthermore the abundance of data available, including weak-lensing data,optical, radio, X-ray and SZ data makes it one of the most     
+%present mass info 
+%present redshift info 
+
+%Aims of this paper 
+\noindent\textbf{Need}\\
+Merging clusters of galaxies are excellent probes of the self-interaction cross section of DM($\sigma_{\mathrm{SIDM}}$) due to the high collision speeds. If $\sigma_{\mathrm{SIDM}}$ is non-negligible, then in a merger of galaxy clusters, the dark matter (DM) halos may slow down due to scattering of DM particles. Thus, the DM halos will lag behind the (effectively) collisionless galaxies. This offset ($\Delta x$) is a function of $\sigma_{\mathrm{SIDM}}$, the surface mass density ($\Sigma$) and dynamical parameters such as the time-since-collision (TSC) and the three-dimensional velocity ($v_{\mathrm{3D}}$) .\\ 
+\textbf{Objective}\\
+\textbf{Task - not really good enough yet I need to be more to the point}\\
+In this paper, we give estimates of the aforementioned dynamical parameters
+ and examine the corresponding $\Delta x$. We performed a Monte Carlo simulating the free fall of two dark matter halos.
+To model projection effects in each Monte Carlo realization, we randomly draw a value between 0 and 90 degrees to represent the angle between the plane of the sky and the merger axis ($\alpha$). We further reduce the inferred parameter space by making use of a prior derived from the observation of the double symmetric radio relic. With the estimated dynamical parameters, we test the hypothesis that there would be a larger offset $\Delta x$ from El Gordo than the Bullet cluster due to a higher surface mass density.\\ 
+\textbf{Findings}\\ 
+We estimate El Gordo to have a slightly higher TSC than the bullet cluster using the same analysis by Dawson (2012).  
+To be continued.
+
+
+
+(250 words)
+	
+\end{abstract}
+
+\begin{keywords}
+%circumstellar matter -- infrared: stars.
+
+gravitational lensing -- dark matter -- cosmology: observations -- X-rays: galaxies: clusters -- galaxies: custers: individual (ACT-CL J0102-4915) -- galaxies: high redshift
+\end{keywords}
+
+\section{Introduction}
+\textbf{background - why it is merging cluster is worth investigating}
+Dark matter has first been proposed due to the anomaly in the rotation curve of galaxies (cite ??? ) and later confirmed from a large offset between the intercluster gas peak and the centroids of the dark matter halos (Markevitch).
+Astrophysical systems have been valuable laboratories of dark matter.
+Merging clusters are particular suitable due to the high-merger velocities, making them nature's dark matter colliders.
+
+Using the data from the Bullet cluster, Randall et al. have derived a loose limit of $\sigma_{\mathrm{SIDM}} < 1.25 \, \mathrm{cm}^2 \mathrm{g}^{-1}$, based on the null offset between the galaxy centroid and the respective dark matter halo of each subcluster ($\Delta x$).
+More merging clusters have been discovered and analyzed since the Bullet cluster. However, 
+work in using the offset for inferring ($\sigma_{\mathrm{SIDM}}$) is still lacking.
+
+\textbf{justifies why we need the dynamical simulation}
+The high mass of El Gordo translates to a high 
+Since the discovery, an abundance of multi-wavelength data of El Gordo has been analyzed according to the two-dimensional projected view. One of the largest uncertainties remains from the deprojection effects from 2-D view to a 3-D configuration. One solution is to investigate the 3-D view consistently is to study analog systems in cosmological structure formation simulation. However, according to the bottom-up picture of structure formation, chance of finding an analog as massive as El Gordo is intrinsically low at the reported high redshift. Menanteau et al. reported finding only one merging system with total mass comparable to El Gordo (with discrepant mass ratio between subclusters) within a large 3.072$h^{-1} \mathrm{Gpc}^3 \, \Lambda$CDM cosmological simulation. 
+%With the relatively simple bimodal mass distribution detected by weak lensing, we are able to model El Gordo analytically with our Monte-Carlo simulation. 
+Weak lensing analysis of El Gordo has revealed a relatively simple bimodal mass distribution. The lack of substructures make the analytical Monte Carlo simulation of El Gordo possible.\\
+
+
+
+\section[]{METHOD-MONTE CARLO ANALYSIS}
+We make use of the Monte Carlo simulation provided by Dawson (2013) for this analysis. Required input include the probability density distribution function (p.d.f.) of the mass and the redshifts of the two subclusters. 
+\subsection{Inputs of Monte Carlo analysis}
+\subsection{Prior based on radio relic physics}
+
+
+\begin{figure}
+ \vspace{302pt}
+ \caption{Time-since-merger of El Gordo is higher than the Bullet cluster.}
+\end{figure}
+
+\section{ANALYSIS AND RESULTS}
+\subsection{Three-dimensional dynamical parameters}
+\begin{table*}[!h]
+ \centering
+ \begin{minipage}{140mm}
+  \caption{Table of the dynamical parameters from Monte Carlo analysis}
+  \begin{tabular}{@{}llrrrrlrlr@{}}
+  \hline
+  \footnote{Observed by.}\\
+\hline
+\end{tabular}
+\end{minipage}
+\end{table*}
+
+
+\begin{figure*}
+  \vspace*{174pt}
+  \caption{Two dimensional parameter posterior probability of time-since-merger and three-dimensional velocity at collision.}
+\end{figure*}
+
+
+%\citet{b9} have reported that the simultaneous optical and near-IR
+%data of AC Her can be fitted by a combination of two blackbodies
+%at 5680 and 1800\,K, representing, respectively, the stellar and
+
+\subsubsection{Three-dimensional configuration of El Gordo}
+
+Discuss relative positions of the gas, the two subclusters, the radio relic etc?
+
+\subsubsection{Galaxy centroid from spectroscopic data}
+
+\subsubsection{Merger speeds} 
+
+
+\begin{figure}
+  \vspace*{174pt}
+  \caption{Plot of }
+\end{figure}
+
+%
+\begin{figure*}
+%\vbox to 220mm{\vfil Landscape figure to go here. This figure was
+%not part of the original paper and is inserted here for
+%illustrative purposes.\\ See the author guide for details (section
+%2.2 of \verb|mn2eguide.tex|) on how to handle landscape figures or
+%tables. \caption{} \vfil} \label{landfig}
+\end{figure*}
+
+
+\section{DISCUSSION}
+Possible constraints for \[\sigma_{SIDM}\]
+\section{SUMMARY AND CONCLUSIONS}
+
+
+\section*{ACKNOWLEDGEMENTS}
+We thank Dr. Reinout Van Weeren for the discussion of the prior constraints from 
+the observation of double radio relic.
+
+\begin{thebibliography}{99}
+
+%\bibitem[\protect\citeauthoryear{Baird}{1981}]{b1} Baird S.R., 1981,
+%ApJ, 245, 208
+%\bibitem[\protect\citeauthoryear{Beichman et al.}{1985a}]{b2} Beichman
+%C.A., Neugebauer G., Habing H.J., Clegg P.E., Chester T.J., 1985a,
+%{\it IRAS\/} Point Source Catalog. Jet Propulsion Laboratory,
+%Pasadena
+%\bibitem[\protect\citeauthoryear{Beichman et al.}{1985b}]{b3} Beichman
+%C.A., Neugebauer G., Habing H.J., Clegg P.E., Chester T.J., 1985b,
+\end{thebibliography}
+
+\appendix
+
+\section{RESULT PLOTS}
+Thinking of putting similar plots as Will 's appendix for the dynamical analysis paper.
+With 2D PDFs on each parameters\ldots.
+
+
+%\begin{figure}
+%\vspace{11pc}
+%\caption{$P(>x_{\rmn{gap}})$ as a function of $x_{\rmn{gap}}$ for,
+% from left to right, $N=160$, 150, 140, 110, 100, 90, 50, 45 and~40.
+% Compare this with \protect\citet{b15}.}
+%\label{appenfig}
+%\end{figure}
+
+
+
+\bsp
+
+\label{lastpage}
+
+\end{document}
