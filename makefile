@@ -1,24 +1,40 @@
 PROJECT=ElGordo1
-TEX=pdflatex
-BIBTEX=bibtex
-BUILDTEX=$(TEX) $(PROJECT).tex
 
-# tell make that all, clean and test do not explicitly depend on files
-.PHONY: all clean test
+# You want latexmk to *always* run, because make does not have all the info.
+# Also, include non-file targets in .PHONY so they are run regardless of any
+# file of the given name existing.
+.PHONY: $(PROJECT).pdf all clean
 
-# tell make to test if finally product exist first
-# avoid rebuilding if no changes are made to the tex files
-test: $(PROJECT).pdf 
+# The first rule in a Makefile is the one executed by default ("make"). It
+# should always be the "all" rule, so that "make" and "make all" are identical.
+all: $(PROJECT).pdf
 
-all:
-	$(BUILDTEX)
-	$(BIBTEX) $(PROJECT)
-	$(BIBTEX) $(PROJECT)
-	$(BUILDTEX)
-	$(BUILDTEX)
+# CUSTOM BUILD RULES
 
-clean-all:
-	rm -f *.dvi *.log *.bak *.aux *.bbl *.blg *.idx *.ps *.eps *.pdf *.toc *.out *~
+# In case you didn't know, '$@' is a variable holding the name of the target,
+# and '$<' is a variable holding the (first) dependency of a rule.
+# "raw2tex" and "dat2tex" are just placeholders for whatever custom steps
+# you might have.
 
+%.tex: %.raw
+	./raw2tex $< > $@
+
+%.tex: %.dat
+	./dat2tex $< > $@
+
+# MAIN LATEXMK RULE
+
+# -pdf tells latexmk to generate PDF directly (instead of DVI).
+# -pdflatex="" tells latexmk to call a specific backend with specific options.
+# -use-make tells latexmk to call make for generating missing files.
+
+# -interactive=nonstopmode keeps the pdflatex backend from stopping at a
+# missing file reference and interactively asking you for an alternative.
+
+$(PROJECT).pdf: $(PROJECT).tex
+	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make $(PROJECT).tex 
+
+# make sure that .aux files are not removed since they tell latex 
+# if a file has been changed or not!!
 clean:
-	rm -f *.log *.bak *.aux *.bbl *.blg *.idx *.toc *.out *~
+	latexmk -CA
