@@ -1,15 +1,15 @@
-\textbf{For this analysis, we made use of the collisionless 
+For this analysis, we made use of the collisionless 
 dark-matter-only Monte Carlo modeling code written by Dawson (2013),
-hereafter \citepalias{D13}. } 
+hereafter \citepalias{D13}.  
 In the code, the time evolution of the head-on merger was computed
 analytically, assuming that the only dominant force is the gravitational attraction from
 the masses of two truncated Naverro-Frenk-White (hereafter NFW) DM halos.
 Other major assumptions for modeling systems with this code include
 negligible impact parameter and no self-interaction of dark matter.\par
 
-\textbf{In the Monte Carlo simulation, many realizations of the collision is
+In the Monte Carlo simulation, many realizations of the collision is
 computed from the inputs of each realization, including
-the data ($\vec{D}$) and the model variable ($\alpha$).} In particular,
+the data ($\vec{D}$) and the model variable ($\alpha$). In particular,
 the standard required data, which were in the form of samples of the probability density
 functions (PDFs), included the masses ($M_{200_{NW}},M_{200_{SE}}$) the
 redshifts ($z_{NW}, z_{SE}$) and the projected separation of the two
@@ -47,17 +47,17 @@ chain rule underlies the simulation is:
 where the likelihood is defined to be the PDF of $\vec{D}$ given $\vec{\theta}$,
 i.e. the input variables, not statistical parameters, and the priors are
 defined to be the probabilities due to prior believes of the values of
-$\vec{\theta}$.\par
-The output variables ($\vec{\theta}^\prime$), on the other hand, were computed
-according to the conservation of energy,which is represented by a suitable
-function form $f$ below.
- For example,the calculation of
-the $j$-th realization: 
+$\vec{\theta}$. The output variables ($\vec{\theta}^\prime$), on the other
+hand, were computed according to the conservation of energy, which is represented by a suitable
+function form $f$ below. For example,the calculation of the $j$-th realization: 
 \begin{equation}
     (\vec{\theta}^\prime)^{(j)} = f(\vec{\theta}^{(j)}, \vec{D}) 
 \end{equation}    
 The estimated values of $(\vec{\theta}^\prime)^{(j)}$ were then computed
-over all $j$ realizations.
+over all $j$ realizations. Finally, we took physical
+constraints on $\vec{\theta}$ and $\vec{\theta}^\prime$ into account by
+excluding the unphysical realizations, and we refer to this process as
+``applying prior probability''. 
 
 %To model projection effects, we randomly draw a projection
 %angle in each realization. We throw out realizations with unphysical
