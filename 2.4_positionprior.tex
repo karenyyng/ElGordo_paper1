@@ -1,0 +1,146 @@
+% this line is included when individual section needs to be compiled and
+% reviewed  
+\input{style}
+\begin{document}
+
+\label{sec: positionprior}
+% draft: 
+% explain that 4300 km /s from L13 
+% explain how the position of the radio relic is calculated 
+% explain the physics / concepts behind this calculation 
+% explain the assumptions
+% explain the data 
+% decide on which frame of reference we want to do the calculation in 
+% corresponding code: position_prior_elgordo.ipnb in
+% TSM/mercury_elGo/Feb_data folder 
+% incorporate the uncertainty of the centroid position???????
+% paragraph 1: explain where the data comes from and how they are used 
+% why only the NW relic is used but not the SE one ?
+%Even though there is a list of standard required data as denoted in section
+%\ref{sec: inputs} for the simulation, it is straight forward to incorporate
+%new data variables. 
+%With additional of data from the radio relic
+%\citep{L13}, this simulation is capable of providing a quantitative view of
+%how likely each of  the two possible merger scenarios mentioned in section
+%\ref{sec: outputs} is true. 
+%We make reference to the radio relic data from \cite{L13} in this
+%subsection for extending the simulation. Three sources of radio relic
+%were identified - including the NW, SE and the E relic. The NW radio
+%relic possesses the most extended geometry among all the identified relic source. 
+%
+%% make sure of Springel and Farrar 
+%% the frame of the shock given by Lindner et al. is complicated 
+%% there is no trivial translation between  
+%We do not refer to the The SE nor the E radio relic in this calculation
+%since we do not have an estimation of the shock speed of the SE relic
+%nor the E relic from \citealt{L13}.    
+%We incorporate the calculated shock speed of the radio relic as part of
+%$\vec{D}$ for the Monte Carlo simulation. 
+%We draw  $v_{relic} \sim N(4300~\kilo\meter~\second^{-1},
+%800~\kilo\meter~\second^{-1})$ \citep{L13} from each realization and
+%compute how far the NW relic would have traveled given a certain TSC in the
+%frame of the SE subcluster. Finally we compare the distance traveled
+%predicted from the simulation to the reported position of the NW relic at RA = 01:02:46, DEC = -49:14:43\citep{L13}.
+%
+% this paragraph should really discuss why we are assuming constant speed 
+% paragraph 2: estimate the upper and lower bound of the speeds and how
+% that is going to impact the conclusion drawn 
+% Ambiguity about the speed:
+
+We demonstrate that despite significant uncertainty in the time evolution
+of the shock, we can still break the degeneracy of the outgoing and
+incoming merger scenarios by comparing the observed and the simulated
+position of the radio relic. The uncertainty of the time evolution of the
+velocity of the shock stem from how the velocity depends on a number of
+physical quantities, including the local gravitational potential, matter
+density, temperature, pressure among others (\citealt{E98}, Shu .F. more
+citations???). 
+The exact time evolution of the shock velocity requires
+detailed numerical simulation similar to Kang et al 1997, Springel \&
+Farrar etc, which is not available for El Gordo at the writing of this
+paper. Fortunately, we can approximate limit of the shock speed by
+making use of the simulated speed of the subclusters. 
+
+We simplified the calculation by working in the
+center of mass frame where the shock speed remains approximately constant. We estimated the upper and lower bounds of the
+time-averaged velocity ($\langle v_{relic} \rangle$) of the shock between
+the collision of the subclusters and the observed time as:  
+\begin{equation}
+	\frac{(v_{3D}(t_{obs}) + v_{3D}(t_{col}))}{2}	< \langle v_{relic} \rangle \lesssim v_{3D}(t_{col}) 
+\end{equation}
+The lower bound is set to be the average speed of the subcluster since the
+relic is observed to have traveled further away from the subclusters from
+the center of mass. The upper bound can be approximated as the relative collision
+speed of the subclusters due to how the shock is powered by the collision.
+These assumptions of the range of relic velocity is consistent with the
+numerical studies of the shock of the Bullet cluster \citep{Springel2007},
+right after the collision of the subclusters, the Bullet shock speed was
+comparable to the merger speed of the two subclusters in the center of mass frame
+\citep{Springel2007}.  The shock speed monotonically drops by only $\sim 14\%$
+in the 300~\mega yr period after the formation of the shock. This is
+consistent with the fact that shock is a pressure wave
+and does not experience gravitational deceleration while other dissipative
+processes could have slowed down the shock wave. It is unlikely that there
+would be significant energy injected into the shock to speed up the shock .
+\begin{equation}
+	s_{bound} = v_{bound} \hat{TSC} \cos(\hat{\alpha})
+\end{equation}
+where $s_{bound}$ is the bound projected separation.
+
+
+
+%Observationally, studies from Lindner et al. also provide some
+%comparison of the estimated shock speed relative to the gas medium as $4300
+%\pm^{800}_{500} \kilo \meter~\second^{-1}$. 
+
+%We simplified the computation of the position of the relic by estimating
+%the time-averaged velocity of the relic.
+%We treated the lower bound of the time-average
+%relic velocity $\hat{v}_{relic} \approx  \hat{v}_{3D}(t_{col})$ due to how
+%shock speed evolves over time.  
+
+%We performed two sets of calculation to bracket the possible positions of
+%the radio relic.
+%
+%%* shock speed from Lindner et al. is in the frame of  
+%
+%In order to capture the major uncertainty in the time evolution of the
+%shock, we approximated the time-averaged velocity of the shock with a mean
+%as the relative merger speed, and assumed a very wide support of $\kilo
+%\meter~\second^{-1}$.
+%(See Figure to denote how the distribution compares with the
+%relative velocity, the observed shock velocity in the unknown frame)
+%\begin{itemize}
+%\item ``In previous work, it has been assumed that the shock
+%			velocity is equal to
+%			the subclustre's relative velocity with respect to the parent
+%			cluster
+%			(Markevitch et al. 2002, Hayashi \& White 2006, Markevitch
+%			2006, among
+%			others')'' all velocities are quoted in the CM frame
+%
+%\item Shock speed related to the local density / temperature / pressure of
+%	the medium.
+%\end{itemize}
+
+%We denoted the speed in the SE subcluster frame, we take into consideration
+%that after the collision, the SE subcluster move away from the NW
+%shock(relic) at a deceleration due to the gravitational pull of the NW subcluster.
+%Therefore, in the SE subcluster frame, the shock would also slow down. 
+%(See figure \ref{fig:shock_evo} for the evolution of the shock wave speed
+%in different reference frames)
+%The study of the radio relic from \citealt{L13} also shows that the shock
+%speed can be consistent with the merger speed. 
+%However, since the shock speed was measured with respect to the 
+%(See figure X for a distribution
+%of the merger speed and how that compares to the observed relic speed) 
+%
+%The greatest uncertainty remains in the modeling of the time evolution of
+%the speed of the shock wave.
+
+
+
+
+\par      
+
+\end{document}
