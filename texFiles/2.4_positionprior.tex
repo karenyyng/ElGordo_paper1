@@ -46,48 +46,56 @@
 % paragraph 2: estimate the upper and lower bound of the speeds and how
 % that is going to impact the conclusion drawn 
 % Ambiguity about the speed:
+% do we need to talk about that we are only referring to the NW relic not
+% the SE relic? Yes! 
+% do we need to explain why we are only using the NW relic not the SE
+% relic?
+We demonstrate that despite significant uncertainty in the time
+evolution of the shock, we can still break the degeneracy of the
+outgoing and incoming merger scenarios by comparing the observed and the
+simulated position of the radio relic.
+The key to the success of this method lies our ability in estimating the
+upper and lower bounds on the possible position of the relic. The
+uncertainty of the time evolution of the velocity of the shock stem from
+how the velocity depends on a number of physical quantities, including the
+local gravitational potential, matter density, temperature, pressure among others (\citealt{E98}, Shu .F. , more
+citations?).  The exact time evolution of the shock velocity requires
+detailed numerical simulation similar to  \citet{Springel2007},
+\citet{Vazza11}, \citet{Kang2007}, etc. 
+We draw physical insight from the
+simulation of the merger shock of the Bullet cluster from
+\citet{Springel2007}, which shows
+that, right after the collision of the subclusters, the shock speed is
+comparable to the merger speed of the two subclusters in the center of mass frame.  The shock speed mildly drops by only $\sim 14\%$
+in the 300~\mega yr period after the formation of the shock versus  
+a $\sim65\%$ drop for the main subcluster, which was slowed down by gravity. 
 
-We demonstrate that despite significant uncertainty in the time evolution
-of the shock, we can still break the degeneracy of the outgoing and
-incoming merger scenarios by comparing the observed and the simulated
-position of the radio relic. The uncertainty of the time evolution of the
-velocity of the shock stem from how the velocity depends on a number of
-physical quantities, including the local gravitational potential, matter
-density, temperature, pressure among others (\citealt{E98}, Shu .F. more
-citations???). 
-The exact time evolution of the shock velocity requires
-detailed numerical simulation similar to Kang et al 1997, Springel \&
-Farrar etc, which is not available for El Gordo at the writing of this
-paper. Fortunately, we can approximate limit of the shock speed by
-making use of the simulated speed of the subclusters. 
-
-We simplified the calculation by working in the
-center of mass frame where the shock speed remains approximately constant. We estimated the upper and lower bounds of the
+We approximated the upper and lower bounds of the shock speed with the
+simulated speeds of the subclusters.  We simplified the calculation by
+working in the center of mass frame where the shock speed drops only
+slightly with time. We estimated the upper and lower bounds of the
 time-averaged velocity ($\langle v_{relic} \rangle$) of the shock between
 the collision of the subclusters and the observed time as:  
 \begin{equation}
 	\frac{(v_{3D}(t_{obs}) + v_{3D}(t_{col}))}{2}	< \langle v_{relic} \rangle \lesssim v_{3D}(t_{col}) 
 \end{equation}
 The lower bound is set to be the average speed of the subcluster since the
-relic is observed to have traveled further away from the subclusters from
-the center of mass. The upper bound can be approximated as the relative collision
-speed of the subclusters due to how the shock is powered by the collision.
-These assumptions of the range of relic velocity is consistent with the
-numerical studies of the shock of the Bullet cluster \citep{Springel2007},
-right after the collision of the subclusters, the Bullet shock speed was
-comparable to the merger speed of the two subclusters in the center of mass frame
-\citep{Springel2007}.  The shock speed monotonically drops by only $\sim 14\%$
-in the 300~\mega yr period after the formation of the shock. This is
+relic is observed to have traveled further away than the NW subcluster from
+the center of mass. The upper bound can be approximated as the relative
+collision speed of the subclusters due to how the shock is powered by the
+collision. This is
 consistent with the fact that shock is a pressure wave
-and does not experience gravitational deceleration while other dissipative
-processes could have slowed down the shock wave. It is unlikely that there
+and does not experience gravitational deceleration while some dissipative
+processes may have slowed down the shock wave. It is unlikely that there
 would be significant energy injected into the shock to speed up the shock .
 \begin{equation}
-	s_{bound} = v_{bound} \hat{TSC} \cos(\hat{\alpha})
+	s_{proj} = \langle v_{relic} \rangle (t_{obs} - t_{col}) \cos(\hat{\alpha})
 \end{equation}
-where $s_{bound}$ is the bound projected separation.
-
-
+where $s_{proj}$ is the bound projected separation. 
+We compare the bounds with the observed position of the NW relic from
+\citet{L13}. We plot the most extreme values from the realizations for the
+two possible scenario in Figure (X), while we leave detailed analysis in
+Appendix X.
 
 %Observationally, studies from Lindner et al. also provide some
 %comparison of the estimated shock speed relative to the gas medium as $4300
@@ -137,10 +145,9 @@ where $s_{bound}$ is the bound projected separation.
 %
 %The greatest uncertainty remains in the modeling of the time evolution of
 %the speed of the shock wave.
-
-
-
-
 \par      
+
+\bibliographystyle{mn2e}
+\bibliography{bib}
 
 \end{document}
