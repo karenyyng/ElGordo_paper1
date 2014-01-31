@@ -62,9 +62,8 @@ local gravitational potential, matter density, temperature, pressure among
 others (\citealt{E98}, Shu .F., more citations?).  The exact time evolution
 of the shock velocity requires detailed numerical simulation similar to
 \citet{Springel2007}, \citet{Vazza11}, \citet{Kang2007}, etc. 
-We draw physical insight from the
-simulations of the merger shock of the Bullet cluster from
-\citet{Springel2007} and \citet{Paul2011b}, which both show
+We draw physical insight from the simulations of the merger shock of the
+Bullet cluster from \citet{Springel2007} and \citet{Paul2011b}, which both show
 that, right after the collision of the subclusters, the shock speed is
 comparable to the merger speed of the two subclusters in the center of mass
 frame.  While \citet{Paul2011b} reports the shock speed decreases only
@@ -81,13 +80,14 @@ the collision of the subclusters and the observed time as:
 \begin{equation}
 	\frac{(v_{3D}(t_{obs}) + v_{3D}(t_{col}))}{2}	< \langle v_{relic} \rangle \lesssim v_{3D}(t_{col}) 
 \end{equation}
-The lower bound is set to be the average speed of the NW subcluster since the
-relic is observed to have traveled further away than the NW subcluster from
-the center of mass. The upper bound can be approximated as the collisional
-speed of the NW subclusters due to how the shock is powered by the
-collision. We base this physical picture on the fact that shock is a pressure wave
-and does not experience gravitational deceleration while some dissipative
-processes may have slowed down the shock wave slightly. It is unlikely that there
+where $v_{3D}(t_{col}) < 0 $ for the incoming scenario. 
+For the outgoing situation, the lower bound is set to be the average speed
+of the NW subcluster since the relic is observed to have traveled further
+away than the NW subcluster from the center of mass. The upper bound can be
+approximated as the collisional speed of the NW subclusters due to how the
+shock is powered by the collision. We base this physical picture on the
+fact that shock is a pressure wave and does not experience gravitational
+deceleration while some dissipative processes may have slowed down the shock wave slightly. It is unlikely that there
 would be significant energy injected into the shock to speed up the shock
 such that the shock travels much faster than the collision speed of the
 subcluster.
@@ -96,8 +96,30 @@ subcluster.
 \end{equation}
 where $s_{proj}$ is the bound projected separation. 
 We compare the bounds with the observed position of the NW relic from
-\citet{L13}. 
+\citet{L13} at RA = 01:02:46, DEC = -49:14:43 \citep{L13}.
+Three sources of radio relic
+were identified - including the NW, SE and the E relic. The NW radio
+relic possesses the most extended geometry among all the identified relic source. 
+We do not refer to the The SE nor the E radio relic in this calculation
+since we do not have an estimation of the shock speed of the SE relic
+nor the E relic from \citealt{L13} as a comparison case.    
+From \citet{L13}, the estimated speed of the NW relic is $4300 \pm
+^{800}_{500}\kilo\meter~\second^{-1}$. This speed is compatible with our
+simulated collisional speed but the conversion of frame of reference is
+non-trivial since the speed is measured with respect to on the turbulent intercluster gas.
 
+
+%We incorporate the calculated shock speed of the radio relic as part of
+%$\vec{D}$ for the Monte Carlo simulation. 
+%We draw  $v_{relic} \sim N(4300~\kilo\meter~\second^{-1},
+%800~\kilo\meter~\second^{-1})$ \citep{L13} from each realization and
+%compute how far the NW relic would have traveled given a certain TSC in the
+%frame of the SE subcluster. Finally we compare the distance traveled
+%predicted from the simulation to the reported position of the NW relic 
+
+% make sure of Springel and Farrar 
+% the frame of the shock given by Lindner et al. is complicated 
+% there is no trivial translation between  
 
 %Observationally, studies from Lindner et al. also provide some
 %comparison of the estimated shock speed relative to the gas medium as $4300
