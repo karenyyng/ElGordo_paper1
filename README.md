@@ -37,7 +37,6 @@ Table of Content
 	* 3.2 Time-since-collision
 	* 3.3 Effects of applied prior on output variables 
 	* 3.4 Three-dimensional configuration of El Gordo 
-
 4. Discussion 
 	* 4.1 Our findings in the context of other studies of El Gordo
 	* 4.2 Comparison to other merging clusters of galaxies 
