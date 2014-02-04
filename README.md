@@ -24,7 +24,7 @@ Table of Content
 1. Introduction 
 2. Method - Monte Carlo Simulation 
 	* 2.1 Inputs of the Monte Carlo simulation 
-		* 2.1.1 Membership selection and redshift estimate ion of subclusters 
+		* 2.1.1 Membership selection and redshift estimation of subclusters 
 		* 2.1.2 Weak lensing mass estimation 
 		* 2.1.3 Estimation of projected separation 
 	* 2.2 Outputs of the Monte Carlo Simulation 		
