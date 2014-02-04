@@ -41,7 +41,7 @@ Table of Content
 	* 2.4 Extension to the Monte Carlo simulation - Determining merger
 	scenario with radio relic position 
 
-3. Results 
+3.Results 
 
 	* 3.1 Relative merger speed  
 
@@ -51,7 +51,7 @@ Table of Content
 
 	* 3.4 Three-dimensional configuration of El Gordo 
 
-4. Discussion 
+4.Discussion 
 
 	* 4.1 Our findings in the context of other studies of El Gordo
 
@@ -60,7 +60,7 @@ Table of Content
 	* 4.3 Possible improvements for radio relic priors  
 	
 	* 4.4 Other limitations and future work 
-5. Appendices 
+5 Appendices 
 
 	* App A. Details and output diagnostics for the MCMC mass inference 
 
