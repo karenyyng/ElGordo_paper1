@@ -1,20 +1,41 @@
 The strength of the Monte Carlo simulation by \citetalias{D13} is its ability
 to detect and rule out extreme input values that would result in
 unphysical realizations. 
-Our default Monte Carlo filters are described in D13 and they are applied to ensure 
+Our default Monte Carlo priors are described in D13 and they are applied to ensure 
 unphysical realizations in the simulation are ruled out. 
-In addition to the default filters, we also examine the effects of applying 
-two filters derived based on the position and the integrated polarization
+In addition to the default priors, we also examine the effects of applying 
+two priors derived based on the position and the integrated polarization
 fraction of the radio relic of El Gordo respectively. 
-%(See Appendix \ref{tab:priors} for a complete list of filters used in this paper.) 
+%(See Appendix \ref{tab:priors} for a complete list of priors used in this paper.) 
 
-\textbf{El Gordo shows remarkable double radio relics on the periphery
-(M11).} The radio relic  of El Gordo was first mentioned in the Sydney University
+El Gordo shows remarkable double radio relics on the periphery
+(M11). The radio relic  of El Gordo was first mentioned in the Sydney University
 Molonglo Sky Survey (SUMSS) data in low resolution at 843 MHz
-\citep{Mauch03} as shown in
-M11. The higher resolution radio observation conducted by \cite{L13} at 610
-\mega Hz and 2.1 \giga Hz confirms that those radio emission correspond to
-radio relic after removing effects of radio point sources.
+\citep{Mauch03} as shown in M11. The higher resolution radio observation
+conducted by \cite{L13} at 610 \mega Hz and 2.1 \giga Hz confirms that
+the identity of the radio relic after removing effects of radio point sources.
+Radio relics have been suggested to be able to constrain the
+mass ratios, the projection and the merger configuration.
+\citep{vanWeeren10} 
+
+%%%%%%%%%% WAIT WHAT AM I TRYING TO SAY????
+%Ever since the first detection of radio relic, cosmological hydrodynamical simulations of
+%merging clusters have been used to model their emission spectrum and
+%geometry. (\citealt{Vazza11}, \citealt{VanWeerenRJ2011}, Bonafede
+%et al. 2013, \citealt{E98}, Br\"{u}ggen et al., Skillman et al.
+%2013) While such cosmological simulations have provided valuable insights
+%to verifying the physical models, they are expensive in terms of
+%computational power and novel techniques have to be invented in order to
+%analyze the large amount of simulated data so progress has been slow. 
+%Our Monte Carlo simulation can make use of known physics combined with the
+%preliminary results from such cosmological simulations to use properties of
+%the radio relic to constrain merger dynamics. 
+
+%Compared to hydrodynamical simulations or cosmological simulations, this
+%    Monte Carlo simulation is not demanding in terms of CPU time, therefore, we
+%    can run many realizations in order to probe how the input variables
+%affect the output variables. 
+
 %\begin{itemize}
 %\item talks about the observable, which is the comoving kinetic power through each shock surface
 %\item refer to diffusive shock acceleration (DSA) mechanism?
@@ -22,26 +43,6 @@ radio relic after removing effects of radio point sources.
 %considering the possibility of having an non-isotropic magnetic field  
 %$KJ_BparallelRadial$ model
 %\end{itemize}
-
-Radio relics have been suggested to be able to constrain the
-mass ratios, the projection and the merger configuration.
-\citep{vanWeeren10} 
-Ever since the first detection of radio relic, cosmological hydrodynamical simulations of
-merging clusters have been used to model their emission spectrum and
-geometry. (\citealt{Vazza11}, \citealt{VanWeerenRJ2011}, Bonafede
-et al. 2013, \citealt{E98}, Br\"{u}ggen et al., Skillman et al.
-2013) While such cosmological simulations have provided valuable insights
-to verifying the physical models, they are expensive in terms of
-computational power and novel techniques have to be invented in order to
-analyze the large amount of simulated data so progress has been slow. 
-Our Monte Carlo simulation can make use of known physics combined with the
-preliminary results from such cosmological simulations to use properties of
-the radio relic to constrain merger dynamics. 
-Compared to hydrodynamical simulations or cosmological simulations, this
-    Monte Carlo simulation is not demanding in terms of CPU time, therefore, we
-    can run many realizations in order to probe how the input variables
-affect the output variables. 
-
 %\begin{figure}
 %	\includegraphics[width=\linewidth]{d_3d_prior1.png}
 %	\caption{The marginalized output PDFs of the observed 3D separation

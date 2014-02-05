@@ -17,14 +17,26 @@ mass ($m_{200c}$) and the position of its center ($\vec{s}$).
 We consider the joint posterior as the fit to the ellipticity data:
 \begin{align}
     &\begin{aligned}
-    &\log(P( m_{1}, \vec{s_{1}}, m_{2}, \vec{s_{2}} | \vec{e} )) \propto\\
-    &-\left[\frac{(\hat{e_1}(m_1, \vec{s_1}, m_2, \vec{s_2}) - e_1)^2
+    &\log(P( m_{1}, m_{2} | \vec{e} )) \propto\\
+    &-\left[\frac{(\hat{e_1}(m_1, m_2) - e_1)^2
     }{\sigma_{e_1}^2+\sigma_{SN}^2 }+ 
-    \frac{(\hat{e_2}(m_1, \vec{s_1}, m_2, \vec{s_2}) - e_2)^2
+    \frac{(\hat{e_2}(m_1, m_2) - e_2)^2
     }{\sigma_{e_2}^2+\sigma_{SN}^2 }\right] \label{eqn:jointposterior} 
     \end{aligned}
 \end{align} 
-where $\sigma_{SN} = 0.25$(to be checked) represents Gaussian shape noise
+where we have fixed the centers of the halos so $\vec{s}_1$ and $\vec{s}_2$
+are left out of the joint posterior.
+
+%\begin{align}
+%    &\begin{aligned}
+%    &\log(P( m_{1}, \vec{s_{1}}, m_{2}, \vec{s_{2}} | \vec{e} )) \propto\\
+%    &-\left[\frac{(\hat{e_1}(m_1, \vec{s_1}, m_2, \vec{s_2}) - e_1)^2
+%    }{\sigma_{e_1}^2+\sigma_{SN}^2 }+ 
+%    \frac{(\hat{e_2}(m_1, \vec{s_1}, m_2, \vec{s_2}) - e_2)^2
+%    }{\sigma_{e_2}^2+\sigma_{SN}^2 }\right] \label{eqn:jointposterior} 
+%    \end{aligned}
+%\end{align} 
+Gaussian shape noise of the background galaxies are represented by $\sigma_{SN} = 0.25$(to be checked) represents Gaussian shape noise
 of the background galaxies; The reduced shear due to the NFW halos can be
 decomposed into two components, $\hat{e_1}$ and $\hat{e_2}$  
 
