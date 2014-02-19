@@ -9,6 +9,9 @@ Computation Tasks sorted by priority
 *  rerun MCMAC with updated data (late next week) 
 *  Grab Will 's code / modify it for plotting all the simulation outputs
   (late next week) 
+*  make picture with locations of subclusters, center of mass and
+   pericenters
+* (optional) make use of SVM for classification of subcluster members 
 
 Writing Tasks sorted by priority  
 =====
