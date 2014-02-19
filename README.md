@@ -7,6 +7,8 @@ Computation Tasks sorted by priority
 *  Test sensitivity of polarization prior (over the weekend)
 *  rerun MCMC with suitable acceptance rate / variance (early next week) 
 *  rerun MCMAC with updated data (late next week) 
+*  modify MCMAC to output the location of the centroids - (which coordinate
+   do we want them in???)
 *  Grab Will 's code / modify it for plotting all the simulation outputs
   (late next week) 
 *  make picture with locations of subclusters, center of mass and
