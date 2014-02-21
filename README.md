@@ -4,23 +4,23 @@ Aimming for another review in late Feb among group members and Davis collaborato
 
 Computation Tasks sorted by priority  
 =====
-*  Test sensitivity of polarization prior (over the weekend)
-*  rerun MCMC with suitable acceptance rate / variance (early next week) 
-*  rerun MCMAC with updated data (late next week) 
-*  modify MCMAC to output the location of the centroids - (which coordinate
+- [x] Test sensitivity of polarization prior (over the weekend)
+- [ ] rerun MCMC with suitable acceptance rate / variance (early next week) 
+- [ ] rerun MCMAC with updated data (late next week) 
+- [ ] modify MCMAC to output the location of the centroids - (which coordinate
    do we want them in???)
-*  Grab Will 's code / modify it for plotting all the simulation outputs
+- [ ] Grab Will 's code / modify it for plotting all the simulation outputs
   (late next week) 
-*  make picture with locations of subclusters, center of mass and
+- [ ]  make picture with locations of subclusters, center of mass and
    pericenters
-* (optional) make use of SVM for classification of subcluster members 
+- [ ] (optional) make use of SVM for classification of subcluster members 
 
 Writing Tasks sorted by priority  
 =====
-*  incorporate comments from Tues group meetings to paper
-*  Modify polarization section (over the weekend) 
-*  Write result sections  
-*  add stuff to appendix this should be quick
+- [ ] incorporate comments from Tues group meetings to paper
+- [x] Modify polarization section (over the weekend) 
+- [ ]  Write result sections  
+- [ ]  add stuff to appendix this should be quick
 
 Table of Content
 ====
