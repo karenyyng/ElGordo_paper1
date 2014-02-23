@@ -13,7 +13,9 @@ Computation Tasks sorted by priority
   (late next week) 
 - [ ]  make picture with locations of subclusters, center of mass and
    pericenters
-- [ ] make use of SVM for classification of subcluster members (optional) 
+- [ ] make use of SVM for classification of subcluster members (optional)
+- [ ] finalize all the figures and numerical results before working on the the writing tasks in detail
+
 
 Writing Tasks sorted by priority  
 =====

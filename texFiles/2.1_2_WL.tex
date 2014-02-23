@@ -16,12 +16,17 @@ check for convergence. We performed more MCMC steps as long as convergence
 was not achieved. After convergence was achieved, we removed the
 burn-in portions of the MCMC chains and used the resulting MCMC chains as
 samples of the PDFs of the masses. \par 
+% this is from Jee13 section 3.5
+We make use of an effective redshift of $z_{\text{eff}} = 1.37$ or $\beta
+= 0.276$ \citepalias{Jee13} and $g' \approx (1 + 0.79 \kappa)~g$ \citepalias{Jee13}
+and \citep{Seitz97}.    
 %\textbf{The inputs of our MCMC mass inference are from proposal blah,
 %which is similar to \citepalias{Jee13}, however, this
 %separate implementation of the MCMC analysis code is different than
 %\citepalias{Jee13}.} 
 We used a catalog of reduced and bias-corrected background 
-galaxy shapes from Hubble Space Telescope PROP 12755 similar to
+galaxy shapes from Hubble Space Telescope PROP 12755, and these galaxies
+were discussed as the population in Region A in
 \citetalias{Jee13}. (! \citealt{Jee13} actually used
 additional data) On the other hand, we fixed the
 position of the centers of the NFW halos to be  the luminosity peaks of the
@@ -33,3 +38,7 @@ the centroids like Jee 13)  The agreement between our analysis and \citepalias{J
 the 68\% credible interval serves as a sanity check on the estimated masses. 
 %Other sanity check including the control of acceptance rate between 20\%
 %and 50\%. 
+
+The mass estimates from \citealt{Jee13} are $M_{200c} = 13.8 \pm
+2.2 \times 10^{14}~h_{70}^{-1} M_{\sun}$ for the NW subcluster and $ M_{200c} = 7.8 \pm
+2.0 \times 10^{14}~h_{70}^{-1} M_{\sun}$ for the SE subcluster. 
