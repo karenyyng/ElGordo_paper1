@@ -1,44 +1,46 @@
-Paper to be submitted to MNRAS in mid March
+Paper to be submitted to MNRAS in mid May
 
-Aimming for another review in late Feb among group members and Davis collaborators for finalizing the methodology and results sections.
+Aimming for another review in early April among group members and Davis collaborators for finalizing the methodology and results sections.
 
 Effort to debug Will 's MCMC code 
 ====
-- [ ] fix shear to be calculated more exactly (See Issue
-  wadawson/ResearchCode#10)
-- [ ] make mock catalog with one halo then do MCMC
-- [ ] use James' mock catalog with two halos, fix the mass of one, just
-  infer mass of the other halo 
-- [ ] fit the above catalogs with two different methods
-	- least square fitting using bfgs 
-	- MCMC 
-	if two agrees but do not give the right answer, then something is wrong
-		with the way we prepare the catalogs / do transformation 
-
+[ ] fit the above catalogs with two different methods (to be
+done by week of 04/01)      		
+	[ ] least square fitting using bfgs	 
+	[ ] MCMC			 
+[ ] fix shear to be calculated more exactly (See Issue
+wadawson/ResearchCode#10)			
+[ ] use James' mock catalog with two halos, fix the mass of one, just
+infer mass of the other halo		 
 
 Computation Tasks sorted by priority  
 =====
-- [x] Test sensitivity of polarization prior (over the weekend)
-- [x] rerun MCMC with suitable acceptance rate / variance (early next week) 
-- [x] rerun MCMAC with updated data (late next week) 
-- [ ] Debug MCMC code 
-- [ ] modify MCMAC to output the location of the centroids - (which coordinate
-   do we want them in???)
-- [ ] Grab Will 's code / modify it for plotting all the simulation outputs
-  (late next week) 
-- [ ]  make picture with locations of subclusters, center of mass and
-   pericenters
-- [ ] make use of SVM for classification of subcluster members (optional)
-- [ ] finalize all the figures and numerical results before working on the the writing tasks in detail
-- [ ] zoom in on the merging scenario figure and see which scenario is
+[x] Test sensitivity of polarization prior (over the weekend)   	
+[x] rerun MCMC with suitable acceptance rate / variance (early next week)  	 
+[ ] rerun MCMAC with updated data (late next week)		 
+[ ] Debug MCMC code		 
+[ ] modify MCMAC to output the location of the centroids - (which coordinate
+ do we want them in???)			
+[ ] Grab Will 's code / modify it for plotting all the simulation outputs
+(late next week)	 
+[ ]  make picture with locations of subclusters, center of mass and
+ pericenters    	
+[ ] make use of SVM for classification of subcluster members (optional)   	
+[ ] finalize all the figures and numerical results before working on the
+the writing tasks in detail        	
+[ ] zoom in on the merging scenario figure and see which scenario is
   actually more favored for beta = 0.9 with the polarization prior applied
+  
+  	
+	
 
 Writing Tasks sorted by priority  
 =====
-- [ ] incorporate comments from Tues group meetings to paper
-- [x] Modify polarization section (over the weekend) 
-- [ ]  Write result sections  
-- [ ]  add stuff to appendix this should be quick
+[ ] incorporate comments from Tues group meetings to paper  
+[x] Modify polarization section (over the weekend)   
+[ ]  Write result sections  
+[ ]  add stuff to appendix this should be quick   
+[ ] add Wright and Brainerd to reference   
 
 Table of Content
 ====
