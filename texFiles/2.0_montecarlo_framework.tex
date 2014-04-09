@@ -1,7 +1,7 @@
 For this analysis, we made use of the collisionless 
 dark-matter-only Monte Carlo modeling code written by Dawson (2013),
 hereafter \citepalias{D13}.  
-In the code, the time evolution of the head-on merger was computed
+In the D13 code, the time evolution of the head-on merger was computed
 based on an analytical model assuming that the only dominant force is the gravitational attraction from
 the masses of two truncated Naverro-Frenk-White (hereafter NFW) DM halos.
 Other major assumptions for modeling systems with this code include
@@ -10,8 +10,8 @@ negligible impact parameter and no self-interaction of dark matter.\par
 In the Monte Carlo simulation, many realizations of the collision is
 computed from the inputs of each realization, including
 the data ($\vec{D}$) and the model variable ($\alpha$). In particular,
-the standard required data, which were in the form of samples of the probability density
-functions (PDFs), included the masses ($M_{200_{NW}},M_{200_{SE}}$) the
+the standard required data, which were in the form of samples of the
+probability density functions (PDFs), included the masses ($M_{200_{NW}},M_{200_{SE}}$) the
 redshifts ($z_{NW}, z_{SE}$) and the projected separation of the two
 subclusters ($d_{proj}$).  
 %For the $j-$th realization, w
@@ -38,9 +38,8 @@ To ensure convergence of the output PDFs, in total, 2 million (to be
 confirmed) realizations were computed. The results, however, are
 consistent up to a fraction of a percent just from 20 000 runs
 \citepalias{D13}.\par    
-We note that the Monte Carlo simulation is described from a Bayesian
-point of view but the analysis differs from conventional Bayesian inference. The Bayes
-chain rule underlies the simulation can be written as:
+We adapt a Bayesian interpretation of the outputs of the Monte Carlo
+simulation. The Bayes chain rule underlies the simulation can be written as:
 \begin{equation}
     P(\vec{\theta}|\vec{D}) \propto P(\vec{D}|\vec{\theta})P(\vec{\theta})
 \end{equation}
