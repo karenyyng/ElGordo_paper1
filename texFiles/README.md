@@ -4,6 +4,7 @@ Comments from Feb group meeting
 [0] means work in progress   
 [x] means done    
 [c] means computation required   
+[?] not sure if I want to do it 
 
 Section 1: (3rd) 
 --------
@@ -17,29 +18,32 @@ self-interaction to this system.
 -------
 [x] insert the data section instead between method and intro?    
 Or just rearrange the data first then talk about the method   
-[c] 2.1.1 plot : choose a different color scale in the middle?  
-[c] RA and DEC / use arcmin scale for axes   
+[cx] 2.1.1 plot : choose a different color scale in the middle?  
+[c] RA and DEC / use arcmin scale for axes for showing the centroids
+vs relic location plot   
 [x] we adopted the spatial cut - put it in main text   
-	[c ] translate that to a relative velocity difference in 2.1.1   
-[ ] BCG for SE subcluster so choose it as luminosity center   
-[ ] Fig 1. WL info - shifting gapper method - add citation   
-[ ] 2.1.3 justify the luminosity peaks are close to the WL centroids
-add uncertainty   
-[ ] spectroscopic members -- completeness - can have a lot of
-contamination?  
-[ ] BCG & luminosity peaks agree well (cite J13)   
-[ ] 2.3.1 specify which exact model it is from Ensslin 's paper    
+[c ] 2.1.1 translate that to a relative velocity difference    
+[x] BCG for SE subcluster so choose it as luminosity center   
+(I don' think we need to mention this)
+[x] Fig 1. WL info - shifting gapper method - add citation   
+[? ] spectroscopic members --talk about completeness - can it have a lot of
+contamination?   
+[c ] 2.1.3 justify the luminosity peaks are close to the WL centroids
+and add uncertainty   
+[c ] BCG & luminosity peaks agree well (cite J13)   
+[x] 2.3.1 specify which exact model it is from Ensslin 's paper    
 [x] 2.2 change "incoming" to "returning"   
-[ ] 2.3 explain that we explored using position information as a prior    
-[ ] 2.3.1 reproduce Ensslin figure and show uncertainty?   
-[ ] talk about Sam Skillman 's paper about how long the relic can persist  
-[ ] X-ray peak leading SE DM peak by 3 sigma include uncertainties   
+[x ] 2.3 explain that we explored using position information as a prior    
+[c? ] 2.3.1 reproduce Ensslin figure and show uncertainty?   
+[ ] 3.3.2 add description of how little the mass estimates affect the
+dynamical parameters from the sensitivity analysis    
 
 Section 3 (2nd) 
 --------
 [ ] 3. Results - talk about the table - overview   
 [ ] point out the highlights   
 [ ] 3.1 stays in result section   
+[ ] talk about Sam Skillman 's paper about how long the relic can persist  
 [ ] 3.2 stays   
 [ ] 4.1 how our returning / outgoing scenario is consistent with other
 studies  
@@ -47,9 +51,15 @@ studies
 scenario  
 [ ] Mention the period and talk about how far from the recent the
 pericenter.   
-[ ] time since turn around.  
-[ ] turn around point in ipython notebook figure 
+[x] switch the appendix TSC figure with the one in the main result   
+[0] modify 4.1 text to be consistent with the switch between the appendix
+TSC figure and the one in the main result - 
+[0] also figure captions!!! 
+[ ] compute time since turn around.  
+[c ] turn around point in ipython notebook figure 
 cartoon for the scenario ?   
+[ ] talk about X-ray peak leading SE DM peak by 3 sigma include
+uncertainties??    
 
 
 Intro
