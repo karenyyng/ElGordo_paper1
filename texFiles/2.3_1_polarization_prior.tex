@@ -1,5 +1,6 @@
-In the presence of a uniform magnetic field, the observed polarization
-fraction of the synchrotron emission of the electrons depends on the
+The observed radio relic is due to synchrotron emission of free electrons in a
+magnetic field. If the magnetic field is uniform, the observed
+polarization fraction of the synchrotron emission of the electrons depends on the
 viewing angle with respect to the alignment of the magnetic field. 
 Synchrotron emission from electrons inside unorganized magnetic field are
 randomly polarized. The high reported integrated polarization fraction from
@@ -9,60 +10,80 @@ created by the compressed intracluster medium during a merger
 This picture is consistent with a high polarization fraction perpendicular
 to this magnetic field along the relic. 
 \par
-The major assumption behind the design of our prior
-is that the integrated polarization fraction is a monotonically
-decreasing function of $\alpha$ . 
+We designed our prior to reflect how $\alpha$ decreases monotonically as the
+maximum observable integrated polarization fraction. 
 \begin{figure}
-	\includegraphics[width=\linewidth]{Ensslin_rep_polarization.pdf}
+	\includegraphics[width=\linewidth]{Ensslin_polar_fig.pdf}
 	\caption{Predictions of polarization percentage of the radio relic at a
 		given projection angle from different models, reproduced from
 		\citealt{E98}. Each model assumes electrons producing the radio emission
 		to be accelerated inside
-		uniform magnetic field of various strength, indicated by strong or weak
-		field, with a corresponding spectral index of the radio emission
-		($\alpha_{rad}$), spectral index of the electrons ($\gamma$) and
-		compression ratio of the magnetic field ($R$).
-		We highlight the observed polarization percentage of the NW radio relic
+		uniform magnetic field of various strengths ({\it strong} or {\it weak}). The curves are plotted with spectral index of the radio emission
+		($\alpha_{radio}$), spectral index of the electrons ($\gamma$) and
+		compression ratio of the magnetic field ($R$) corresponding to the
+		estimated values from \citet{L13}.
+		We highlight the observed polarization percentage of the main NW radio relic
 		of El Gordo by the dotted vertical line with the greyed out region
-		indicating the uncertainty.\label{fig:Ensslin_fig}}
+		indicating the uncertainty \citep{L13}.\label{fig:Ensslin_fig}}
 \end{figure}
-This assumption is inspired by the class of models given by \cite{E98}(See Figure \ref{fig:Ensslin_fig}), 
-which, despite various inputs for spectral indices and magnetic field strength, each predicts a monotonically decreasing integrated
-polarization fraction as a function of $\alpha$. 
-%This assumption is yet to be verified by cosmological simulations of radio relic. 
-In particular, we refer to a model from \cite{E98} that would give the most
-conservative estimate on the upper bound of $\alpha$. This model we picked
-correspond to the strong field case with the relic being supported by
-magnetic pressure only, with a radio spectral index $\alpha_{rad} = 1$. 
+This assumption is based on the class of models given by \cite{E98}(See
+Figure \ref{fig:Ensslin_fig}). In particular, we refer to a model from \cite{E98} that would give the most
+conservative estimate on the upper bound of $\alpha$:
+\begin{align}
+\alpha &= 90 \degree -
+\arcsin
+\left(
+\sqrt{
+\frac{
+	\frac{2}{15} \frac{13R - 7}{R - 1} \frac{\gamma + 7/3}{\gamma + 1}
+	\langle P_{strong} \rangle}{
+	1 + \frac{\gamma + 7/3}{ \gamma +1} \langle P_{strong} \rangle }}\right)
+\end{align}
+
+
+This model
+corresponds to the strong field case with the relic being supported by
+magnetic pressure only, with $\alpha_{radio} = 0.86$, compression ratio
+$R=2.7$ and $\gamma = 2.7$. 
 This model predicts a maximum integrated polarization fraction of
-$\sim75\%$ when $\alpha = 0$ . From this model, the observed integrated
-polarization fraction of $33\%\pm1\%$ corresponds to $\mu_\alpha =
-39\degree$. 
+$\sim60\%$ when $\alpha \rightarrow 0$. From this model, the observed integrated
+polarization fraction of $33\%\pm1\%$ corresponds to an estimated value
+of $\hat{\alpha}
+ = 35\degree$. 
 %We consider 39\degree as an upper bound on the projection angle since this idealized model assume isotropic distribution of magnetic field and
 %electrons. 
-This  polarization fraction of $\sim 75\%$ predicted by \citep{E98} is
+This  polarization fraction of $\sim 60\%$ predicted by \citep{E98} is
 consistent with the upper bound of relic polarization fraction in cosmological
 simulations \citep{S13}. No other model of the magnetic field should predict a higher polarization fraction, thus it is highly unlikely that we see 33\%
-integrated polarization at $\alpha > 39\degree$.  
+integrated polarization at $\alpha > 35\degree$.  
 \par
 
-We cannot rule out $\alpha \leq 39\degree$ as a result of possible
+We cannot rule out $\alpha \leq 35\degree$ as a result of possible
 variations in the magnetic field. 
 \cite{E98} assumes an isotropic distribution of electrons in an isotropic magnetic field. Cosmological
 simulations of radio relics from \cite{S13} show varying polarization
 fraction across and along the relic assuming $\alpha = 0$, resulting in a
 lower integrated polarization fraction. For example, it is possible to see a edge-on radio relic ($\alpha = 0$) with integrated polarization fraction of 33\%. 
-To summarize, the prior derived from polarization information takes the form of:
+Furthermore, \cite{S13} shows that after convolving the
+simulated polarization signal with a Gaussian kernel of 4\arcmin~to match
+the observed resolution, the polarization fraction drops to between 30\% to
+65\% even when $\alpha = 0$. 
+Other uncertainties come from the fact that the inferred spectral indices
+differ between the two observed frequencies and vary between the three
+identified relic sources \citep{L13}. We examine the effects  of changing
+the cutoff value of this prior to ensure the uncertainties do not
+introduce significant bias in the estimated output variables and we
+present the results in Appendix \ref{app: results}.
+To summarize, we adopt a conservative uniform prior to encapsulate the
+information from the polarization fraction of the radio relic as:
 \begin{equation}
 P(\alpha) = 
 	\begin{cases}
-	& \text{const. $>$ 0 for  }\alpha < 39 \degree \\ 
+	& \text{const. $>$ 0 for  }\alpha < 35 \degree \\ 
 	& 0 \text{ otherwise}
 	\end{cases}
 \end{equation}
-(I removed the figure showing the prior and replaced it with the above
-equations since the equation is more compact.)
-\par 
+
 
 %Due to these likely variations in the true magnetic field, the true observable integrated polarization values at a given $\alpha$ can be lower than what is predicted by \cite{E98}. 
 %For example, it is possible that the radio relic of El Gordo has a lower maximum face-on polarization fraction than 75\%, but if we are viewing the relic at a smaller $\alpha$, the integrated
@@ -93,16 +114,6 @@ equations since the equation is more compact.)
 %Therefore,   
 %
 %\par
-Observation also introduces uncertainties that we have to take into account. \cite{S13} shows that after convolving the
-simulated polarization signal with a Gaussian kernel of 4\arcmin~to match
-the observed resolution, the polarization fraction drops to between 30\% to
-65\% even when $\alpha = 0$. 
-Other uncertainties come from the fact that the inferred spectral indices
-differ between the two observed frequencies and vary between the three
-identified relic sources \citep{L13}. We examine the effects  of changing
-the cutoff value of this prior to ensure the uncertainties do not
-introduce significant bias in the estimated output variables and we
-present the results in Appendix \ref{app: results}. 
 %\textbf{We pick a form of uniform prior, to represent
 %the uncertainties in both the modeling (\citealt{E98}, \citealt{S13}) and the interpretation of the data from \cite{L13}.} 
 %Following previous discussion, we pick a value of $\mu_\alpha =39\degree +

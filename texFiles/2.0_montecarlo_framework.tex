@@ -43,25 +43,29 @@ consistent up to a fraction of a percent just from 20 000 runs
 We adapt a Bayesian interpretation of the outputs of the Monte Carlo
 simulation. The Bayes chain rule underlies the simulation can be written as:
 \begin{equation}
-    P(\vec{\theta}|\vec{D}) \propto P(\vec{D}|\vec{\theta})P(\vec{\theta})
+    P(M|\vec{D}) \propto P(\vec{D}|M)P(M)
 \end{equation}
-where the likelihood is defined to be the PDF of $\vec{D}$ given $\vec{\theta}$,
+where the likelihood is defined to be the PDF of $\vec{D}$ given our
+physical model $M$ which we parametrize using variables in Table 1
+($\vec{\theta}$) by
 %i.e. the input variables, not statistical parameters, 
-and the priors are
-defined to be the probabilities due to prior knowledge of the estimated values of
-$\vec{\theta}$. The output variables $\vec{\theta}^\prime$, on the other
-hand, were computed according to the conservation of energy, which is
+%. The output variables $\vec{\theta}^\prime$, on the other
+%hand, were computed according to  
+assuming conservation of energy, which is
 represented by a suitable functional form $f$ below. For example,the
 calculation of the output variables of the $j$-th realization can be denoted as: 
 \begin{equation}
-    (\vec{\theta}^\prime)^{(j)} = f(\vec{\theta}^{(j)}, \vec{D}) 
+    (\vec{\theta}^\prime)^{(j)} = M(\vec{\theta}^{(j)}, \vec{D}) 
 \end{equation}    
 and computed over all $j$ realizations. Finally, we took the physical
-constraints on $\vec{\theta}$ and $\vec{\theta}^\prime$ into account by
+constraints on the dynamical variables into account by
 examining the resulting physical variables against the physical limits and
 excluding realizations that would produce impossible values. We refer to this
-process of excluding realizations as ``applying prior probability''. 
-
+process of excluding unphysical realizations by applying suitable priors. 
+Even though we denote the priors for one dimensions each, 
+the correlations between different variables are taken into account
+properly due to how we throw away all the variables of problematic
+realizations. 
 %To model projection effects, we randomly draw a projection
 %angle in each realization. We throw out realizations with unphysical
 %outputs.  \textbf{what are the inputs}
