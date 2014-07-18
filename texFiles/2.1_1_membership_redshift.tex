@@ -4,27 +4,56 @@
 % spatial cut is defined in M11 p.9 first paragraph 
 
 % paragraphs needs to be reorganized 
-The overall membership of the galaxies
-of El Gordo was first determined using a shifting gapper method
-\citep{Fadda96} after applying a rest frame cut of
-4000~\kilo\meter~\second$^{-1}$ \citep{Sifon13}. This method gives a
-total count of 89 galaxy members of El Gordo.
-To further distinguish member galaxies of each subcluster, we adopt a spatial cut approximately perpendicular to the 2D merger axis
-from \citepalias{M11}. Using this cut, we determined that there are 54
-members in the NW subclusters and 35 members in the SE subclusters (See Figure
-\ref{fig:membership}). The spatial cut indicated by the green line was done after
+We adopt the identification of galaxy membership of El Gordo given by
+\citepalias{M11} with a total count of 89 galaxies.
+%The overall membership of the galaxies
+%of El Gordo was first determined using a shifting gapper method
+%\citep{Fadda96} after applying a rest frame cut of
+%4000~\kilo\meter~\second$^{-1}$ \citep{Sifon13}. This method gives a
+To further distinguish member galaxies of each subcluster, we adopt a
+redshift cut of $z < 0.886$, and a spatial cut approximately perpendicular
+to the 2D merger axis from \citetalias{M11} to determine that
+there are 51 members in the NW subclusters and 35 members in the SE subclusters (See Figure
+\ref{fig:membership}). 
+The spatial cut indicated by the green line was done after
 mapping the world coordinates to pixel coordinates to avoid anamorphic distortion. 
-Then, we bootstrapped the biweight locations of the redshifts of the
-respective members in order to obtain the PDFs of the redshifts of each
-subcluster 
-\citep{Sifon13}. Using this method of determining subcluster members, the spectroscopic
-redshift of the subclusters were determined to be $z_{NW} = 0.86901 \pm
-0.00017$ and $z_{SE} = 0.87175 \pm 0.00019$, where the quoted numbers represent the biweight location and
-biweight scale respectively \citep{Beers90}. 
-These biweight location
-estimators are less susceptible to outliers than the mean and standard
-deviations. These redshifts of the subclusters correspond to a relative
-velocity difference of $476$ km/s. 
+
+%Compare and contrast the amount of bootstrapping and the reported
+%redshifts and velocity dispersion.
+After identifying members of each subcluster, we performed 10, 000 bootstrap realizations to estimate the biweight
+locations of the redshifts of the respective members in order to obtain the
+samples of the PDFs of the redshifts of each subcluster. 
+The spectroscopic redshift of the subclusters were
+determined to be 
+%$z_{total} = \pm $ 
+$z_{\mathrm{NW}} = 0.86842 \pm 0.0011$ and 
+$z_{\mathrm{SE}} = 0.87131 \pm 0.0012$, where the quoted numbers represent the
+biweight location and 1$\sigma$ biased corrected confidence level
+respectively \citep{Beers90}.  
+%These biweight location estimators are less susceptible to outliers than
+%the mean and standard deviations. 
+Both the estimated redshifts of the subclusters and the uncertainties are
+consistent with estimates given by \citealt{Sifon13}, and the fact that El
+Gordo shows large velocity dispersion and has the largest velocity
+dispersion among all the ACT galaxy clusters as reported by
+\citetalias{M13}. These redshifts of the subclusters correspond to a
+radial velocity difference in the frame of the NW subcluster
+to be $476 \pm 242 $ km/s. We estimate the radial velocity differences of the
+subclusters by first calculating the velocity of each subcluster with
+respective to us, using  
+\begin{equation}
+	v_i = \left[ \frac{(1+z_i)^2 - 1 }{(1+z_i)^2 + 1 }\right]c
+\end{equation}
+where $c$ is the speed of light. And then the radial velocity was calculated
+by: 
+\begin{equation}
+	\Delta v_{rad}(t_{obs}) = \frac{|v_2 - v_1|}{1-\frac{v_1 v_2}{c^2}}
+\end{equation}
+This result is lower than the the quoted radial velocity differences of
+$586$
+km/s reported by \citetalias{M11} from the approximation of $\Delta v_{rad}
+= c(z_1 - z_2) / (1 + z_1)$ in the frame of the NW subcluster. 
+
 
 \begin{figure}
 	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
