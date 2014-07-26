@@ -42,7 +42,13 @@
 \usepackage{amsmath}
 \usepackage[amssymb]{SIunits} 
 \usepackage{booktabs}
+\usepackage{hhline}
 \usepackage{breqn}
 \usepackage{standalone}
+\usepackage{dcolumn}
+	\newcolumntype{d}[1]{D{.}{.}{#1}}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \graphicspath{{graphics/}}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
 %-----------------------------------------------------------------------
