@@ -1,11 +1,11 @@
 We outline the outputs of the simulation here to facilitate the discussion
 of the design of the priors used in the simulation. The simulation
-provides PDF estimates for many of the output variables. Variables
-of the most interest include the time dependence and $\alpha$, which is
+provides PDF estimates for 10 output variables. Variables
+of the most interest include the time dependence and the angle $\alpha$, which is
 defined to be the projection angle between the plane of the sky and the merger axis. Other output variables are dependent on $\alpha$ and the time
 dependence. Specifically, the simulation denotes the time dependence by
 providing several characteristic time-scales, including the time
-elapsed between the consecutive collisions
+elapsed between consecutive collisions
 ($T$) and the time-since-collision of the observed state (TSC).  
 
 We provide two versions of the time-since-collision variables $TSC_0$ and
@@ -14,16 +14,20 @@ moving apart after collision to be ``outgoing" and it corresponds to the
 smaller $TSC_0$ value, and 2) we call the alternative scenario 
 ``returning" for which the subclusters are approaching each other after turning
 around from the apoapsis for the first time and it corresponds to $TSC_1$.
-We describe how we use to break the degeneracies of the two scenarios in
+We describe how we make use of properties of the radio relic to evalute
+which scenario is more likely in
 section \ref{sec: positionprior}. 
  
 The simulation also output estimates of variables that characterize
-the dynamics of the merger. The 3D velocities, both at the time of the
+the dynamics and the characteristic distances of the merger. The 3D velocities, both at the time of the
 collision ($v_{3D}(t_{col})$) and at the time of observation
-($v_{3D}(t_{obs})$) are provided. The maximum 3D separation ($d_{max}$),
-which is defined to be the distance between the position of collision to
-the apoapsis, is also part of
-the outputs. (See Table \ref{tab:outputs} for all the outputs).
+($v_{3D}(t_{obs})$) are provided. The three characteristic
+distances include the maximum 3D separation ($d_{max}$),
+which is the distance between the position of collision to
+the apoapsis; the projected separation $d_proj$ and the three
+dimensional separation of the subclusters at observation. 
+%(See Table \ref{tab:outputs} for all the outputs).
+
 %Here we present results based on:\\  %1) a flat radio prior\\
 %2) a uniform prior over a range of most likely 3D separations\\
 %3) a Gaussian prior  
