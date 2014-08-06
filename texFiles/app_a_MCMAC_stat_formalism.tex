@@ -9,27 +9,26 @@ follows for most of the output variables:
 \end{equation}
 
 In addition, we apply the following prior on $TSC_1$ only when evaluating the
-statistics of $TSC_1$ and $T$, thus allowing realiziations with a valid
-outgoing TSC but an invalid returning $TSC_1$.  
+statistics of $TSC_1$, thus allowing realiziations with a valid
+outgoing TSC but an invalid returning $TSC_1$. 
 
 \begin{equation}
 	P(TSC_1) = 
 	\begin{cases}
 		& \text{const}~\text{if }TSC_1 < \text{age of universe at } z=0.87	\\
-		& 0~\text{otherwise}
+		& 0~\text{otherwise} \label{eqn:TSM_1}
 	\end{cases}
 \end{equation}
 
-To correct for observational limitations, we further convolve the posterior probabilities of the different
-realizations with 
+To correct for observational limitations, we further convolve the
+posterior probabilities of the different realizations with 
 \begin{equation}
 	P(TSC_0 | T) = 2 \frac{TSC_0}{T}
 \end{equation}
 to account for how the subclusters move faster at lower $TSC$ and thus it
 is more probable to observe the subclusters at a stage with a larger $TSC$.
 
-
-
+\par 
 
 
 
