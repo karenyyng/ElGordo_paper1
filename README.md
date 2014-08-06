@@ -1,4 +1,3 @@
-Paper to be submitted to MNRAS in mid May
 
 Aimming for another review in early April among group members and Davis collaborators for finalizing the methodology and results sections.
 
