@@ -52,36 +52,42 @@ variables. \par
 %and these galaxies were discussed as the population in Region A in
 %\citetalias{Jee13}.  
 In order to constrain our parameter space, we referred to the properties of
-the radio relic from \citet{L13}. 
-El Gordo shows radio relics on the periphery of both subclusters
-\citepalias{M12}. Two 
-radio relics, the northwest (NW) relic and the southeast (SE) relic, of El
-Gordo were first discovered in the Sydney University
-Molonglo Sky Survey (SUMSS) data in low resolution at 843 MHz
-\citep{Mauch03} as shown in M12. The higher resolution radio observation
-conducted by \cite{L13} at 610 \mega Hz and 2.1 \giga Hz confirms that the
-identity of the NW radio relic
-after removing effects of radio point sources. 
-The NW radio relic, which possesses the most extended geometry (Mpc in
-length)
+the radio relic from \citet{L13}. El Gordo shows radio relics on the
+periphery of both subclusters \citepalias{M12}. Two radio relics, the
+northwest (NW) relic and the southeast (SE) relic, of El Gordo were first
+discovered in the Sydney University Molonglo Sky Survey (SUMSS) data in low
+resolution at 843 MHz \citep{Mauch03} as shown in M12. The higher
+resolution radio observation conducted by \cite{L13} at 610 \mega Hz and
+2.1 \giga Hz confirms that the identity of the NW radio relic
+after removing effects of radio point sources.The NW radio relic, which
+possesses the most extended geometry (Mpc in length)
 among all radio source, was identified to be associated with the
-merger. We do not refer to the SE radio
-relic in this paper since the SE radio relic is reported to be
-caused by a compact radio source and the association of the E radio    
-relic to the merger is unclear \citep{L13}.    
+merger. We do not refer to the SUMSS SE radio relic in this paper since the
+SE radio relic is reported to be caused by a compact radio source \citep{L13}.    
 %\input{2.0_data_section.tex}
 
 \section{METHOD -- Monte Carlo simulation} 
 %\input{2.0_montecarlo_framework}
-For this analysis, we used the collisionless 
+To explore the multidimensional and highly-correlated input parameter space
+with large uncertainties, we used the collisionless 
 dark-matter-only Monte Carlo modeling code written by Dawson (2013),
-hereafter \citepalias{D13}.  
-In the D13 code, the time evolution of the head-on merger was computed
-based on an analytical model assuming that the only dominant force is the gravitational attraction from
-the masses of two truncated Naverro-Frenk-White (hereafter NFW) DM halos.
+hereafter \citepalias{D13}. 
+
+
+
+
+In the D13 code, the time evolution of the
+head-on merger was computed based on an analytical model assuming that the
+only dominant force is the gravitational attraction from the masses of two
+truncated Naverro-Frenk-White (hereafter NFW) DM halos. 
+Under the assumption of conservation of energy, the Monte Carlo simulation
+excludes all realizations that would result in relative collisional
+velocities) of the subclusters higher than the free-fall velocity ($\sim
+4500~\kilo\meter~\second^{-1}$. This also implies that only
+gravitationally bound mergers are included in the simulation.
 Other major assumptions for modeling systems with this code include
-negligible impact parameter (cite M11???) and no self-interaction of dark matter.
-No mass accretion during the merger. 
+negligible impact parameter (cite M11???) and negligible self-interaction
+of dark matter and negligible mass accretion during the merger. 
 \par
 
 In the Monte Carlo simulation, many realizations of the collision is
@@ -99,9 +105,8 @@ their collision due to the mutual gravitational attraction.
 (See Table~\ref{tab:inputs}
 for quantitative descriptions of the sample PDFs and we outline how those
 PDFs are obtained in the following subsections.) 
-To ensure convergence of the output PDFs, in total, 2 million (to be
-confirmed) realizations were computed. The results, however, are
-consistent up to a fraction of a percent just from 20 000 runs
+To ensure convergence of the output PDFs, in total, 2 million realizations were computed. 
+The results, however, are consistent up to a fraction of a percent just from 20 000 runs
 \citepalias{D13}.\par    
 We adapt a Bayesian interpretation of the outputs of the Monte Carlo
 simulation. The Bayes chain rule underlies the simulation can be written as:
@@ -115,7 +120,7 @@ assuming conservation of energy, which is
 represented by a suitable functional form $f$ below. For example,the
 calculation of the output variables of the $j$-th realization can be denoted as: 
 \begin{equation}
-    (\vec{\theta}^\prime)^{(j)} = M(\vec{\theta}^{(j)}, \vec{D}) 
+    (\vec{\theta}^\prime)^{(j)} = f(\vec{\theta}^{(j)}, \vec{D}) 
 \end{equation}    
 and computed over all $j$ realizations. Finally, we took the physical
 constraints on the dynamical variables into account by
@@ -127,8 +132,7 @@ the correlations between different variables are properly taken into account
  due to how we throw away all the variables of problematic
 realizations. 
 
-\subsection{Inputs of the Monte Carlo simulation}
-\label{sec: inputs}
+\subsection{Inputs of the Monte Carlo simulation} \label{sec: inputs}
 \setcounter{table}{0} 
 \input{input_table}
 
@@ -164,7 +168,7 @@ determined to be
 %$z_{total} = \pm $ 
 $z_{\mathrm{NW}} = 0.86842 \pm 0.0011$ and 
 $z_{\mathrm{SE}} = 0.87131 \pm 0.0012$, where the quoted numbers represent the
-biweight location and 1$\sigma$ biased corrected confidence level
+biweight location and 1$\sigma$ bias-corrected confidence level
 respectively \citep{Beers90}.  
 Both the estimated redshifts of the subclusters and the uncertainties are
 consistent with estimates of $z=0.8701 \pm 0.0009$ for El Gordo given by \citealt{Sifon13}, and the fact that the
@@ -186,12 +190,13 @@ light. The radial velocity was calculated by:
 \end{equation}
 Due to the estimates of the subcluster redshifts are close to
 one another with overlapping confidence intervals, we obtained a low 
-radial velocity difference of the two subclusters to be $476 \pm 242 $ km /
-s. 
-This result is lower than the quoted radial velocity differences of
-$586$
-km/s reported by \citetalias{M12} from the approximation of $\Delta v_{rad}
-= c(z_1 - z_2) / (1 + z_1)$ in the frame of the NW subcluster. 
+radial velocity difference of the two subclusters to be
+$476~\pm~242~\kilo\meter~\second^{-1}$. 
+The quoted radial velocity differences of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
+is higher than our estimates but within the 68\% bias-corrected
+confidence interval. 
+%The estimate from the approximation of $\Delta v_{rad}
+%= c(z_1 - z_2) / (1 + z_1)$ in the frame of the NW subcluster. 
 
 \begin{figure}
 	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
@@ -207,13 +212,24 @@ distribution.}
 %-----------------------------------------------------------------------
 \subsubsection{Weak lensing mass estimation} 
 %\input{2.1_2_WL}
+We obtained 40, 000 samples of the joint PDFs of the mass of the two dark
+matter halos as the outputs of the Monte Carlo Markov Chain (MCMC)
+procedure from \citealt{Jee13}. Discussion of the handling of the weak
+lensing source galaxies and the details the MCMC procedure for mass
+estimation can be found in \citealt{Jee13}.
 
 %----------------------------------------------------------------------
 
-\subsubsection{Estimation of projected separation ($d_{proj}$) } 
+\subsubsection{Estimation of projected separation ($d_{proj}$)} 
 To be consistent with our MCMC mass inference, our Monte Carlo simulation takes 
-the projected separation of the NFW halos to be those of the two aforementioned 
-luminosity peaks.
+the projected separation of the NFW halos to be those of the inferred
+DM centroid locations in \citealt{Jee13}. We draw random samples
+ of the location of centroids from two 2D Gaussians centered at
+ RA=01:02:50.601, Decl.=-49:15:04.48 for the NW subcluster and RA =
+ 01:02:56.312, Decl. = -49:16:23.15 for the SE
+subcluster, with a 1'' standard deviation each. Or equivalently, the
+samples of the inferred centroid locations correspond to a projected separation of
+$0.74\pm {0.007}$ Mpc. 
 %A iterative centroiding method is used to find the centers of the two
 %subclusters of El Gordo.
 
@@ -398,7 +414,7 @@ the collision of the subclusters and the observed time as:
 	\langle v_{relic} \rangle = \beta~v_{3D,1}(t_{col})  
 \end{equation}
 where $0.5 \leq \beta \leq 1.5$ is a factor that we introduce to represent the
-uncertainty of the speed of the relic and $v_{3D,1}(t_{col})$ refers to the collisional velocity of
+uncertainty of the velocity of the relic shockwave and $v_{3D,1}(t_{col})$ refers to the collisional velocity of
 the NW relic in the center-of-mass frame. The upper bound can be
 approximated as the collisional speed of the NW subclusters due to how the
 shock is powered by the collision. After the collision, it is unlikely that
@@ -415,44 +431,90 @@ give a different lower bound of the projected separation of the relic.
 %\input{3_overview}
 %-----------------------------------------------------------------------
 
+\input{output_table}
 \section{RESULTS} 
-We present an overview of the estimated physical parameters  in table~\ref{tab:outputs} and the plots of the PDFs in Appendix \ref{app: results}.  
-We estimated the relative merger speed of the two subclusters to be
+We found that the two subclusters collided at with a relative velocity of 
+$2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$, at an estimated projection
+angle of $\alpha = 21\degree~\pm^{9}_{11}$. From our analysis of the two
+scenarios, we found that El Gordo is more likely to be observed at a returning
+phase with a estimate of $TSC_1 = 0.91\pm^{0.22}_{0.39}$ Gyr. We present an
+overview of all the estimated variables in table~\ref{tab:outputs}, with
+results only applying the default priors on the left hand side of the table
+and those applied with the polarization prior on the right hand side.
+Furthermore, we include the plots of all the marginalized PDFs with the
+polarization prior in Appendix~\ref{app: results}.  
+
+	We estimated the relative merger speed of the two subclusters to be
 $2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$ at the time of collision. 
-There have been several estimates of the relative merger speed based on
-different physics. 
-For example, \cite{L13} inferred the upper bound of
-the relative collisional velocity from the Mach number of the NW radio
-relic, giving an upper bound estimate of $2500
+By making use of the upstream velocity of the shockwave, \cite{L13}
+inferred the upper bound of the relative collisional velocity from the Mach
+number of the NW radio relic, giving an estimate of $2500
 \pm^{400}_{300}\kilo\meter~\second^{-1}$.  This speed is compatible with our
 simulated collisional speed within the uncertainties. 
-\input{output_table}
 However, we note that
 the conversion of the frame of reference is non-trivial since the speed is
 measured with respect to the turbulent intracluster gas as a Mach number.
-On the other hand Molnar and Broadhurst found the scenario where $2400
-~\kilo \meter \second^{-1}$ to be the most likely velocity for matching the
-morphology of the X-ray wake feature.
-Based on the observed peculiar velocity difference between
-the galaxies of the two subclusters, 
-$v_{3D}(t_{col}) \approx v_{pec}(t_{obs}) / \sin(\alpha) $, \citetalias{M12} gave two estimates:
 
-\begin{equation}
-v_{3D}(t_{col})  =  586 / \sin(\alpha) ~\kilo\meter~\second^{-1}=
-\begin{cases} 
-2300~\kilo\meter~\second^{-1}, ~\alpha = 15 \degree \\ 
-1200~\kilo\meter~\second^{-1}, ~\alpha = 30 \degree
-\end{cases}
-\label{eqn: M12estimate}
-\end{equation}
-If we use our estimate of $\alpha = 41.7 \degree$ in
-(\ref{eqn: M12estimate}), we obtain an estimate of $v_{3D}(t_{obs})
-\approx 940~\kilo \meter~ \second^{-1}$ instead. This is consistent with our simulation.  
 
+
+
+%On the other hand, Molnar and Broadhurst found an infall velocity of $2250
+%~\kilo \meter~\second^{-1}$ matching the
+%morphology of the X-ray wake feature.
+%Based on the observed peculiar velocity difference between
+%the galaxies of the two subclusters, 
+%$v_{3D}(t_{col}) \approx v_{pec}(t_{obs}) / \sin(\alpha) $, \citetalias{M12} gave two estimates:
+%
+%\begin{equation}
+%v_{3D}(t_{col})  =  586 / \sin(\alpha) ~\kilo\meter~\second^{-1}=
+%\begin{cases} 
+%2300~\kilo\meter~\second^{-1}, ~\alpha = 15 \degree \\ 
+%1200~\kilo\meter~\second^{-1}, ~\alpha = 30 \degree
+%\end{cases}
+%\label{eqn: M12estimate}
+%\end{equation}
+%If we use our estimate of $\alpha = 21 \degree$ in
+%(\ref{eqn: M12estimate}), we obtain an estimate of $v_{3D}(t_{obs})
+%\approx 940~\kilo \meter~ \second^{-1}$ instead. This is consistent with our simulation.  
+%
 %-----------------------------------------------------------------------
 \subsection{Time-since-collision}  
 %\input{3.1_TSC}
-* estimate and compare to sound crossing time!
+
+Comparison of the estimate of the location of the radio relic in the
+outgoing and returning scenario favors the returning scenario.
+The simulation gives two estimates for
+the time-since-collision, with $TSC_0 = 0.46~\giga \text{yr}$ and $TSC_1 =
+0.91~\giga \text{yr}$. Based on section \ref{sec: positionprior}, we
+present estimates for the position of the NW radio relic based on the two PDFs
+of inferred TSC as shown in Fig. \ref{fig: positionprior}. We plotted
+the PDF of the simulated positions of the relic for the outgoing scenario
+(blue) and the returning scenario (green) against
+the observed position of the relic (light red), with the width of the
+relic accounting for the uncertainty due to the location of the center of
+mass, this uncertainty is greater than the width of the relic ($\sim$$23$
+kpc) along merger axis \citep{L13}. When we
+assume $\langle v_{relic} \rangle / v_{3D,1}(t_{col}) = 1.5$ (uppermost
+panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
+corresponds to a distribution of time-averaged relative velocity with a
+location of $\sim 3800~\kilo \meter~\second^{-1}$ or, in the center of
+mass frame $\sim 1400~\kilo\meter~\second^{-1}$, the outgoing scenario is more favored. As we examine a decreased ratio of  $\langle v_{relic} \rangle /
+v_{3D,1}(t_{col})$, we probe how much the shock could have slowed down
+and still be consistent with the outgoing scenario. The second (relative
+velocity of $2800~\kilo\meter~\second^{-1}$) and third row of
+Fig. \ref{fig: positionprior} show that if $\langle v_{relic} \rangle
+\lesssim 1.1 $, the returning scenario would be favored instead.
+If the estimates of \citet{L13} of the shock velocity corresponds to $2500 \pm
+^{400}_{300} \kilo \meter~\second^{-1}$. 
+
+Both the estimates of the returning and the outgoing scenario are
+compatible with the sound crossing time of $\sim 1 Gyr$.  
+Hydrodynamical simulations from Donnert et al. and Molnar and Broadhurst
+also give estimates of the TSC. The sound
+crossing time can be considered for which the wake feature can be observed. 
+We limit the following discussion of the results to the returning scenario.
+A definite conclusion about the best fit scenario would require better
+knowledge of the time evolution of the shock velocities. 
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{polar_prior_bounds.pdf}
@@ -469,47 +531,14 @@ If we use our estimate of $\alpha = 41.7 \degree$ in
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
-	\caption{The marginalized output PDF of the outgoing time-since-collision
-($TSC_0$) vs. the 3D velocity at the time of collision for El Gordo. The
+	\caption{The marginalized output PDF of the returning time-since-collision
+($TSC_1$) vs. the 3D velocity at the time of collision for El Gordo. The
 grey set of contours show the credible regions before applying the
 polarization prior and the colored contours correspond to the credible
 regions after applying the priors. The contours represents the 95\% and
 68\% credible regions respectively. }
 	\label{fig:TSC_v3D}
 \end{figure}
-
-Comparison of the estimate of the location of the radio relic in the
-outgoing and returning scenario favors the returning scenario.
-The simulation gives two estimates for
-the time-since-collision, with $TSC_0 = 0.61~\giga \text{yr}$ and $TSC_1 =
-1.0~\giga \text{yr}$. Based on section \ref{sec: positionprior}, we
-present estimates for the position of the NW radio relic based on the two PDFs
-of inferred TSC as shown in Fig. \ref{fig: positionprior}. We plotted
-the PDF of the simulated positions of the relic for the outgoing scenario
-(blue) and the returning scenario (green) against
-the observed position of the relic (light red), with the width of the
-relic accounting for the uncertainty due to the location of the center of
-mass, this uncertainty is greater than the width of the relic ($\sim$$23$
-kpc) along merger axis \citep{L13}. When we
-assume $\langle v_{relic} \rangle / v_{3D,1}(t_{col}) = 1.5$ (uppermost
-panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
-corresponds to an time-averaged relative velocity of $\sim 3800~\kilo
-\meter~\second^{-1}$ or, in the center of
-mass frame $\sim 1400~\kilo\meter~\second^{-1}$, the outgoing scenario is more favored. As we examine a decreased ratio of  $\langle v_{relic} \rangle /
-v_{3D,1}(t_{col})$, we probe how much the shock could have slowed down
-and still be consistent with the outgoing scenario. The second (relative
-velocity of $2800~\kilo\meter~\second^{-1}$) and third row of
-Fig. \ref{fig: positionprior} show that if $\langle v_{relic} \rangle
-\lesssim 1.1 $, the returning scenario would be favored instead.
-Estimates of \citet{L13} of the shock velocity corresponds to $2500 \pm
-^{400}_{300} \kilo \meter~\second^{-1}$.
-We limit the following discussion of the results to the returning scenario.
-
-A definite conclusion about the best fit scenario would require better
-knowledge of the time evolution of the shock velocities. 
-
-Hydrodynamical simulations from Donnert et al. and Molnar and Broadhurst
-also give estimates of the TSC and the phase of collision.
 
 %\begin{figure} 
 %	\label{fig: positionprior}
@@ -613,12 +642,17 @@ our simulation found that a merger velocity of $4000~\kilo
 Compare to \citet{L13}.
 Compare to \citet{Donnert13} for their best fit scenario.
 
-Initial velocity is higher for the hydrodynamical simulations than our
+Initial velocity from Donnert is higher for the hydrodynamical simulations than our
 Monte Carlo simulations.
 
 This is reflected by the low probability for our Monte Carlo simulations
 to reach $d_max$. This is an aspect that should be further investigated in
 future cosmological simulations.
+
+
+Molnar et al. may have simulated unbound systems, while Donnert and us
+simulated bound systems. 
+
 
 \subsection{Comparison to other merger clusters of galaxies}
 %\input{4.3_comparison_merger}
@@ -659,6 +693,21 @@ Simulations from Ricker \& Sarazin (2001) showed that cool-core is not
 disrupted  when the impact parameters of mergers are of the order of $\sim 500$ kpc.   
 
 
+Due to the highly-correlated nature of the input parameters, 
+we suggest simulators for hydrodynamical simulations perform preliminary
+calculations when picking their initial conditions.   
+
+For a better Monte Carlo simulation, we seek answers from cosmological
+simulations for the following questions about distribution of cluster
+properties: 
+1) What are the duration after merger for which radio relics are
+observable?\\ 
+2) What are the typical distribution of impact parameters 
+as a ratio of $r_{200c}$ or $m_{200c}$ in cluster mergers?\\ 
+3) What are the typical velocities of the radio relic shockwave? 
+4)
+
+
 %-----------------------------------------------------------------------
 
 \section{SUMMARY \& CONCLUSION} (Maybe not needed if there is a discussion)
@@ -694,6 +743,7 @@ of the merger scenario.
 \appendix
 
 \section{BAYESIAN PRIORS USED FOR DAWSON'S MONTE CARLO SIMULATION}
+\label{app:priors}
 %\input{app_a_MCMAC_stat_formalism}
 The default prior probabilities that we employed can be summarized as
 follows for most of the output variables: 
@@ -726,7 +776,6 @@ to account for how the subclusters move faster at lower $TSC$ and thus it
 is more probable to observe the subclusters at a stage with a larger $TSC$.
 
 \par 
-\label{app:priors}
 
 %\section{DETAILS AND OUTPUT DIAGNOSTICS FOR THE MCMC MASS INFERENCE}
 %\input{app_b_MCMC}
