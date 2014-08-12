@@ -30,7 +30,7 @@ dynamics as the relics are created by the violent merger process.
 We demonstrate one of the first uses of the
 properties of the radio relic
 to reduce the uncertainties of the dynamical variables 
-and 3D configurations of a cluster merger, ACT-CL J0102-4915, El Gordo. 
+and determine 3D configuration of a cluster merger, ACT-CL J0102-4915, El Gordo. 
 From the double radio relic observation and X-ray wake morphology, 
 it is believed that El Gordo is observed shortly after the first
 core-passage of the subclusters.
@@ -50,8 +50,8 @@ angle between the sky and the merger axis to be $\alpha = 21\degree \pm $.
 The 3D merger speed of El Gordo was found to be $\sim 2400 ~\kilo\meter~
 \second^{-1}$. We put our estimates of the time-since-collision into
 context and showed that if the time-averaged shock velocities $\gtrsim 2800~
-\kilo\meter~\second^{-1}$ in the center of mass frame, the two subclusters are more likely to be moving
-away from each other than moving towards each other. 
+\kilo\meter~\second^{-1}$ in the center of mass frame, the two subclusters
+are more likely to be moving away from each other than moving towards each other. 
 Finally, we compare our simulation results with other merging clusters and
 show that El Gordo has very similar dynamical properties as the Bullet Cluster
 \end{abstract}
@@ -562,19 +562,21 @@ Right after the collision of the subclusters, both \citet{Paul2011b} and
 \citet{VanWeerenRJ2011} showed that
 merger shock fronts that corresponds to the radio relics 1) are generated
 close to the center of the substructure, 2) propagated outwards with  
- the shock speed decreases only slightly (between 10\% to 30\% via private
+ the shock speed decreasing only slightly (between 10\% to 30\% via private
  communication with Paul S.) as the
  shock propagates away from the center of mass.  
 \par  
 
-We make use of the reported shock speed and uncertainties from \cite{L13}
-to calculate how far the shock would have propagated for our inferred
+Since we do not know the time-evolution of the propagation speed of the
+shock front with respect to the center of mass, we express possible shock
+speeds as a multiple of the inferred collisional speed of the subclusters
+in the center of mass (momentum) frame and calculate how far the shock would have propagated for our inferred
 $TSC_0$ and $TSC_1$ values. We worked in the center of mass frame where the
 shock speed is expected to drop slightly with TSC. 
 The projected separation of the shock is approximated as:
 \begin{equation}
-	s_{proj} = \langle v_{relic} \rangle (\hat{t}_{obs} - \hat{t}_{col})
-	%s_{proj} = \langle v_{relic} \rangle (\hat{t}_{obs} - \hat{t}_{col}) \cos(\hat{\alpha})
+	%s_{proj} = \langle v_{relic} \rangle (\hat{t}_{obs} - \hat{t}_{col})
+	s_{proj} = \langle v_{relic} \rangle (\hat{t}_{obs} - \hat{t}_{col}) \cos(\hat{\alpha})
 	\label{eqn: projectedsep}
 \end{equation}
 where the quantities with hats on the right hand side of the equations were
@@ -588,6 +590,7 @@ the collision of the subclusters and the observed time as:
 where $0.5 \leq \beta \leq 1.5$ is a factor that we introduce to represent the
 uncertainty of the velocity of the relic shockwave and $v_{3D,1}(t_{col})$ refers to the collisional velocity of
 the NW relic in the center-of-mass frame as a comparison. 
+\label{sec: positionprior}
 
 %the springel and farrar shock is NOT applicable to this section get rid of
 %it
@@ -647,14 +650,17 @@ the time of observation.
 %-----------------------------------------------------------------------
 
 \subsection{Time-since-collision (TSC) and the merger scenario}
-(PLEASE SKIP THIS SECTION, I need to amend the figure by replacing the
-shock speed with the actual estimates from Lindner et al. instead of using
-our simulated speed)
+Both the estimates of $TSC_0$ and $TSC_1$ are
+compatible physical time-scales of observable features of El Gordo.  
+Both estimates are lower than the sound crossing time of $\sim 2 \giga$ yr,
+which an be considered for which the wake feature can be observed. 
+The observable time scale of the radio relics are also on the scale of
+$\sim 1 \giga yr$. 
 Comparison of the estimate of the location of the radio relic in the
-outgoing and returning scenario favors the returning scenario.
+outgoing and returning scenario favors the outgoing scenario.
 The simulation gives two estimates for
 the time-since-collision, with $TSC_0 = 0.61~\giga \text{yr}$ and $TSC_1 =
-1.0~\giga \text{yr}$. Based on section \ref{sec: positionprior}/(cite cite cite) , we
+1.0~\giga \text{yr}$. Based on section \ref{sec: positionprior}, we
 present estimates for the position of the NW radio relic based on the two PDFs
 of inferred TSC as shown in Fig. \ref{fig: positionprior}. We plotted
 the PDF of the simulated positions of the relic for the outgoing scenario
@@ -662,25 +668,20 @@ the PDF of the simulated positions of the relic for the outgoing scenario
 the observed position of the relic (light red), with the width of the
 relic representing the 95\% confidence interval, this uncertainty is greater than the width of the relic ($\sim$$23$
 kpc) along merger axis \citep{L13}. When we
-assume $\langle v_{relic} \rangle / v_{3D,1}(t_{col}) = 1.5$ (uppermost
+assume $\langle v_{relic} \rangle / v_{3D, NW}(t_{col}) = 1.5$ (uppermost
 panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
-corresponds to an time-averaged relative velocity of $\sim 3800~\kilo
-\meter~\second^{-1}$ or, in the center of
+corresponds to an time-averaged velocity of $\sim 3800~\kilo
+\meter~\second^{-1}$ relative to SE subcluster, or, in the center of
 mass frame $\sim 1400~\kilo\meter~\second^{-1}$, the outgoing scenario 
-is more favored. As we examine a decreased ratio of  $\langle v_{relic} \rangle /
+is more favored.  As we examine a decreased ratio of  $\langle v_{relic} \rangle /
 v_{3D,1}(t_{col})$, we probe how much the shock could have slowed down
 and still be consistent with the outgoing scenario. The second (relative
 velocity of $2800~\kilo\meter~\second^{-1}$) and third row of
 Fig. \ref{fig: positionprior} show that if $\langle v_{relic} \rangle
 \lesssim 1.1 $, the returning scenario would be favored instead.
 Estimates of \citet{L13} of the shock velocity corresponds to $2500 \pm
-^{400}_{300} \kilo \meter~\second^{-1}$.
+^{400}_{300} \kilo \meter~\second^{-1}$ relative to the surrounding intracluster medium.
 
-Both the estimates of $TSC_0$ and $TSC_1$ are
-compatible physical time-scales of observable features of El Gordo.  
-Both estimates are lower than the sound crossing time of $\sim 2 \giga$ yr,
-which an be considered for which the wake feature can be observed. 
-The observable time scale of the radio relics are also on the scale of $\sim 1 \giga yr$. 
 A definite conclusion about the best fit scenario would require better
 knowledge of the time evolution of the shock velocities. 
 
@@ -845,7 +846,7 @@ Gordo is the most massive among the listed clusters, the higher mass did not res
 The estimate of $v_{3D}(t_{col}) = 2400~\kilo\meter~\second^{-1}$ is
 comparable to the inferred $v_{3D}(t_{col}) =
 2800~\kilo\meter~\second^{-1}$ of the Bullet Cluster. 
-Both the phase $TSC_0  \approx 40\%~T$ and the $TSC_0 = 0.6 Gyr$ are
+Both the phase $TSC_0  \approx 40\%~T$ and the $TSC_0 = 0.6~\giga$yr are
 similar between El Gordo and the Bullet Cluster
 It is remained to be investigated if our hypothesis about the relationship
 between how these variables would affect our chance of seeing effects from
@@ -863,9 +864,9 @@ may be treated as a (statistical) clustering problem with well known
 methods such as normal mixture model. However, our setting is complicated
 by the fact that each of the observed redshifts of galaxies is an unknown combination of cosmological redshift
 and redshift due to peculiar motion along the line-of-sight. Our study
-only make use of a limited galaxies with spectroscopic members. This could
-cause selection bias and incompleteness due to limitations of the 
-of spectroscopic targets. Existing
+only make use of a limited number of galaxies with spectroscopy
+information. This could cause selection bias and incompleteness due to
+limitations of the of spectroscopic targets. Existing
 literature and tests mostly focus on detecting substructures in galaxy
 clusters through non-Gaussianity of the velocity dispersion (Dressler,
 Einasto). Few extensive studies have focused on finding out the uncertainties
@@ -898,8 +899,8 @@ results
 \item favors the estimate of a small projection angle \\ 
 \item shows a low observed radial velocity and collisional velocity of El
 	Gordo given its high mass \\ 
-\item predicts an outgoing scenario if the time-averaged merger shock
-	velocity in the center of mass frame is $> 2800~\kilo \meter~\second^{-1}$ between the collision and the
+\item favors an outgoing scenario if the time-averaged merger shock
+	velocity in the center of mass frame is $>> ~\kilo \meter~\second^{-1}$ between the collision and the
 observation. 
 \end{enumerate}
 
