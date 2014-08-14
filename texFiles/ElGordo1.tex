@@ -39,7 +39,7 @@ At a redshift of 0.87, El Gordo (M$_{200c} =
 clusters discovered in the early universe. The two subclusters of El
 Gordo has a mass ratio of around 2:1. 
 The X-ray and weak-lensing data of El Gordo show an offset of X kpc between
-the intercluster gas and the dark matter (DM) at $\sim$4 $\sigma$ level.
+the intracluster gas and the dark matter (DM) at $\sim$4 $\sigma$ level.
 All these features of El Gordo make it part of a valuable class of
 dissociative mergers that can probe the self-interaction of dark matter.
 We employ a Monte Carlo simulation to investigate the three-dimensional (3D)
@@ -94,7 +94,7 @@ without significant substructures. This picture is further supported by the
 weak lensing analysis by \cite{Jee13}. The weak lensing analysis shows
 a mass ratio of $\sim$2:1  between the two main subclusters, named according to their location as the northeast (NW) and southeast (SE) subclusters respectively. 
 (See Figure \ref{fig:config}). El Gordo has interesting intracluster medium morphology as shown in the X-ray. In the northwest, it shows a wake feature, i.e.,
-depression in the X-ray emissivity, while in the southeast, it shows
+turbulent flow due to object of higher density moving through fluids, while in the southeast, it shows
 highest X-ray emissivity indicative of a cold gas core southeast of the
 wake. The cold gas core may have passed from the northwest to the southwest
 to have caused this morphology (\citealt{M12}, hereafter M12). 
@@ -292,9 +292,9 @@ velocities would $> 3000~\kilo \meter~\second^{-1}$ under $\Lambda$CDM.
 (\citealt{Thompson12}, \citealt{Lee2010}).  Other major assumptions for
 modeling systems with this code include negligible impact parameter. Even
 though there are studies indicating that the impact parameter of El Gordo
-may be as large as $300$ kpc $ \approx 40\% r_s$\citep{Molnar14},
+may be as large as $300$ kpc $ \approx 40\%~r_s$ \citep{Molnar14},
 where $r_s$ is the characteristic core
-radius of the NFW halo with the mass of El Gordo. According to
+radius of the NFW halo with the mass of the SE subcluster. According to
 \cite{Ricker98}, the resulting remnant of bimodal cluster mergers would only be
 different when the impact parameter $> 10~ r_{\text{core}}$.
 \cite{Mastropietro2008a} also reported that an impact parameter of $0.1
@@ -364,7 +364,8 @@ light. The radial velocity was calculated by:
 Due to the estimates of the subcluster redshifts are close to
 one another with overlapping confidence intervals, we obtained a low 
 radial velocity difference of the two subclusters to be
-$476~\pm~242~\kilo\meter~\second^{-1}$. 
+$476~\pm~242~\kilo\meter~\second^{-1}$ (See Fig. \ref{fig:
+bootstrap_redshift}). 
 The quoted radial velocity differences of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
 is higher than our estimates but within the 68\% bias-corrected
 confidence interval. Limitations and possible improvements of this analyze
@@ -383,6 +384,12 @@ redshift. The background number density contours in green indicate a bimodal
 distribution.} 
 \end{figure}
 
+\begin{figure}
+	\includegraphics[width = \linewidth]{bootstrapped_redshift.pdf}
+	\caption{\label{fig: bootstrap_redshift} Bootstrapped location of the
+	redshift estimates and $v_{rad}$ estimates for each subcluster using the selected spectroscopic members.  
+} 
+\end{figure}
 %-----------------------------------------------------------------------
 \subsubsection{Weak lensing mass estimation} 
 %\input{2.1_2_WL}
