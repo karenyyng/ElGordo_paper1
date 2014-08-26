@@ -221,10 +221,9 @@ resolution radio observation conducted by \cite{L13} at 610 \mega Hz and
 after removing effects of radio point sources.The NW radio relic, which
 possesses the most extended geometry (0.56 Mpc in length)
 among all radio source, was identified to be associated with the
-merger. (See Fig.  
-%We do not refer to the SUMSS SE nor the E radio relic in this paper
-%since the upstream velocity of those radio relics are not reported in
-%\citet{L13} for qualitative comparisons.    
+merger. We do not refer to the SUMSS SE nor the E radio relic in this paper
+since the upstream velocity of those radio relics are not reported in
+\citet{L13} for qualitative comparisons.    
 %\input{2.0_data_section.tex}
 
 \section{METHOD -- Monte Carlo simulation} 
@@ -438,7 +437,7 @@ smaller $TSC_0$ value, and 2) we call the alternative scenario
 around from the apoapsis for the first time and it corresponds to $TSC_1$.
 We describe how we make use of properties of the radio relic to evalute
 which scenario is more likely in
-section~\ref{sec:positionprior}. Evolution of the merger after the second
+section~\ref{sec: positionprior}. Evolution of the merger after the second
 passage is not considered. Outputs from our dissipationless simulation for
 a ``second'' passage will not differ from the first passage.
  
@@ -458,8 +457,7 @@ the apoapsis and the 3D separation of the subclusters at observation
 One of the biggest strengths of the Monte Carlo simulation by \citetalias{D13} is its ability
 to detect and rule out extreme input values that would result in
 unphysical realizations via the application of prior probability. 
-Our default priors are described in D13 and we include them in
-Appendix~\ref{app:results} for the convenience of the readers. 
+Our default priors are described in D13 and we include them in Appendix~\ref{app: results} for the convenience of the readers. 
 In addition, we have devised a new prior on the projection angle $\alpha$
 based on the polarization fraction of the radio relic.
 
@@ -546,25 +544,32 @@ illustrate effects of non-zero beam size, the polarization fraction drops to bet
 65\% even when $\alpha = 0$. We examined the effects of perturbing
 the cutoff value of this prior to ensure the uncertainties do not
 introduce significant bias in the estimated output variables and we
-present the results in Appendix \ref{app:results}.
+present the results in Appendix \ref{app: results}.
 To summarize, we adopt a conservative uniform prior to encapsulate the
 information from the polarization fraction of the radio relic as:
 \begin{equation}
 P(\alpha) = 
 	\begin{cases}
 	& \text{const. $>$ 0 for  }\alpha < 35 \degree \\ 
-	& 0 \text{ otherwise}\label{eqn:polarprior}.
+	& 0 \text{ otherwise}\label{eqn: polarprior}.
 	\end{cases}
 \end{equation}
-We refer to \ref{eqn:polarprior} as the polarization prior. Unless
+We refer to \ref{eqn: polarprior} as the polarization prior. Unless
 otherwise stated, the main results of the paper are obtained after applying
 this polarization prior in addition to the default priors.
 
 %---------------------------------------------------------------------------
 \subsection{Extension to the Monte Carlo simulation - Determining merger
 scenario with radio relic position by model comparison}
+%\begin{figure} 
+%	\includegraphics[width =\linewidth]{shock_evolution.pdf}
+%	\caption{The simplified view of time evolution of the speeds of the
+%	different cluster components during the collision. }
+%\end{figure}
+%\label{sec: positionprior}
+%\input{2.4_positionprior}
 
-One of the biggest questions involving the merger is whether El Gordo was
+One of the biggest questions involving the merger is if El Gordo was
 observed to be in a returning or outgoing phase.
 %We performed a Bayesian model comparison of the observed and the
 %simulated position of the NW radio relic in each scenario.
@@ -583,8 +588,8 @@ outwards with the shock speed decreasing only slightly (between 10\% to
  shock propagates away from the center of mass.  
 \par  
 Since we do not know the time-evolution of the propagation speed of the
-the shock fronts with respect to the center of mass, we expressed the possible shock
-speeds as a factor of the inferred collisional speed of the corresponding subcluster
+NW shock front with respect to the center of mass, we expressed the possible shock
+speeds as a factor of the inferred collisional speed of the NW subcluster
 in the center of mass (momentum) frame, 
 then calculated how far the shock would have propagated for our inferred
 $TSC_0$ and $TSC_1$ values. We worked in the center of mass frame where the
@@ -594,36 +599,24 @@ The projected separation of the shock is approximated as:
 	%s_{proj} = \langle v_{relic} \rangle (\hat{t}_{obs} - \hat{t}_{col})
 	s^j_{proj} \approx \langle v_{relic} \rangle^j (t^j_{obs} - t^j_{col})
 	\cos(\alpha^j),
-	\label{eq:proj_s_model}
+	\label{eq: proj_s_model}
 \end{equation}
 where the superscript $j$ of any variable denotes that the value of the
 variable from the $j-th$ realization of the simulation, and $s_{proj}$ is the estimated projected
 separation. We estimated the upper and lower bounds of the time-averaged velocity
-$\langle v_{NW relic} \rangle$ of the shock between
+$\langle v_{relic} \rangle$ of the shock between
 the collision of the subclusters and the observed time as:  
 \begin{align}
-	%\label{eqn:NW_speed}
-	\langle v_{NW relic} \rangle^j &= \beta~v^j_{3D, NW}(t_{col}) \\
+	\langle v_{relic} \rangle^j &= \beta~v^j_{3D, NW}(t_{col}) \\
 	&= \beta~v^j_{3D}(t_{col}) \frac{m^j_{SE}}{m^j_{SE} + m^j_{NW}}, 
 \end{align}
 where $0.7 \leq \beta \leq 1.3$ is a factor that we introduce to represent the
-uncertainty of the velocity of the relic shockwave and $v_{3D, NW}(t_{col})$ refers to the collisional velocity of
-the NW subcluster in the center-of-mass frame as a comparison. 
-Likewise, we have also computed the expected projected separation of the SE
-relic using:  
-\begin{align}
-	%\label{eqn:SE_speed}
-	\langle v_{SE relic} \rangle^j 
-	&= \beta~v^j_{3D}(t_{col}) \frac{m^j_{NW}}{m^j_{SE} + m^j_{NW}}. 
-\end{align}
-%We made the approximations in equations~\ref{eqn:NW_speed} and
-%~\ref{eqn:SE_speed} to reflect the fact the shock was initially driven by
-%the compression of the gas due to the motion of each subcluster. 
-Simulation
+uncertainty of the velocity of the relic shockwave and $v_{3D,NW}(t_{col})$ refers to the collisional velocity of
+the NW subcluster in the center-of-mass frame as a comparison. Simulation
 of the Bullet Cluster by \cite{Springel2007} indicates that the
 propagation velocity of the shock evolves such that $\beta \approx 0.95$ within
 $\sim 400~\mega$yr after the collision. 
-\label{sec:positionprior}
+\label{sec: positionprior}
 
 %the springel and farrar shock is NOT applicable to this section get rid of
 %it
@@ -653,7 +646,6 @@ $\sim 400~\mega$yr after the collision.
 %-----------------------------------------------------------------------
 
 \input{output_table}
-
 \section{RESULTS} 
 We found that the two subclusters collided with a relative velocity of 
 $2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$, at an estimated projection
@@ -664,7 +656,7 @@ overview of all the estimated variables in table~\ref{tab:outputs}, with
 results only applying the default priors on the left hand side of the table
 and those applied with the polarization prior on the right hand side.
 Furthermore, we include the plots of all the marginalized PDFs with the
-polarization prior in Appendix~\ref{app:results}. \par 
+polarization prior in Appendix~\ref{app: results}. \par 
 
 
 % maybe I should think about rewording this whole thing
@@ -692,26 +684,27 @@ the time of observation.
 
 %-----------------------------------------------------------------------
 
-
-\subsection{Time-since-collision (TSC) and the merger scenario}
 \begin{figure}
 	\includegraphics[width=\linewidth]{our_guess.pdf}
-	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
-		includes the 95\% confidence interval of location of the NW radio relic in the center of mass frame) with the predicted position from the two simulated merger
+	\caption{Comparison of the PDFs of the observed position of the relic (red bar
+		includes the 95\% confidence interval of location of the radio relic in the center of
+		mass frame) with the predicted position from the two simulated merger
 		scenarios (blue for outgoing and green for the returning scenario).
 		We made use of the polarization prior for producing this figure. 
-	\label{fig:our_guessed_scenario}}
+	\label{fig: our_guessed_scenario}}
 \end{figure}
-
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{our_guess_SE.pdf}
-	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
-	includes the 95\% confidence interval of location of the radio relic in
-the center of mass frame)}% with the predicted position from the two simulated merger
-	%	scenarios (blue for outgoing and green for the returning scenario).
-	%	We made use of the polarization prior for producing this figure.}
+	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
+	\caption{The marginalized output PDF of the returning time-since-collision
+($TSC_1$) vs. the 3D velocity at the time of collision for El Gordo. The
+grey set of contours show the credible regions before applying the
+polarization prior and the colored contours correspond to the credible
+regions after applying the priors. The contours represents the 95\% and
+68\% credible regions respectively. }
+	\label{fig:TSC_v3D}
 \end{figure}
+\subsection{Time-since-collision (TSC) and the merger scenario}
 The simulation gives two estimates for
 the time-since-collision, with $TSC_0 = 0.46\pm^{0.9}_{0.16}~\giga \text{yr}$
 and $TSC_1 =0.91\pm^{0.39}_{0.22}~\giga\text{yr}$. Both the estimates of $TSC_0$ and $TSC_1$ are
@@ -721,8 +714,8 @@ wake feature in the X-ray, i.e. the sound crossing time of $\sim2~\giga$yr.
 The observable time scale of the radio relics are also on the scale of
 $\sim1~\giga$yr. 
 
-Based on section \ref{sec:positionprior}, we present the most likely
-value of $\beta = 0.9$ in Fig.~\ref{fig:our_guessed_scenario} to show that
+Based on section \ref{sec: positionprior}, we present the most likely
+value of $\beta = 0.9$ in Fig.~\ref{fig: our_guessed_scenario} to show that
 the returning case is preferred.%We show estimates for the projected position of the NW radio relic based
 %on the two PDFs of inferred TSC as shown in Fig.~\ref{fig
 %our_gussed_scenario}. We plotted
@@ -734,31 +727,17 @@ the returning case is preferred.%We show estimates for the projected position of
 %uncertainty of the center of mass is greater than the reported uncertainty
 %of the relic ($\sim$$23$ kpc) along merger axis \citep{L13}. 
 This conclusion favoring the returning case holds true for $ \beta < 1.1$,
-which corresponds to 
-$\langle v_{NW relic} \rangle <
-1000~\kilo\meter~\second^{-1}$ and 
-$\langle v_{NW relic} \rangle < 1800~\kilo\meter~\second^{-1}$  
-in the center of mass frame. For comparison purpose, we found that an extreme, and
-unlikely range of $\beta > 1.5$ would be needed for the outgoing scenario
-to be preferred. (See \ref{fig:positionprior} for plots of all the range of
+which corresponds to $\langle v_{relic} \rangle <
+1000~\kilo\meter~\second^{-1}$ in the center of mass frame. For comparison purpose, we found that an extreme, and
+unlikely range of $\beta > 1.5$ would be needed for the outgoing scenario to be preferred. (See \ref{fig: positionprior} for plots of all the range of
 $\beta$ that we examined). If we marginalize $\beta$ to
 compute a Bayes factor to compare the ratio between the likelihood of the
 returning case and the outgoing case, we get a Bayes factor to be $\approx
-6$ from the NW relic and a Bayes factor of $\approx 1700$ for the SE relic, showing substantial evidence to support the returning scenario 
-(See Appendix \ref{app:Bayes_factor}).  
+6$, showing substantial evidence to support the returning scenario 
+(See Appendix \ref{app: Bayes_factor}).  
 A definite conclusion about the best fit scenario would require better
 knowledge of the formation location of the shock and the time evolution of
 the shock propagation velocity. 
-\begin{figure}
-	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
-	\caption{The marginalized output PDF of the returning time-since-collision
-($TSC_1$) vs. the 3D velocity at the time of collision for El Gordo. The
-grey set of contours show the credible regions before applying the
-polarization prior and the colored contours correspond to the credible
-regions after applying the priors. The contours represents the 95\% and
-68\% credible regions respectively. }
-	\label{fig:TSC_v3D}
-\end{figure}
 %When we
 %assume $\langle v_{relic} \rangle / v_{3D, 1}(t_{col}) = 1.5$ (uppermost
 %panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
@@ -794,7 +773,7 @@ comparison.
 
 \subsection{Sensitivity analysis of the polarization prior}
 %\input{3.3_sens_analysis}
-\label{sec:sensitivityTests}
+\label{sec: sensitivityTests}
 We performed tests of how each of the output variables vary according to the
 choice of the cutoff of the polarization prior between
 $\alpha_{\text{cutoff}} =
@@ -977,17 +956,15 @@ observed radio relic emission to constrain cluster merger properties, the
 results
 \begin{enumerate}
 	\item favors an estimate of a small projection angle of $21 \degree
-		\pm^{9}_{11}$ (See	Fig. \ref{fig:geom_geom})\\ 
+		\pm^{9}_{11}$ (See	Fig. \ref{fig: geom_geom})\\ 
 \item 
 	shows a {\it relative} collisional velocity between the subclusters of El
 	Gordo as $2400~\kilo\meter~\second^{-1}$ \\ 
-\item favors a returning scenario if the $\langle v_{NW relic}\rangle \leq
-	1000~\kilo
-	\meter~\second^{-1}$ and $\langle v_{SE relic}\rangle \leq
-	1800~\kilo\meter~\second^{-1}$between the collision and the observation in the
+\item favors a returning scenario if the $\langle v_{relic}\rangle \leq 1100~\kilo
+	\meter~\second^{-1}$ between the collision and the observation in the
 	center-of-mass frame. It takes
 	an unlikely high speed of $\langle v_{relic} \rangle \gg 1.5~v_{3D,
-	sub}(t_{col})$ for the outgoing scenario to be favored.  
+	NW}(t_{col})$ for the outgoing scenario to be favored.  
 \end{enumerate}
 
 \section{ACKNOWLEDGEMENTS}
@@ -1074,7 +1051,7 @@ indicates the corresponding figure number in this appendix.}
 
 
 %make use of subplots from matplotlib in order to plot all the posteriors
-\label{app:results}
+\label{app: results}
 
 %%%%%%%%%%%%% TASK --- 
 
@@ -1100,7 +1077,7 @@ uneven sampling of inputs. }
 	\caption{One-dimensional marginalized PDFs (panels on the diagonal) and
 		two-dimensional marginalized PDFs of variables
 		denoting characteristic distances and projection angle of the mergers.
-	\label{fig:geom_geom}
+	\label{fig: geom_geom}
 	}
 	\end{center}
 	\end{minipage}
@@ -1197,9 +1174,42 @@ different velocities.}
 \end{figure*}
 
 \section{Model comparison for the outgoing and returning scenario}
+\label{app: Bayes_factor}
+We can write down our model for the different scenarios to be $M_{out}$ and
+$M_{ret}$ for the outgoing and returning scenarios respectively. Both
+models are computed using the same variables except for $TSC$. The models
+are parametrized by $\beta$, which represents our uncertainty of $\langle v_{relic} \rangle$
+(See Eqn~\ref{eq: proj_s_model}). Our data in this
+case is the observed projected location of the radio relic $s_{proj}$. 
+The Bayes factor thus can be computed as: 
+\begin{align}
+	K &= \frac{P(s_{proj} | M_{ret})}{P(s_{proj}| M_{out}}\\
+	 &= \frac
+	 {\int P(\beta | M_{ret}) P(s_{proj} | \beta, M_{ret}) d\beta}
+	 {\int P(\beta | M_{out}) P(s_{proj} | \beta, M_{out})
+ d\beta}\\
+	 &\approx 6 
+\end{align}
+where $P(s_{proj} | \beta, M_{ret})$ and $P(s_{proj} | \beta, M_{out})$ can be
+viewed as the green and blue curves respectively for each given $\beta$ value and we
+have used priors on $\beta$ as: 
+\begin{equation}
+	\label{eq: beta_prior}
+	P(\beta | M_{ret}) = P(\beta | M_{out}) =  
+	\begin{cases}
+		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.3 \\
+		& 0~\text{otherwise}.
+	\end{cases}
+\end{equation}
+This conservative prior is chosen to reflect our belief that the NW
+shockfront should propagate at approximately $v_{3D, NW}(t_{col})$ in the
+center-of-mass frame.  As more simulations of merger shocks become
+available, one can update (\ref{eq: beta_prior}) accordingly.
+
+
 \begin{figure}
 	\includegraphics[width=\linewidth]{polar_prior_bounds.pdf}
-	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
+	\caption{Comparison of the PDFs of the observed position of the relic (red bar
 		includes 95\% confidence interval of location of relic in the center of
 		mass frame) with the	predicted position from the two simulated merger scenarios (blue for
 	outgoing and green for the returning scenario). 
@@ -1210,54 +1220,6 @@ different velocities.}
 	Note that we made use of the	polarization prior for producing this figure. 
 	\label{fig: positionprior}}
 \end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{polar_prior_bounds_SE.pdf}
-	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
-		includes 95\% confidence interval of location of relic in the center of
-		mass frame) with the	predicted position from the two simulated merger scenarios (blue for
-	outgoing and green for the returning scenario). 
-	For the most likely value of $\beta < 1.1$, the returning scenario is preferred. 
-	We obtained similar conclusion about the merger scenario as for the NW
-	relic calculation.
-	\label{fig:positionprior_SE}}
-\end{figure}
-We can write down our model for the different scenarios to be $M_{out}$ and
-$M_{ret}$ for the outgoing and returning scenarios respectively. Both
-models are computed using the same variables except for $TSC$. The models
-are parametrized by $\beta$, which represents our uncertainty of $\langle v_{relic} \rangle$
-(See equation~\ref{eq:proj_s_model}). Our data in this
-case is the observed projected location of the radio relic $s_{proj}$. 
-The Bayes factor thus can be computed as: 
-\begin{align}
-	K &= \frac{P(s_{proj} | M_{ret})}{P(s_{proj}| M_{out}}\\
-	 &= \frac
-	 {\int P(\beta | M_{ret}) P(s_{proj} | \beta, M_{ret}) d\beta}
-	 {\int P(\beta | M_{out}) P(s_{proj} | \beta, M_{out})
- d\beta}\\
- &\approx 
- \begin{cases}
- & 6 \text{ for the NW relic}\\
- & 1700 \text{ for the SE relic}
- \end{cases}
-\end{align}
-where $P(s_{proj} | \beta, M_{ret})$ and $P(s_{proj} | \beta, M_{out})$ can be
-viewed as the green and blue curves respectively for each given $\beta$ value and we
-have used priors on $\beta$ as: 
-\begin{equation}
-	\label{eq:beta_prior}
-	P(\beta | M_{ret}) = P(\beta | M_{out}) =  
-	\begin{cases}
-		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.3 \\
-		& 0~\text{otherwise}.
-	\end{cases}
-\end{equation}
-This conservative prior is chosen to reflect our belief that the
-NW shockfront should propagate at approximately $v_{3D, NW}(t_{col})$ in the
-center-of-mass frame, and likewise for the SE shockfront.  As more
-simulations of merger shocks become available, one can update equation 
-\ref{eq:beta_prior} accordingly.
-\label{app:Bayes_factor}
 
 \bsp 
 \label{lastpage} 
