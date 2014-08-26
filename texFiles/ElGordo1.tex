@@ -580,49 +580,25 @@ compatible physical time-scales of observable features of El Gordo.
 Both estimates are lower than the approximate observable time-scale of the
 wake feature in the X-ray, i.e.\ the sound crossing time of $\sim2~\giga$yr. 
 The observable time scale of the radio relics is also on the scale of
-$\sim1~\giga$yr. 
+$\sim1~\giga$yr.\par 
 Based on section~\ref{sec:positionprior}, we present the most likely
 value of $\beta = 0.9$ in Fig.~\ref{fig:our_guessed_scenario} to show that
-the returning case is preferred.
-This conclusion favoring the returning case holds true for $\beta < 1.1$,
-which corresponds to 
-$\langle v_{NW relic} \rangle <
-1000~\kilo\meter~\second^{-1}$ and 
-$\langle v_{SE relic} \rangle < 1800~\kilo\meter~\second^{-1}$  
-in the center of mass frame. For comparison purpose, we found that an extreme, and
-unlikely range of $\beta > 1.5$ would be needed for the outgoing scenario
-to be preferred. (See appendix~\ref{app:Bayes_factor} for plots of all the range of
-$\beta$ that we examined). 
-
-When we
-assume $\langle v_{relic} \rangle / v_{3D, 1}(t_{col}) = 1.5$ (uppermost
-panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
-corresponds to an time-averaged velocity of $\sim3800~\kilo
-\meter~\second^{-1}$ relative to SE subcluster, or, in the center of
-mass frame $\sim1400~\kilo\meter~\second^{-1}$, the outgoing scenario 
-is more favored.
-As we examine a decreased ratio of  $\langle v_{relic} \rangle /
-v_{3D,1}(t_{col})$, we probe how much the shock could have slowed down
-and still be consistent with the outgoing scenario. The second (relative
-velocity of $2800~\kilo\meter~\second^{-1}$) and third row of
-Fig. \ref{fig: positionprior} show that if $\langle v_{relic} \rangle
-\lesssim 1.1 $, the returning scenario would be favored instead. 
-
-Finally, we note that the estimate of NW shock velocity at $2500
+the returning case is preferred for both the calculations of the NW and the
+SE relic. This conclusion favoring the returning case holds true for $\beta
+< 1.1$, which corresponds to the time-averaged velocity of the relics at
+$\langle v_{NW relic} \rangle < 1000~\kilo\meter~\second^{-1}$ and $\langle
+v_{SE relic} \rangle < 1800~\kilo\meter~\second^{-1}$  in the center of
+mass frame. For comparison purpose, we found that an extreme, and unlikely
+range of $\beta > 1.5$ would be needed for the outgoing scenario to be
+preferred. (See appendix~\ref{app:Bayes_factor} for plots of all the range
+of $\beta$ that we examined). We marginalized $\beta$ to compute a Bayes
+factor to compare the ratio between the likelihood of the returning case
+and the outgoing case, and obtained a Bayes factor to be $\approx 6$ from
+the NW relic and a Bayes factor of $\approx 1700$ for the SE relic, showing
+substantial evidence to support the returning scenario  (See Appendix~\ref{app:Bayes_factor}).  Finally, we note that the estimate of NW shock velocity at $2500
 \pm^{400}_{300}~\kilo\meter~\second^{-1}$ by \cite{L13} was reported with respect to
-the turbulent ICM. 
-It is unclear what the bulk motion
-of the ICM would be at the time of observation of El Gordo and how to ensure the frame of
-references of our simulation outputs and the observation are consistent for
-comparison.  
-If we marginalize $\beta$ to
-compute a Bayes factor to compare the ratio between the likelihood of the
-returning case and the outgoing case, we get a Bayes factor to be $\approx
-6$ from the NW relic and a Bayes factor of $\approx 1700$ for the SE relic, showing substantial evidence to support the returning scenario 
-(See Appendix~\ref{app:Bayes_factor}).  
-A definite conclusion about the best fit scenario would require better
-knowledge of the formation location of the shock and the time evolution of
-the shock propagation velocity. 
+the turbulent ICM, not the propogation velocity with respect to center of
+mass, so we have not made use of the estimate of \cite{L13} in this calculation. 
 \begin{figure}
 	\includegraphics[width=\linewidth]{our_guess.pdf}
 	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
@@ -727,7 +703,8 @@ simulations and other hydrodynamical simulations of El Gordo such as
 \cite{Donnert13} and \cite{Molnar14}. Our simulation focuses on giving PDF
 estimates of particular dynamical and kinematic variables, whereas the
 hydrodynamical simulations focused on understanding the detailed gas dynamics
-and the corresponding X-ray observables of El Gordo. The goals,
+required to reproduce the X-ray observables and Sunyaev-Zeldovich
+observables of El Gordo. The goals,
 assumptions, and initial conditions of \cite{Donnert13} and \cite{Molnar14}
 are different from our simulations such that it is hard to come up with a
 fair comparison. 
@@ -741,15 +718,22 @@ of the two virial radii) to be $> 2250~\kilo \meter~
 \second^{-1}$. This corresponds to $v_{3D}(t_{col}) \gtrsim 4700~\kilo
 \meter~\second^{-1}$, which is close to the escape velocity of the
 subclusters. The range of projection angles suggested by
-\cite{Molnar14} of $\alpha \gtrsim 45\degree$ are also excluded by our polarization prior.  On the other hand, our simulations show qualitative agreement with
-\cite{Donnert13} on the duration between consecutive core-passages. With
+\cite{Molnar14} of $\alpha \gtrsim 45\degree$ are also excluded by our
+polarization prior. \par 
+On the other hand, our simulations show qualitative agreement with
+\cite{Donnert13} on the kinematics. Both \cite{Donnert13} and our
+simulation assumed a low energy orbit as the initial condition and obtain a
+relative collisional velocity between the subclusters at $\sim
+2500~\kilo\meter~\second^{-1}$. Our simulations also show qualitative
+agreemnt on the duration between consecutive core-passages. With
 the time resolution of 0.25 $\giga$yr, \cite{Donnert13} gave an
-qualitative estimate of  $T\approx 2~\giga$yr between the first and second
+estimate of  $T\approx 2~\giga$yr between the first and second
 core-passage in Fig. 6 of their work, while our estimate gives $T
 = 1.6~\giga$yr.  A better comparison to the hydrodynamical simulations
 may be achieved by performing Gaussian process emulation to obtain outputs
 with more similar inputs as our simulations, but the work of fair, detailed
 comparison is out of the scope of this paper. 
+
 
 \subsection{Comparison to other merging clusters of galaxies}
 %\input{4.3_comparison_merger}
@@ -1103,7 +1087,13 @@ have used priors on $\beta$ as:
 \end{equation}
 This conservative prior is chosen to reflect our belief that the
 NW shockfront should propagate at approximately $v_{3D, NW}(t_{col})$ in the
-center-of-mass frame, and likewise for the SE shockfront.  As more
+center-of-mass frame, and likewise for the SE shockfront.  
+%When we assume $\langle v_{relic} \rangle / v_{3D, 1}(t_{col}) = 1.5$ (uppermost
+%panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
+%corresponds to an time-averaged velocity of $\sim3800~\kilo
+%\meter~\second^{-1}$ relative to SE subcluster, or, in the center of
+%mass frame $\sim1400~\kilo\meter~\second^{-1}$. 
+As more
 simulations of merger shocks become available, one can update equation~\ref{eq:beta_prior} accordingly.
 
 
