@@ -33,7 +33,7 @@ all: $(PROJECT).pdf
 # missing file reference and interactively asking you for an alternative.
 
 $(PROJECT).pdf:$(PROJECT).tex
-	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make $(PROJECT).tex 
+	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode " -use-make $(PROJECT).tex 
 
 # make sure that .aux files are not removed since they tell latex 
 # if a file has been changed or not!!

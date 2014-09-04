@@ -1,6 +1,7 @@
 \input{style}
 \input{bib_alias}
-\title[The dynamics and merging scenario of ACT-CL J0102-4915, El Gordo]{The dynamics and merging scenario of the galaxy cluster ACT-CL J0102-4915, El Gordo}
+\title[The dynamics and merging scenario of ACT-CL J0102-4915, El
+Gordo]{The dynamics and the inbound merging scenario of the galaxy cluster ACT-CL J0102-4915, El Gordo}
 \author[K. Y. Ng et al.]{K. Y. Ng$^{1}$, W. A. Dawson$^{2}$, D. Wittman$^{1}$, J.
 Jee$^{1}$, J. Hughes$^{3}$, F. Menanteau$^{3}$, C. Sif\'{o}n$^{4}$\\
 (temporary order)\\
@@ -19,8 +20,9 @@ Merging galaxy clusters with radio relics provide rare insights to the merger
 dynamics as the relics are created by the violent merger process. 
 We demonstrate one of the first uses of the
 properties of the radio relic to reduce the uncertainties of the dynamical variables 
-and determine 3D configuration of a cluster merger, ACT-CL J0102-4915, El Gordo. 
-From the double radio relic observation and the X-ray wake morphology, 
+and determine 3D configuration of a cluster merger, ACT-CL J0102-4915,named El Gordo. 
+From the double radio relic observation and the X-ray observation of a
+comet-like gas morphology induced by motion of the cool core, 
 it is believed that El Gordo is observed shortly after the first
 core-passage of the subclusters.
 %At a redshift of 0.87, El Gordo (M$_{200c} = 
@@ -43,13 +45,14 @@ $2400\pm^{400}_{200} ~\kilo\meter~\second^{-1}$. We put our estimates of
 the time-since-collision into context by showing that if the time-averaged
 shock velocities $< 1100~ \kilo\meter~\second^{-1}$ in the center of mass
 frame, the two subclusters are more likely to be moving towards, rather
-than away from each other. This merging scenario might help
+than away from each other, after the apocenter. 
+We compare and contrast the merger scenario of El Gordo with that of the Bullet
+Cluster, and show that this late-stage merging scenario might help
 explain why the southeast dark matter lensing peak of El Gordo is
-closer to the merger center than the southeast galaxy number density peak. 
-However, a more concrete
-conclusion would require better knowledge of the time evolution of the
-relic propagation speed. Finally, we provide a comparison of El Gordo with
-other merging clusters such as the Bullet Cluster and the Musketball Cluster. 
+closer to the merger center than the southeast cool core. 
+Finally, we provide our insight on what information from simulations and
+observations would help us better constrain the merger scenarios for other
+bimodal merging clusters. 
 \end{abstract}
 \begin{keywords}
 gravitational lensing -- dark matter -- cosmology: observations -- galaxies: clusters: individual (ACT-CL J0102-4915) --
@@ -71,7 +74,7 @@ momentum through electromagnetic interactions. On the other hand, offsets
 between dark matter and galaxies may suggest dark matter self-interaction
 (\citealt{Kahlhoefer14}, \citealt{Randall2008d}).  
 \par
-El Gordo possesses a range of special features that allows us to constrain
+El Gordo possesses a range of noteworthy features that allows us to constrain
 the merger dynamics in multiple ways.  Ever since the discovery of El Gordo
 in the Atacama Camera Telescope survey (ACT; \citealt{Marriage11}), there is an ongoing effort for
 collecting comprehensive data for El Gordo.
@@ -93,7 +96,7 @@ the NW and the SE respectively. These radio emission has steep spectral
 index gradient and are identified as radio relic associated with shockwaves
 created from a merger \citep{L13}. 
 \begin{figure}
-	\includegraphics[width=\linewidth]{ElGordo.pdf}
+	\includegraphics[width=.95\linewidth]{ElGordo.pdf}
 	\caption{Configuration of El Gordo showing overlay of dark
 		matter distribution in blue, and X-ray emissivity in red. 
 		(Image credit: NASA, ESA and \citealt{Jee13}). 
@@ -110,10 +113,10 @@ El Gordo is one of the small samples of galaxy clusters ($\sim50$) that have
 been associated with a radio relic and show dissociation between the X-ray
 gas and the DM subclusters. Even fewer of them have been studied in
 great details, making El Gordo a valuable candidate for further analysis.\par 
-In this paper, we combine most of the available information of El Gordo
+In this paper, we combined most of the available information of El Gordo
 with the main goal of giving estimates of
-the associated dynamical parameters after taking into account all available
-constraints and reflecting uncertainties due to the missing variables.
+the dynamical parameters after taking into account all
+constraints and uncertainties due to the missing variables.
 Determining the time-since-collision of mergers of similar clusters helps
 us reconstruct different stages of a cluster merger.
 Mergers of clusters proceed on the time-scale of millions of year,
@@ -122,7 +125,7 @@ of merger. In order to understand the merger process observationally,
 we need to identify different stages of similar dissociative mergers and
 gather statistics to understand the physics of the mergers.  
 Another crucial piece of missing information is the 3D
-configuration, i.e. the angle between the plane of the sky and the merger
+configuration, i.e.\ the angle between the plane of the sky and the merger
 axis called the projection angle $\alpha$. Since most of the dynamical
 observables are projected quantities while the modelling of physics
 requires 3D
@@ -132,11 +135,15 @@ From the morphology of the double relic of El Gordo, it is believed that
 $\alpha$ should be small. For mergers with a
 large projection angle, the radio emission would be projected towards the
 center of the merger, which is hard to be detected \citep{Vazza11}.
-However, the only quantitative constraints on $\alpha$ is from \cite{L13}
-with a lower bound of $\alpha \geq 11.6 \degree$.  
+However, the only quantitative constraints on $\alpha$ for El Gordo is from
+\cite{L13} with a lower bound of $\alpha \geq 11.6 \degree$. A tighter
+constraint on $\alpha$ is needed for us to reduce uncertainty of the
+dynamical variables. 
 \par 
-We employ a data-driven approach that thoroughly probes parameter
-space by directly drawing samples from the observables. 
+We employed a data-driven approach that thoroughly probes parameter
+space by directly drawing samples from the probability density functions
+(PDFs) of
+the observables. 
 This work based on Monte Carlo simulation is particularly important since
 it is forbiddingly expensive to simulate and analyze clusters similar to El
 Gordo in high resolution. Previous attempts at modeling El Gordo with hydrodynamical
@@ -155,7 +162,7 @@ assume the standard $\Lambda$CDM cosmology with $\Omega_{m} = 0.3$, $\Omega_{\La
 (3) All credible intervals (a.k.a. Bayesian confidence intervals) are also
 quoted at the 68\% level unless otherwise stated and are central credible
 intervals. We adopt this terminology to remind readers of our Bayesian
-interpretation of the probability density functions, and that we obtained
+interpretation of the probability density functions (PDFs), and that we obtained
 the intervals / regions are estimated by integrating the posterior
 probability densities.  
 (4) All quoted masses ($M_{200c}$) are based on mass contained
@@ -168,14 +175,13 @@ examined the spectroscopic data obtained from the Very Large Telescope (VLT) and
 Germini South as described in \citetalias{M12} and \citet{Sifon13}.
 For the weak-lensing mass estimation, we used the published
 Monte Carlo Markov Chains (MCMC) mass estimates from \citetalias{Jee13}.
-See Table~\ref{tab:inputs} for descriptions of the probability density
-functions (PDFs) of the input
+See Table~\ref{tab:inputs} for descriptions of the PDFs of the input
 variables. \par 
 %and these galaxies were discussed as the population in Region A in
 %\citetalias{Jee13}.  
 In order to further constrain our parameter space, we referred to the properties of
-the radio relics from \citet{L13}. El Gordo shows radio relics on the
-periphery of both subclusters \citepalias{M12}. Two radio relics, the
+the radio relics from \citet{L13}. El Gordo shows radio emission on the
+periphery of both subclusters \citepalias{M12}. The two radio relics, the
 northwest (NW) relic and the southeast (SE) relic, of El Gordo were first
 discovered in the Sydney University Molonglo Sky Survey (SUMSS) data in low
 resolution at 843 MHz \citep{Mauch03} as shown in M12. A higher
@@ -183,8 +189,12 @@ resolution radio observation conducted by \cite{L13} at 610 \mega Hz and
 2.1 \giga Hz later confirmed the identities of the NW and the SE relic, and
 found another extended source of radio relic in the east (E) (See Fig.~\ref{fig:config}). Among the radio relics, the NW relic possesses the most extended geometry
 (0.56 Mpc in length), and its physics, including the
-polarization and Mach number were studied in the greatest detail. The E relic
-was also reported to have a resolved length of 0.27 Mpc. 
+polarization and Mach number were studied in the greatest detail. Such
+information allows us to constrain the $\alpha$ and the merger scenario. The E relic
+was also reported to have a resolved length of 0.27 Mpc, while the SE relic
+was found to overlap with a point source \citep{L13}. Both the E and SE
+relic are located closer to the SE DM subcluster, we therefore considered them to
+originate from the same merger shock in the following work.
 
 \section{METHOD -- Monte Carlo simulation} 
 We used the collisionless 
@@ -195,8 +205,7 @@ head-on merger was computed based on an analytical, dissipationless model
 assuming that the only dominant force is the gravitational attraction from
 the masses of two truncated Naverro-Frenk-White (hereafter NFW) DM halos. 
 In the simulation, many realizations of the collision is
-computed by drawing random realizations of the probability density
-functions (PDFs) of the inputs, including
+computed by drawing random realizations of the PDFs of the inputs, including
 the data ($\vec{D}$) and one model variable, the projection angle between
 the plane of the sky and the merger axis, $\alpha$. In particular,
 the required data, included the masses ($M_{200_{NW}},M_{200_{SE}}$) the
@@ -213,7 +222,7 @@ from 20 000 runs \citepalias{D13}. The random sampling allows us to
 throughly explore the multidimensional input parameter space and account
 for the uncertainties of the inputs at the same time.
 \par    
-We adapt a Bayesian interpretation of the PDFs of the Monte Carlo
+We adopt a Bayesian interpretation of the PDFs of the Monte Carlo
 simulation. The Bayes chain rule that underlies the simulation can be written as:
 \begin{equation}
     P(M|\vec{D}) \propto P(\vec{D}|M)P(M),
@@ -231,7 +240,7 @@ constraints on the dynamical variables into account by
 examining the resulting physical variables against the physical limits and
 excluding realizations that would produce impossible values. We refer to this
 process of excluding unphysical realizations as applying priors. 
-Even though we denote the priors for one dimension at a time (See Appendix~\ref{app:priors}), 
+Even though we denoted the priors for one dimension at a time (See Appendix~\ref{app:priors}), 
 the correlations between different variables are properly taken into account
 since we discarded all the variables of the problematic
 realizations.\par 
@@ -244,7 +253,7 @@ higher than the free-fall velocity. We justify our assumption of only
 modeling gravitationally bound system by noting that the relative escape
 velocity of the subclusters for El Gordo is
 $4500~\kilo\meter~\second^{-1}$ (based on the mass estimates of
-\cite{Jee13}).Studies from cosmological simulations giving the PDFs of the pairwise velocities of massive merging clusters ($>
+\cite{Jee13}). Studies from cosmological simulations giving the PDFs of the pairwise velocities of massive merging clusters ($>
 10^{15} M_{\sun}$) indicate that it is highly unlikely that the pairwise
 velocities would $> 3000~\kilo \meter~\second^{-1}$ under $\Lambda$CDM.
 (\citealt{Thompson12}, \citealt{Lee2010}).  Other major assumptions for
@@ -290,8 +299,8 @@ respectively \citep{Beers90}.
 Both the estimated redshifts of the subclusters and the uncertainties are
 consistent with estimates of $z=0.8701 \pm 0.0009$ for El Gordo given by \citealt{Sifon13}, and the fact that the
 member galaxies of El
-Gordo shows large velocity dispersion and has the largest velocity
-dispersion among all the ACT galaxy clusters as reported by
+Gordo shows large velocity dispersion, i.e. the largest velocity
+dispersion among all the ACT galaxy clusters, as reported by
 \citetalias{M12}.
 
 We estimated the radial velocity differences of the
@@ -310,10 +319,11 @@ one another with overlapping confidence intervals, we obtained a low
 radial velocity difference of the two subclusters to be
 $476~\pm~242~\kilo\meter~\second^{-1}$ (See Fig. \ref{fig:
 bootstrap_redshift}). 
-The quoted radial velocity differences of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
+The quoted radial velocity difference of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
 is higher than our estimates but within the 68\% bias-corrected
-confidence interval. Limitations and possible improvements of this analysis
-of $v_{rad}$ are provided in the discussion. 
+confidence interval. 
+%Limitations and possible improvements of this analysis
+%of $v_{rad}$ are provided in the discussion. 
 \begin{figure}
 	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
 	\caption{\label{fig:membership} Points showing the locations of the
@@ -325,7 +335,7 @@ redshift. The background number density contours in green indicate a bimodal
 distribution.} 
 \end{figure}
 \begin{figure}
-	\includegraphics[width = \linewidth]{bootstrapped_redshift.pdf}
+	\includegraphics[width = \linewidth]{bootstrapped_redshift.png}
 	\caption{\label{fig: bootstrap_redshift} Bootstrapped location of the
 	redshift estimates and $v_{rad}$ estimates for each subcluster using the
 	selected spectroscopic members. The shaded histograms approximate the
@@ -346,7 +356,7 @@ DM centroid locations in \citealt{Jee13}. We draw random samples
  RA=01:02:50.601, Decl.=-49:15:04.48 for the NW subcluster and RA =
  01:02:56.312, Decl. = -49:16:23.15 for the SE
 subcluster, with a 1'' standard deviation each as estimated from the
-convergence map of \citet{Jee13} . Or equivalently, the
+convergence map of \citet{Jee13}. Or equivalently, the
 samples of the inferred centroid locations correspond to a projected separation of
 $0.74\pm {0.007}$ Mpc. 
 \subsection{Outputs of the Monte Carlo simulation}\label{sec: outputs}
@@ -367,7 +377,7 @@ $TSC_1$ to denote different possible merger scenarios. 1) We call the scenario f
 moving apart after collision to be ``outgoing" and it corresponds to the
 smaller $TSC_0$ value, and 2) we call the alternative scenario 
 ``returning" for which the subclusters are approaching each other after turning
-around from the apoapsis for the first time and it corresponds to $TSC_1$.
+around from the apocenter for the first time and it corresponds to $TSC_1$.
 We describe how we make use of properties of the radio relic to evalute
 which scenario is more likely in
 section~\ref{sec:positionprior}. Evolution of the merger after the second
@@ -381,7 +391,7 @@ collision ($v_{3D}(t_{col})$) and at the time of observation
 ($v_{3D}(t_{obs})$) are provided. The characteristic
 distances included in the outputs are the maximum 3D separation ($d_{max}$),
 which is the distance between the subclusters at
-the apoapsis and the 3D separation of the subclusters at observation
+the apocenter and the 3D separation of the subclusters at observation
 ($d_{3D}$). 
 \subsection{Design and application of priors} 
 \label{sec:priors}
@@ -416,7 +426,7 @@ to this magnetic field along the relic.
 We designed our prior to reflect how $\alpha$ decreases monotonically as the
 maximum observable integrated polarization fraction. 
 \begin{figure}
-	\includegraphics[width=\linewidth]{Ensslin_polar_fig.pdf}
+	\includegraphics[width=\linewidth]{Ensslin_polar_fig.png}
 	\caption{Predictions of polarization percentage of the radio relic at a
 		given projection angle from different models, reproduced from
 		\citealt{E98}. Each model assumes electrons producing the radio emission
@@ -626,10 +636,8 @@ uncertainties.
 the turbulent ICM, not the propogation velocity with respect to center of
 mass, so we have not made use of the estimate of \cite{L13} in this
 calculation. \par
-
-
 \begin{figure}
-	\includegraphics[width=\linewidth]{our_guess.pdf}
+	\includegraphics[width=\linewidth]{our_guess.png}
 	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
 		includes the 95\% confidence interval of location of the NW radio relic in the center of mass frame) with the predicted position from the two simulated merger
 		scenarios (blue for outgoing and green for the returning scenario).
@@ -637,7 +645,7 @@ calculation. \par
 	\label{fig:our_guessed_scenario}
 \end{figure}
 \begin{figure}
-	\includegraphics[width=\linewidth]{our_guess_SE.pdf}
+	\includegraphics[width=\linewidth]{our_guess_SE.png}
 	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
 	includes the 95\% confidence interval of location of the radio relic in
 the center of mass frame)}
@@ -652,7 +660,6 @@ regions after applying the priors. The contours represents the 95\% and
 68\% credible regions respectively. }
 	\label{fig:TSC_v3D}
 \end{figure}
-
 \subsection{Sensitivity analysis of the polarization prior}
 %\input{3.3_sens_analysis}
 \label{sec:sensitivityTests}
@@ -768,24 +775,26 @@ work of \cite{Donnert13} and our work.
 \subsection{Comparison to the merger scenarios of other merging clusters of galaxies}
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{merger_scenario.pdf}
-	\caption{Illustration of the different merger scenarios, i.e. projected displacement
-		($s_{proj}$) from the center of mass of different components, of El
-		Gordo and the Bullet Cluster, at different stage of the merger.  
+	\includegraphics[width=\linewidth]{merger_scenario.png}
+	\caption{Illustration of the different proposed merger scenarios, i.e. projected displacement
+		($s_{proj}$) from the center of mass of different components along the
+		merger axis, of El
+		Gordo and the Bullet Cluster, at different stages of the mergers.  
 		Shortly after the core-passage
 		phase of the merger, the cool core had to travel through a dense gas region.
-		Ram pressure would strip the gas component from a subcluster and cause the
+		Ram pressure ($=\rho v^2$) would strip the gas component from a subcluster and cause the
 		cool core to lag behind the DM peak (This corresponds to the scenario
-		for the Bullet Cluster). As time went by, the DM and the cool core of
+		for the Bullet Cluster indicated by the grey dotted line). As time went by, the DM and the cool core of
 		a subcluster would propagate outwards while slowing down, they would
-		encounter a region with much lower gas density. At this later stage
-		, the ram pressure from the lower density gas in the
-		outskirt region would decrease drastically so the cool core would not be slowed
-		down as much, as if it had received a kick in a slingshot. During this
+		encounter a region with much lower gas density. At this later stage, 
+		the ram pressure from the lower density gas in the
+		outskirt region may decrease drastically, so the cool core would seem
+		to have received a kick by a slingshot. By this
 		later stage, the DM component would have also reached the
-		apoapsis and started returning to the center of mass for a second
+		apocenter and started returning to the center of mass for a second
 		core-passage. The cool core would then be able to travel further away from
-		the center of mass than the DM component. (El Gordo scenario)
+		the center of mass than the DM component (El Gordo scenario indicated
+		by the black dashed line).
 	\label{fig:merger_scenario}}
 \end{figure}
 The hypothesis of El Gordo being in the outbound phase is more plausible when
@@ -794,7 +803,7 @@ Cluster (\citealt{Bradac2006b}, \citealt{Springel2007},
 \citealt{Mastropietro2008a}).
 A lot of the inferred properties are similar between the two clusters and
 both clusters were observed in similar wavelengths. Both clusters are
-considered bimodal major mergers of subclusters of significant masses. The inferred
+considered as bimodal major mergers of subclusters of significant masses. The inferred
 merger velocities are comparable at around $2600~\kilo\meter~\second^{-1}$
 and $\alpha$ of both clusters are around $20 \degree$. 
 In particular, the inferred outbound $TSC_0 / T$ of the Bullet Cluster and El Gordo
@@ -803,7 +812,7 @@ is in the outbound phase of the merger (i.e. $TSC_0$ for El Gordo is
 invalid) while the Bullet Cluster is in the inbound phase, the differences
 in the observables of El Gordo and the Bullet Cluster can be explained.\par
 First, the merger shock front of the Bullet Cluster is
-observed only in the X-ray, meaning that the shock has not had the
+observed only in the X-ray, meaning that the shock may not have the
 time to propagate to the outskirt of the cluster (\citealt{Bruggen2011},
 \citealt{Markevitch2007}), and this bow shock is indeed observed to closely
 lead the corresponding less massive subcluster by $\sim 0.08~\mega$pc,
@@ -820,125 +829,165 @@ mass than the corresponding SE subcluster (See Fig.~\ref{fig:config} for
 the observed positions). 
 Both configurations of cool core relative to the subcluster mass peak are
 mentioned in \cite{Markevitch2007}, with the case of the Bullet Cluster
-explained by the ram pressure stripping effect, and the case of El Gordo
+explained by the ram pressure stripping effect , and the case of El Gordo
 explained by the ram pressure slingshot effect, which only occurs at a
-later stage of a merger. (See Fig. \ref{fig:merger_scenario} for an
-illustration depicting this conjectured scenario)\par 
+later stage of a merger (See Fig. \ref{fig:merger_scenario} for an
+illustration depicting this conjectured scenario).\par 
 Simulation of a major merger by
-\cite{Mathis05} with similar mass and mass ratio as El Gordo confirms this
-picture: it shows the turn-around of the cool core can occur after the
-apoapsis of the DM component, resulting in the cool core being further
+\cite{Mathis05} with comparable mass ($1.4 \times 10^{15} M_{\sun}$) and
+mass ratio (1:1) as El Gordo supports
+our proposed scenario: it shows the turn-around of the cool core can occur after the
+apocenter of the DM component, resulting in the cool core being further
 away from the center of mass than the dark matter by as much as $\sim
-0.2~\mega$pc.  The cool core of El Gordo shows a comet-like
-morphology that suggests an outbound motion of the cool core, however, from
-the above argument, we cannot rule out the possibility that the DM
-subclusters had already started returning for a second core-passage. 
-If the returning scenario is true, El Gordo would be one of the first
+0.2~\mega$pc.  The gas northwest of the cool core of El Gordo shows a comet-like
+morphology with two tails that suggests outbound motion of the cool core, which may seem
+contradictory to the returning scenario. However, from our proposed merger
+scenario of El Gordo in Fig. \ref{fig:merger_scenario},
+it is possible that the cool core and the DM are observed to be moving in
+opposite directions, with the DM subcluster started returning for a second core-passage. If the returning scenario is true, El Gordo would be one of the first
 clusters to be observed at a late stage of the merger, after another
 bimodal cluster merger A168 with a cool front leading the corresponding DM
 subcluster \citep{Hallman04}.
 
 \subsection{El Gordo as a probe of dark matter self-interaction}
-
-% cite Markevitch paper about the self-interacting cross section 
-% talk about how different variables would have different effects 
-
-
-% spatial separation of gas-DM not really great for constraining sigma
-% 
-
-Time variability of the gas-DM offset makes it not a very suitable probe
-
-galaxy-DM offset remain to investigate how galaxy propagates 
-
-the Musketball Cluster (\citealt{Dawson12}, \citetalias{D13}). 
-
-%In addition to the default prior, \citetalias{D13} applied a temporal prior
-%based on the observed X-ray luminosity boost for the Bullet Cluster, while
-%only the default priors were suitable to be applied for the Musketball.
-%Therefore, with the additional priors, both the Bullet Cluster and El Gordo
-%show a more constrained parameter space.
-%\begin{equation}
-%	\text{scattering rate}\propto v 
-%\end{equation}
-
-The three output variables that we compare among the listed clusters include $TSC$,
-$v_{3D}$ and the masses. These variables can affect
-how strongly the self-interaction of dark matter would manifest itself in
-case the DM self-interaction cross section is not zero. A higher TSC might
-allow more time for DM to interact with itself; a higher $v_{3D}$ might
- and a higher mass would correspond to
-higher central density for a higher self-interaction rate. Although El
-Gordo is the most massive among the listed clusters, the higher mass did not result in a higher $v_{3D}(t_{col})$.
-The estimate of $v_{3D}(t_{col}) = 2400~\kilo\meter~\second^{-1}$ is
-comparable to the inferred $v_{3D}(t_{col}) =
-2800~\kilo\meter~\second^{-1}$ of the Bullet Cluster. 
-Both the phase $TSC_0  \approx 40\%~T$ and the $TSC_0 = 0.6~\giga$yr are
-similar between El Gordo and the Bullet Cluster
-It is remained to be investigated if our hypothesis about the relationship
-between how these variables would affect our chance of seeing effects from
-self-interaction of dark matter. 
-
-
-Merging clusters of galaxies are unique probes of the self-interaction of
-dark matter from the separation of different components. In particular, it
-is interesting to examine the scattering probability of dark matter by other dark matter. 
-From \cite{Randall2008d}, the scattering probability of each dark matter
-would be proportional to the local dark matter density and the relative
-velocities. 
-
-
-El Gordo is one of the most massive merging galaxy clusters. 
-
-This is further complicated by the likely returning scenario of El Gordo.
-time since collision 
-
-
-
-
-It is interesting to compare 
-We compare El Gordo 
-
-
-
-ison to both the Bullet Cluster and the Musketball
-Cluster, which were studied by \citetalias{D13} using the Monte Carlo simulation.
+El Gordo possesses a range of special properties that makes it a promising
+probe of self-interaction of DM. Its high mass ensure high DM
+particle density for interactions during the high-speed core-passage. Its bimodal configuration makes it
+relatively simple to interpret the offset and dynamics of the different
+components. The observation of the radio relic has enabled us to
+constrain the projection angle and reduce uncertainties of other dynamical
+parameters. Furthermore, El Gordo is likely to be a late-stage merger
+unlike other well studied clusters such as the Bullet Cluster. This gives
+us a better picture of how a bimodal merger would behave at a later stage of a merger. \par 
+This special merger scenario of El Gordo also raises a question: what phase
+of a merger or what type of mergers would allow the most stringent
+constraints on the self-interaction cross section of DM ($\sigma_{\text{SIDM}}$)? 
+The use of merging clusters as probes of $\sigma_{\text{SIDM}}$. 
+has been proposed and used in various literature.
+(\citealt{Markevitch2004}, \citealt{Randall2008d}, \citealt{Merten2011},
+\citealt{Dawson12}). One common theme among such work is
+to make use of the observed offsets of the different components of the
+merging clusters for the estimation. One of the most popular methods proposed by
+\citealt{Markevitch2004} (i.e. method 1 in the paper) assumes the
+corresponding the gas component would lag behind the corresponding DM
+subcluster along the direction of motion due to ram pressure stripping.   
+%and make use of the scattering depth $\tau_s = 1$ as an upper
+%limit of the scattering depth of DM for estimating
+%$\sigma_{\text{SIDM}}$. 
+For El Gordo, since the cool core is further away from the
+center of mass than the SE DM centroid, it is apparent that this particular
+method does not apply. However, from a preliminary analysis of
+the galaxy number density map of El Gordo \citepalias{Jee13}, there is a
+noteworthy $\sim0.2~\mega$pc offset between the SE galaxy number density
+peak and the SE DM centroid. This galaxy-DM offset may provide an even
+better constraint than the gas-DM offset method. Before there is a
+conclusion about how the galaxy-DM offset would vary over
+the different phase of the merger Fig.~\ref{fig:merger_scenario}, it is
+helpful to have some understanding about clusters at a late-stage of the
+merger. 
+\par 
+%For example, another method for constraining $\sigma_{\text{SIDM}}$ is to
+%compare the magnitude of the observed offset of galaxy and the corresponding DM
+%subcluster peak using simulations with different assumed
+%$\sigma_{\text{SIDM}}$ \citep{Randall2008d}. 
+%the Musketball Cluster (\citealt{Dawson12}, \citetalias{D13}). 
+%
+%%In addition to the default prior, \citetalias{D13} applied a temporal prior
+%%based on the observed X-ray luminosity boost for the Bullet Cluster, while
+%%only the default priors were suitable to be applied for the Musketball.
+%%Therefore, with the additional priors, both the Bullet Cluster and El Gordo
+%%show a more constrained parameter space.
+%%\begin{equation}
+%%	\text{scattering rate}\propto v 
+%%\end{equation}
+%
+%The three output variables that we compare among the listed clusters include $TSC$,
+%$v_{3D}$ and the masses. These variables can affect
+%how strongly the self-interaction of dark matter would manifest itself in
+%case the DM self-interaction cross section is not zero. A higher TSC might
+%allow more time for DM to interact with itself; a higher $v_{3D}$ might
+% and a higher mass would correspond to
+%higher central density for a higher self-interaction rate (surface mass
+%density $\Sigma$). Although El
+%Gordo is the most massive among the listed clusters, the higher mass did not result in a higher $v_{3D}(t_{col})$.
+%The estimate of $v_{3D}(t_{col}) = 2400~\kilo\meter~\second^{-1}$ is
+%comparable to the inferred $v_{3D}(t_{col}) =
+%2800~\kilo\meter~\second^{-1}$ of the Bullet Cluster. 
+%Both the phase $TSC_0  \approx 40\%~T$ and the $TSC_0 = 0.6~\giga$yr are
+%similar between El Gordo and the Bullet Cluster
+%It is remained to be investigated if our hypothesis about the relationship
+%between how these variables would affect our chance of seeing effects from
+%self-interaction of dark matter. 
+%
+%
+%Merging clusters of galaxies are unique probes of the self-interaction of
+%dark matter from the separation of different components. In particular, it
+%is interesting to examine the scattering probability of dark matter by other dark matter. 
+%From \cite{Randall2008d}, the scattering probability of each dark matter
+%would be proportional to the local dark matter density and the relative
+%velocities. 
+%
+%
+%El Gordo is one of the most massive merging galaxy clusters. 
+%
+%This is further complicated by the likely returning scenario of El Gordo.
+%time since collision 
+%
+%It is interesting to compare 
+%We compare El Gordo to both the Bullet Cluster and the Musketball
+%Cluster, which were studied by \citetalias{D13} using the Monte Carlo simulation.
 
 %
-\subsection{Limitations of our data analysis and future work} 
-We note that our method of inferring the 3D velocities by deprojecting the
-radial velocities might not be optimal but is commonly used (\citetalias{M12},
-\citealt{Dawson12}). The relative
-radial velocities are dependent on the identification of subcluster members.
-However, it is unclear that a spatial
-cut according to number density peaks would be optimal for selecting
-galaxies that represent the underlying velocities of the subclusters. Traditionally, grouping members
-may be treated as a (statistical) clustering problem with well known
-methods such as normal mixture model. However, our setting is complicated
-by the fact that each of the observed redshifts of galaxies is an unknown
-combination of cosmological redshift and redshift due to peculiar motion
-along the line-of-sight. Our study only made use of a limited number of
-galaxies with spectroscopy information. This could cause selection bias and
-incompleteness due to limitations of the of spectroscopic targets. Existing
-literature and tests mostly focus on detecting substructures in galaxy
-clusters through non-Gaussianity of the velocity dispersion
-(\citealt{Dressler88}, \citealt{Einasto12}). Few extensive studies have focused on finding out the uncertainties
-associated with this clustering procedure for inferring the dynamics of
-merging clusters. This problem of inferring galaxies to best reflect
-subcluster dynamics presents an interesting direction for investigation in the future.   
- 
-Despite the limitations and simplifying assumptions, this work provides
-insight to the merger dynamics and configuration of El Gordo as a basis for further studies.
-Tests for signs of self-interaction of DM in El Gordo can be done
-by comparing the offset between the member galaxies and the
-DM distribution of the subclusters. By understanding the merging scenario,
-we can infer if the observed galaxy-DM offset are in the expected
-direction such that the collisionless galaxies lead the DM subhalos along
-the direction of motion. \par 
+\section{SUMMARY} 
+%We note that our method of inferring the 3D velocities by deprojecting the
+%radial velocities might not be optimal but is commonly used (\citetalias{M12},
+%\citealt{Dawson12}). The relative
+%radial velocities are dependent on the identification of subcluster members.
+%However, it is unclear that a spatial
+%cut according to number density peaks would be optimal for selecting
+%galaxies that represent the underlying velocities of the subclusters. Traditionally, grouping members
+%may be treated as a (statistical) clustering problem with well known
+%methods such as normal mixture model. However, our setting is complicated
+%by the fact that each of the observed redshifts of galaxies is an unknown
+%combination of cosmological redshift and redshift due to peculiar motion
+%along the line-of-sight. Our study only made use of a limited number of
+%galaxies with spectroscopy information. This could cause selection bias and
+%incompleteness due to limitations of the of spectroscopic targets. Existing
+%literature and tests mostly focus on detecting substructures in galaxy
+%clusters through non-Gaussianity of the velocity dispersion
+%(\citealt{Dressler88}, \citealt{Einasto12}). Few extensive studies have focused on finding out the uncertainties
+%associated with this clustering procedure for inferring the dynamics of
+%merging clusters. This problem of inferring galaxies to best reflect
+%subcluster dynamics presents an interesting direction for investigation in the future.   
+We provide estimates of the dynamical parameters of El Gordo using our
+Monte Carlo simulation, in particular, we 
+\begin{enumerate}
+	\item demonstrated the first use of polarization fraction information from
+		the radio relics to reduce our estimates of the projection angle from
+		$43\degree^{26}_{24}$ to $21 \degree
+		\pm^{9}_{11}$ (See	Fig. \ref{fig:geom_geom})\\ 
+	\item 
+		inferred a {\it relative} collisional velocity between the subclusters of El
+		Gordo as $2400\pm^{400}_{200}~\kilo\meter~\second^{-1}$ \\ 
+	\item showed that a returning scenario is favored if the $\langle v_{NW relic}\rangle \leq
+		1000~\kilo
+		\meter~\second^{-1}$ and $\langle v_{SE relic}\rangle \leq
+		1800~\kilo\meter~\second^{-1}$between the collision and the observation in the
+		center-of-mass frame. It takes
+		an unlikely high speed of $\langle v_{relic} \rangle \gg 1.5~v_{3D,
+		sub}(t_{col})$ for the outgoing scenario to be favored.  
+	\item made used of a simplified illustration to show how our inferred
+		returning scenario may explain the unexpected location of the cool
+		core and still be consistent with the wake / gas-tail morphology of the cool core. 
+\end{enumerate}
+As large scale sky surveys come online, more and more galaxy cluster merger
+would become available and more cluster mergers at later stages of their merger
+would be discoverd. El Gordo will serve as one of the best studied
+example of a late-stage cluster merger for comparison.  
 In addition, our work has allowed us to examine
-what information would be needed to better understanding of the merger
-dynamics and scenario. Important questions concerning the radio
-relic and the merger pending for answers include:  
+what information would be needed to better understand the merger
+dynamics and scenario. Important questions concerning merging galaxy
+clusters pending for answers include:  
 \begin{itemize}
 \item What are the typical propagation velocities of the shockwave that
 corresponds to the radio relic in the	center of mass frame of the cluster?
@@ -947,30 +996,14 @@ corresponds to the radio relic in the	center of mass frame of the cluster?
 \item What is the typical duration
 after the merger for which radio relics are observable in terms of the merger
 core-passage time-scales? 
+\item how generalizable is the merger scenario in Fig.
+	\ref{fig:merger_scenario} is?  
+\item how would the galaxy-DM offset evolve if we were to add that information
+	to Fig. \ref{fig:merger_scenario}?
 \end{itemize}
-We urge simulators working on radio relic
-simulations to help come up with answers that would be directly
+We urge simulators to help come up with answers that would be directly
 comparable with data. \par 
 
-As a summary, this paper presents one of the first examples of using the
-observed radio relic emission to constrain cluster merger properties, the
-results
-\begin{enumerate}
-	\item demonstrate the first use of polarization fraction information from
-		the radio relics to constrain the projection angle to $21 \degree
-		\pm^{9}_{11}$ (See	Fig. \ref{fig:geom_geom})\\ 
-	\item 
-		shows a {\it relative} collisional velocity between the subclusters of El
-		Gordo as $2400~\kilo\meter~\second^{-1}$ \\ 
-	\item favors a returning scenario if the $\langle v_{NW relic}\rangle \leq
-		1000~\kilo
-		\meter~\second^{-1}$ and $\langle v_{SE relic}\rangle \leq
-		1800~\kilo\meter~\second^{-1}$between the collision and the observation in the
-		center-of-mass frame. It takes
-		an unlikely high speed of $\langle v_{relic} \rangle \gg 1.5~v_{3D,
-		sub}(t_{col})$ for the outgoing scenario to be favored.  
-	\item is a prime example of a cluster merger at a later stage  
-\end{enumerate}
 
 \section{ACKNOWLEDGEMENTS}
 We thank Franco Vazza, Marcus Br\"{u}ggen and Surajit Paul for sharing
@@ -981,12 +1014,12 @@ radio relic as prior. We appreciate the comments from Maru\v{s}a
 Brada\v{c} about using the position of the relic to break degeneracy
 of the merger scenario. KN is grateful to Paul Baines and Tom Loredo for
 discussion of the use of Bayesian priors and sensitivity tests. 
-Part of this work was performed under the auspices of the U.S. DOE by LLNL under Contract DE-AC52-07NA27344.
-Github 
-Ipython notebook 
-Ipython 
-astroML 
-astropy
+Part of this work was performed under the auspices of the U.S. DOE by LLNL
+under Contract DE-AC52-07NA27344. We would also like to thank 
+GitHub for providing free repository for version control for our data
+analysis code, and open source
+packages developers of Ipython notebook, Ipython, astroML  and astropy.
+(should provide proper citations)
 %%the discussion of the design of Monte Carlo filters and sensitivity tests.   
 %
 %
@@ -1049,23 +1082,8 @@ We present the PDFs of the inputs of the dynamical simulation and the
 marginalized PDFs of the outputs after applying the polarization prior in
 addition to the default priors. See following figure for explanations of
 the order that we present the variables. 
-\begin{figure}
-	\begin{center}
-	\includegraphics[width=\linewidth]{ElGordo_plot_config.png}
-	\end{center}
-	\caption{Matrix of variables used in the simulations. We present them in
-	4 categories, including, inputs, geometry, time and velocity. Regions of
-	the same color represent one plot and the number
-indicates the corresponding figure number in this appendix.}
-\end{figure}
-
-
-
-%make use of subplots from matplotlib in order to plot all the posteriors
 \label{app:results}
-
 %%%%%%%%%%%%% TASK --- 
-
 \clearpage
 \begin{figure*}
 	\begin{minipage}{180mm}
@@ -1079,7 +1097,6 @@ uneven sampling of inputs. }
 	\end{center}
 	\end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1093,7 +1110,6 @@ uneven sampling of inputs. }
 	\end{center}
 	\end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1104,7 +1120,6 @@ uneven sampling of inputs. }
 	\end{center}
 	\end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1117,7 +1132,6 @@ not for $TSC_1$ and $T$, so $TSC_0$ spans a smaller range.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1127,9 +1141,7 @@ not for $TSC_1$ and $T$, so $TSC_0$ spans a smaller range.}
 and the characteristic distances and the projection angle of the merger. }
 	\end{center}
 \end{minipage}
-
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1140,7 +1152,6 @@ and the inputs.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1152,7 +1163,6 @@ different velocities.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1163,7 +1173,6 @@ different velocities.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1174,7 +1183,6 @@ different velocities.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
@@ -1185,11 +1193,10 @@ different velocities.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-
 \section{Model comparison for the outgoing and returning scenario}
 \label{app:Bayes_factor}
 \begin{figure}
-	\includegraphics[width=\linewidth]{polar_prior_bounds.pdf}
+	\includegraphics[width=\linewidth]{polar_prior_bounds.png}
 	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
 		includes 95\% confidence interval of location of relic in the center of
 		mass frame) with the	predicted position from the two simulated merger scenarios (blue for
@@ -1201,9 +1208,8 @@ different velocities.}
 	Note that we made use of the	polarization prior for producing this figure. 
 	\label{fig: positionprior}}
 \end{figure}
-
 \begin{figure}
-	\includegraphics[width=\linewidth]{polar_prior_bounds_SE.pdf}
+	\includegraphics[width=\linewidth]{polar_prior_bounds_SE.png}
 	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
 		includes 95\% confidence interval of location of relic in the center of
 		mass frame) with the	predicted position from the two simulated merger scenarios (blue for
@@ -1252,8 +1258,7 @@ not think that $\beta_{SE} = \beta_{NW}$ has to be necessarily true.
 %corresponds to an time-averaged velocity of $\sim3800~\kilo
 %\meter~\second^{-1}$ relative to SE subcluster, or, in the center of
 %mass frame $\sim1400~\kilo\meter~\second^{-1}$. 
-As more
-simulations of merger shocks become available, one can update equation~\ref{eq:beta_prior} accordingly.
+As more simulations of merger shocks become available, one can update equation~\ref{eq:beta_prior} accordingly.
 
 
 \bsp 
