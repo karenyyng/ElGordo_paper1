@@ -1,7 +1,7 @@
 \input{style}
 \input{bib_alias}
 \title[The dynamics and merging scenario of ACT-CL J0102-4915, El
-Gordo]{The dynamics and the inbound merging scenario of the galaxy cluster ACT-CL J0102-4915, El Gordo}
+Gordo]{The dynamics and merging scenario of the galaxy cluster ACT-CL J0102-4915, El Gordo}
 \author[K. Y. Ng et al.]{K. Y. Ng,$^{1}$
 	W. A. Dawson,$^{2}$ 
 	D. Wittman,$^{1}$
@@ -82,7 +82,8 @@ between dark matter and galaxies may suggest dark matter self-interaction
 \par
 El Gordo possesses a range of noteworthy features that allows us to constrain
 the merger dynamics in multiple ways.  Ever since the discovery of El Gordo
-in the Atacama Camera Telescope survey (ACT; \citealt{Marriage11}), there is an ongoing effort for
+in the Atacama Camera Telescope survey (ACT; \citealt{Marriage11}), there
+has been an ongoing effort for
 collecting comprehensive data for El Gordo.
 From the spectroscopy and Dressler-Schecter test for the member galaxies
 in \cite{Sifon13}, El Gordo is confirmed to be a binary merger 
@@ -1192,8 +1193,9 @@ different velocities.}
 	\end{center}
 \end{minipage}
 \end{figure*}
-\section{MODEL COMPARISON FOR THE OUTGOING AND RETURNING SCENARIO}
+\section{COMPARISON OF THE OUTGOING AND RETURNING SCENARIO}
 \label{app:Bayes_factor}
+%\input{supplement}
 \begin{figure}
 	\includegraphics[width=\linewidth]{polar_prior_bounds.png}
 	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
@@ -1208,7 +1210,7 @@ different velocities.}
 	\label{fig: positionprior}}
 \end{figure}
 \begin{figure}
-	\includegraphics[width=\linewidth]{polar_prior_bounds_SE.png}
+\includegraphics[width=\linewidth]{polar_prior_bounds_SE.png}
 	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
 		includes 95\% confidence interval of location of relic in the center of
 		mass frame) with the	predicted position from the two simulated merger scenarios (blue for
@@ -1218,56 +1220,50 @@ different velocities.}
 	relic calculation.
 	\label{fig:positionprior_SE}}
 \end{figure}
-We can write down our model for the different scenarios to be $M_{out}$ and
-$M_{ret}$ for the outgoing and returning scenarios respectively. Both
-models are computed using the same variables except for $TSC$. The models
-are parametrized by $\beta$, which represents our uncertainty of $\langle v_{relic} \rangle$
-(See equation~\ref{eq:proj_s_model}). Our data in this
-case is the observed projected location of the radio relic $s_{proj}$. 
-The Bayes factor thus can be computed as: 
+
+Here, we compare the different merger scenarios through several
+quantities and show that they consistently give the conclusion that the returning
+scenario is favored. The first quantity that we use answers the question:
+which scenario would have a higher (marginalized) probability of producing simulated
+separation ($s_{proj}$)
+compatible with the observed location of the radio relic ($s_{obs}$). 
+Quantitatively, we want to compute and compare the probability:  
+\begin{align} 
+	&P(s_{proj} \text{ compatible with }s_{obs} | M)  \\
+	&=\int f(S_{proj} \cap S_{obj} | M, \beta) f(\beta | M) d\beta\\
+	&=\iint  f(s_{proj}|M, \beta) f(s_{obs}) f(\beta | M) d s_{proj}
+	d\beta, 
+\end{align}
+where $f$ indicates the corresponding probability density function, $M$
+represents one of the merger scenarios, and $\beta$ is defined in equation,
+$s_{proj} \in S_{proj}$ and $s_{obj} \in S_{obs}$. 
+And we found: 
 \begin{align}
-	K &= \frac{P(s_{proj} | M_{ret})}{P(s_{proj}| M_{out}}\\
-	 &= \frac
-	 {\int P(\beta | M_{ret}) P(s_{proj} | \beta, M_{ret}) d\beta}
-	 {\int P(\beta | M_{out}) P(s_{proj} | \beta, M_{out})
- d\beta}\\
- &\approx 
+	&P(S_{proj} \cap S_{obj} | M_{ret}) / P(S_{proj} \cap S_{obj} |
+	M_{out})\\
+	&=
  \begin{cases}
- & 2.1 \text{ for the NW relic}\\
- & 460 \text{ for the SE relic}
+  2.1 \text{ for the NW relic}\\
+  460 \text{ for the SE relic}
  \end{cases}
 \end{align}
-where $P(s_{proj} | \beta, M_{ret})$ and $P(s_{proj} | \beta, M_{out})$ can be
-viewed as the green and blue curves respectively for each given $\beta$ value and we
-have used priors on $\beta$ as: 
-\begin{equation}
-	\label{eq:beta_prior}
-	P(\beta | M_{ret}) = P(\beta | M_{out}) =  
-	\begin{cases}
-		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.5 \\
-		& 0~\text{otherwise}.
-	\end{cases}
-\end{equation}
-This conservative prior is chosen to reflect our belief that the
-NW shockfront should propagate at approximately $v_{3D, NW}(t_{col})$ in the
-center-of-mass frame, and likewise for the SE shockfront, although we do
-not think that $\beta_{SE} = \beta_{NW}$ has to be necessarily true. 
-%When we assume $\langle v_{relic} \rangle / v_{3D, 1}(t_{col}) = 1.5$ (uppermost
-%panel of Figure \ref{fig: positionprior}), $\langle v_{relic} \rangle$
-%corresponds to an time-averaged velocity of $\sim3800~\kilo
-%\meter~\second^{-1}$ relative to SE subcluster, or, in the center of
-%mass frame $\sim1400~\kilo\meter~\second^{-1}$. 
-As more simulations of merger shocks become available, one can update
-equation~\ref{eq:beta_prior} accordingly.\par 
-There are alternative ways of constructing probabilistic comparisons of the
-returning and the outgoing scenarios, but they are not as conservative as
-computing the Bayes factor. In particular, any frequentist tests will not be
-able to capture the range of uncertainty of $\langle v_{relic} \rangle$. From
-a frequentist point of view, parameters of a model are fixed (but perhaps
-unknown) values \citep{Neyman1937}, thus there is no frequentist concept of probability of
-parameters. Therefore, any frequentist tests, such as p-value
-tests or likelihood ratio tests, would require one to first fix $\beta$
-before computing the test statistic. 
+
+
+This differs from the traditional hypothesis testing or model comparison in several ways: 
+\begin{enumerate}
+\item we did not compute the traditional likelihood function.  We have adopted
+a non-parametric approach in our Monte Carlo simulation, there is no
+parametric form of the likelihood in our context. Readers can feel
+free to assume $f(S_{proj} \cap S_{obj})$ as a form of likelihood or
+distance measure to compare our simulated and our observed data, but
+coming up with a rigorous measure is beyond the scope of this paper
+\item we are not asking whether the expected value of the radio relic such
+	as the mean or median from each model match the observation best, since
+	those estimators take into account the values that do not match the
+	observed location of the radio relic 
+\item we have marginalized the uncertainty in $\beta$ to be as conservative
+	as possible instead of assuming a fixed value of $\beta$
+\end{enumerate}
 
 \bsp 
 \label{lastpage} 
