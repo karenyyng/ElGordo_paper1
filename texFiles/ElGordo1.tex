@@ -1221,21 +1221,30 @@ different velocities.}
 	\label{fig:positionprior_SE}}
 \end{figure}
 
-Here, we compare the different merger scenarios through several
+\begin{figure}
+	\includegraphics[width=\linewidth]{wald.eps}
+	\caption{Wald statistic to show whether the observed relic location is
+		within the confidence interval of each merger scenario model. (lower
+		value
+		means more compatible)  
+	\label{fig:waldtest}}
+\end{figure}
+Here, we compare the different merger scenarios through two statistical 
 quantities and show that they consistently give the conclusion that the returning
 scenario is favored. The first quantity that we use answers the question:
 which scenario would have a higher (marginalized) probability of producing simulated
-separation ($s_{proj}$)
+values ($s_{proj}$)
 compatible with the observed location of the radio relic ($s_{obs}$). 
 Quantitatively, we want to compute and compare the probability:  
 \begin{align} 
-	&P(s_{proj} \text{ compatible with }s_{obs} | M)  \\
+	&P(s_{proj} \text{ compatible with }s_{obs} | M)  \label{eqn:prob}\\
 	&=\int f(S_{proj} \cap S_{obj} | M, \beta) f(\beta | M) d\beta\\
 	&=\iint  f(s_{proj}|M, \beta) f(s_{obs}) f(\beta | M) d s_{proj}
 	d\beta, 
 \end{align}
 where $f$ indicates the corresponding probability density function, $M$
-represents one of the merger scenarios, and $\beta$ is defined in equation,
+represents one of the merger scenarios, and $\beta$ is defined in equation
+\ref{eqn:NW_speed} and \ref{eqn:SE_speed},
 $s_{proj} \in S_{proj}$ and $s_{obj} \in S_{obs}$. 
 And we found: 
 \begin{align}
@@ -1243,27 +1252,53 @@ And we found:
 	M_{out})\\
 	&=
  \begin{cases}
-  2.1 \text{ for the NW relic}\\
-  460 \text{ for the SE relic}
+  2.1 \text{ for the NW relic},\\
+  460 \text{ for the SE relic},
  \end{cases}
 \end{align}
+which shows that the returning scenario is favored over the outgoing
+scenario. 
+And we have set our priors set to be uniform: 
+\begin{equation}
+	f(\beta | M_{ret}) = f(\beta | M_{out}) =  
+	\begin{cases}
+		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.5 \\
+		& 0~\text{otherwise}.
+	\end{cases}
+\end{equation}
 
-
-This differs from the traditional hypothesis testing or model comparison in several ways: 
+This test quantity differs from the traditional hypothesis testing or model comparison in several ways: 
 \begin{enumerate}
-\item we did not compute the traditional likelihood function.  We have adopted
-a non-parametric approach in our Monte Carlo simulation, there is no
-parametric form of the likelihood in our context. Readers can feel
-free to assume $f(S_{proj} \cap S_{obj})$ as a form of likelihood or
-distance measure to compare our simulated and our observed data, but
-coming up with a rigorous measure is beyond the scope of this paper
-\item we are not asking whether the expected value of the radio relic such
-	as the mean or median from each model match the observation best, since
-	those estimators take into account the values that do not match the
-	observed location of the radio relic 
-\item we have marginalized the uncertainty in $\beta$ to be as conservative
-	as possible instead of assuming a fixed value of $\beta$
+\item we did not compute a likelihood function.  We have adopted
+non-parametric PDFs in our Monte Carlo simulation, there is no well-known
+functional form of the likelihood (i.e. no Gaussian, or binomial likelihood) in our context. Readers can feel
+free to assume $f(S_{proj} \cap S_{obj})$ to be a (zero-one) loss function
+analog or a distance measure to compare our simulated and our observed data
+\item with this quantity, we are not asking whether the expected value of
+	the radio relic such as the mean or median from each model match the
+	observation best. Those estimators take into account the values that do not match the observed location of the radio relic. 
+\item we marginalized the uncertainty in $\beta$ to be as conservative
+	as possible, instead of assuming a fixed value of $\beta$.
 \end{enumerate}
+\par
+The second quantity that we compute is the Wald statistic
+(two-tail hypothesis test) at a range of possible $\beta$ values.
+This allows us to ask the question, given a particular merger scenario,
+whether the null value (sample mean) is in the confidence
+interval.
+The Wald statistic that we compute for each model is: 
+\begin{align}
+	W(\beta) = \frac{\bar{s}_{obs} - \mu(\beta)}{\sigma / (n)^{1/2}} 
+\end{align}
+where $\bar{x}$ is the sample mean, $\mu(\beta)$, $\sigma$ and $n$ are the
+population mean, population standard deviation and size of data of the
+simulated model respectively. A higher Wald statistic value would represent
+a larger distance between the observed and model value. Within the range of
+most likely $0.7 < \beta < 1.5$, the Wald statistic shows that the observed
+relic location is more compatible with the confidence interval of the returning
+scenario. (See Figure~\ref{fig:waldtest})
+
+
 
 \bsp 
 \label{lastpage} 
