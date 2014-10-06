@@ -203,55 +203,55 @@ originate from the same merger shock in the following work.
 
 \section{METHOD -- Monte Carlo simulation} 
 We used the collisionless 
-dark-matter-only Monte Carlo modeling code written by \citetalias{D13}, to compute the physics of between
-the first and second core-passage of the DM subclusters. 
+dark-matter-only Monte Carlo modeling code written by \citetalias{D13}, to
+compute the physics of between the first and second core-passage of the DM subclusters. 
 In the D13 code, the time evolution of the
 head-on merger was computed based on an analytical, dissipationless model
 assuming that the only dominant force is the gravitational attraction from
 the masses of two truncated Naverro-Frenk-White (hereafter NFW) DM halos. 
-In the simulation, many realizations of the collision is
-computed by drawing random realizations of the PDFs of the inputs, including
-the data ($\vec{D}$) and one model variable, the projection angle between
-the plane of the sky and the merger axis, $\alpha$. In particular,
-the required data, included the masses ($M_{200_{NW}},M_{200_{SE}}$) the
-redshifts ($z_{NW}, z_{SE}$) and the projected separation of the two
-subclusters ($d_{proj}$).  (See Table~\ref{tab:inputs}
-for quantitative descriptions of the sample PDFs) 
-Each set of inputs is then used for computing the output variables
-($\vec{\theta}^\prime$) by making use of conservation of energy to describe
-their collision due to the mutual gravitational attraction.
-To ensure convergence of the output PDFs, in total, 2 million realizations
-were computed. 
-The results, however, are consistent up to a fraction of a percent just
-from 20 000 runs \citepalias{D13}. The random sampling allows us to
-throughly explore the multidimensional input parameter space and account
-for the uncertainties of the inputs at the same time.
-\par    
-We adopt a Bayesian interpretation of the PDFs of the Monte Carlo
-simulation. The Bayes chain rule that underlies the simulation can be written as:
+In the simulation, many realizations of the collision are
+computed by drawing random realizations of the PDFs of the inputs. Most
+input variables are obtained from previous observations ($\vec{D}$).  One
+unknown model variable, which is the projection angle between the plane of the sky
+and the merger axis, $\alpha$, is drawn from the PDF of $\alpha$ being
+observed: 
 \begin{equation}
-    P(M|\vec{D}) \propto P(\vec{D}|M)P(M),
+	\alpha^{(j)} \sim f(\alpha) = \cos \alpha.
 \end{equation}
-where the likelihood is defined to be the PDF of $\vec{D}$ given our
-physical model $M$ which we parametrize using variables in Table 1
-($\vec{\theta}$).
-For example,the
-calculation of the output variables of the $j$-th realization can be denoted as: 
+and the calculation of the output variables of the $j$-th realization can be denoted as: 
 \begin{equation}
-    (\vec{\theta}^\prime)^{(j)} = f(\vec{\theta}^{(j)}, \vec{D}), 
+	(\vec{\theta}^\prime)^{(j)} = g(\alpha^{(j)}, \vec{D}^{(j)}), 
 \end{equation}    
-and computed over all $j$ realizations. Finally, we took the physical
-constraints on the dynamical variables into account by
-examining the resulting physical variables against the physical limits and
-excluding realizations that would produce impossible values. We refer to this
-process of excluding unphysical realizations as applying priors. 
-Even though we denoted the priors for one dimension at a time (See Appendix~\ref{app:priors}), 
+for a suitable function $g$ that describes conservation of energy during the collision of the two NFW halos due to the mutual gravitational attraction.  In particular, the required $\vec{D}$, included the masses ($M_{200_{NW}},M_{200_{SE}}$) the redshifts ($z_{NW}, z_{SE}$) and the
+projected separation of the two subclusters ($d_{proj}$).  See
+Table~\ref{tab:inputs} for quantitative descriptions of the sample PDFs, and
+the outputs with physical importance are described in detail in Section
+\ref{sec: outputs}. \par
+%We adopt a Bayesian interpretation of the PDFs of the Monte Carlo
+%simulation so we can talk about the PDF of parameters. 
+%The Bayes chain rule that underlies the simulation can be written as:
+%\begin{equation}
+%    P(M|\vec{D}) \propto P(\vec{D}|M)P(M),
+%\end{equation}
+%where the likelihood is defined to be the PDF of $\vec{D}$ given our
+%physical model $M$ which we parametrize using variables in Table 1
+%($\vec{\theta}$).
+Finally, we excluded realizations that produce any unphysical output
+values. An example excluded realization may give estimate of the
+time-since-collision to be larger than age of universe at the
+cluster redshift.  We refer to this process of excluding unphysical
+realizations as applying (importance) weights. 
+To ensure convergence of the output PDFs, in total, 2 million realizations
+from 20 000 runs \citepalias{D13}. 
+%The random sampling allows us to
+%throughly explore the multidimensional input parameter space and account
+%for the uncertainties of the inputs at the same time.
+Even though we denoted the weights for one variable at a time (See Appendix~\ref{app:priors}), 
 the correlations between different variables are properly taken into account
 since we discarded all the variables of the problematic
 realizations.\par 
 The system of El Gordo satisfies several major assumptions in the Monte Carlo
-simulation.
-One of the strongest assumptions is that all realizations correspond to
+simulation. One of the strongest assumptions is that all realizations correspond to
 gravitationally bound systems. The simulation excludes all realizations
 that would result in relative collisional velocities of the subclusters
 higher than the free-fall velocity. We justify our assumption of only
@@ -368,7 +368,7 @@ inferred centroid locations correspond to a mean projected separation
 %\input{2.2_0_monte_carlo_outputs}
 
 We outline the outputs of the simulation here to facilitate the discussion
-of the design of the priors used in the simulation. The simulation
+of the design of the weights used in the simulation. The simulation
 provides PDF estimates for 8 output variables. Variables
 of highest interest include the time dependence and the angle $\alpha$, which is
 defined to be the projection angle between the plane of the sky and the
@@ -399,19 +399,19 @@ distances included in the outputs are the maximum 3D separation ($d_{max}$),
 which is the distance between the subclusters at
 the apocenter and the 3D separation of the subclusters at observation
 ($d_{3D}$). 
-\subsection{Design and application of priors} 
+\subsection{Design and application of weights} 
 \label{sec:priors}
 %\input{2.3_prior}
 One of the biggest strengths of the Monte Carlo simulation by
 \citetalias{D13} is its ability to detect and rule out extreme input values that would result in
-unphysical realizations via the application of prior probability. 
-Our default priors are described in D13 and we include them in
+unphysical realizations via the application of weights. 
+Our default weights are described in D13 and we include them in
 Appendix~\ref{app:results} for the convenience of the readers. 
-In addition, we have devised a new prior on the projection angle $\alpha$
+In addition, we have devised a new type of weights of the projection angle $\alpha$
 based on the polarization fraction of the radio relic.
 
 %---------------------------------------------------------------------------
-\subsubsection{Monte Carlo prior based on the polarization fraction of the radio relic}
+\subsubsection{Monte Carlo weights based on the polarization fraction of the radio relic}
 %\input{2.3_1_polarization_prior}
 
 We can relate the polarization fraction of the radio relic to the
@@ -429,7 +429,7 @@ compressing the ICM during a merger
 This picture is consistent with a high polarization fraction perpendicular
 to this magnetic field along the relic. 
 \par
-We designed our prior to reflect how $\alpha$ decreases monotonically as the
+We designed the weights to reflect how $\alpha$ decreases monotonically as the
 maximum observable integrated polarization fraction. 
 \begin{figure}
 	\includegraphics[width=\linewidth]{Ensslin_polar_fig.png}
@@ -445,7 +445,6 @@ maximum observable integrated polarization fraction.
 		of El Gordo by the dotted vertical line with the greyed out region
 		indicating the uncertainty \citep{L13}.\label{fig:Ensslin_fig}}
 \end{figure}
-
 This assumption is based on the class of models given by \cite{E98}(See
 Figure~\ref{fig:Ensslin_fig}). In particular, we refer to a model from \cite{E98} 
 that would give the most
@@ -487,21 +486,21 @@ Furthermore, \cite{S13} shows that after convolving the
 simulated polarization signal with a Gaussian kernel of 4\arcmin~to
 illustrate effects of non-zero beam size, the polarization fraction drops
 to between 30\% to 65\% even when $\alpha = 0$. We examined the effects of perturbing
-the cutoff value of this prior to ensure the uncertainties do not
+the cutoff value of this weight to ensure the uncertainties do not
 introduce significant bias in the estimated output variables in
 section~\ref{sec:sensitivityTests}.
-To summarize, we used a conservative uniform prior to encapsulate the
+To summarize, we used a conservative uniform weight to encapsulate the
 information from the polarization fraction of the radio relic as:
 \begin{equation}
-P(\alpha) = 
+w(\alpha) = 
 	\begin{cases}
 	& \text{const. $>$ 0 for  }\alpha < 35 \degree \\ 
 	& 0 \text{ otherwise}\label{eqn:polarprior}.
 	\end{cases}
 \end{equation}
-We refer to equation \ref{eqn:polarprior} as the polarization prior. Unless
+We refer to equation \ref{eqn:polarprior} as the polarization weights. Unless
 otherwise stated, the main results of the paper are obtained after applying
-this polarization prior in addition to the default priors.
+this polarization weight in addition to the default weights.
 
 %%---------------------------------------------------------------------------
 \input{output_table}
@@ -582,10 +581,10 @@ phase with a estimate of $TSC_1 = 0.91\pm^{0.22}_{0.39}$ Gyr. This puts the
 estimate of the time of collision to be when the age of the universe was
 $\sim5.4$ Gyr. We present an
 overview of all the estimated variables in table~\ref{tab:outputs}, with
-results only applying the default priors on the left hand side of the table
-and those also applied with the polarization prior on the right hand side.
+results only applying the default weights on the left hand side of the table
+and those also applied with the polarization weight on the right hand side.
 Furthermore, we include the plots of all the marginalized PDFs with the
-polarization prior in Appendix~\ref{app:results}. \par 
+polarization weight in Appendix~\ref{app:results}. \par 
 Our estimates of $v_{3D}(t_{col}) = 2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$ 
 at the time of collision is compatible with the independent estimate from \citealt{L13}. 
 By making use of the Mach number of the NW radio relic, \cite{L13}
@@ -622,20 +621,28 @@ relics is also on the scale of $\sim1~\giga$yr.\par
 Based on section~\ref{sec:positionprior}, we present the most likely
 value of $\beta = 0.9$ in Fig.~\ref{fig:our_guessed_scenario} to show that
 the returning case is preferred for both the calculations of the NW and the
-SE relic. This conclusion favoring the returning case holds true for $\beta
+SE relic. This conclusion favoring the returning case ($M_{ret}$) holds true for the
+relevant range of $  \beta
 < 1.1$, which corresponds to the time-averaged velocity of the relics at
 $\langle v_{NW relic} \rangle < 1000~\kilo\meter~\second^{-1}$ and $\langle
 v_{SE relic} \rangle < 1800~\kilo\meter~\second^{-1}$ in the center of
 mass frame. For comparison purpose, we found that an extreme, and unlikely
-range of $\beta > 1.5$ would be needed for the outgoing scenario to be
+range of $\beta > 1.5$ would be needed for the outgoing scenario($M_{out}$) to be
 preferred. (See appendix~\ref{app:Bayes_factor} for plots of all the range
-of $\beta$ that we examined). We marginalized $\beta$ to compute a Bayes
-factor to compare the ratio between the likelihood of the returning case
-and the outgoing case, and obtained a Bayes factor to be $\approx 1.6$ from
-the NW relic and a Bayes factor of $\approx 460$ for the SE relic, showing
-that our results favor the returning scenario despite the
-uncertainties.
-(See appendix~\ref{app:Bayes_factor}). Finally, we note that the estimate of NW shock velocity at $2500
+of $\beta$ that we examined). We marginalized $\beta$ to compute the
+probability of the simulated relic location being compatible with the
+observed location $P(S_{proj} \cap S_{obs}| M)$. We then computed   
+$P(S_{proj} \cap S_{obs} | M_{ret}) / P(S_{proj} \cap S_{obs} | M_{out})$. 
+The ratio of the two probabilities is found to be $\approx
+2.1$ for the NW relic and a relative probability of $\approx 460$ for the
+SE relic, showing that our results favor the returning scenario despite the
+uncertainties. (See appendix~\ref{app:Bayes_factor}). Additionally, we
+computed the Wald statistic that tests if the sample mean (observed
+location) of the location of the relic is within the confidence interval of
+the two models, and found that the returning scenario to predict the relic
+location to be more compatible with the observed relic location. (See
+Figure \ref{fig:waldtest}) \par 
+Finally, we note that the estimate of NW shock velocity at $2500
 \pm^{400}_{300}~\kilo\meter~\second^{-1}$ by \cite{L13} was reported with respect to
 the turbulent ICM, not the propagation velocity with respect to center of
 mass, so we have not made use of the estimate of \cite{L13} in this
@@ -648,7 +655,7 @@ radio relics, such as shown in \citet{Stroe14}. \par
 	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
 		includes the 95\% confidence interval of location of the NW radio relic in the center of mass frame) with the predicted position from the two simulated merger
 		scenarios (blue for outgoing and green for the returning scenario).
-	We made use of the polarization prior for producing this figure.} 
+	We made use of the polarization weight for producing this figure.} 
 	\label{fig:our_guessed_scenario}
 \end{figure}
 \begin{figure}
@@ -662,25 +669,25 @@ the center of mass frame)}
 	\caption{The marginalized output PDF of the returning time-since-collision
 ($TSC_1$) vs. the 3D velocity at the time of collision for El Gordo. The
 grey set of contours show the credible regions before applying the
-polarization prior and the colored contours correspond to the credible
-regions after applying the priors. The contours represents the 95\% and
+polarization weight and the colored contours correspond to the credible
+regions after applying the weights. The contours represents the 95\% and
 68\% credible regions respectively. }
 	\label{fig:TSC_v3D}
 \end{figure}
-\subsection{Sensitivity analysis of the polarization prior}
+\subsection{Sensitivity analysis of the polarization weight}
 %\input{3.3_sens_analysis}
 \label{sec:sensitivityTests}
 We performed tests of how the output variables vary according to the
-choice of the cutoff of the polarization prior between
+choice of the cutoff of the polarization weight between
 $\alpha_{\text{cutoff}} =
 29 \degree$ to $49\degree$ instead of $35 \degree$.  
 We found that in the most extreme case, choosing the cutoff values as $29
 \degree$ ($-6 \degree$), the location of the $v_{3D}(t_{obs})$, is
 increased by $ 16 \%$. While the $95\%$ CI of $d_{max}$ is
-the most sensitive to the prior and it changes by
+the most sensitive to the weight and it changes by
 $\sim20 \%$ when $\alpha_{\text{cutoff}} = 49 \degree$. 
 This shows that the exact choice of the cut off value for $\alpha$ for the
-polarization prior does not change our estimates drastically.
+polarization weight does not change our estimates drastically.
 
 
 %Both estimates are consistent with the estimate of $\alpha > 11.6 \degree$ from
@@ -755,7 +762,7 @@ the escape velocity of the subclusters. From our simulation, there is a
 negligible number of realizations with $v_{3D}(t_{col}) >
 3000~\kilo\meter~\second^{-1}$. The range of projection angles suggested by
 \cite{Molnar14} of $\alpha \gtrsim 45\degree$ is also excluded by our
-polarization prior, whereas, we are unable to find information concerning
+polarization weight, whereas, we are unable to find information concerning
 the projection angle of the simulation from \cite{Donnert13}, and we note
 that \cite{Donnert13}
 might have assumed $\alpha = 0$. \par 
@@ -965,33 +972,8 @@ merger.
 %Cluster, which were studied by \citetalias{D13} using the Monte Carlo simulation.
 
 %
-\section{SUMMARY} 
-We provide estimates of the dynamical parameters of El Gordo using Dawson's
-Monte Carlo simulation, in particular, we 
-\begin{enumerate}
-	\item demonstrated the first use of polarization fraction information from
-		the radio relics to reduce our estimates of the projection angle from
-		$43\degree \pm ^{26}_{24}$ to $21 \degree \pm^{9}_{11}$ (See
-		Fig.~\ref{fig:geom_geom}). By performing sensitivity analysis, we
-		showed that this prior helps reduce uncertainty for the dynamical
-		variables without changing the estimates drastically ($< 20\%$) \\ 
-	\item inferred a {\it relative} collisional velocity between the
-		subclusters of El Gordo as $2400\pm^{400}_{200}~\kilo\meter~\second^{-1}$ \\ 
-	\item showed that a returning scenario is favored if the $\langle v_{NW relic}\rangle \leq
-		1000~\kilo
-		\meter~\second^{-1}$ and $\langle v_{SE relic}\rangle \leq
-		1800~\kilo\meter~\second^{-1}$between the collision and the observation in the
-		center-of-mass frame. It takes
-		an unlikely high speed of $\langle v_{relic} \rangle \gg 1.5~v_{3D,
-		sub}(t_{col})$ for the outgoing scenario to be favored. \\ 
-	\item showed how our inferred
-		returning scenario may explain the unexpected location of the cool
-		core and still be consistent with the wake / gas-tail morphology of the cool core. 
-\end{enumerate}
-As large scale sky surveys come online, more cluster mergers at late
-stages of their merger will be discovered. El Gordo will serve as one of
-the best studied example of a late-stage cluster merger for comparison.  
-In addition, our work has allowed us to examine
+\subsection{Improving constraints using prior knowledge from simulations}
+This work has allowed us to examine
 what information would be needed to better understand the merger
 dynamics and scenario. Important questions concerning merging galaxy
 clusters pending for answers include:  
@@ -1009,18 +991,41 @@ core-passage time-scales?
 	to Fig. \ref{fig:merger_scenario}?
 \end{itemize}
 We urge simulators to help come up with answers that would be directly
-comparable with data to the questions above. Metastudies of merging
-clusters in multiple wavelengths supported with simulations such as this
-work would allow us to understand the merger clusters well enough to push the bounds on
-$\sigma_{\text{SIDM}}$. \par 
+comparable with data to the questions above.  
+\section{SUMMARY} 
+We provide estimates of the dynamical parameters of El Gordo using Dawson's
+Monte Carlo simulation, in particular, we 
+\begin{enumerate}
+	\item demonstrated the first use of polarization fraction information from
+		the radio relics to reduce our estimates of the projection angle from
+		$43\degree \pm ^{26}_{24}$ to $21 \degree \pm^{9}_{11}$ (See
+		Fig.~\ref{fig:geom_geom}). By performing sensitivity analysis, we
+		showed that this weighting function helps reduce uncertainty for the dynamical
+		variables without changing the estimates drastically ($< 20\%$) \\ 
+	\item inferred a {\it relative} collisional velocity between the
+		subclusters of El Gordo as $2400\pm^{400}_{200}~\kilo\meter~\second^{-1}$ \\ 
+	\item showed that a returning scenario is favored if the $\langle v_{NW relic}\rangle \leq
+		1000~\kilo
+		\meter~\second^{-1}$ and $\langle v_{SE relic}\rangle \leq
+		1800~\kilo\meter~\second^{-1}$between the collision and the observation in the
+		center-of-mass frame. It takes
+		an unlikely high speed of $\langle v_{relic} \rangle \gg 1.5~v_{3D,
+		sub}(t_{col})$ for the outgoing scenario to be favored. \\ 
+	\item showed how our inferred
+		returning scenario may explain the unexpected location of the cool
+		core and still be consistent with the wake / gas-tail morphology of the cool core. 
+\end{enumerate}
+As large scale sky surveys come online, more cluster mergers at late
+stages of their merger will be discovered. El Gordo will serve as one of
+the best studied example of a late-stage cluster merger for comparison.  
 \section{ACKNOWLEDGEMENTS}
 We thank Franco Vazza, Marcus Br\"{u}ggen and Surajit Paul for sharing
 their knowledge on the simulated properties of radio relic and merger
 shocks. We extend our gratitude to Reinout Van Weeren for first proposing the use of
-radio relic as prior. We appreciate the comments from Maru\v{s}a
-Brada\v{c} about using the position of the relic to break degeneracy
-of the merger scenario. KN is grateful to Paul Baines and Tom Loredo for
-discussion of the use of Bayesian priors and sensitivity tests. 
+radio relic to weight the Monte Carlo realizations. We appreciate the
+comments from Maru\v{s}aBrada\v{c} about using the position of the relic to
+break degeneracy of the merger scenario. KN is grateful to Paul Baines and
+Tom Loredo for discussion of the use of prior information and sensitivity tests. 
 Part of this work was performed under the auspices of the U.S. DOE by LLNL
 under Contract DE-AC52-07NA27344. We would also like to thank 
 GitHub for providing free repository for version control for our data and
@@ -1033,26 +1038,26 @@ interactive scientific computing, computing in science and engineering
 \bibliographystyle{mn2e}
 \bibliography{bib}
 \appendix
-\section{DEFAULT PRIORS USED FOR DAWSON'S MONTE CARLO SIMULATION}
+\section{DEFAULT weightS USED FOR DAWSON'S MONTE CARLO SIMULATION}
 \label{app:priors}
-The default prior probabilities that we employed can be summarized as
+The default weight that we employed can be summarized as
 follows for most of the output variables: 
 \begin{equation}
-	P(v_{3D}(t_{col}) | \alpha, v_{proj}(t_{col})) = 0\text{ if }v_{3D}(t_{col}) >
+	w(v_{3D}(t_{col})) = 0\text{ if }v_{3D}(t_{col}) >
 	v_{\text{free fall}}. 
 \end{equation}
 \begin{equation}
-	P(TSC_0) = 
+	w(TSC_0) = 
 	\begin{cases}
 		& \text{const}~\text{if }TSC_0 < \text{age of universe at } z=0.87	\\
 		& 0~\text{otherwise}.
 	\end{cases}
 \end{equation}
-In addition, we apply the following prior on $TSC_1$ only when evaluating the
+In addition, we apply the following weight on $TSC_1$ only when evaluating the
 statistics of $TSC_1$, thus allowing realiziations with a valid
 outgoing TSC but an invalid returning $TSC_1$. 
 \begin{equation}
-	P(TSC_1) = 
+	w(TSC_1) = 
 	\begin{cases}
 		& \text{const}~\text{if }TSC_1 < \text{age of universe at } z=0.87	\\
 		& 0~\text{otherwise} \label{eqn:TSM_1}.
@@ -1061,15 +1066,15 @@ outgoing TSC but an invalid returning $TSC_1$.
 To correct for observational limitations, we further convolve the
 posterior probabilities of the different realizations with 
 \begin{equation}
-	P(TSC_0 | T) = 2 \frac{TSC_0}{T},
+	w(TSC_0 | T) = 2 \frac{TSC_0}{T},
 \end{equation}
 to account for how the subclusters move faster at lower $TSC$ and thus it
 is more probable to observe the subclusters at a stage with a larger $TSC$.
 \par 
 \section{PLOTS OF OUTPUTS OF THE MONTE CARLO SIMULATION}
 We present the PDFs of the inputs of the dynamical simulation and the
-marginalized PDFs of the outputs after applying the polarization prior in
-addition to the default priors. See Fig. \ref{fig:plot_config} for explanations of
+marginalized PDFs of the outputs after applying the polarization weight in
+addition to the default weights. See Fig. \ref{fig:plot_config} for explanations of
 the order that we present the figures containing the PDFs . 
 \begin{figure}
 	\begin{center}
@@ -1090,9 +1095,9 @@ indicates the corresponding figure number in this appendix.
 	\begin{center}
 	\includegraphics[width=0.65\linewidth]{TwoMnWBSG_inputsVsinput.png}
 	\caption{Marginalized PDFs of original inputs (vertical axis) and the inputs after
-applying polarization prior and default priors (horizontal axis). The inner and outer contour
+applying polarization weight and default weights (horizontal axis). The inner and outer contour
 denote the central 68\% and 95\% credible regions respectively.
-The circular contours show that the application of priors did not introduce
+The circular contours show that the application of weights did not introduce
 uneven sampling of inputs. }
 	\end{center}
 	\end{minipage}
@@ -1127,7 +1132,7 @@ uneven sampling of inputs. }
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_tri_time.png}
 	\caption{One-dimensional PDFs of characteristic timescales of the simulation
 (panels on the diagonal) and the marginalized PDFs of different
-timescales. Note that there is a default prior for constraining $TSC_0$ but
+timescales. Note that there is a default weight for constraining $TSC_0$ but
 not for $TSC_1$ and $T$, so $TSC_0$ spans a smaller range.}
 	\end{center}
 \end{minipage}
@@ -1206,7 +1211,7 @@ different velocities.}
 	For comparison purpose, we also show that the shock velocity has to
 	be as extreme as $1.5~v_{3D, NW}(t_{col})$ (top panel) for the outgoing
 	scenario to be favored. 
-	Note that we made use of the	polarization prior for producing this figure. 
+	Note that we made use of the	polarization weight for producing this figure. 
 	\label{fig: positionprior}}
 \end{figure}
 \begin{figure}
@@ -1242,7 +1247,7 @@ Quantitatively, we want to compute and compare the probability:
 	&=\iint  f(s_{proj}|M, \beta) f(s_{obs}) f(\beta | M) d s_{proj}
 	d\beta, 
 \end{align}
-where $f$ indicates the corresponding probability density function, $M$
+where $f$ indicates the corresponding PDF, $M$
 represents one of the merger scenarios, and $\beta$ is defined in equation
 \ref{eqn:NW_speed} and \ref{eqn:SE_speed},
 $s_{proj} \in S_{proj}$ and $s_{obj} \in S_{obs}$. 
@@ -1271,29 +1276,28 @@ This test quantity differs from the traditional hypothesis testing or model comp
 \begin{enumerate}
 \item we did not compute a likelihood function.  We have adopted
 non-parametric PDFs in our Monte Carlo simulation, there is no well-known
-functional form of the likelihood (i.e. no Gaussian, or binomial likelihood) in our context. Readers can feel
-free to assume $f(S_{proj} \cap S_{obj})$ to be a (zero-one) loss function
-analog or a distance measure to compare our simulated and our observed data
+functional form of the likelihood (i.e. no Gaussian, or binomial
+likelihood) in our context. We make use of $f(S_{proj} \cap S_{obj})$ to
+penalize the simulated values being different from our observed data
 \item with this quantity, we are not asking whether the expected value of
 	the radio relic such as the mean or median from each model match the
 	observation best. Those estimators take into account the values that do not match the observed location of the radio relic. 
 \item we marginalized the uncertainty in $\beta$ to be as conservative
 	as possible, instead of assuming a fixed value of $\beta$.
-\end{enumerate}
-\par
-The second quantity that we compute is the Wald statistic
-(two-tail hypothesis test) at a range of possible $\beta$ values.
-This allows us to ask the question, given a particular merger scenario,
+\end{enumerate} \par
+The second quantity that we compute is the Wald statistic at a range of possible $\beta$ values.
+Wald statistic is usually used in two-tail hypothesis test
+This allows us to ask the question, given a particular model (merger
+scenario),
 whether the null value (sample mean) is in the confidence
-interval.
-The Wald statistic that we compute for each model is: 
+interval \citep{Wasserman04}. The Wald statistic that we compute for each model is: 
 \begin{align}
 	W(\beta) = \frac{\bar{s}_{obs} - \mu(\beta)}{\sigma / (n)^{1/2}} 
 \end{align}
 where $\bar{x}$ is the sample mean, $\mu(\beta)$, $\sigma$ and $n$ are the
-population mean, population standard deviation and size of data of the
+population mean, population standard deviation and size of samples of the
 simulated model respectively. A higher Wald statistic value would represent
-a larger distance between the observed and model value. Within the range of
+a larger difference between the observed and model value, while taking into account the model uncertainty. Within the range of
 most likely $0.7 < \beta < 1.5$, the Wald statistic shows that the observed
 relic location is more compatible with the confidence interval of the returning
 scenario. (See Figure~\ref{fig:waldtest})
