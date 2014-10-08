@@ -165,13 +165,13 @@ cosmological simulation is as low as $10^{-11} \mega\text{pc}^{-3}$ \citepalias{
 \par
 In the following sections, we adopt the following conventions: (1) we
 assume the standard $\Lambda$CDM cosmology with $\Omega_{m} = 0.3$, $\Omega_{\Lambda} = 0.7$. (2) All confidence intervals are quoted at the 68\% level unless otherwise stated. 
-(3) All credible intervals (a.k.a. Bayesian confidence intervals) are also
-quoted at the 68\% level unless otherwise stated and are central credible
-intervals. We adopt this terminology to remind readers of our Bayesian
-interpretation of the probability density functions (PDFs), and that we obtained
-the intervals / regions are estimated by integrating the posterior
-probability densities.  
-(4) All quoted masses ($M_{200c}$) are based on mass contained
+%(3) All confidence intervals (a.k.a. Bayesian confidence intervals) are also
+%quoted at the 68\% level unless otherwise stated and are central confidence
+%intervals. We adopt this terminology to remind readers of our Bayesian
+%interpretation of the probability density functions (PDFs), and that we obtained
+%the intervals / regions are estimated by integrating the posterior
+%probability densities.  
+(3) All quoted masses ($M_{200c}$) are based on mass contained
 within $r_{200}$ where the mass density is 200 times the critical density
 of the universe at the cluster redshift of $z = 0.87$. 
 \section{DATA} 
@@ -240,7 +240,7 @@ Finally, we excluded realizations that produce any unphysical output
 values. An example excluded realization may give estimate of the
 time-since-collision to be larger than age of universe at the
 cluster redshift.  We refer to this process of excluding unphysical
-realizations as applying (importance) weights. 
+realizations as applying weights. 
 To ensure convergence of the output PDFs, in total, 2 million realizations
 from 20 000 runs \citepalias{D13}. 
 %The random sampling allows us to
@@ -635,13 +635,19 @@ observed location $P(S_{proj} \cap S_{obs}| M)$. We then computed
 $P(S_{proj} \cap S_{obs} | M_{ret}) / P(S_{proj} \cap S_{obs} | M_{out})$. 
 The ratio of the two probabilities is found to be $\approx
 2.1$ for the NW relic and a relative probability of $\approx 460$ for the
-SE relic, showing that our results favor the returning scenario despite the
+SE relic, favoring the returning scenario despite the
 uncertainties. (See appendix~\ref{app:Bayes_factor}). Additionally, we
 computed the Wald statistic that tests if the sample mean (observed
 location) of the location of the relic is within the confidence interval of
 the two models, and found that the returning scenario to predict the relic
 location to be more compatible with the observed relic location. (See
-Figure \ref{fig:waldtest}) \par 
+Figure \ref{fig:waldtest}). 
+%It is possible to convert the Wald statistic
+%for each scenario to a p-value \citep{Wasserman04} at each $\beta$, but the
+%p-value only addresses the question: ``assuming a model is true, what is 
+%the conditional probability to see the relic at its observed location?''. The
+%p-value itself does not constitute a comparison of the two scenarios. 
+\par 
 Finally, we note that the estimate of NW shock velocity at $2500
 \pm^{400}_{300}~\kilo\meter~\second^{-1}$ by \cite{L13} was reported with respect to
 the turbulent ICM, not the propagation velocity with respect to center of
@@ -668,10 +674,10 @@ the center of mass frame)}
 	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
 	\caption{The marginalized output PDF of the returning time-since-collision
 ($TSC_1$) vs. the 3D velocity at the time of collision for El Gordo. The
-grey set of contours show the credible regions before applying the
-polarization weight and the colored contours correspond to the credible
+grey set of contours show the confidence regions before applying the
+polarization weight and the colored contours correspond to the confidence
 regions after applying the weights. The contours represents the 95\% and
-68\% credible regions respectively. }
+68\% confidence regions respectively. }
 	\label{fig:TSC_v3D}
 \end{figure}
 \subsection{Sensitivity analysis of the polarization weight}
@@ -1038,7 +1044,7 @@ interactive scientific computing, computing in science and engineering
 \bibliographystyle{mn2e}
 \bibliography{bib}
 \appendix
-\section{DEFAULT weightS USED FOR DAWSON'S MONTE CARLO SIMULATION}
+\section{DEFAULT WEIGHTS USED FOR DAWSON'S MONTE CARLO SIMULATION}
 \label{app:priors}
 The default weight that we employed can be summarized as
 follows for most of the output variables: 
@@ -1096,7 +1102,7 @@ indicates the corresponding figure number in this appendix.
 	\includegraphics[width=0.65\linewidth]{TwoMnWBSG_inputsVsinput.png}
 	\caption{Marginalized PDFs of original inputs (vertical axis) and the inputs after
 applying polarization weight and default weights (horizontal axis). The inner and outer contour
-denote the central 68\% and 95\% credible regions respectively.
+denote the central 68\% and 95\% confidence regions respectively.
 The circular contours show that the application of weights did not introduce
 uneven sampling of inputs. }
 	\end{center}
@@ -1225,7 +1231,6 @@ different velocities.}
 	relic calculation.
 	\label{fig:positionprior_SE}}
 \end{figure}
-
 \begin{figure}
 	\includegraphics[width=\linewidth]{wald.eps}
 	\caption{Wald statistic to show whether the observed relic location is
@@ -1276,8 +1281,7 @@ This test quantity differs from the traditional hypothesis testing or model comp
 \begin{enumerate}
 \item we did not compute a likelihood function.  We have adopted
 non-parametric PDFs in our Monte Carlo simulation, there is no well-known
-functional form of the likelihood (i.e. no Gaussian, or binomial
-likelihood) in our context. We make use of $f(S_{proj} \cap S_{obj})$ to
+functional form of the likelihood (i.e. not Gaussian, nor binomial) in our context. We make use of $f(S_{proj} \cap S_{obj})$ to
 penalize the simulated values being different from our observed data
 \item with this quantity, we are not asking whether the expected value of
 	the radio relic such as the mean or median from each model match the
@@ -1286,8 +1290,8 @@ penalize the simulated values being different from our observed data
 	as possible, instead of assuming a fixed value of $\beta$.
 \end{enumerate} \par
 The second quantity that we compute is the Wald statistic at a range of possible $\beta$ values.
-Wald statistic is usually used in two-tail hypothesis test
-This allows us to ask the question, given a particular model (merger
+Wald statistic is usually used hypothesis testing.
+Computing the Wald statisic allows us to ask the question, given a particular model (merger
 scenario),
 whether the null value (sample mean) is in the confidence
 interval \citep{Wasserman04}. The Wald statistic that we compute for each model is: 
