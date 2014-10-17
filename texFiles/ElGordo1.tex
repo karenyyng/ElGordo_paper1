@@ -1020,7 +1020,7 @@ Monte Carlo simulation, in particular, we
 \end{enumerate}
 As large scale sky surveys come online, more cluster mergers at late
 stages of their merger will be discovered. El Gordo will serve as one of
-the best studied example of a late-stage cluster merger for comparison.  
+the best studied example of a bimodal cluster merger for comparison.  
 \section{ACKNOWLEDGEMENTS}
 We thank Franco Vazza, Marcus Br\"{u}ggen and Surajit Paul for sharing
 their knowledge on the simulated properties of radio relic and merger
@@ -1205,49 +1205,12 @@ different velocities.}
 \section{COMPARISON OF THE OUTGOING AND RETURNING SCENARIO}
 \label{app:Bayes_factor}
 %\input{supplement}
-\begin{figure}
-	\includegraphics[width=\linewidth]{polar_prior_bounds.png}
-	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
-		includes 95\% confidence interval of location of relic in the center of
-		mass frame) with the	predicted position from the two simulated merger scenarios (blue for outgoing and green for the returning scenario). 
-	For the plausible values of $\beta (\beta < 1.1)$, the returning model is preferred. 
-	For comparison purpose, we also show that $\beta > 1.3$ (top panel) for the outgoing scenario to be favored. 
-	Note that we made use of the polarization weight for producing this figure. 
-	\label{fig: positionprior}}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\linewidth]{polar_prior_bounds_SE.png}
-	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
-		includes 95\% confidence interval of location of relic in the center of
-		mass frame) with the predicted position from the two simulated merger scenarios (blue for outgoing and green for the returning scenario). 
-	For the plausible values of $\beta < 1.1$, the returning scenario is preferred. 
-	We obtained similar conclusion about the merger scenario as for the NW
-	relic calculation.
-	\label{fig:positionprior_SE}}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{prob_ratio.eps}
-	\caption{Probability ratio between the returning model (numerator) and
-		the outgoing model. We remind readers $\beta$ is a factor
-		relating the \it{time-averaged} shock velocity and the collisional
-		velocity of the corresponding subcluster.  
-	\label{fig:prob_ratio}}
-\end{figure}
-
 Here, we compare the different merger scenarios for the two relics and show that they consistently give the conclusion that the returning
-scenario is favored for the plausible range of $\beta$. We compute :
-which scenario would have a higher (marginalized) probability of producing simulated
-values ($s_{proj}$) compatible with the observed location of the radio relic ($s_{obs}$). 
-We set our priors set to be uniform for the marginalization: 
-\begin{equation}
-	f(\beta | M_{ret}) = f(\beta | M_{out}) =  
-	\begin{cases}
-		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.5 \\
-		& 0~\text{otherwise}.
-	\end{cases}
-\end{equation}
+scenario is favored for the plausible range of $\beta$. For each merger
+scenario, we compute
+the (marginalized) probability of producing simulated
+values ($s_{proj}$) compatible with the observed location of the radio
+relic ($s_{obs}$). 
 
 Quantitatively, we want to compute and compare the probability:  
 \begin{align} 
@@ -1259,6 +1222,14 @@ Quantitatively, we want to compute and compare the probability:
 where $f$ indicates the corresponding PDF, $M$
 represents one of the merger scenarios, and $\beta$ is defined in equation
 \ref{eqn:NW_speed}, $s_{proj} \in S_{proj}$ and $s_{obj} \in S_{obs}$. 
+We set our priors set to be uniform for the marginalization: 
+\begin{equation}
+	f(\beta | M_{ret}) = f(\beta | M_{out}) =  
+	\begin{cases}
+		& \text{const}~\text{if } 0.7 \leq \beta \leq 1.5 \\
+		& 0~\text{otherwise}.
+	\end{cases}
+\end{equation}
 We found: 
 \begin{align}
 	&P(S_{proj} \cap S_{obj} | M_{ret}) / P(S_{proj} \cap S_{obj} |
@@ -1275,9 +1246,9 @@ scenario.
 This test quantity differs from the traditional hypothesis testing or model comparison in several ways: 
 \begin{enumerate}
 \item we did not compute a likelihood function.  We have adopted
-non-parametric PDFs in our Monte Carlo simulation, there is no well-known
-functional form of the likelihood (i.e. not Gaussian, nor binomial) in our context. We make use of $f(S_{proj} \cap S_{obj})$ to
-penalize the simulated values being different from our observed data
+non-parametric PDFs in our Monte Carlo simulation,i.e. there is no well-known
+functional form of the likelihood in our context. We make use of
+$f(S_{proj} \cap S_{obj})$ to penalize the simulated values being different from our observed data
 \item with this quantity, we are not asking whether the expected value of
 	the radio relic such as the mean or median from each model match the
 	observation best. Those estimators take into account the values that do not match the observed location of the radio relic. 
@@ -1301,8 +1272,40 @@ penalize the simulated values being different from our observed data
 %relic location is more compatible with the confidence interval of the returning
 %scenario. (See Figure~\ref{fig:waldtest})
 
+%
+%
+\begin{figure}
+	\includegraphics[width=\linewidth]{prob_ratio.eps}
+	\caption{Probability ratio between the returning model (numerator) and
+		the outgoing model at given $\beta$. We remind readers $\beta$ is a factor
+		relating the {\it time-averaged} shock velocity and the collisional
+		velocity of the corresponding subcluster.  
+	\label{fig:prob_ratio}}
+\end{figure}
 
+\begin{figure}
+\includegraphics[width=\linewidth]{polar_prior_bounds_SE.png}
+	\caption{Comparison of the PDFs of the observed position of the SE relic (red bar
+		includes 95\% confidence interval of location of relic in the center of
+		mass frame) with the predicted position from the two simulated merger scenarios (blue for outgoing and green for the returning scenario). 
+	For the plausible values of $\beta < 1.1$, the returning scenario is preferred. 
+	We obtained similar conclusion about the merger scenario as for the NW
+	relic calculation.
+	\label{fig:positionprior_SE}}
+\end{figure}
 
+\begin{figure}
+	\includegraphics[width=\linewidth]{polar_prior_bounds.png}
+	\caption{Comparison of the PDFs of the observed position of the NW relic (red bar
+		includes 95\% confidence interval of location of relic in the center of
+		mass frame) with the	predicted position from the two simulated merger scenarios (blue for outgoing and green for the returning scenario). 
+	For the plausible values of $\beta (\beta < 1.1)$, the returning model is
+	preferred. For comparison purpose, we also show that $\beta > 1.3$ (top
+	panel) for the outgoing scenario to be favored.  
+	Note that we made use of the polarization weight for producing this figure. 
+	\label{fig: positionprior}}
+\end{figure}
+\clearpage
 \bsp 
 \label{lastpage} 
 \end{document}
