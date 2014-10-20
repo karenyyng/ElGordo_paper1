@@ -99,7 +99,7 @@ the NW and the SE respectively. These radio emitting regions show steep spectral
 index gradients and are identified as radio relics associated with shock waves
 created from the merger \citep{L13}. 
 \begin{figure}
-	\includegraphics[width=.95\linewidth]{ElGordo.pdf}
+	\includegraphics[width=.95\linewidth]{ElGordo.png}
 	\caption{Configuration of El Gordo showing overlay of dark
 		matter distribution in blue, and X-ray emission in red. 
 		(Image credit: NASA, ESA and \citealt{Jee13}). 
@@ -1217,13 +1217,13 @@ relic ($s_{obs}$).
 Quantitatively, we want to compute and compare the probability:  
 \begin{align} 
 	&P(s_{proj} \text{ compatible with }s_{obs} | M)  \label{eqn:prob}\\
-	&=\int f(S_{proj} \cap S_{obj} | M, \beta) f(\beta | M) d\beta\\
+	&=\int f(S_{proj} \cap S_{obs} | M, \beta) f(\beta | M) d\beta\\
 	&=\iint  f(s_{proj}|M, \beta) f(s_{obs}) f(\beta | M) d s_{proj}
 	d\beta, 
 \end{align}
 where $f$ indicates the corresponding PDF, $M$
 represents one of the merger scenarios, and $\beta$ is defined in equation
-\ref{eqn:NW_speed}, $s_{proj} \in S_{proj}$ and $s_{obj} \in S_{obs}$. 
+\ref{eqn:NW_speed}, $s_{proj} \in S_{proj}$ and $s_{obs} \in S_{obs}$. 
 We set our priors set to be uniform for the marginalization: 
 \begin{equation}
 	f(\beta | M_{ret}) = f(\beta | M_{out}) =  
@@ -1236,7 +1236,7 @@ which is more conservative than the most likely range of $\beta$, which is
 $0.7 < \beta < 1.1$.
 We found: 
 \begin{align}
-	&P(S_{proj} \cap S_{obj} | M_{ret}) / P(S_{proj} \cap S_{obj} |
+	&P(S_{proj} \cap S_{obs} | M_{ret}) / P(S_{proj} \cap S_{obs} |
 	M_{out})\\
 	&=
  \begin{cases}
@@ -1252,7 +1252,7 @@ This test quantity differs from the traditional hypothesis testing or model comp
 \item we did not compute a likelihood function.  We have adopted
 non-parametric PDFs in our Monte Carlo simulation,i.e. there is no well-known
 functional form of the likelihood in our context. We make use of
-$f(S_{proj} \cap S_{obj})$ to penalize the simulated values being different from our observed data
+$f(S_{proj} \cap S_{obs})$ to penalize the simulated values being different from our observed data
 \item with this quantity, we are not asking whether the expected value of
 	the radio relic such as the mean or median from each model match the
 	observation best. Those estimators take into account the values that do not match the observed location of the radio relic. 
