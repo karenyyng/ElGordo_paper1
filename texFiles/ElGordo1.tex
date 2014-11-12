@@ -249,7 +249,8 @@ from 20 000 runs \citepalias{D13}.
 %The random sampling allows us to
 %throughly explore the multidimensional input parameter space and account
 %for the uncertainties of the inputs at the same time.
-Even though we denoted the weights for one variable at a time (See Appendix~\ref{app:priors}), 
+Even though we denoted the weights for one variable at a time 
+(See Appendix~\ref{app:priors}), 
 the correlations between different variables are properly taken into account
 since we discarded all the variables of the problematic
 realizations.\par 
@@ -261,19 +262,42 @@ higher than the free-fall velocity. We justify our assumption of only
 modeling gravitationally bound system by noting that the relative escape
 velocity of the subclusters for El Gordo is
 $4500~\kilo\meter~\second^{-1}$ (based on the mass estimates of
-\cite{Jee13}). Studies from cosmological simulations giving the PDFs of the pairwise velocities of massive merging clusters ($>
+\cite{Jee13}). 
+Studies from cosmological simulations giving the PDFs of the pairwise velocities of massive merging clusters ($>
 10^{15} M_{\sun}$) indicate that it is highly unlikely that the pairwise
 velocities would be $> 3000~\kilo \meter~\second^{-1}$ under $\Lambda$CDM.
-(\citealt{Thompson12}, \citealt{Lee2010}).  Other major assumptions for
+(\citealt{Thompson12}, \citealt{Lee2010}). \par
+Other major assumptions for
 modeling systems with this code include negligible impact parameter.
-However, \citealt{Molnar14} indicating that the impact parameter of El Gordo
-may be as large as $300$ kpc $ \approx 40\%~r_s$,
-where $r_s$ is the characteristic core
-radius of the NFW halo with the mass of the SE subcluster. According to
-\cite{Ricker98}, the resulting remnant of bimodal cluster mergers would
-have drastic differences only when the impact parameter $> 10~ r_{\text{core}}$.
-\cite{Mastropietro2008a} also reported that an impact parameter of $0.1~
-r_{200}$ affected merger dynamics only at the $\sim$10\% level.   
+Several papers have noted that the X-ray morphology of a bimodal merger is
+sensitive to the impact parameter (\citealt{Springel2007},
+\citealt{Ricker98}), an impact
+parameter as small as 0.012 Mpc can result in substantial asymmetry. 
+The X-ray morphology of El Gordo is approximately symmetric about the merger axis. 
+The simulations of \cite{Ricker98} of bimodal mergers of dark matter
+component with $10^{15} M_{\sun}$ each, showed that the resulting relative
+velocity would be approximately at $2000 \text{ km s}^{-1}$ even if they vary the
+impact parameter between 0 to 5 times the scale radius ($5~r_s = 3.5$ Mpc). \cite{Mastropietro2008a} also reported that
+an impact parameter of $0.1~r_{200} = 0.14$ Mpc affected merger dynamics only at the $\sim$10\% level.   
+\citealt{Molnar14} indicated that the impact parameter of El Gordo
+may be as large as $40\%~r_s \approx 0.3$ Mpc, where $r_s$ is
+the corresponding characterisic core
+radius of the NFW halo with the mass of the SE subcluster. We consider
+the result from \citealt{Molnar14} may be due to incomplete exploration of
+the parameter space, and that other impact parameter may also match the
+X-ray observables of El Gordo.
+%% scale radius according to me seems to be ~.7 Mpc 
+%% r200C = 1.4 Mpc  
+%% Ricker -> fig. 0
+%BLAH BLAH $r_{200c}$
+%will result in strong asymmetry in the X-ray morphology. 
+%Furthermore, according to
+%\cite{Ricker98}, the resulting dark matter remnant of bimodal cluster mergers would
+%have drastic differences only when the impact parameter $> 10~ r_{\text{core}}$.
+\par
+ 
+
+
 Other assumptions in this simulation include negligible dynamical friction
 during the merger, negligible mass accretion and negligible self-interaction
 of dark matter. Discussion of the effects of each of these assumptions is
@@ -285,12 +309,13 @@ included in \citetalias{D13}.
 \subsubsection{Membership selection and redshift estimation of subclusters}
 We adopted the identification of galaxy membership of El Gordo given by
 \citetalias{M12} with a total count of 89 galaxies.
-To further distinguish member galaxies of each subcluster, we first
-converted the coordinates (01:03:22.0,
--49:12:32.9) and (01:02:35.1, -49:18:09.8) to pixel space to
-avoid anarmorphic distortion. Then we performed a spatial cut using the
-aforementioned two points in pixel space as the two ends of the cut. The
-spatial cut is approximately perpendicular to the 2D merger axis and is consistent with
+%To further distinguish member galaxies of each subcluster, we first
+%converted the coordinates (01:03:22.0,
+%-49:12:32.9) and (01:02:35.1, -49:18:09.8) to pixel space to
+%avoid anarmorphic distortion. 
+%Then we performed a spatial cut using the
+%aforementioned two points in pixel space as the two ends of the cut. 
+The adopted spatial cut is approximately perpendicular to the 2D merger axis and is consistent with
 the bimodal number density contours (See Figure~\ref{fig:membership}). 
 There are 51 members identified in the NW subclusters and 35 members in the SE
 subclusters. 
