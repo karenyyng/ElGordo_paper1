@@ -1,5 +1,2 @@
-
-Revisions to El Gordo 
-==============
-[ ] explain more clearly about the frame of reference of Fig. 5  
-[ ] examine about how to compare the different velocities  
+# Paper on the Monte Carlo simulation of the merging cluster El Gordo
+arXiv preprint can be found [here](http://arxiv.org/abs/1412.1826v1)
