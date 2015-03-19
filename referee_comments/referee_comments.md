@@ -11,25 +11,26 @@ various	constraints.	Once	this	is	corrected,	the	paper	can	certainly	be	accepted
 
 # Introduction:
 
-> more	references on cluster	merger	and	in	particular	regarding	the typical	speed of	a	merger	should	be	 given.
+> more references on cluster	merger	and	in	particular	regarding	the typical	speed of	a	merger	should	be	 given.
 
-Accepted. Added in section 
+Accepted. This information is added on the 6th line of the introduction. 
 
 > Figure	1	is	key	for	the	understanding	of	the	paper.	I	would	suggest	to	make	it	
 larger	(by	rotating	it	by	~45-50	deg	in	order	to	have	the	elongation axis	of	the	
 cluster	horizontal)	
 
-Accepted. After tiling the elongation axis, the RA and DEC coordinates are going to be diagonal.
-To remove any potential confusion about the coordinate grid, we have removed the axis ticks.
+We have made the plot significantly larger.
 
 > showing	possibly	the	galaxy	luminosity	contours.	
 
-Maybe. There may be an overplotting issue.
+We will have an overplotting issue if the galaxy luminosity is added.
+
 
 > Can	the	relic	radio	data	be plotted	on	top	instead	of	some	schematic	of	it? (it	looks	like	the	size	of	the	relic	does	not	match	the	size given	in	Lindner	et	al	2014).
 
-It depends on which wavelength of the radio relic image you are looking at. We
-referred to Figure 5 and Figure 8. 
+We do not have the contours of the relic radio data.
+The relic size depends on which wavelength of the radio relic image you are looking at. We
+referred to Figure 5 and Figure 8 in Lindner et al. 2014 for estimating the . 
 
 
 
