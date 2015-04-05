@@ -405,27 +405,6 @@ Gordo shows large velocity dispersion, i.e.\ the largest velocity
 dispersion among all the ACT galaxy clusters, as reported by
 \citetalias{M12}.
 
-We estimated the radial velocity differences of the
-subclusters by first calculating the velocity of each subcluster with
-respect to us, using  
-\begin{equation}
-	v_i = \left[ \frac{(1+z_i)^2 - 1 }{(1+z_i)^2 + 1 }\right]c,
-\end{equation}
-where $i=1, 2$ represents the two subclusters, and $c$ is the speed of
-light. The relative radial velocity was calculated by: 
-\begin{equation}
-	\Delta v_{rad}(t_{obs}) = \frac{|v_2 - v_1|}{1-\frac{v_1 v_2}{c^2}}.
-\end{equation}
-We obtained a low radial velocity difference of the two subclusters to be
-$476~\pm~242~\kilo\meter~\second^{-1}$ (See Fig.~\ref{fig:
-bootstrap_redshift}). 
-The radial velocity difference of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
-is higher than our estimates but within the 68\% bias-corrected
-confidence interval.\footnote{bias from the location estimator of
-	the bootstrapped distribution not giving the maximum likelihood value was
-corrected for.} 
-%Limitations and possible improvements of this analysis
-%of $v_{rad}$ are provided in the discussion. 
 \begin{figure}
 	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
 	\caption{\label{fig:membership} Points showing the locations of the
@@ -438,12 +417,32 @@ distribution.}
 \end{figure}
 \begin{figure}
 	\includegraphics[width = \linewidth]{bootstrapped_redshift.png}
-	\caption{\label{fig:bootstrap_redshift} Bootstrapped location of the
+	\caption{Bootstrapped location of the
 	redshift estimates and $v_{rad}$ estimates for each subcluster using the
 	selected spectroscopic members. The shaded histograms represent the
 	bootstrapped samples.
-} 
+} \label{fig:bootstrap_redshift}
 \end{figure}
+We estimated the radial velocity differences of the
+subclusters by first calculating the velocity of each subcluster with
+respect to us, using  
+\begin{equation}
+	v_i = \left[ \frac{(1+z_i)^2 - 1 }{(1+z_i)^2 + 1 }\right]c,
+\end{equation}
+where $i=1, 2$ represents the two subclusters, and $c$ is the speed of
+light. The relative radial velocity was calculated by: 
+\begin{equation}
+	\Delta v_{rad}(t_{obs}) = \frac{|v_2 - v_1|}{1-\frac{v_1 v_2}{c^2}}.
+\end{equation}
+We obtained a low radial velocity difference of the two subclusters to be
+$476~\pm~242~\kilo\meter~\second^{-1}$ (See Fig.~\ref{fig:bootstrap_redshift}). 
+The radial velocity difference of $586~\kilo \meter~\second^{-1}$ reported by \citetalias{M12} 
+is higher than our estimates but within the 68\% bias-corrected
+confidence interval.\footnote{bias from the location estimator of
+	the bootstrapped distribution not giving the maximum likelihood value was
+corrected for.} 
+%Limitations and possible improvements of this analysis
+%of $v_{rad}$ are provided in the discussion. 
 \subsubsection{Weak lensing mass estimation} 
 We obtained 40, 000 samples of the joint PDFs of the masses of the two dark
 matter halos as the outputs of the Monte Carlo Markov Chain (MCMC)
@@ -721,6 +720,15 @@ $\beta = 2.0$.
 \label{sec:positionprior}
 
 \section{RESULTS} 
+
+\begin{figure*}
+	\includegraphics[width=\linewidth]{merger_cartoon_white_bg.pdf}
+	\caption{
+		Illustration of the spatial location of different components of El Gordo at
+		different stages of the merger, order by time from left to right. 
+	} 
+	\label{fig:merger_cartoon}
+\end{figure*}
 We found that the two subclusters collided with a relative velocity of $2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$, at an estimated projection
 angle of $\alpha = 21\degree\pm^{9}_{11}$. From our analysis of the two
 scenarios, we found that El Gordo is more likely to be observed at a returning
