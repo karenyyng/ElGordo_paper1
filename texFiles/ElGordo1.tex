@@ -227,9 +227,18 @@ $\Omega_{\Lambda} = 0.7$ and $H_0 = 70~\kilo\meter / \second / \mega
 within $r_{200}$ where the mass density is 200 times the critical density
 of the universe at the cluster redshift of $z = 0.87$. 
 \section{DATA} 
-We gathered and analyzed data from multiple sources. For assigning membership of galaxies to the two identified subclusters, we
-examined the spectroscopic data obtained from the Very Large Telescope
-(VLT) as described in \citetalias{M12} and \citet{Sifon13}.
+We gathered and analyzed data from multiple sources. We examined the
+spectroscopic data obtained from the Very Large Telescope (VLT) as described in \citetalias{M12} and \citet{Sifon13} for estimating the
+relative velocity differences between the subclusters.
+We adopted the identification of galaxy membership of El Gordo given by
+\citet{Sifon13} with a total count of 89 galaxies.
+To further distinguish member galaxies of each subcluster, we adopted the
+spatial cut from \citetalias{M12}.
+The adopted spatial cut is approximately perpendicular to the 2D merger
+axis \citepalias{M12} and is consistent with
+the bimodal number density contours (See Figure~\ref{fig:membership}). 
+There are 51 members identified in the NW subcluster and 35 members in the SE
+subcluster. \par 
 For the weak-lensing mass estimation, we used the
 Monte Carlo Markov Chains (MCMC) mass estimates from \citetalias{Jee13}.
 See Table~\ref{tab:inputs} for descriptions of the PDFs of the input
@@ -374,21 +383,6 @@ d$_{\mathrm{proj}}$ & Mpc & 0.74 &0.007 & \citetalias{Jee13} \\
 \end{table} 
 %\input{input_table.tex}
 \subsubsection{Membership selection and redshift estimation of subclusters}
-We adopted the identification of galaxy membership of El Gordo given by
-\citet{Sifon13} with a total count of 89 galaxies.
-% we first
-%converted the coordinates (01:03:22.0,
-%-49:12:32.9) and (01:02:35.1, -49:18:09.8) to pixel space to
-%avoid anarmorphic distortion. 
-%Then we performed a spatial cut using the
-%aforementioned two points in pixel space as the two ends of the cut. 
-To further distinguish member galaxies of each subcluster, we adopted the
-spatial cut from \citetalias{M12}.
-The adopted spatial cut is approximately perpendicular to the 2D merger
-axis \citepalias{M12} and is consistent with
-the bimodal number density contours (See Figure~\ref{fig:membership}). 
-There are 51 members identified in the NW subcluster and 35 members in the SE
-subcluster. 
 After identifying members of each subcluster, we performed 10, 000 bootstrap realizations to estimate the biweight
 locations of the spectroscopic redshifts of the respective members in order
 to obtain the samples of the PDFs of the redshifts of each subcluster. 
@@ -455,7 +449,7 @@ To be consistent with our MCMC mass inference, our Monte Carlo simulation takes
 the projected separation of the NFW halos to be those of the inferred
 DM centroid locations in \citealt{Jee13}. We drew random samples
  of the location of centroids from two 2D Gaussians centered at
- RA$=$01:02:50.601, Decl.=$-$49:15:04.48 for the NW subcluster and RA =
+ R.A.$=$01:02:50.601, Decl.=$-$49:15:04.48 for the NW subcluster and R.A. =
  01:02:56.312, Decl.=$-$49:16:23.15 for the SE
 subcluster, with a 1'' standard deviation each as estimated from the
 convergence map of \citet{Jee13}. The
@@ -533,7 +527,7 @@ maximum observable integrated polarization fraction ($\langle P \rangle$).
 	\includegraphics[width=\linewidth]{Ensslin_polar_fig.png}
 	\caption{Predictions of polarization percentage of the radio relic at a
 		given projection angle from different models, reproduced from
-		\citep{E98} or equation ~\ref{eqn:Ensslin_model}. Each model assumes electrons producing the radio emission
+		\citep{E98} or equation~\ref{eqn:Ensslin_model}. Each model assumes electrons producing the radio emission
 		to be accelerated inside uniform magnetic field of various strengths ({\it strong} or 
 		{\it weak}). The curves are plotted with spectral index of the radio emission
 		($\alpha_{radio}$), spectral index of the electrons ($\gamma$) and
@@ -726,6 +720,11 @@ larger than $1.5$ to
 avoid the returning model, and in Appendix
 ~\ref{app:Bayes_factor}, we show the full range of possibilities up to
 $\beta = 2.0$. 
+In fig.~\ref{fig:our_guessed_scenario} and~\ref{fig:our_guessed_scenario1}, we compared our estimates of the projected locations of the relics to the
+observed location given by Table 3 of L13. The given NW relic and E relic
+locations are R.A.=01:02:46, Decl.=-49:14:43 and R.A.=01:03:07, Decl.=-49:16:16
+respectively. 
+
 \label{sec:positionprior}
 
 \section{RESULTS} 

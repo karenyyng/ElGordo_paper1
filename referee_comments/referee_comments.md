@@ -47,10 +47,10 @@ Lindner et al. 2014 for estimating the extent of the radio relic and
 have double checked that the extent are consistent.
 
 > The concept of time-since-pericenter is interesting, but it need to be
-> clarified (the$
+> clarified (the
 > time at pericenter is only defined in section 3.3).
 
-A brief definition is added to line 10 of P.3 of the paper.
+A brief definition is added to line 10 of P.3, the introduction section of the paper.
 
 > I would suggest that you draw a diagram of the merger (may be at
 > different time step) so that the reader can have a clearer idea of the
@@ -75,21 +75,12 @@ Section 2
 > the radio data used in$
 > the analysis (position, Mach Number/velocity?, polarisation? ...)
 
-Only the positions of the NW and the E relic, i.e. 2 best estimates and 2 uncertainties and the
-polarization information of the NW relic has been used i.e. 1 best estimate
-and 1 uncertainty. These information are present in section BLAH or added 
-and do not have the quantity to span a table. We did not use a Mach number in
-our calculation and it will be confusing for us to put it in the table with
-the information that we did make use of. 
-
-The radio data are not inputs like the other data in Table 1. Table 1
-only specifies the initial conditions that we used for the Monte Carlo
-simulation for computing the output parameter estimates.
-
-The radio data help the simulation in two ways: 1) determine the Monte
-Carlo weights to the inputs this is specified fully in section 3.3 2)
-calculate the probability of the two merger scenarios, this is specified
-fully in section 3.4
+Only the polarization information of the NW relic has been used i.e. 1 best estimate
+and 1 uncertainty, is present in Section 3.3. 
+The two observed positions used for the NW and the E relic have been added to
+the end of section 3.4.
+We did not use a Mach number in
+our calculation. 
 
 All data and code used in the calculation are hosted on a GitHub repository.
 The link to the repository is added to the paper.
@@ -100,8 +91,8 @@ published papers.
 > should it not be
 > moved to section 2?
 
-Accepted. To be implemented. We have moved some of the descriptions to
-section 2.
+We have moved the descriptions of the
+relative velocity data from the first paragraph of section 3.1.1 to section 2.
 
 Section 3
 =========
@@ -112,7 +103,7 @@ Section 3
 > to only give
 > part of the data used in the analysis.
 
-We have added descriptions in Table 1 for clarification.
+To be implemented. We have added descriptions in Table 1 for clarification.
 
 > It would be helpful to describe a little bit more the MC simulation
 > code. Does the simulation use a large number of particules? Or is it
@@ -154,7 +145,7 @@ precise calculation.
 > Would there be a correlation between beta and TSP?
 
 No. The parameter $\beta$ is not a property, nor an output of each
-Monte Carlo simulation, it is a choice of parametrization of our
+Monte Carlo simulation. It is a choice of parametrization of our
 uncertainty, i.e. you cannot find one $\beta$ value for each
 simulation so you cannot compute a correlation between $\beta$ and
 $TSP$. The variable $TSP$ is an output and has one value for each Monte
@@ -168,7 +159,13 @@ Section 4
 > results that are basically
 > described in the appendix, which is not ideal.
 
-Which specific likelihood plot would you like to see in the main text?
+Which specific PDF plots would you like to see in the main text?
+Just to clarify, we do not have any likelihood plots but PDF plots since the
+Monte Carlo simulation is
+a likelihood-free inference process. Both a model and a fit of the model to the
+data are needed in order to compute a likelihood. We did not perform any
+fitting.
+Table 2 summarizes the marginalized PDF of all relevant variables. 
 
 Section 5
 =========
