@@ -178,8 +178,18 @@ time-since-pericenter (TSP), which is defined to be the time when the mass
 peaks of the DM subclusters coincide.
 Determining the TSP of similar clusters helps
 us reconstruct different stages and recover the physics of a cluster merger.
-BLURP ABOUT OUTGOING AND RETURNING SCENARIO and REFER TO FIG 5.
-
+In particular there is a degeneracy between the following two possible
+scenarios:
+We call the scenario for which the subclusters are
+moving apart after pericenter to be ``outgoing", and the alternative scenario 
+``returning" for which the subclusters are approaching each other after turning
+around from the apocenter for the first time (See Fig~\ref{fig:merger_cartoon}).
+\begin{figure*}
+	\includegraphics[width=\linewidth]{merger_cartoon_white_bg.pdf}
+	\caption{Illustration of the spatial location of different components of El Gordo at
+		different stages of the merger. Earlier stages (with a smaller TSP) are on the left side of later stages. The rightmost returning scenario is preferred from our simulation.} 
+	\label{fig:merger_cartoon}
+\end{figure*}
 Another crucial, missing piece of information is the 3D
 configuration, i.e.\ the angle between the plane of the sky and the merger
 axis called the projection angle $\alpha$. Since most of the dynamical
@@ -365,7 +375,8 @@ included in \citetalias{D13}.
 \setcounter{table}{0} 
 %\setcounter{table}{0}
 \begin{table}
-\caption{Properties of the sampling PDFs of the Monte Carlo simulation} 
+	\caption{Properties of the input sampling PDFs ($\vec{D}$) of the Monte Carlo
+simulation.} 
 \begin{center} 
 \begin{tabular}{@{}lcccc}
 \hline \hline Data & Units & Location & Scale & Ref\\ \hline
@@ -470,11 +481,10 @@ elapsed between consecutive collisions
 time of pericenter defined to be when the centers of the two NFW halos coincide. 
 
 We provide two versions of the time-since-pericenter variables $TSP_{\rm out}$ and
-$TSP_{\rm ret}$ to denote different possible merger scenarios. 1) We call the scenario for which the subclusters are
-moving apart after pericenter to be ``outgoing" and it corresponds to the
-smaller $TSP_{\rm out}$ value, and 2) we call the alternative scenario 
-``returning" for which the subclusters are approaching each other after turning
-around from the apocenter for the first time and it corresponds to $TSP_{\rm ret}$.
+$TSP_{\rm ret}$ to denote different possible merger scenarios. 
+1) The TSP for the``outgoing" scenario corresponds to the
+smaller $TSP_{\rm out}$ value, and 2) the ``returning'' scenario 
+corresponds to the larger $TSP_{\rm ret}$.
 We describe how we make use of properties of the radio relic to evaluate
 which scenario is more likely in
 section~\ref{sec:positionprior}. Evolution of the merger after the second
@@ -626,14 +636,6 @@ $v_{\rm 3D}(t_{\rm per})$ & \kilo \meter~\second$^{-1}$ &&2800&2400-3700&2100-42
 \end{table*}
 \subsection{Extension to the Monte Carlo simulation - Determining merger
 scenario with radio relic position by model comparison}
-\begin{figure*}
-	\includegraphics[width=\linewidth]{merger_cartoon_white_bg.pdf}
-	\caption{
-		Illustration of the spatial location of different components of El Gordo at
-		different stages of the merger. Earlier stages are on the left side of later stages. The rightmost returning scenario is preferred from our simulation. 
-	} 
-	\label{fig:merger_cartoon}
-\end{figure*}
 
 One of the biggest questions involving the merger is whether El Gordo is
 observed during a returning or outgoing phase. We compared the two merger
@@ -810,7 +812,7 @@ Finally, we note that the estimate of NW shock velocity at $2500
 the Mach number, thus, this velocity is measured in the reference frame of
 the turbulent ICM, not the velocity with respect to center of
 mass. Due to the difference that could arise from the different frame of
-references, we have not made use of the estimate of \cite{L13} in this
+references, we have not made use of the Mach number estimate of \cite{L13} in this
 calculation. If there are radio data in more frequency bands than
 the radio data available now \citep{L13}, an alternative constraint of the
 TSP can be constructed from the spectral aging of the electrons that were involved in the generation of the

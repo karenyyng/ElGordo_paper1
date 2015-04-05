@@ -4,7 +4,7 @@ Authors: Ng, Karen (contact); Dawson, William; Wittman, David; Jee,
 Myungkook; Hughes, John; Menanateau, Felipe; Sifon, Cristobal
 
 This paper is investigating the merger properties of the "El Gordo"
-merging cluster using$
+merging cluster using
 a wide range of data set. Although the analysis sounds convincing, it
 would benefit of a
 better presentation so that the reader have a better understanding on
@@ -23,28 +23,32 @@ Introduction:
 > more references on cluster merger and in particular regarding the
 > typical speed of a merger should be given.
 
-Accepted. This information is added on the 6th line of the introduction.
+This information is added on the 6th line of the introduction.
 
 > Figure 1 is key for the understanding of the paper. I would suggest to
-> make it$
+> make it
 > larger (by rotating it by \~45-50 deg in order to have the elongation
 > axis of the cluster horizontal)
 
-We have made the plot significantly larger.
+We have made the figure significantly larger.
 
 > showing possibly the galaxy luminosity contours.
 
-We will have an overplotting issue if the galaxy luminosity is added.
+We will have an overplotting issue if the galaxy luminosity is added. We
+did not present any scientific results based on the galaxy luminosity contours.
 
 > Can the relic radio data be plotted on top instead of some schematic
 > of it? (it looks like the size of the relic does not match the size
 > given in Lindner et al 2014).
 
-We asked Robert Lindner for the relic contour but have not received any
-reply. The relic size depends on which wavelength of the radio relic
-image you are looking at. We referred to Figure 5 and Figure 8 in
+We emailed Robert Lindner for the relic contours but have not received any
+reply. The relic size depends on the wavelength and the contour of the radio relic
+image that one examines. We referred to Figure 5 and Figure 8 in
 Lindner et al. 2014 for estimating the extent of the radio relic and
-have double checked that the extent are consistent.
+have double checked that the extent are consistent with the outer contours.
+The schematic is just to give the reader an idea of where the relic is
+compared to the rest of the cluster. We used the numerical values given by L13 
+to all the calculation (See later discussion).
 
 > The concept of time-since-pericenter is interesting, but it need to be
 > clarified (the
@@ -72,17 +76,18 @@ Section 2
 > given for the WL
 > data, but the paper is also using the radio data relic, and a summary
 > table would be great. This table should underline the key number from
-> the radio data used in$
+> the radio data used in
 > the analysis (position, Mach Number/velocity?, polarisation? ...)
 
 Only the polarization information of the NW relic has been used i.e. 1 best estimate
 and 1 uncertainty, is present in Section 3.3. 
 The two observed positions used for the NW and the E relic have been added to
 the end of section 3.4.
-We did not use a Mach number in
-our calculation. 
+We did not use any Mach number in our calculation and we have explained why
+Mach numbers give unreliable estimates of the shock velocities in the center of
+mass frame in Section 4.1 paragraph 3. 
 
-All data and code used in the calculation are hosted on a GitHub repository.
+[TO BE IMPLEMENTED] All data and code used in the calculation are hosted on a GitHub repository.
 The link to the repository is added to the paper.
 This sharing of data and code by this paper is more transparent than most
 published papers.
@@ -103,7 +108,13 @@ Section 3
 > to only give
 > part of the data used in the analysis.
 
-To be implemented. We have added descriptions in Table 1 for clarification.
+The table indeed gives all the PDFs that we draw directly from as inputs to
+the simulation. We did not draw
+draw samples directly from from the radio relic data at all. The radio relic data
+are only used to compute Monte Carlo weights. 
+The Monte Carlo simulation does not require the radio relic Monte Carlo
+weights, and can stand alone if one does not agree with our understanding of
+the radio relic. We have edited the descriptions in Table 1 for clarification.
 
 > It would be helpful to describe a little bit more the MC simulation
 > code. Does the simulation use a large number of particules? Or is it
@@ -120,8 +131,7 @@ Accepted. To be implemented.
 > given in the text, can you explain why?
 
 We thank the referee for double-checking our calculation. 
-(1) The
-calculations that led to the results were done with the entire probability
+(1) The calculations that led to the results were done with the entire probability
 density functions (PDFs), i.e.
 carrying out this calculation for EACH of our 2 million realizations,
 then we take the biweight location as the estimate. In the referee 's
@@ -130,17 +140,19 @@ inputs) was used. Therefore, the
 discrepancies can arise from the different inputs. 
 (2) We only report to 2 significant figures since some the inputs of the data
 did not have more than 2 significant figures. 
-Also, the uncertainty
-that we give is much bigger than this discrepancy.
+(3) The uncertainty
+that we give is much bigger than the discrepancy between 463 and 476 km/s.
 
 > Similarly the $d_{proj}$ I found is 0.744 instead of .74 (based on the
 > RA, DEC given)
 
 We also used the full PDFs for computing $d_{proj}$ which is a more
-precise calculation.
+precise calculation. Other explanations from the previous answer also follows.
 
 > It would be much better to define the output parameters using a
 > diagram of the different merger scenarios.
+
+We have added Figure 5.
 
 > Would there be a correlation between beta and TSP?
 
