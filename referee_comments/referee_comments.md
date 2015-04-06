@@ -1,21 +1,12 @@
-Title: The return of the merging galaxy subclusters of El Gordo?
-Manuscript ID: MN-14-3494-MJ
+Title: The return of the merging galaxy subclusters of El Gordo?  
+Manuscript ID: MN-14-3494-MJ   
 Authors: Ng, Karen (contact); Dawson, William; Wittman, David; Jee,
-Myungkook; Hughes, John; Menanateau, Felipe; Sifon, Cristobal
+Myungkook; Hughes, John; Menanateau, Felipe; Sifon, Cristobal  
 
-This paper is investigating the merger properties of the "El Gordo"
-merging cluster using
-a wide range of data set. Although the analysis sounds convincing, it
-would benefit of a
-better presentation so that the reader have a better understanding on
-the importance of
-various constraints. Once this is corrected, the paper can certaThe
-concept of time-since-pericenter is interesting, but it need to be
-clarified (the time at pericenter is only defined in section 3.3). I
-would suggest that you draw a diagram of the merger (may be at different
-time step) so that the reader can have a clearer idea of the geometry
-and evolution of the system (on the plot all the quantities used such as
-distances and velocities must be indicated).inly be accepted.
+This	paper is	investigating	the	merger	properties	of	the	“El	Gordo” merging	cluster	using	
+a	wide	range	of	data	set.	Although	the	analysis	sounds	convincing,	it	would	benefit	of	a	
+better	presentation so	that	the	reader	have	a	better	understanding	on	the	importance	of	
+various	constraints.	Once	this	is	corrected,	the	paper	can	certainly	be	accepted.
 
 Introduction:
 =============
@@ -201,4 +192,3 @@ explanation.
 We have summarized the main similaries and differences. 
 Interested reader should refer to Dawson 13 for full comparison.
 
-> Written with [StackEdit](https://stackedit.io/).
