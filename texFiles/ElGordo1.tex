@@ -1,5 +1,3 @@
-%\pdfoutput=1
-%\input{style.tex}
 \documentclass[letterpaper,useAMS,usenatbib]{mn2e}
 \usepackage[colorlinks=true,
             linkcolor=blue,
@@ -77,8 +75,6 @@ it is widely believed that El Gordo is observed shortly after the first
 core-passage of the subclusters.
 We employ a Monte Carlo simulation to investigate the three-dimensional (3D)
 configuration and dynamics of El Gordo. 
-%and provide a summary of the probability
-%density functions of the inferred variables.
 Using the polarization
 fraction of the radio relic, we constrain the estimate of the
 angle between the plane of the sky and the merger axis to be $\alpha = 21\degree
@@ -141,8 +137,6 @@ to be undergoing a major merger approximately in the plane of the sky
 		\label{fig:config}
 	}
 \end{figure*}
-
-
 From the spectroscopy and Dressler-Schectman test for the member galaxies
 in \cite{Sifon13}, it is shown that El Gordo does not have complicated
 substructures in its galaxy velocity distribution. 
@@ -163,11 +157,16 @@ gravitationally lensed images around the center region of El Gordo.
 On the outskirts, strong radio emission is detected in
 the NW and the SE respectively. These radio emitting regions show steep spectral
 index gradients and are identified as radio relics associated with shock waves
-created from the merger \citep{L13}. 
-
-El Gordo is one of $\sim 50$ galaxy clusters that have
+created from the merger \citep{L13}. El Gordo is one of $\sim 50$ galaxy clusters that have
 been associated with a radio relic and show dissociation between the X-ray
 gas and the DM subclusters. \par 
+
+\begin{figure*}
+	\includegraphics[width=\linewidth]{merger_cartoon_white_bg.pdf}
+	\caption{Illustration of the spatial location of different components of El Gordo at
+		different stages of the merger. Earlier stages (with a smaller TSP) are on the left side of later stages. The rightmost returning scenario is preferred from our simulation.} 
+	\label{fig:merger_cartoon}
+\end{figure*}
 In this paper, we combined most of the available information of El Gordo
 with the main goal of giving estimates of
 the dynamical parameters after taking into account all
@@ -183,13 +182,8 @@ scenarios:
 We call the scenario for which the subclusters are
 moving apart after pericenter to be ``outgoing", and the alternative scenario 
 ``returning" for which the subclusters are approaching each other after turning
-around from the apocenter for the first time (See Fig~\ref{fig:merger_cartoon}).
-\begin{figure*}
-	\includegraphics[width=\linewidth]{merger_cartoon_white_bg.pdf}
-	\caption{Illustration of the spatial location of different components of El Gordo at
-		different stages of the merger. Earlier stages (with a smaller TSP) are on the left side of later stages. The rightmost returning scenario is preferred from our simulation.} 
-	\label{fig:merger_cartoon}
-\end{figure*}
+around from the apocenter for the first time (See
+Fig~\ref{fig:merger_cartoon}).\par
 Another crucial, missing piece of information is the 3D
 configuration, i.e.\ the angle between the plane of the sky and the merger
 axis called the projection angle $\alpha$. Since most of the dynamical
@@ -221,23 +215,20 @@ simulations.  However, under the hierarchical picture
 of structure formation in the $\Lambda$CDM model, there is a rare chance
 for massive clusters like El Gordo to have formed at a redshift of $z = 0.87$.  
 The number density of analogs with mass comparable to El Gordo in a
-cosmological simulation is as low as $10^{-11} \mega\text{pc}^{-3}$ \citepalias{M12}.  
-\par
+cosmological simulation is as low as $10^{-11} \mega\text{pc}^{-3}$
+\citepalias{M12}.\par
 In the following sections, we adopt the following conventions: (1) we
 assume the standard $\Lambda$CDM cosmology with $\Omega_{m} = 0.3$,
 $\Omega_{\Lambda} = 0.7$ and $H_0 = 70~\kilo\meter / \second / \mega
 {\rm pc}$. (2) All confidence intervals are quoted at the 68\% level unless otherwise stated. 
-%(3) All confidence intervals (a.k.a. Bayesian confidence intervals) are also
-%quoted at the 68\% level unless otherwise stated and are central confidence
-%intervals. We adopt this terminology to remind readers of our Bayesian
-%interpretation of the probability density functions (PDFs), and that we obtained
-%the intervals / regions are estimated by integrating the posterior
-%probability densities.  
 (3) All quoted masses ($M_{200c}$) are based on mass contained
 within $r_{200}$ where the mass density is 200 times the critical density
 of the universe at the cluster redshift of $z = 0.87$. 
 \section{DATA} 
-We gathered and analyzed data from multiple sources. We examined the
+We gathered and analyzed data from multiple sources. 
+See Table~\ref{tab:inputs} for descriptions of the PDFs of the input
+variables. 
+We examined the
 spectroscopic data obtained from the Very Large Telescope (VLT) as described in \citetalias{M12} and \citet{Sifon13} for estimating the
 relative velocity differences between the subclusters.
 We adopted the identification of galaxy membership of El Gordo given by
@@ -251,10 +242,12 @@ There are 51 members identified in the NW subcluster and 35 members in the SE
 subcluster. \par 
 For the weak-lensing mass estimation, we used the
 Monte Carlo Markov Chains (MCMC) mass estimates from \citetalias{Jee13}.
-See Table~\ref{tab:inputs} for descriptions of the PDFs of the input
-variables. \par 
-%and these galaxies were discussed as the population in Region A in
-%\citetalias{Jee13}.  
+The Hubble Space Telescope data used in \citetalias{Jee13} was obtained from two
+programs PROP 12755
+and PROP 12477. PROP 12755 consisted of two pointings in the F625W, F775W, and F850LP.
+F850LP for a 6' x 3' strip. While PROP 12477 provided a $2 \times 2$ mosaic
+pattern with F606W and a single pointing in F814W. 
+\par 
 In order to further constrain our parameter space, we referred to the properties of
 the radio relics from \citet{L13}. El Gordo shows radio emission on the
 periphery of both subclusters \citepalias{M12}. The two radio relics, the
@@ -272,7 +265,6 @@ was also reported to have a resolved length of 0.27 Mpc, while the SE relic
 was found to overlap with a point source \citep{L13}. Both the E and SE
 relic are closer to the SE DM subcluster, so we considered them to
 originate from the same merger shock in the following work.
-
 \section{METHOD -- Monte Carlo simulation} 
 We used the collisionless 
 dark-matter-only Monte Carlo modeling code written by \citetalias{D13}, to
@@ -280,8 +272,10 @@ model the dynamics of the DM subclusters of their first core-passage.
 In the D13 code, the time evolution of the
 head-on merger was computed based on an analytical, dissipationless model
 assuming that the only dominant force is the gravitational attraction from
-the masses of two truncated Navarro-Frenk-White (hereafter NFW) DM halos
+the masses of two Navarro-Frenk-White (hereafter NFW) DM halos
 \citep{Navarro96}. 
+The gravitational attraction was evaluated and summed at 10 000 fixed grid
+points of each of the NFW halos out to the respective R200c.\par
 In the simulation, many realizations of the collision are
 computed by drawing random realizations of the PDFs of the inputs. Most
 input variables are obtained from previous observations ($\vec{D}$).  One
@@ -301,15 +295,6 @@ attraction.  In particular, the required $\vec{D}$ includes the masses ($M_{200_
 projected separation of the two subclusters ($d_{\rm proj}$).  See
 Table~\ref{tab:inputs} for quantitative descriptions of the sample PDFs, and
 the outputs with physical importance are described in detail in Section~\ref{sec:outputs}. \par
-%We adopt a Bayesian interpretation of the PDFs of the Monte Carlo
-%simulation so we can talk about the PDF of parameters. 
-%The Bayes chain rule that underlies the simulation can be written as:
-%\begin{equation}
-%    P(M|\vec{D}) \propto P(\vec{D}|M)P(M),
-%\end{equation}
-%where the likelihood is defined to be the PDF of $\vec{D}$ given our
-%physical model $M$ which we parametrize using variables in Table 1
-%($\vec{\theta}$).
 Finally, we excluded realizations that produce any unphysical output
 values, such as realizations with time-since-pericenter larger than the age of universe at the
 cluster redshift.  We refer to this process of excluding unphysical
@@ -317,63 +302,11 @@ realizations as applying weights.
 To ensure convergence of the output PDFs, in total, 2 million realizations
 were computed. However, the estimates would agree up to 1\% just 
 from 20 000 runs \citepalias{D13}. 
-%The random sampling allows us to
-%throughly explore the multidimensional input parameter space and account
-%for the uncertainties of the inputs at the same time.
 Even though we describe the weights for one variable at a time 
 (See Appendix~\ref{app:priors}), 
 the correlations between different variables are properly taken into account
 since we discarded all the variables of the problematic
 realizations.\par 
-The system of El Gordo satisfies several major assumptions in the Monte Carlo
-simulation. One of the strongest assumptions is that all realizations correspond to
-gravitationally bound systems. The simulation excludes all realizations
-that would result in relative pericenter velocities of the subclusters
-higher than the free-fall velocity. We justify our assumption of
-modeling only gravitationally bound systems by noting that the relative escape
-velocity of the subclusters for El Gordo is
-$4500~\kilo\meter~\second^{-1}$ (based on the mass estimates of
-\cite{Jee13}). 
-Studies from cosmological simulations giving the PDFs of the pairwise velocities of massive merging clusters ($>
-10^{15} M_{\sun}$) indicate that it is highly unlikely that the pairwise
-velocities would be $> 3000~\kilo \meter~\second^{-1}$ under $\Lambda$CDM.
-(\citealt{Thompson12}, \citealt{Lee2010}). \par
-Other major assumptions for
-modeling systems with this code include negligible impact parameter.
-Several papers have noted that the X-ray morphology of a bimodal merger is
-sensitive to the impact parameter (\citealt{Springel2007},
-\citealt{Ricker98}, \citealt{Mastropietro2008a}); an impact
-parameter as small as 0.1 Mpc can result in substantial asymmetry. 
-The X-ray morphology of El Gordo is approximately symmetric about the merger axis. 
-On the other hand, the dynamics of the merger is not as sensitive to the
-impact parameter as the X-ray morphology. The simulations of
-\cite{Ricker98} of bimodal mergers of $10^{15} M_{\sun}$ halos, showed that the resulting relative
-velocity would be approximately $2000 \text{ km s}^{-1}$, relatively
-insensitive to impact parameters between 0 to 5 times the scale radius ($5~r_s = 3.5$ Mpc). \cite{Mastropietro2008a} also reported that
-an impact parameter of $0.1~r_{200} = 0.14$ Mpc affected merger dynamics only at the $\sim$10\% level.   
-\citealt{Molnar14} indicated that the impact parameter of El Gordo
-may be as large as $40\%~r_s \approx 0.3$ Mpc, where $r_s$ is
-the corresponding characteristic core
-radius of the NFW halo with the mass of the SE subcluster. We attribute
-the result from \citealt{Molnar14} to incomplete exploration of
-the parameter space, and note that other impact parameter values may also match the
-X-ray observables of El Gordo. \par
-%% scale radius according to me seems to be ~.7 Mpc 
-%% r200C = 1.4 Mpc  
-%% Ricker -> fig. 0
-%BLAH BLAH $r_{200c}$
-%will result in strong asymmetry in the X-ray morphology. 
-%Furthermore, according to
-%\cite{Ricker98}, the resulting dark matter remnant of bimodal cluster mergers would
-%have drastic differences only when the impact parameter $> 10~ r_{\text{core}}$.
- Other assumptions in this simulation include negligible dynamical friction
-during the merger, negligible mass accretion and negligible self-interaction
-of dark matter. Discussion of the effects of each of these assumptions is
-included in \citetalias{D13}.  
-\par
-\subsection{Inputs of the Monte Carlo simulation} \label{sec:inputs}
-\setcounter{table}{0} 
-%\setcounter{table}{0}
 \begin{table}
 	\caption{Properties of the input sampling PDFs ($\vec{D}$) of the Monte Carlo
 simulation.} 
@@ -392,14 +325,49 @@ d$_{\mathrm{proj}}$ & Mpc & 0.74 &0.007 & \citetalias{Jee13} \\
 \end{center} 
 \label{tab:inputs} 
 \end{table} 
-%\input{input_table.tex}
+The system of El Gordo satisfies several major assumptions in the Monte Carlo
+simulation. One of the strongest assumptions is that all realizations correspond to
+gravitationally bound systems. The simulation excludes all realizations
+that would result in relative pericenter velocities of the subclusters
+higher than the free-fall velocity. We justify our assumption of
+modeling only gravitationally bound systems by noting that the relative escape
+velocity of the subclusters for El Gordo is
+$4500~\kilo\meter~\second^{-1}$ (based on the mass estimates of
+\cite{Jee13}). Studies from cosmological simulations giving the PDFs of the pairwise
+velocities of massive merging clusters ($>10^{15} M_{\sun}$) indicate that it
+is highly unlikely that the pairwise velocities would be $> 3000~\kilo
+\meter~\second^{-1}$ under $\Lambda$CDM (\citealt{Thompson12},
+\citealt{Lee2010}).\par
+Other major assumptions for modeling systems with this code include negligible impact parameter.
+Several papers have noted that the X-ray morphology of a bimodal merger is
+sensitive to the impact parameter (\citealt{Springel2007},
+\citealt{Ricker98}, \citealt{Mastropietro2008a}); an impact
+parameter as small as 0.1 Mpc can result in substantial asymmetry. 
+The X-ray morphology of El Gordo is approximately symmetric about the merger axis. 
+On the other hand, the dynamics of the merger is not as sensitive to the
+impact parameter as the X-ray morphology. The simulations of
+\cite{Ricker98} of bimodal mergers of $10^{15} M_{\sun}$ halos, showed that the
+resulting relative velocity would be approximately $2000 \text{ km s}^{-1}$, relatively
+insensitive to impact parameters between 0 to 5 times the scale radius ($5~r_s = 3.5$ Mpc). \cite{Mastropietro2008a} also reported that
+an impact parameter of $0.1~r_{200} = 0.14$ Mpc affected merger dynamics only
+at the $\sim$10\% level. \citealt{Molnar14} indicated that the impact parameter of El Gordo
+may be as large as $40\%~r_s \approx 0.3$ Mpc, where $r_s$ is
+the corresponding characteristic core
+radius of the NFW halo with the mass of the SE subcluster. We attribute
+the result from \citealt{Molnar14} to incomplete exploration of
+the parameter space, and note that other impact parameter values may also match the
+X-ray observables of El Gordo. \par
+Other assumptions in this simulation include negligible dynamical friction
+during the merger, negligible mass accretion and negligible self-interaction
+of dark matter. Discussion of the effects of each of these assumptions is
+included in \citetalias{D13}.  
+\subsection{Inputs of the Monte Carlo simulation} \label{sec:inputs}
 \subsubsection{Membership selection and redshift estimation of subclusters}
 After identifying members of each subcluster, we performed 10, 000 bootstrap realizations to estimate the biweight
 locations of the spectroscopic redshifts of the respective members in order
 to obtain the samples of the PDFs of the redshifts of each subcluster. 
 The spectroscopic redshift of the subclusters were
 determined to be 
-%$z_{total} = \pm $ 
 $z_{\mathrm{NW}} = 0.86842 \pm 0.0011$ and 
 $z_{\mathrm{SE}} = 0.87131 \pm 0.0012$, where the quoted numbers represent the
 biweight location and 1$\sigma$ bias-corrected confidence level
@@ -410,7 +378,6 @@ member galaxies of El
 Gordo shows large velocity dispersion, i.e.\ the largest velocity
 dispersion among all the ACT galaxy clusters, as reported by
 \citetalias{M12}.
-
 \begin{figure}
 	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
 	\caption{\label{fig:membership} Points showing the locations of the
@@ -465,10 +432,8 @@ DM centroid locations in \citealt{Jee13}. We drew random samples
 subcluster, with a 1'' standard deviation each as estimated from the
 convergence map of \citet{Jee13}. The
 inferred centroid locations correspond to a mean projected separation
-($d_{\rm proj}$) of $0.74\pm {0.007}$ Mpc. 
+($d_{\rm proj}$) of $0.74\pm {0.007}$ Mpc.  
 \subsection{Outputs of the Monte Carlo simulation}\label{sec:outputs}
-%\input{2.2_0_monte_carlo_outputs}
-
 We outline the outputs of the simulation here to facilitate the discussion
 of the design of the weights used in the simulation. The simulation
 provides PDF estimates for 8 output variables. Variables
@@ -479,7 +444,7 @@ providing several characteristic time-scales, including the time
 elapsed between consecutive collisions
 ($T$) and the time-since-pericenter of the observed state ($TSP$), with the
 time of pericenter defined to be when the centers of the two NFW halos coincide. 
-
+\par
 We provide two versions of the time-since-pericenter variables $TSP_{\rm out}$ and
 $TSP_{\rm ret}$ to denote different possible merger scenarios. 
 1) The TSP for the``outgoing" scenario corresponds to the
@@ -1197,7 +1162,6 @@ uneven sampling of inputs. }
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_tri_geo.png}
 	\caption{One-dimensional marginalized PDFs (panels on the diagonal) and
 		two-dimensional marginalized PDFs of variables
@@ -1210,7 +1174,6 @@ uneven sampling of inputs. }
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.7\linewidth]{TwoMnWBSG_geoVSinputs.png}
 	\caption{Marginalized PDFs of characteristic distances and projection
 		angle of the merger and the inputs of the simulation.}
@@ -1220,7 +1183,6 @@ uneven sampling of inputs. }
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_tri_time.png}
 	\caption{One-dimensional PDFs of characteristic timescales of the simulation
 (panels on the diagonal) and the marginalized PDFs of different
@@ -1232,7 +1194,6 @@ not for $TSP_{\rm ret}$ and $T$, so $TSP_{\rm out}$ spans a smaller range.}
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_timeVsgeo.png}
 	\caption{Marginalized PDFs of characteristic timescales of the simulation
 and the characteristic distances and the projection angle of the merger. }
@@ -1242,7 +1203,6 @@ and the characteristic distances and the projection angle of the merger. }
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.7\linewidth]{TwoMnWBSG_timeVSinput.png}
 	\caption{Marginalized PDFs of characteristic timescales of the simulation
 and the inputs.}
@@ -1252,7 +1212,6 @@ and the inputs.}
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_tri_vel.png}
 	\caption{One-dimensional marginalized PDFs of velocities at
 	characteristic times (panels on the diagonal) and marginalized PDFs of
@@ -1263,7 +1222,6 @@ different velocities.}
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_velVStime.png}
 	\caption{Marginalized PDFs velocities and the characteristic timescales
 	of the simulation against the inputs.}
@@ -1273,7 +1231,6 @@ different velocities.}
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.5\linewidth]{TwoMnWBSG_velVSgeo.png}
 	\caption{Marginalized PDFs of the velocities at characteristic timescales
 		and the characteristic distances and the projection angle of the merger. }
@@ -1283,7 +1240,6 @@ different velocities.}
 \begin{figure*}
 \begin{minipage}{180mm}
 	\begin{center}
-	%\vspace{200px}
 	\includegraphics[width=0.7\linewidth]{TwoMnWBSG_velVSinputs.png}
 	\caption{Marginalized PDFs of relative velocities characteristic
 	timescales of the simulation and the inputs.}

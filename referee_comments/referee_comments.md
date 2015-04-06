@@ -54,7 +54,7 @@ to all the calculation (See later discussion).
 > clarified (the
 > time at pericenter is only defined in section 3.3).
 
-A brief definition is added to line 10 of P.3, the introduction section of the paper.
+The definition is added to second paragraph of P.3, the introduction section of the paper.
 
 > I would suggest that you draw a diagram of the merger (may be at
 > different time step) so that the reader can have a clearer idea of the
@@ -67,7 +67,8 @@ A brief definition is added to line 10 of P.3, the introduction section of the p
 
 Explanation of the different merger scenario has been added in the
 introduction on P.3 at the end of the second paragraph.
-A new illustration has also been added as Fig. 5. 
+A new illustration has also been added as Fig. 2 to go along with the
+definition. 
 
 Section 2
 =========
@@ -87,10 +88,6 @@ We did not use any Mach number in our calculation and we have explained why
 Mach numbers give unreliable estimates of the shock velocities in the center of
 mass frame in Section 4.1 paragraph 3. 
 
-[TO BE IMPLEMENTED] All data and code used in the calculation are hosted on a GitHub repository.
-The link to the repository is added to the paper.
-This sharing of data and code by this paper is more transparent than most
-published papers.
 
 > What about the velocity data? It is described in section 3.1.1 but
 > should it not be
@@ -108,9 +105,9 @@ Section 3
 > to only give
 > part of the data used in the analysis.
 
-The table indeed gives all the PDFs that we draw directly from as inputs to
+The table gives all the PDFs that we draw directly from as inputs to
 the simulation. We did not draw
-draw samples directly from from the radio relic data at all. The radio relic data
+draw samples directly from from the radio relic data. The radio relic data
 are only used to compute Monte Carlo weights. 
 The Monte Carlo simulation does not require the radio relic Monte Carlo
 weights, and can stand alone if one does not agree with our understanding of
@@ -122,7 +119,9 @@ the radio relic. We have edited the descriptions in Table 1 for clarification.
 > NFW mass profile. It would be good to remind the reader of some of the
 > key element in D13.
 
-Accepted. To be implemented.
+The description of how the gravitational attraction was evaluated at fixed
+grid points of the NFW halos were added in section 3, the end of the first
+paragraph.
 
 > Are the galaxies introduces as test particles in the simulations? It
 > seems not, but would this be a way to better model and possibly
@@ -152,7 +151,7 @@ precise calculation. Other explanations from the previous answer also follows.
 > It would be much better to define the output parameters using a
 > diagram of the different merger scenarios.
 
-We have added Figure 5.
+We have added Figure 2.
 
 > Would there be a correlation between beta and TSP?
 
@@ -189,14 +188,17 @@ Section 5
 > other El Gordo modelling.
 
 The hydrodynamical simulations do not directly give estimates for most
-of the output parameters that we have. If we try to compute a table, a
-lot of the entries from the hydrodynamical simulations will be empty or
-rough estimates that are estimated from their plots.
+of the output parameters that we have. 
+If we try to compute a table, a
+lot of the entries from the hydrodynamical simulations will be
+rough estimates that are estimated from their plots and would require
+explanation.
 
 > And one table comparing the properties of the different merger
 > described with the same modelling principle, in particular
 > comparing El Gordo to the bullet cluster and the musket cluster.
 
-Accepted. To be implemented in the appendix.
+We have summarized the main similaries and differences. 
+Interested reader should refer to Dawson 13 for full comparison.
 
 > Written with [StackEdit](https://stackedit.io/).
