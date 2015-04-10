@@ -14,14 +14,17 @@ Introduction:
 > more references on cluster merger and in particular regarding the
 > typical speed of a merger should be given.
 
-This information is added on the 6th line of the introduction.
+We have added the typical speeds along with some citations on the 9th line of the introduction.
 
 > Figure 1 is key for the understanding of the paper. I would suggest to
 > make it
 > larger (by rotating it by \~45-50 deg in order to have the elongation
 > axis of the cluster horizontal)
 
-We have made the figure significantly larger.
+We agree with the referee about the importance of the figure. 
+We did not rotate the figure because there is valuable information in the RA,
+Dec coordinates of the various components, so we made the figure two columns
+wide instead.
 
 > showing possibly the galaxy luminosity contours.
 
@@ -97,12 +100,24 @@ Section 3
 > part of the data used in the analysis.
 
 The table gives all the PDFs that we draw directly from as inputs to
-the simulation. We did not draw
-draw samples directly from from the radio relic data. The radio relic data
+the simulation, i.e. $M_{200_cNW}, c_{NW}, M_{200_cSE}, c_{SE}, z_{NW},
+z_{SE}, d_{proj} Table 1.  
+We did not draw samples directly from from the radio relic data, so the radio
+relic data does not belong in Table 2 which specifies only properties that are
+used as the input PDF of the Monte Carlo simulation. The radio relic data
 are only used to compute Monte Carlo weights. 
-The Monte Carlo simulation does not require the radio relic Monte Carlo
-weights, and can stand alone if one does not agree with our understanding of
-the radio relic. We have edited the descriptions in Table 1 for clarification.
+
+We have edited the descriptions in Table 1 to clarify that the table is only
+for input sampling PDFs.
+
+The radio relic data that we do make use of include:
+1)  the polarization fraction and the uncertainty ($33\% \pm 1 \%$) which is specified in
+section 3.3.1 where the physics of the polarization are explained 
+2)  the observed location of the relics (RA, DEC and the separation from the
+center of mass) that we used for the calculation for the
+different merger scenarios have been added to the last sentence of section
+3.4. This particular section explains the motivation and how
+the projected relic location is calculated. 
 
 > It would be helpful to describe a little bit more the MC simulation
 > code. Does the simulation use a large number of particules? Or is it
@@ -110,9 +125,13 @@ the radio relic. We have edited the descriptions in Table 1 for clarification.
 > NFW mass profile. It would be good to remind the reader of some of the
 > key element in D13.
 
-The description of how the gravitational attraction was evaluated at fixed
-grid points of the NFW halos were added in section 3, the end of the first
-paragraph.
+We agree that we should provide the details of the simulation but the original
+paper did not describe the setup more than having two NFW profiles for
+evaluating the gravitational force. After going
+through the code base, we have added The description of how the gravitational
+attraction was evaluated at fixed grid points of each of the two analytic NFW
+halo profiles (10000 grid points each) in section 3, 
+at the end of the first paragraph.
 
 > Are the galaxies introduces as test particles in the simulations? It
 > seems not, but would this be a way to better model and possibly
@@ -142,7 +161,9 @@ precise calculation. Other explanations from the previous answer also follows.
 > It would be much better to define the output parameters using a
 > diagram of the different merger scenarios.
 
-We have added Figure 2.
+We have added Figure 2 that outlines each merger scenario with the
+corresponding time-since-pericenter and the corresponding projected separation
+of the two subclusters.
 
 > Would there be a correlation between beta and TSP?
 
