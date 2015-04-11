@@ -17,7 +17,7 @@ $ pip install -I $package_name==$package_version
 ```
 
 ## folders 
-* Fig. 1 - in Position - ipynb contains code to plot fig 1
+* Fig. 1 - in `Position/plot_Fig1.ipynb` 
 * fits_image - contains fits files for configuration plots 
 * sensitivity_analysis 
 	* contains sensitivity analysis 
