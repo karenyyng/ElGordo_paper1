@@ -16,6 +16,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{microtype}
+\usepackage{placeins}
 \graphicspath{{graphics/}}
 \newcommand{\mc}[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
 %-----------------------------------------------------------------------
@@ -480,6 +481,7 @@ In addition, we have devised a new type of weights of the projection angle $\alp
 based on the polarization fraction of the radio relic.
 
 %---------------------------------------------------------------------------
+
 \subsubsection{Monte Carlo weights based on the polarization fraction of the radio relic}
 %\input{2.3_1_polarization_prior}
 
@@ -498,6 +500,7 @@ compressed along with the ICM during a merger
 (\citealt{E98}, \citealt{vanWeeren10}, \citealt{Feretti12}).
 %This picture is consistent with a high polarization fraction.
 \par
+
 We designed the weights to reflect how $\alpha$ decreases monotonically as the
 maximum observable integrated polarization fraction ($\langle P \rangle$). 
 \begin{figure}
@@ -575,32 +578,7 @@ this polarization weight in addition to the default weights.
 
 %%---------------------------------------------------------------------------
 %\input{output_table.tex}
-\begin{table*} 
-\begin{minipage}{170mm} 
-\caption{Table of the output PDF properties of the model variables and output variables from Monte Carlo simulation
-\label{tab:outputs}}
-\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lccccccccc@{}}
-\hline
-\hline
-&&&&Default weights & & & & Default + polarization weights  \\ 
-\cmidrule{4-6} \cmidrule{8-10} 
-Variables & Units && Location & 68$\%$ CI $^{\dagger}$ &95$\%$ CI && Location & 68$\%$ CI  & 95$\%$ CI \\ 
-\hline 
-$\alpha$ &(degree)&&43&19-69&6-80&&21&10-30&3-34\\
-$d_{\rm proj}$ &Mpc&&0.74&0.74-0.75&0.73-0.76&&0.74&0.74-0.75&0.73-0.76\\
-$d_{\rm max}$ &Mpc&&1.2&0.90-2.2&0.77-4.6&&0.93&0.81-1.2&0.75-1.9\\
-$d_{\rm 3D}$ &Mpc&&1.0&0.79-2.1&0.75-4.3&&0.80&0.76-0.88&0.74-0.91\\
-$TSP_{\rm out}$&Gyr&&0.61&0.4-0.95&0.26-2.4&&0.46&0.30-0.55&0.21-0.64\\
-$TSP_{\rm ret}$&Gyr&&1.0&0.77-1.7&0.63-4.4&&0.91&0.69-1.3&0.59-2.3\\
-$T$&Gyr&&1.6&1.3-2.4&1.2-6.4&&1.4&1.2-1.6&1.2-2.2\\
-$v_{\rm 3D}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&580&260-1200&59-2400&&940&360-1800&62-2900\\
-$v_{\rm rad}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&360&140-630&27-880&&310&110-590&8-840\\
-$v_{\rm 3D}(t_{\rm per})$ & \kilo \meter~\second$^{-1}$ &&2800&2400-3700&2100-4200&&2400&2200-2800&2100-3500\\
-\bottomrule
-\end{tabularx}\\
-\footnotesize{$\dagger$ CI stands for confidence interval}\\
-\end{minipage}
-\end{table*}
+
 \subsection{Extension to the Monte Carlo simulation - Determining merger
 scenario with radio relic position by model comparison}
 
@@ -619,6 +597,16 @@ to drop between $\sim 10\%$ from \citet{Springel2007} and
 10\% to 30\% from \citet{Paul2011b} (note that the   
  time resolution is 0.6 Gyr for the simulation in \citealt{Paul2011b}).
 \par 
+\begin{figure}
+	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
+	\caption{The marginalized output PDF of the returning time-since-pericenter
+($TSP_{\rm ret}$) vs. the 3D velocity at the time of pericenter for El Gordo. The
+grey set of contours show the confidence regions before applying the
+polarization weight and the colored contours correspond to the confidence
+regions after applying the weights. The contours represent the 95\% and
+68\% confidence regions respectively. }
+	\label{fig:TSP_v3D}
+\end{figure}
 To capture the monotonically decreasing trend of the
 propagation speed of the shock fronts with respect to the center of
 mass, we expressed the possible time-averaged shock speeds as a factor of the inferred
@@ -657,6 +645,8 @@ relic using:
 	\langle v_{SE relic} \rangle^j = \beta~v^j_{3D}(t_{\rm per}) \frac{m^j_{NW}}{m^j_{SE} + m^j_{NW}}. 
 \end{equation}
 \par 
+
+
 For the most likely range of $\beta$, we refer to the
 simulations of cluster mergers by both \cite{Springel2007} and
 \cite{Paul2011b} because those are some of the few simulations available that
@@ -697,9 +687,36 @@ respectively. These locations correspond to a projected separation of 0.63 Mpc
 (NW relic) and 1.1 Mpc (E relic) from the center of mass.
 
 \label{sec:positionprior}
+\begin{table*}
+\begin{minipage}{170mm} 
+\caption{Table of the output PDF properties of the model variables and output variables from Monte Carlo simulation
+\label{tab:outputs}}
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lccccccccc@{}}
+\hline
+\hline
+&&&&Default weights & & & & Default + polarization weights  \\ 
+\cmidrule{4-6} \cmidrule{8-10} 
+Variables & Units && Location & 68$\%$ CI $^{\dagger}$ &95$\%$ CI && Location & 68$\%$ CI  & 95$\%$ CI \\ 
+\hline 
+$\alpha$ &(degree)&&43&19-69&6-80&&21&10-30&3-34\\
+$d_{\rm proj}$ &Mpc&&0.74&0.74-0.75&0.73-0.76&&0.74&0.74-0.75&0.73-0.76\\
+$d_{\rm max}$ &Mpc&&1.2&0.90-2.2&0.77-4.6&&0.93&0.81-1.2&0.75-1.9\\
+$d_{\rm 3D}$ &Mpc&&1.0&0.79-2.1&0.75-4.3&&0.80&0.76-0.88&0.74-0.91\\
+$TSP_{\rm out}$&Gyr&&0.61&0.4-0.95&0.26-2.4&&0.46&0.30-0.55&0.21-0.64\\
+$TSP_{\rm ret}$&Gyr&&1.0&0.77-1.7&0.63-4.4&&0.91&0.69-1.3&0.59-2.3\\
+$T$&Gyr&&1.6&1.3-2.4&1.2-6.4&&1.4&1.2-1.6&1.2-2.2\\
+$v_{\rm 3D}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&580&260-1200&59-2400&&940&360-1800&62-2900\\
+$v_{\rm rad}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&360&140-630&27-880&&310&110-590&8-840\\
+$v_{\rm 3D}(t_{\rm per})$ & \kilo \meter~\second$^{-1}$ &&2800&2400-3700&2100-4200&&2400&2200-2800&2100-3500\\
+\bottomrule
+\end{tabularx}\\
+\footnotesize{$\dagger$ CI stands for confidence interval}\\
+\end{minipage}
+\end{table*}
 
 \section{RESULTS} 
-
+We present the full outputs in Table~\ref{tab:outputs} and in figures in
+Appendix~\ref{app:results}, while we summarize the key numbers here.
 We found that the two subclusters collided with a relative velocity of $2400\pm^{900}_{400}~\kilo\meter~\second^{-1}$, at an estimated projection
 angle of $\alpha = 21\degree\pm^{9}_{11}$. From our analysis of the two
 scenarios, we found that El Gordo is more likely to be observed at a returning
@@ -710,7 +727,7 @@ returning scenario puts the
 estimate of the time of pericenter to be when the age of the universe was
 $\sim5.4$ Gyr. 
 Our estimate of $v_{3D}(t_{obs})$ is
-$940\pm^{860}_{580}~\kilo\meter~\second^{-1}$. 
+$940\pm^{860}_{580}~\kilo\meter~\second^{-1}$. (See figure~\ref{fig:TSP_v3D})
 %is compatible with the independent estimate from \citealt{L13}. 
 This fits comfortably within the upper limit of $2500
 \pm^{400}_{300}\kilo\meter~\second^{-1}$ reported by \cite{L13},
@@ -807,16 +824,6 @@ rationale of picking $\beta = 0.9$ can be found in the last paragraph of
 section 3.4. 
 }
 	\label{fig:our_guessed_scenario1}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
-	\caption{The marginalized output PDF of the returning time-since-pericenter
-($TSP_{\rm ret}$) vs. the 3D velocity at the time of pericenter for El Gordo. The
-grey set of contours show the confidence regions before applying the
-polarization weight and the colored contours correspond to the confidence
-regions after applying the weights. The contours represent the 95\% and
-68\% confidence regions respectively. }
-	\label{fig:TSP_v3D}
 \end{figure}
 \subsection{Sensitivity analysis of the polarization weight}
 %\input{3.3_sens_analysis}

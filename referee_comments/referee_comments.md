@@ -21,7 +21,7 @@ We have added the typical speeds along with some citations on the 9th line of th
 > larger (by rotating it by \~45-50 deg in order to have the elongation
 > axis of the cluster horizontal)
 
-We agree with the referee about the importance of the figure. 
+This is an excellent suggestion and we agree with the referee about the importance of the figure. 
 We did not rotate the figure because there is valuable information in the RA,
 Dec coordinates of the various components, so we made the figure two columns
 wide instead.
@@ -41,14 +41,15 @@ image that one examines. We referred to Figure 5 and Figure 8 in
 Lindner et al. 2014 for estimating the extent of the radio relic and
 have double checked that the extent are consistent with the outer contours.
 The schematic is just to give the reader an idea of where the relic is
-compared to the rest of the cluster. We used the numerical values given by L13 
-to all the calculation (See later discussion).
+compared to the rest of the cluster. We used the numerical locations given by L13 
+for all the calculation (See later discussion).
 
 > The concept of time-since-pericenter is interesting, but it need to be
 > clarified (the
 > time at pericenter is only defined in section 3.3).
 
-The definition is added to second paragraph of P.3, the introduction section of the paper.
+We completely agree with this suggestion.
+The definition has been added to second paragraph of P.3, the introduction section of the paper.
 
 > I would suggest that you draw a diagram of the merger (may be at
 > different time step) so that the reader can have a clearer idea of the
@@ -59,7 +60,8 @@ The definition is added to second paragraph of P.3, the introduction section of 
 > moment, the reader needs to go through the literature to understand
 > what are the effective geometric assumptions used.
 
-Explanation of the different merger scenario has been added in the
+This suggestion really improves the presentation a lot. 
+We have added the different merger scenario the
 introduction on P.3 at the end of the second paragraph.
 A new illustration has also been added as Fig. 2 to go along with the
 definition. 
@@ -182,13 +184,15 @@ Section 4
 > results that are basically
 > described in the appendix, which is not ideal.
 
-Which specific PDF plots would you like to see in the main text?
-Just to clarify, we do not have any likelihood plots but PDF plots since the
-Monte Carlo simulation is
-a likelihood-free inference process. Both a model and a fit of the model to the
-data are needed in order to compute a likelihood. We did not perform any
-fitting.
-Table 2 summarizes the marginalized PDF of all relevant variables. 
+We have moved table 2 to be right before the result section and provided an
+additional sentence to guide the reader to find the table in the result
+section. 
+The table contains the key summaries of the results. 
+Figure 6 also contains the marginalized PDF of one of the key variables, TSP
+vs the relative 3D velocities at pericenter.
+The plots in the appendix is only for visualizing possible correlation but
+otherwise contain the same information as table 2.
+
 
 Section 5
 =========
@@ -199,17 +203,29 @@ Section 5
 > with
 > other El Gordo modelling.
 
-The hydrodynamical simulations do not directly give estimates for most
+We agree with the referee and we originally attempted summarizing the results
+in table form.
+However, the hydrodynamical simulations do not directly give estimates for most
 of the output parameters that we have. 
 If we try to compute a table, a
 lot of the entries from the hydrodynamical simulations will be
 rough estimates that are estimated from their plots and would require
-explanation.
+explanation of how they might have under sampled the number of snapshots so
+their time estimates have larger uncertainties. 
 
 > And one table comparing the properties of the different merger
 > described with the same modelling principle, in particular
 > comparing El Gordo to the bullet cluster and the musket cluster.
 
-We have summarized the main similaries and differences. 
-Interested reader should refer to Dawson 13 for full comparison.
+In section 5.2, we have summarized the main similaries and differences due to
+TSP that can contribute to the
+morphological features. We feel like a numerical comparison from a table is
+less compelling than the description of the physics at the different merger
+stages as in section 5.2.
+Furthermore, the Musketball Cluster around an order of magnitude less massive
+and is much more further progressed than both El Gordo and the Bullet Cluster. 
+The Musketball also does not possess neither the cool core nor radio relics. 
+Therefore, we found the
+Musketball different enough that we did not
+include a direct comparison of the Musketball Cluster in the paper.
 
