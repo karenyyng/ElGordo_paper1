@@ -110,7 +110,7 @@ gas($\sim15\%$ in mass content), and sparsely spaced galaxies ($\sim2\%$ in mass
 clusters of the high mass range of $10^{14} M_{\sun}$ to the low mass end of
 $10^{15} M_{\sun}$, the subclusters are accelerated to high speeds of 
 $\sim 2000 - 3000~\kilo \meter~\second^{-1}$ (\citealt{Lage2014},
-\citealt{Dawson12}. The offsets of
+\citealt{Dawson12}). The offsets of
 different components of the subclusters reflect the differences in the
 strengths of interactions between various components. Galaxies are
 expected to lead the gas due to their negligible interaction cross
@@ -146,8 +146,8 @@ El Gordo is further confirmed to be a binary merger
 from the weak lensing analysis by \cite{Jee13}. The weak lensing analysis shows
 a mass ratio of $\sim$2:1  between the two main subclusters, named
 according to their location as the northwest (NW) and southeast (SE) subclusters respectively 
-(See Figure~\ref{fig:config}). 
-El Gordo also has an interesting X-ray morphology. In the northwest, it shows a wake feature, i.e.,
+(See Figure~\ref{fig:config}). A bimodal distribution of cluster members is
+also observed \citep{M12}. In addition, El Gordo has an interesting X-ray morphology. In the northwest, it shows a wake feature, i.e.,
 turbulent flow due to object of higher density moving through fluids, while
 in the southeast, it shows the highest X-ray emissivity indicative of a
 cool gas core at the head of the wake. The most straightforward explanation for this morphology is that the
@@ -175,8 +175,11 @@ the dynamical parameters after taking into account all
 constraints and uncertainties due to the missing variables.
 Since mergers of clusters proceed on the time-scale of many millions of
 years, one of the most important missing variables to infer is the
-time-since-pericenter (TSP), which is defined to be the time when the mass
-peaks of the DM subclusters are at minimum separation.
+time-since-pericenter (TSP)$^\dagger$, which is defined to be the time when the mass
+peaks of the DM subclusters are at minimum separation. \footnote{TSP in this
+	paper is completely identical to the variable time-since-collision (TSC) in
+	\cite{Dawson12}. We have renamed the variable to avoid confusion about how we
+define collision as pericenter.}
 Determining the TSP of similar clusters helps
 us reconstruct different stages and recover the physics of a cluster merger.
 In particular there is a degeneracy between the following two possible
@@ -185,7 +188,7 @@ We call the scenario for which the subclusters are
 moving apart after pericenter to be ``outgoing", and the alternative scenario 
 ``returning" for which the subclusters are approaching each other after turning
 around from the apocenter for the first time (See
-Fig~\ref{fig:merger_cartoon}).\par
+Fig.~\ref{fig:merger_cartoon}).\par
 Another crucial, missing piece of information is the 3D
 configuration, i.e.\ the angle between the plane of the sky and the merger
 axis called the projection angle $\alpha$. Since most of the dynamical
@@ -226,6 +229,16 @@ $\Omega_{\Lambda} = 0.7$ and $H_0 = 70~\kilo\meter / \second / \mega
 (3) All quoted masses ($M_{200c}$) are based on mass contained
 within $r_{200}$ where the mass density is 200 times the critical density
 of the universe at the cluster redshift of $z = 0.87$. 
+\begin{figure}
+	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
+	\caption{\label{fig:membership} Points showing the locations of the
+	member galaxies and the division of the member galaxies among the two subclusters of El Gordo by a spatial cut
+(black line). The color of the points shows the corresponding spectroscopic
+redshift of the member galaxies (see color bar for matching of
+spectroscopic values), with the redder end indicating higher
+redshift. The galaxy number density contours in the background in green indicate a bimodal
+distribution.} 
+\end{figure}
 \section{DATA} 
 We gathered and analyzed data from multiple sources. 
 See Table~\ref{tab:inputs} for descriptions of the PDFs of the input
@@ -239,15 +252,14 @@ To further distinguish member galaxies of each subcluster, we adopted the
 spatial cut from \citetalias{M12}.
 The adopted spatial cut is approximately perpendicular to the 2D merger
 axis \citepalias{M12} and is consistent with
-the bimodal number density contours (See Figure~\ref{fig:membership}). 
+the bimodal number density contours (See Fig.~\ref{fig:membership}). 
 There are 51 members identified in the NW subcluster and 35 members in the SE
 subcluster. \par 
 For the weak-lensing mass estimation, we used the
 Monte Carlo Markov Chains (MCMC) mass estimates from \citetalias{Jee13}.
 The Hubble Space Telescope data used in \citetalias{Jee13} were obtained from two
-programs PROP 12755
-and PROP 12477. PROP 12755 consisted of two pointings in the F625W, F775W, and F850LP.
-F850LP for a 6' x 3' strip. While PROP 12477 provided a $2 \times 2$ mosaic
+programs PROP 12755 and PROP 12477. PROP 12755 consisted of two pointings in the F625W, F775W, and F850LP.
+F850LP for a 6' x 3' strip, while PROP 12477 provided a $2 \times 2$ mosaic
 pattern with F606W and a single pointing in F814W. 
 \par 
 In order to further constrain our parameter space, we referred to the properties of
@@ -381,16 +393,6 @@ member galaxies of El
 Gordo shows large velocity dispersion, i.e.\ the largest velocity
 dispersion among all the ACT galaxy clusters, as reported by
 \citetalias{M12}.
-\begin{figure}
-	\includegraphics[width = \linewidth]{confirmed_member_divide.png}
-	\caption{\label{fig:membership} Points showing the locations of the
-	member galaxies and the division of the member galaxies among the two subclusters of El Gordo by a spatial cut
-(black line). The color of the points shows the corresponding spectroscopic
-redshift of the member galaxies (see color bar for matching of
-spectroscopic values), with the redder end indicating higher
-redshift. The galaxy number density contours in the background in green indicate a bimodal
-distribution.} 
-\end{figure}
 \begin{figure}
 	\includegraphics[width = \linewidth]{bootstrapped_redshift.png}
 	\caption{Bootstrapped location of the
@@ -597,16 +599,6 @@ to drop between $\sim 10\%$ from \citet{Springel2007} and
 10\% to 30\% from \citet{Paul2011b} (note that the   
  time resolution is 0.6 Gyr for the simulation in \citealt{Paul2011b}).
 \par 
-\begin{figure}
-	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
-	\caption{The marginalized output PDF of the returning time-since-pericenter
-($TSP_{\rm ret}$) vs. the 3D velocity at the time of pericenter for El Gordo. The
-grey set of contours show the confidence regions before applying the
-polarization weight and the colored contours correspond to the confidence
-regions after applying the weights. The contours represent the 95\% and
-68\% confidence regions respectively. }
-	\label{fig:TSP_v3D}
-\end{figure}
 To capture the monotonically decreasing trend of the
 propagation speed of the shock fronts with respect to the center of
 mass, we expressed the possible time-averaged shock speeds as a factor of the inferred
@@ -645,7 +637,43 @@ relic using:
 	\langle v_{SE relic} \rangle^j = \beta~v^j_{3D}(t_{\rm per}) \frac{m^j_{NW}}{m^j_{SE} + m^j_{NW}}. 
 \end{equation}
 \par 
+\begin{figure}
+	\includegraphics[width=\linewidth]{TwoMnWBSG_2contour2d.png}
+	\caption{The marginalized output PDF of the returning time-since-pericenter
+($TSP_{\rm ret}$) vs. the 3D velocity at the time of pericenter for El Gordo. The
+grey set of contours show the confidence regions before applying the
+polarization weight and the colored contours correspond to the confidence
+regions after applying the weights. The contours represent the 95\% and
+68\% confidence regions respectively. }
+	\label{fig:TSP_v3D}
+\end{figure}
 
+\begin{table*}
+\begin{minipage}{170mm} 
+\caption{Table of the output PDF properties of the model variables and output variables from Monte Carlo simulation
+\label{tab:outputs}}
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lccccccccc@{}}
+\hline
+\hline
+&&&&Default weights & & & & Default + polarization weights  \\ 
+\cmidrule{4-6} \cmidrule{8-10} 
+Variables & Units && Location & 68$\%$ CI $^{\dagger}$ &95$\%$ CI && Location & 68$\%$ CI  & 95$\%$ CI \\ 
+\hline 
+$\alpha$ &(degree)&&43&19-69&6-80&&21&10-30&3-34\\
+$d_{\rm proj}$ &Mpc&&0.74&0.74-0.75&0.73-0.76&&0.74&0.74-0.75&0.73-0.76\\
+$d_{\rm max}$ &Mpc&&1.2&0.90-2.2&0.77-4.6&&0.93&0.81-1.2&0.75-1.9\\
+$d_{\rm 3D}$ &Mpc&&1.0&0.79-2.1&0.75-4.3&&0.80&0.76-0.88&0.74-0.91\\
+$TSP_{\rm out}$&Gyr&&0.61&0.4-0.95&0.26-2.4&&0.46&0.30-0.55&0.21-0.64\\
+$TSP_{\rm ret}$&Gyr&&1.0&0.77-1.7&0.63-4.4&&0.91&0.69-1.3&0.59-2.3\\
+$T$&Gyr&&1.6&1.3-2.4&1.2-6.4&&1.4&1.2-1.6&1.2-2.2\\
+$v_{\rm 3D}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&580&260-1200&59-2400&&940&360-1800&62-2900\\
+$v_{\rm rad}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&360&140-630&27-880&&310&110-590&8-840\\
+$v_{\rm 3D}(t_{\rm per})$ & \kilo \meter~\second$^{-1}$ &&2800&2400-3700&2100-4200&&2400&2200-2800&2100-3500\\
+\bottomrule
+\end{tabularx}\\
+\footnotesize{$\dagger$ CI stands for confidence interval}\\
+\end{minipage}
+\end{table*}
 
 For the most likely range of $\beta$, we refer to the
 simulations of cluster mergers by both \cite{Springel2007} and
@@ -681,38 +709,12 @@ avoid the returning model, and in Appendix
 $\beta = 2.0$. 
 In fig.~\ref{fig:our_guessed_scenario} and~\ref{fig:our_guessed_scenario1}, we compared our estimates of the projected locations of the relics to the
 observed location given by Table 3 of L13. The given NW relic and E relic
-locations are R.A.=$01:02:46$, Decl.=$-49:14:43$ and R.A.=$01:03:07$,
-Decl.=$-49:16:16$
+locations are R.A.=01:02:46, Decl.=$-$49:14:43 and R.A.=01:03:07,
+Decl.=$-$49:16:16
 respectively. These locations correspond to a projected separation of 0.63 Mpc
 (NW relic) and 1.1 Mpc (E relic) from the center of mass.
 
 \label{sec:positionprior}
-\begin{table*}
-\begin{minipage}{170mm} 
-\caption{Table of the output PDF properties of the model variables and output variables from Monte Carlo simulation
-\label{tab:outputs}}
-\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lccccccccc@{}}
-\hline
-\hline
-&&&&Default weights & & & & Default + polarization weights  \\ 
-\cmidrule{4-6} \cmidrule{8-10} 
-Variables & Units && Location & 68$\%$ CI $^{\dagger}$ &95$\%$ CI && Location & 68$\%$ CI  & 95$\%$ CI \\ 
-\hline 
-$\alpha$ &(degree)&&43&19-69&6-80&&21&10-30&3-34\\
-$d_{\rm proj}$ &Mpc&&0.74&0.74-0.75&0.73-0.76&&0.74&0.74-0.75&0.73-0.76\\
-$d_{\rm max}$ &Mpc&&1.2&0.90-2.2&0.77-4.6&&0.93&0.81-1.2&0.75-1.9\\
-$d_{\rm 3D}$ &Mpc&&1.0&0.79-2.1&0.75-4.3&&0.80&0.76-0.88&0.74-0.91\\
-$TSP_{\rm out}$&Gyr&&0.61&0.4-0.95&0.26-2.4&&0.46&0.30-0.55&0.21-0.64\\
-$TSP_{\rm ret}$&Gyr&&1.0&0.77-1.7&0.63-4.4&&0.91&0.69-1.3&0.59-2.3\\
-$T$&Gyr&&1.6&1.3-2.4&1.2-6.4&&1.4&1.2-1.6&1.2-2.2\\
-$v_{\rm 3D}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&580&260-1200&59-2400&&940&360-1800&62-2900\\
-$v_{\rm rad}(t_{\rm obs})$ & \kilo \meter~\second$^{-1}$ &&360&140-630&27-880&&310&110-590&8-840\\
-$v_{\rm 3D}(t_{\rm per})$ & \kilo \meter~\second$^{-1}$ &&2800&2400-3700&2100-4200&&2400&2200-2800&2100-3500\\
-\bottomrule
-\end{tabularx}\\
-\footnotesize{$\dagger$ CI stands for confidence interval}\\
-\end{minipage}
-\end{table*}
 
 \section{RESULTS} 
 We present the full outputs in Table~\ref{tab:outputs} and in figures in
@@ -727,7 +729,7 @@ returning scenario puts the
 estimate of the time of pericenter to be when the age of the universe was
 $\sim5.4$ Gyr. 
 Our estimate of $v_{3D}(t_{obs})$ is
-$940\pm^{860}_{580}~\kilo\meter~\second^{-1}$. (See figure~\ref{fig:TSP_v3D})
+$940\pm^{860}_{580}~\kilo\meter~\second^{-1}$. (See Fig.~\ref{fig:TSP_v3D})
 %is compatible with the independent estimate from \citealt{L13}. 
 This fits comfortably within the upper limit of $2500
 \pm^{400}_{300}\kilo\meter~\second^{-1}$ reported by \cite{L13},
@@ -1104,7 +1106,10 @@ hosted at http://aplpy.github.com; Astropy, a community-developed core
 Python package for Astronomy \citep{astropy}, AstroML, a
 machine learning library for astrophysics \citep{VanderPlas2012}, and IPython, a system for
 interactive scientific computing, computing in science and engineering
-\citep{Perez2007} .
+\citep{Perez2007}.\par
+Note: The authors have made the Python code for most of the analyses openly
+available on \href{https://github.com/karenyyng/ElGordo_paper1}{https://github.com/karenyyng/ElGordo_paper1}. 
+
 \bibliographystyle{mn2e}
 \bibliography{ElGordo1}
 \appendix

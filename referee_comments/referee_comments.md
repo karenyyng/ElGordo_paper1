@@ -14,6 +14,7 @@ Introduction:
 > more references on cluster merger and in particular regarding the
 > typical speed of a merger should be given.
 
+We agree some typical speeds will help readers make better comparisons.
 We have added the typical speeds along with some citations on the 9th line of the introduction.
 
 > Figure 1 is key for the understanding of the paper. I would suggest to
@@ -30,6 +31,8 @@ wide instead.
 
 We will have an overplotting issue if the galaxy luminosity is added. We
 did not present any scientific results based on the galaxy luminosity contours.
+The galaxy luminosity showing bimodality is in Menanateau 12 and we have put a
+note in the main text to refer the readers to the reference. 
 
 > Can the relic radio data be plotted on top instead of some schematic
 > of it? (it looks like the size of the relic does not match the size
@@ -76,10 +79,21 @@ Section 2
 > the radio data used in
 > the analysis (position, Mach Number/velocity?, polarisation? ...)
 
+We have tried to make the data as fully quantitative as possible and put the
+relevant quantities in a section where the calculation making use of the
+quantities are explained. 
+
 Only the polarization information of the NW relic has been used i.e. 1 best estimate
-and 1 uncertainty, is present in Section 3.3. 
-The two observed positions used for the NW and the E relic have been added to
-the end of section 3.4.
+and 1 uncertainty, is present in Section 3.3 where we explain how to calculate
+the polarization prior. The E relic data is not used as
+we explained in the paper that the E relic does not have polarization data
+available. 
+
+The two observed positions (RA, DEC) used for the NW and the E relic have been added to
+the end of section 3.4, along with the projected separation in the
+center-of-mass frame. Section 3.4 explains how the probabilities of different merger scenarios are
+calculated.
+
 We did not use any Mach number in our calculation and we have explained why
 Mach numbers give unreliable estimates of the shock velocities in the center of
 mass frame in Section 4.1 paragraph 3. 
@@ -89,7 +103,8 @@ mass frame in Section 4.1 paragraph 3.
 > should it not be
 > moved to section 2?
 
-We have moved the descriptions of the
+Yes, we agree section 2 is a better location for describing how the velocity data was
+obtained. We have moved the descriptions of the
 relative velocity data from the first paragraph of section 3.1.1 to section 2.
 
 Section 3
@@ -101,16 +116,17 @@ Section 3
 > to only give
 > part of the data used in the analysis.
 
-The table gives all the PDFs that we draw directly from as inputs to
-the simulation, i.e. $M_{200_cNW}, c_{NW}, M_{200_cSE}, c_{SE}, z_{NW},
-z_{SE}, d_{proj} Table 1.  
+Table 1 gives all the PDFs that we draw directly from as inputs to
+the simulation, i.e. 
+$M_{200_cNW}, c_{NW}, M_{200_cSE}, c_{SE}, z_{NW}, z_{SE}, d_{proj}$ .  
 We did not draw samples directly from from the radio relic data, so the radio
 relic data does not belong in Table 2 which specifies only properties that are
 used as the input PDF of the Monte Carlo simulation. The radio relic data
 are only used to compute Monte Carlo weights. 
 
 We have edited the descriptions in Table 1 to clarify that the table is only
-for input sampling PDFs.
+for input sampling PDFs and not for data used for computing weights or merging
+scenario.
 
 The radio relic data that we do make use of include:
 1)  the polarization fraction and the uncertainty ($33\% \pm 1 \%$) which is specified in
@@ -128,10 +144,10 @@ the projected relic location is calculated.
 > key element in D13.
 
 We agree that we should provide the details of the simulation but the original
-paper did not describe the setup more than having two NFW profiles for
+paper (Dawson 13) did not describe the setup more than having two NFW profiles for
 evaluating the gravitational force. After going
 through the code base, we have added The description of how the gravitational
-attraction was evaluated at fixed grid points of each of the two analytic NFW
+attraction was numerically evaluated at fixed grid points of each of the two analytic NFW
 halo profiles (10000 grid points each) in section 3, 
 at the end of the first paragraph.
 
@@ -228,4 +244,5 @@ The Musketball also does not possess neither the cool core nor radio relics.
 Therefore, we found the
 Musketball different enough that we did not
 include a direct comparison of the Musketball Cluster in the paper.
-
+Interested readers can find the full numerical results of Musketball and
+Bullet Cluster in Dawson 13 for a comparison themselves. 
