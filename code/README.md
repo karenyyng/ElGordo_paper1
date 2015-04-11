@@ -33,6 +33,7 @@ your browser and you should modified the `LINK_TO_RAW_IPYTHON_NOTEBOOK_IN_THIS_R
 * Folder `multiDim_plot`
 	* contains the main table 2 results and main plots in appendix B of the paper
 	in  `main_results_and_appendix_plots.ipynb`
+  * `plotmod.py` contains helper functions for making the plots
 
 * Folder `Polarization`
 	* contains calculation and derivation of polarization weights 
