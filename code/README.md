@@ -21,14 +21,18 @@ $ pip install -I $package_name==$package_version
 your browser and you should modified the `LINK_TO_RAW_IPYTHON_NOTEBOOK_IN_THIS_REPO`
 
 ## folders 
-* Position - Fig. 1 - in `plot_Fig1.ipynb` 
-* sensitivity_analysis 
+* Folder `Position` - Fig. 1 - in `plot_Fig1.ipynb` 
+* Folder `redshift_vel_dispersion_est` - Fig. 3 in `plot_fig3.ipynb`
+* Folder `sensitivity_analysis` 
 	* contains sensitivity analysis  
-	* the calculation of the probability of different merger scenario 
+    * in `Sensitivity analysis & parameter estimation.ipynb`
+* Folder`sensitivity_analysis` contains the calculation of the probability of different merger scenario 
     * in `different scenario probability - polar prior E.ipynb`
     * in `different scenario probability - polar prior NW.ipynb`
-  
+ 
 * multiDim_plot 
-	* contains the main plots in appendix B of the paper 
+	* contains the main table 2 results and main plots in appendix B of the paper
+	in  `main_results_and_appendix_plots.ipynb`
+
 * Polarization 
 	* contains calculation and derivation of polarization weights 
