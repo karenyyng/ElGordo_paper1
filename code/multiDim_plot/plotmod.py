@@ -6,6 +6,9 @@ Will Dawson.
 
 The main function of this program is to generate report quality plots,
 especially a covariance array plot
+
+usage: if you use any part of this code for your publication, please cite Ng et
+al. 2015 (a.k.a. http://arxiv.org/abs/1412.1826v1)
 """
 from __future__ import division
 import pylab
@@ -27,6 +30,8 @@ from statsmodels.api import nonparametric
 from types import ModuleType
 
 # -------- for masking and subsetting --------------------------------------
+
+
 def loadcombo(prefix, index, suffix):
     """loads the data from pickle files
     Parameters:
@@ -122,7 +127,7 @@ def load_pickles_to_df(par, prefix, index, msun1e14=True,
 
 
 def mask_bigger_than_age_of_universe(
-    df, z, H0, Om0, T=None, TSM_0=None, TSM_1=None):
+        df, z, H0, Om0, T=None, TSM_0=None, TSM_1=None):
     """assumes a FlatLambdaCDM cosmology to calculate age of universe at
     particular redshift and returns a mask that masks time values
     that are bigger than the age of the universe or if they are undefined
@@ -335,7 +340,6 @@ def histplot1d_pdf(x, prefix=None, prob=None, N_bins='knuth', histrange=None,
         print '{0}, {1:0.4f}, {2:0.4f},'.format(prefix, loc, ll_68) + \
             '{0:0.4f}, {1:0.4f}, {2:0.4f}'.format(ul_68, ll_95, ul_95)
 
-
     # Create location and confidence interval line plots
     # find the binedge that the location falls into
     # so that the line indicating the location only extends to top of
@@ -370,7 +374,7 @@ def histplot1d_pdf(x, prefix=None, prob=None, N_bins='knuth', histrange=None,
     if title is not None:
         pylab.title(title, fontsize=16)
 
-    ### set font size
+    # set font size
     # fontsize=14
     # ax = pylab.gca()
     # for tick in ax.xaxis.get_major_ticks():
@@ -384,7 +388,6 @@ def histplot1d_pdf(x, prefix=None, prob=None, N_bins='knuth', histrange=None,
 
     filename = prefix + '_histplot1D'
     pylab.savefig(filename + '.pdf', bbox_inches='tight')
-
 
     return results
 
@@ -401,7 +404,7 @@ def histplot1d(x, prefix=None, prob=None, norm=False, N_bins='knuth',
         binwidth, bins = de.knuth_bin_width(x, return_bins=True)
         knuth_N_bins = bins.size - 1
         N_bins = knuth_N_bins
-    #elif type(N_bins) is int:
+    # elif type(N_bins) is int:
     #    # compare bin width to knuth bin width
     #    print "specified bin width is {0}, Knuth bin size is {1}".format(
     #        N_bins, knuth_N_bins)
@@ -420,9 +423,10 @@ def histplot1d(x, prefix=None, prob=None, norm=False, N_bins='knuth',
 
     for i in numpy.arange(N_bins):
         if i == 0:
-            x_binned = numpy.ones(hist[i])*(binedges[i]+binedges[i+1])/2
+            x_binned = numpy.ones(
+                hist[i]) * (binedges[i] + binedges[i + 1]) / 2
         else:
-            x_temp = numpy.ones(hist[i])*(binedges[i]+binedges[i+1])/2
+            x_temp = numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
             x_binned = numpy.concatenate((x_binned, x_temp))
 
     loc = biweightLoc(x_binned)
@@ -493,7 +497,7 @@ def histplot1d_part(ax, x, prob=None, N_bins='knuth', histrange=None,
     similar to histplot1d but for subplot purposes I believe
     '''
     # compare bin width to knuth bin width
-    #if type(N_bins) is int:
+    # if type(N_bins) is int:
     #    print "specified bin width is {0}, Knuth bin size is {1}".format(
     #        N_bins, knuth_N_bins)
     if N_bins == 'knuth':
@@ -574,22 +578,22 @@ def histplot2d(x, y, prefix, prob=None, N_bins=100, histrange=None,
     x = np.array(x)
     y = np.array(y)
     # Create the confidence interval plot
-    if histrange == None:
-        if prob != None:
+    if histrange is None:
+        if prob is not None:
             H, xedges, yedges = numpy.histogram2d(
                 x, y, bins=N_bins, weights=prob)
-        elif prob == None:
+        elif prob is None:
             H, xedges, yedges = numpy.histogram2d(x, y, bins=N_bins)
     else:
-        if prob != None:
+        if prob is not None:
             H, xedges, yedges = \
                 numpy.histogram2d(x, y, bins=N_bins,
                                   range=[[histrange[0], histrange[1]],
                                          [histrange[2], histrange[3]]],
                                   weights=prob)
-        elif prob == None:
+        elif prob is None:
             H, xedges, yedges = numpy.histogram2d(
-                x, y, bins = N_bins,
+                x, y, bins=N_bins,
                 range=[[histrange[0], histrange[1]],
                        [histrange[2], histrange[3]]])
     H = numpy.transpose(H)
@@ -624,15 +628,15 @@ def histplot2d(x, y, prefix, prob=None, N_bins=100, histrange=None,
     im = pylab.imshow(H, cmap=pylab.cm.gray_r, interpolation="gaussian")
     #pylab.pcolor(X, Y, H, cmap=pylab.cm.gray_r, interpolation="gaussian")
 
-    if x_label != None:
+    if x_label is not None:
         pylab.xlabel(x_label, fontsize=14)
-    if y_label != None:
+    if y_label is not None:
         pylab.ylabel(y_label, fontsize=14)
-    if x_lim != None:
+    if x_lim is not None:
         pylab.xlim(x_lim)
-    if y_lim != None:
+    if y_lim is not None:
         pylab.ylim(y_lim)
-    if legend != None:
+    if legend is not None:
         # Dummy lines for legend
         # 800000 is for Maroon color - 68% 1 sigma
         # 0000A0 is for blue color - 95% confidence 3 sigma
@@ -647,7 +651,7 @@ def histplot2d(x, y, prefix, prob=None, N_bins=100, histrange=None,
         tick.label1.set_fontsize(fontsize)
 
     if save:
-        filename = prefix+'_histplot2d'
+        filename = prefix + '_histplot2d'
         pylab.savefig(filename, dpi=300, bbox_inches='tight')
 
     return fig
@@ -693,7 +697,7 @@ def histplot2d_part(ax, x, y, prob=None, N_bins=100, histrange=None,
             H, xedges, yedges = \
                 numpy.histogram2d(x, y, bins=N_bins,
                                   range=[[histrange[0], histrange[1]],
-                                        [histrange[2], histrange[3]]],
+                                         [histrange[2], histrange[3]]],
                                   weights=prob)
         elif prob is None:
             H, xedges, yedges = numpy.histogram2d(
@@ -728,8 +732,8 @@ def histplot2d_part(ax, x, y, prob=None, N_bins=100, histrange=None,
     # can use pcolor or imshow to show the shading instead
     ax.pcolormesh(X, Y, H, cmap=pylab.cm.gray_r, shading='gouraud')
     ax.contour(X, Y, H, (h_2sigma, h_1sigma), linewidths=(2, 2),
-            colors=((158 / 255., 202 / 255., 225 / 255.),
-                    (49 / 255., 130 / 255., 189 / 255.)))
+               colors=((158 / 255., 202 / 255., 225 / 255.),
+                       (49 / 255., 130 / 255., 189 / 255.)))
 
     if x_lim is not None:
         ax.set_xlim(x_lim)
@@ -787,7 +791,7 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
             H, xedges, yedges = numpy.histogram2d(
                 x, y, bins=N_bins,
                 range=[[histrange[0], histrange[1]],
-                      [histrange[2], histrange[3]]],
+                       [histrange[2], histrange[3]]],
                 weights=prob)
         elif prob is None:
             H, xedges, yedges = numpy.histogram2d(
@@ -806,16 +810,16 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
             runsum = h[j]
         else:
             runsum += h[j]
-        if runsum/h_sum <= 0.05:
+        if runsum / h_sum <= 0.05:
             # then store the value of N at the 2sigma level
             h_2sigma = h[j]
-        if runsum/h_sum <= 0.32:
+        if runsum / h_sum <= 0.32:
             # then store the value of N at the 1sigma level
             h_1sigma = h[j]
     # Create the contour plot using the 2Dhist info
     # define pixel values to be at the center of the bins
-    x = xedges[:-1]+(xedges[1]-xedges[0])/2
-    y = yedges[:-1]+(yedges[1]-yedges[0])/2
+    x = xedges[:-1] + (xedges[1] - xedges[0]) / 2
+    y = yedges[:-1] + (yedges[1] - yedges[0]) / 2
     X, Y = numpy.meshgrid(x, y)
 
     fig = pylab.figure()
@@ -828,22 +832,22 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
     # Data points for other dissociative mergers
     pylab.scatter(v_bullet_sf07, t_bullet_sf07, s=140,
                   c='k', marker='d', label="Bullet SF07")
-    #pylab.scatter(v_macs,t_macs,s=140, c='0.4',markeredgecolor='0.4',
+    # pylab.scatter(v_macs,t_macs,s=140, c='0.4',markeredgecolor='0.4',
     #    marker='^',label='MACS J0025.4')
-    #pylab.scatter(v_a520,t_a520,s=140,c='0.4',markeredgecolor='0.4',
-    #marker='o',label='A520')
+    # pylab.scatter(v_a520,t_a520,s=140,c='0.4',markeredgecolor='0.4',
+    # marker='o',label='A520')
     # pylab.scatter(v_pandora,t_pandora,s=140,c='0.4',markeredgecolor='0.4',
     # marker='p',label='A2744')
 
-    if x_label != None:
+    if x_label is not None:
         pylab.xlabel(x_label, fontsize=20)
-    if y_label != None:
+    if y_label is not None:
         pylab.ylabel(y_label, fontsize=20)
-    if x_lim != None:
+    if x_lim is not None:
         pylab.xlim(x_lim)
-    if y_lim != None:
+    if y_lim is not None:
         pylab.ylim(y_lim)
-    if legend != None:
+    if legend is not None:
         # Dummy lines for legend
         pylab.plot((0, 1), (0, 1), c='#800000', linewidth=2, label=('68%'))
         pylab.plot((0, 1), (0, 1), c='#0000A0', linewidth=2, label=('95%'))
@@ -855,7 +859,7 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
     for tick in ax.yaxis.get_major_ticks():
         tick.label1.set_fontsize(fontsize)
 
-    filename = prefix+'_histplot2dTSC.pdf'
+    filename = prefix + '_histplot2dTSC.pdf'
     pylab.savefig(filename, dpi=300, bbox_inches='tight')
 
     return fig
@@ -910,7 +914,6 @@ def kde1d(x, plotObj, prob=None, kernel="gau", bw="scott", fft=True,
         if lim is not None:
             plotObj.set_xlim(lim)
 
-
     return support, density
 
 
@@ -952,13 +955,13 @@ def central_CI(support, density, level=68, lim=None):
     low_ix = 0
     while(low_exc < exclude_reg):
         low_exc += density[low_ix]
-        low_ix+=1
+        low_ix += 1
 
     up_exc = 0
     up_ix = density.size - 1
     while(up_exc < exclude_reg):
         up_exc += density[up_ix]
-        up_ix-=1
+        up_ix -= 1
     return low_ix, up_ix
 
 
@@ -1004,7 +1007,7 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
     # divide total number of data points into nparts-1
     nparts = 101
     d = (nparts - 1, 5)
-    reduced_d = (nparts-2, 5)
+    reduced_d = (nparts - 2, 5)
     data = numpy.zeros(d)
     x_perdiff = numpy.zeros(reduced_d)
 
@@ -1012,11 +1015,11 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
     for n in range(1, nparts):
             # print i,"th iteration"
         # size of each of the n parts:
-        partsize = totalsize*(n)/(nparts-1)
+        partsize = totalsize * (n) / (nparts - 1)
         hist, binedges, tmp = \
             astroMLhist(x[:partsize], bins="knuth",
-                 histtype='step', weights=prob[:partsize],
-                 range=histrange, color='k', linewidth=2)
+                        histtype='step', weights=prob[:partsize],
+                        range=histrange, color='k', linewidth=2)
 
         # Calculate the location and confidence intervals
         # Since my location and confidence calculations can't take weighted data I
@@ -1034,9 +1037,9 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
         ll_68, ul_68 = bcpcl(loc, x_binned, 1)
         ll_95, ul_95 = bcpcl(loc, x_binned, 2)
         # this will store the data
-        data[n-1] = [loc, ll_68, ul_68, ll_95, ul_95]
+        data[n - 1] = [loc, ll_68, ul_68, ll_95, ul_95]
 
-    filename = prefix+'_histplot1D_percentdiff.png'
+    filename = prefix + '_histplot1D_percentdiff.png'
 
     pylab.axvline(loc, ls='--', linewidth=2, label='$C_{BI}$', color="k")
     pylab.axvline(ll_68, ls='-.', linewidth=2, color='#800000',
@@ -1049,14 +1052,14 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
     pylab.savefig(filename, dpi=300, bbox_inches='tight')
     pylab.close()
 
-    print '\n'+prefix + ' data is '
+    print '\n' + prefix + ' data is '
     print data
     print '      '
 
-    for n in range(1, nparts-1):
-        x_perdiff[n-1] = (data[nparts - 2]-data[n - 1])*2 * \
-            100/(data[nparts-2]+data[n-1])
-    print prefix+' per diff is '
+    for n in range(1, nparts - 1):
+        x_perdiff[n - 1] = (data[nparts - 2] - data[n - 1]) * 2 * \
+            100 / (data[nparts - 2] + data[n - 1])
+    print prefix + ' per diff is '
     print x_perdiff
     print '      '
 
@@ -1186,11 +1189,11 @@ def N_by_M_plot_contour(data, Nvar_list, Mvar_list, space, axlims=None,
     plt.setp([a.get_xticklabels() for i in range(M - 1)
               for a in axarr[i, :]], visible=False)
 
-    ## remove unwanted column axes tick labels
+    # remove unwanted column axes tick labels
     plt.setp([a.get_yticklabels() for i in range(1, N)
               for a in axarr[:, i]], visible=False)
 
-    ## rotate the xlabels appropriately
+    # rotate the xlabels appropriately
     if xlabel_to_rot is not None:
         match_ix = [Nvar_list.index(item) for item in Nvar_list]
         # ok to use for-loops for small number of iterations
@@ -1199,7 +1202,7 @@ def N_by_M_plot_contour(data, Nvar_list, Mvar_list, space, axlims=None,
             for label in labels:
                 label.set_rotation(xlabel_to_rot[Nvar_list[ix]])
 
-    ## create axes labels
+    # create axes labels
     if axlabels is not None:
         for j in range(M):
             axarr[j, 0].set_ylabel(axlabels[Mvar_list[j]], fontsize=fontsize)
@@ -1216,12 +1219,12 @@ def N_by_M_plot_contour(data, Nvar_list, Mvar_list, space, axlims=None,
             ax2.xaxis.set_major_locator(MaxNLocator(nbins=6, prune="both"))
             ax2.yaxis.set_major_locator(MaxNLocator(nbins=6, prune="both"))
 
-    ## start plotting the 2D contours
+    # start plotting the 2D contours
     for i in range(M):
         for j in range(N):
-            #print "axarr[i, j] has indices {0}".format((i, j))
-            #print "x axis label = {0}".format(Nvar_list[j])
-            #print "y axis label = {0}".format(Mvar_list[i])
+            # print "axarr[i, j] has indices {0}".format((i, j))
+            # print "x axis label = {0}".format(Nvar_list[j])
+            # print "y axis label = {0}".format(Mvar_list[i])
             histplot2d_part(axarr[i, j],
                             data[Nvar_list[j]],
                             data[Mvar_list[i]],
@@ -1332,12 +1335,12 @@ def N_by_N_lower_triangle_plot(data, space, var_list, axlims=None,
 
     for n in range(N):
         # avoid overlapping lowest and highest ticks mark
-        #print "setting x and y tick freq for {0}".format((n, n))
+        # print "setting x and y tick freq for {0}".format((n, n))
         ax2 = axarr[n, n]
         ax2.xaxis.set_major_locator(MaxNLocator(nbins=6, prune="both"))
         ax2.yaxis.set_major_locator(MaxNLocator(nbins=6, prune="both"))
 
-    #print "setting x and y tick freq for {0}".format((i, j))
+    # print "setting x and y tick freq for {0}".format((i, j))
     for i in range(N):
         for j in range(N):  # range(i)
             ax2 = axarr[i, j]
@@ -1371,7 +1374,6 @@ def N_by_N_lower_triangle_plot(data, space, var_list, axlims=None,
                             N_bins=Nbins_2D[(var_list[j], var_list[i])],
                             x_lim=axlims[var_list[j]],
                             y_lim=axlims[var_list[i]])
-
 
     if save:
         print "saving plot to {0}".format(path + prefix + suffix)
@@ -1473,7 +1475,7 @@ def N_by_M_lower_tri_plot(Ndata, Mdata, space, Nvar_list, Mvar_list,
               for a in axarr[i + 1, 1:]], visible=False)
 
     # create axes labels
-    #if axlabels is not None:
+    # if axlabels is not None:
     for j in range(M):
         axarr[j, 0].set_ylabel(axlabels[Mvar_list[j]], fontsize=fontsize)
     for i in range(N):
@@ -1481,7 +1483,7 @@ def N_by_M_lower_tri_plot(Ndata, Mdata, space, Nvar_list, Mvar_list,
                                    fontsize=fontsize)
 
     # avoid overlapping lowest and highest ticks mark
-    #for n in range(N):
+    # for n in range(N):
     #    ## avoid overlapping lowest and highest ticks mark
     #    #ax1 = axarr[n, 0]
     #    #ax1.yaxis.set_major_locator(MaxNLocator(nbins=5, prune="both"))
@@ -1493,7 +1495,7 @@ def N_by_M_lower_tri_plot(Ndata, Mdata, space, Nvar_list, Mvar_list,
 
     for i in range(N):
         for j in range(N):
-            #print "setting x tick freq for {0}".format((i, j))
+            # print "setting x tick freq for {0}".format((i, j))
             ax2 = axarr[i, j]
             ax2.xaxis.set_major_locator(MaxNLocator(nbins=5, prune="both"))
             ax2.yaxis.set_major_locator(MaxNLocator(nbins=5, prune="both"))
@@ -1508,7 +1510,7 @@ def N_by_M_lower_tri_plot(Ndata, Mdata, space, Nvar_list, Mvar_list,
                 label.set_rotation(xlabel_to_rot[Nvar_list[ix]])
 
     # start plotting the diagonal
-    #### have to handle how prob is applied for Mdata !!!!!!
+    # have to handle how prob is applied for Mdata !!!!!!
     # note that the xlim and ylims are supposed to be the same
     for i in range(N):
         histplot2d_part(axarr[i, i],
@@ -1520,7 +1522,7 @@ def N_by_M_lower_tri_plot(Ndata, Mdata, space, Nvar_list, Mvar_list,
                         y_lim=axlims[Mvar_list[i]])
 
     # start plotting the lower triangle when row no > col no
-    #### have to handle how prob is applied for Mdata !!!!!!
+    # have to handle how prob is applied for Mdata !!!!!!
     for i in range(N):
         for j in range(i):
             histplot2d_part(axarr[i, j],
@@ -1574,14 +1576,21 @@ def summarize_CI_as_df(data, par, N_bins="knuth", columns=None,
         histran = dict.fromkeys(data.columns)
 
     # sometimes Knuth bins are problematic
-    if type(N_bins) is str or type(N_bins) is int:
+    if isinstance(N_bins, str) or isinstance(N_bins, int):
         N_bins = {key: N_bins for key in par}
 
     # use list comprehension to loop through the results
-    res = [histplot1d(np.array(data[key]),
-           prob=np.array(data['prob']), N_bins=N_bins[key],
-           histrange=histran[key], save=False, verbose=verbose, plot=False)
-           for key in par]
+    res = [
+        histplot1d(
+            np.array(
+                data[key]),
+            prob=np.array(
+                data['prob']),
+            N_bins=N_bins[key],
+            histrange=histran[key],
+            save=False,
+            verbose=verbose,
+            plot=False) for key in par]
     res = pd.DataFrame(res, columns=columns, index=par)
 
     return res
@@ -1652,7 +1661,8 @@ def save_CI_df_to_tex_table(res, m_res, texfile, columns=None, verbose=True):
             "{@{\extracolsep{\\fill}}lccccccccc@{}}\n")
     F.write("\hline\n")
     F.write("\hline\n")
-    F.write("&&&&Default priors & & & & Default + polarization priors  \\\\ \n")
+    F.write(
+        "&&&&Default priors & & & & Default + polarization priors  \\\\ \n")
     F.write("\cmidrule{4-6} \cmidrule{8-10} \n")
     F.write("Variables & Units && Location & 68$\%$ CI $^{\dagger}$ &" +
             "95$\%$ CI && Location & 68$\%$ CI  & 95$\%$ CI \\\\ \n")
@@ -1685,14 +1695,14 @@ def save_CI_df_to_tex_table(res, m_res, texfile, columns=None, verbose=True):
     key = "v_3d_obs"
     dp = "0f"
     F.write("$v_{3D}(t_{obs})$ & \kilo \meter~\second$^{-1}$ &&" +
-        texline(res, m_res, columns, key, dp, sf))
+            texline(res, m_res, columns, key, dp, sf))
     key = "v_rad_obs"
     dp = "0f"
     F.write("$v_{rad}(t_{obs})$ & \kilo \meter~\second$^{-1}$ &&" +
-        texline(res, m_res, columns, key, dp, sf))
+            texline(res, m_res, columns, key, dp, sf))
     key = "v_3d_col"
     F.write("$v_{3D}(t_{col})$ & \kilo \meter~\second$^{-1}$ &&" +
-        texline(res, m_res, columns, key, dp, sf))
+            texline(res, m_res, columns, key, dp, sf))
     F.write("\\bottomrule" + "\n")
     F.write("\end{tabularx}\\\\" + "\n")
     F.write("\\footnotesize{$\dagger$ CI stands for credible interval}\\\\" +
@@ -1807,7 +1817,7 @@ def plot_perdiff(perdiff, labels, title):
     plt.xlabel('% of iterations')
     plt.ylabel('Percent difference')
     ax.xaxis.set_minor_locator(minorLocator)
-    plt.savefig(title+'.png', dpi=300, bbox_inches='tight')
+    plt.savefig(title + '.png', dpi=300, bbox_inches='tight')
     return fig
 
 
@@ -1834,9 +1844,11 @@ def prior_diff(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # need to use the weighted histogram data in the calculations
     for i in numpy.arange(N_bins):
         if i == 0:
-            x_binned1 = numpy.ones(hist1[i])*(binedges1[i]+binedges1[i+1])/2
+            x_binned1 = numpy.ones(
+                hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
         else:
-            x_temp1 = numpy.ones(hist1[i])*(binedges1[i]+binedges1[i+1])/2
+            x_temp1 = numpy.ones(
+                hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
             x_binned1 = numpy.concatenate((x_binned1, x_temp1))
     loc1 = biweightLoc(x_binned1)
     ll_68_1, ul_68_1 = bcpcl(loc1, x_binned1, 1)
@@ -1848,21 +1860,35 @@ def prior_diff(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
                '--', linewidth=2, color='#6495ed', label='$C_{BI}$')
     pylab.plot((ll_68_1, ll_68_1), (pylab.ylim()[0], pylab.ylim()[1]),
                '-.', linewidth=2, color='#7fffd4', label='68% $IC_{B_{BI}}$')
-    pylab.plot((ul_68_1, ul_68_1),
-               (pylab.ylim()[0], pylab.ylim()[1]), '-.', linewidth=2, color='#7fffd4')
+    pylab.plot(
+        (ul_68_1,
+         ul_68_1),
+        (pylab.ylim()[0],
+         pylab.ylim()[1]),
+        '-.',
+        linewidth=2,
+        color='#7fffd4')
     pylab.plot((ll_95_1, ll_95_1), (pylab.ylim()[0], pylab.ylim()[1]),
                ':', linewidth=2, color='#87ceeb', label='95% $IC_{B_{BI}}$')
-    pylab.plot((ul_95_1, ul_95_1),
-               (pylab.ylim()[0], pylab.ylim()[1]), ':', linewidth=2, color='#87ceeb')
+    pylab.plot(
+        (ul_95_1,
+         ul_95_1),
+        (pylab.ylim()[0],
+         pylab.ylim()[1]),
+        ':',
+        linewidth=2,
+        color='#87ceeb')
 
     # Calculate the location and %confidence intervals for data 2
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
     for i in numpy.arange(N_bins):
         if i == 0:
-            x_binned2 = numpy.ones(hist2[i])*(binedges2[i]+binedges2[i+1])/2
+            x_binned2 = numpy.ones(
+                hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
         else:
-            x_temp2 = numpy.ones(hist2[i])*(binedges2[i]+binedges2[i+1])/2
+            x_temp2 = numpy.ones(
+                hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
             x_binned2 = numpy.concatenate((x_binned2, x_temp2))
     loc2 = biweightLoc(x_binned2)
     ll_68_2, ul_68_2 = bcpcl(loc2, x_binned2, 1)
@@ -1873,31 +1899,43 @@ def prior_diff(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
                '--', linewidth=2, color='#ff4500', label='$C_{BI}$')
     pylab.plot((ll_68_2, ll_68_2), (pylab.ylim()[0], pylab.ylim()[1]),
                '-.', linewidth=2, color='#ff8c00', label='68% $IC_{B_{BI}}$')
-    pylab.plot((ul_68_2, ul_68_2),
-               (pylab.ylim()[0], pylab.ylim()[1]), '-.', linewidth=2, color='#ff8c00')
+    pylab.plot(
+        (ul_68_2,
+         ul_68_2),
+        (pylab.ylim()[0],
+         pylab.ylim()[1]),
+        '-.',
+        linewidth=2,
+        color='#ff8c00')
     pylab.plot((ll_95_2, ll_95_2), (pylab.ylim()[0], pylab.ylim()[1]),
                ':', linewidth=2, color='#ffa500', label='95% $IC_{B_{BI}}$')
-    pylab.plot((ul_95_2, ul_95_2),
-               (pylab.ylim()[0], pylab.ylim()[1]), ':', linewidth=2, color='#ffa500')
+    pylab.plot(
+        (ul_95_2,
+         ul_95_2),
+        (pylab.ylim()[0],
+         pylab.ylim()[1]),
+        ':',
+        linewidth=2,
+        color='#ffa500')
 
     # create labels for the plots
-    if x_label != None:
+    if x_label is not None:
         pylab.xlabel(x_label, fontsize=20)
-    if y_label != None:
+    if y_label is not None:
         pylab.ylabel(y_label, fontsize=20)
-    if x_lim != None:
+    if x_lim is not None:
         pylab.xlim(x_lim)
-    if y_lim != None:
+    if y_lim is not None:
         pylab.ylim(y_lim)
-    if legend != None:
+    if legend is not None:
         pylab.legend()
     # fontsize=14
     #ax = pylab.gca()
     # for tick in ax.xaxis.get_major_ticks():
         # tick.label1.set_fontsize(fontsize)
 
-    filename = prefix+'_prior_diff'
-    pylab.savefig(title+'.png', dpi=300, bbox_inches='tight')
+    filename = prefix + '_prior_diff'
+    pylab.savefig(title + '.png', dpi=300, bbox_inches='tight')
 
     print '{0}, {1:0.4f}, {2:0.4f}, {3:0.4f}, {4:0.4f}, {5:0.4f}'.format(
         prefix, loc1, ll_68_1, ul_68_1, ll_95_1, ul_95_1)
@@ -1944,16 +1982,17 @@ def prior_diff_pdf(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     for i in numpy.arange(N_bins):
         if i == 0:
             x_binned1 = numpy.ones(histbin1[i]) *\
-                (binedges1[i]+binedges1[i+1])/2
+                (binedges1[i] + binedges1[i + 1]) / 2
         else:
-            x_temp1 = numpy.ones(hist1[i])*(binedges1[i]+binedges1[i+1])/2
+            x_temp1 = numpy.ones(
+                hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
             x_binned1 = numpy.concatenate((x_binned1, x_temp1))
     loc1 = biweightLoc(x_binned1)
     ll_68_1, ul_68_1 = bcpcl(loc1, x_binned1, 1)
     ll_95_1, ul_95_1 = bcpcl(loc1, x_binned1, 2)
 
     # adjust the max ylim so it does not look weird
-    ylim_max = pdf2.max()*1.2
+    ylim_max = pdf2.max() * 1.2
 
     # Create location and confidence interval line plots
     pylab.plot((loc1, loc1), (pylab.ylim()[0], ylim_max), '--', linewidth=2,
@@ -1972,9 +2011,11 @@ def prior_diff_pdf(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # need to use the weighted histogram data in the calculations
     for i in numpy.arange(N_bins):
         if i == 0:
-            x_binned2 = numpy.ones(hist2[i])*(binedges2[i]+binedges2[i+1])/2
+            x_binned2 = numpy.ones(
+                hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
         else:
-            x_temp2 = numpy.ones(hist2[i])*(binedges2[i]+binedges2[i+1])/2
+            x_temp2 = numpy.ones(
+                hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
             x_binned2 = numpy.concatenate((x_binned2, x_temp2))
     loc2 = biweightLoc(x_binned2)
     ll_68_2, ul_68_2 = bcpcl(loc2, x_binned2, 1)
@@ -2003,23 +2044,23 @@ def prior_diff_pdf(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
                linewidth=2, color='#ffa500')
 
     # create labels for the plots
-    if x_label != None:
+    if x_label is not None:
         pylab.xlabel(x_label, fontsize=20)
-    if y_label != None:
+    if y_label is not None:
         pylab.ylabel(y_label, fontsize=20)
-    if x_lim != None:
+    if x_lim is not None:
         pylab.xlim(x_lim)
-    if y_lim != None:
+    if y_lim is not None:
         pylab.ylim(y_lim)
-    if legend != None:
+    if legend is not None:
         pylab.legend()
     # fontsize=14
     #ax = pylab.gca()
     # for tick in ax.xaxis.get_major_ticks():
         # tick.label1.set_fontsize(fontsize)
-    pylab.ylim(0, pdf2.max()*1.2)
+    pylab.ylim(0, pdf2.max() * 1.2)
 
-    filename = prefix+'_prior_diff'
+    filename = prefix + '_prior_diff'
     pylab.savefig(filename, dpi=300, bbox_inches='tight')
 
     print '{0}, {1:0.4f}, {2:0.4f}, {3:0.4f}, {4:0.4f}, {5:0.4f}'.format(
@@ -2087,8 +2128,8 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
 
     # Create the contour plot using the 2Dhist info
     # define pixel values to be at the center of the bins
-    x1 = xedges1[:-1]+(xedges1[1]-xedges1[0])/2
-    y1 = yedges1[:-1]+(yedges1[1]-yedges1[0])/2
+    x1 = xedges1[:-1] + (xedges1[1] - xedges1[0]) / 2
+    y1 = yedges1[:-1] + (yedges1[1] - yedges1[0]) / 2
     X1, Y1 = numpy.meshgrid(x1, y1)
 
     fig = pylab.figure()
@@ -2169,7 +2210,7 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
         pylab.ylim(y_lim)
 
     if legend is not None:
-    # Dummy lines for legend
+        # Dummy lines for legend
         # 800000 is for Maroon color - 68% 1 sigma
         # 0000A0 is for blue color - 95% confidence 3 sigma
         pylab.plot((0, 1), (0, 1), c='#87cefa', linewidth=2, label=('68%'))
@@ -2194,7 +2235,7 @@ def plot_perdiff(perdiff, labels, title):
     """
     fig = plt.figure()
     for i in range(5):
-        plt.plot(range(1, len(perdiff[:, 1])+1),
+        plt.plot(range(1, len(perdiff[:, 1]) + 1),
                  perdiff[:, i], label=labels[i])
     ax = plt.subplot(111)
     box = ax.get_position()
@@ -2208,7 +2249,7 @@ def plot_perdiff(perdiff, labels, title):
     plt.xlabel('% of iterations')
     plt.ylabel('Percent difference')
     ax.xaxis.set_minor_locator(minorLocator)
-    plt.savefig(title+'.png', dpi=300, bbox_inches='tight')
+    plt.savefig(title + '.png', dpi=300, bbox_inches='tight')
     return fig
 
 
@@ -2244,7 +2285,7 @@ def hist_scenario(this_ax, data1, data2, data1_mean, data2_mean, beta, i,
                      bins=1000, normed=True, weights=weight)
     this_ax.axvspan(r95low, r95up, color='red',
                     label=r'true $s_{proj}$', alpha=0.3)
-    #this_ax.axvline(NW_subclstr_sep.value, color='orange',
+    # this_ax.axvline(NW_subclstr_sep.value, color='orange',
     #                label=r'obs. NW sep')
     this_ax.set_xlim(-0.1, 1.7)
     this_ax.set_ylabel('PDF')
@@ -2259,8 +2300,8 @@ def hist_scenario(this_ax, data1, data2, data1_mean, data2_mean, beta, i,
         beta_label_yloc = ymax - 0.2
 
     this_ax.text(beta_label_xloc, beta_label_yloc,
-                 #r"Assume $<v_{relic}> / " +
-                 #r"v_{{3D, {0}}}(t_{{col}})".format(cluster_label) +
+                 # r"Assume $<v_{relic}> / " +
+                 # r"v_{{3D, {0}}}(t_{{col}})".format(cluster_label) +
                  r"$\beta =$ {0}".format(beta), va='top', size=15)
 
     # to compute the Bayes factor
@@ -2316,15 +2357,14 @@ def hist_scenario(this_ax, data1, data2, data1_mean, data2_mean, beta, i,
     bw2 = bins2[1] - bins2[0]
     prob1 = np.sum(n1[low_nbin1: up_nbin1]) * bw1
     prob2 = np.sum(n2[low_nbin2: up_nbin2]) * bw2
-    #print "Beta = {0}, P_1 / P_0 = {1:1.4f} / {2:1.4f}".format(
+    # print "Beta = {0}, P_1 / P_0 = {1:1.4f} / {2:1.4f}".format(
     #    beta, prob2, prob1) + \
     #    " Bayes factor = {0:1.2f}".format(prob2 / prob1)
-    #this_ax.text(xmax - 0.8, ymax - 1.75,
+    # this_ax.text(xmax - 0.8, ymax - 1.75,
     #             "Bayes factor = "
     #             " {0:.2f}".format(prob2 / prob1), va='top', size=14)
 
     return prob2, prob1
-
 
 
 # def radio_dist_prior(d_3D, mask, d_3Dmax = 3.0, d_3Dmin = 1.0):
