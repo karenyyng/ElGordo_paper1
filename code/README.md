@@ -36,3 +36,7 @@ your browser and you should modified the `LINK_TO_RAW_IPYTHON_NOTEBOOK_IN_THIS_R
 
 * Polarization 
 	* contains calculation and derivation of polarization weights 
+
+* Folder `call_MCMAC` 
+  * scripts for calling the Monte Carlo simulation  
+
