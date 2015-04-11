@@ -30,13 +30,14 @@ your browser and you should modified the `LINK_TO_RAW_IPYTHON_NOTEBOOK_IN_THIS_R
     * in `different scenario probability - polar prior E.ipynb`
     * in `different scenario probability - polar prior NW.ipynb`
  
-* multiDim_plot 
+* Folder `multiDim_plot`
 	* contains the main table 2 results and main plots in appendix B of the paper
 	in  `main_results_and_appendix_plots.ipynb`
 
-* Polarization 
+* Folder `Polarization`
 	* contains calculation and derivation of polarization weights 
 
 * Folder `call_MCMAC` 
   * scripts for calling the Monte Carlo simulation  
+
 
