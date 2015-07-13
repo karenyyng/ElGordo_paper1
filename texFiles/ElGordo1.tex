@@ -146,7 +146,7 @@ El Gordo is further confirmed to be a binary merger
 from the weak lensing analysis by \cite{Jee13}. The weak lensing analysis shows
 a mass ratio of $\sim$2:1  between the two main subclusters, named
 according to their location as the northwest (NW) and southeast (SE) subclusters respectively 
-(See Figure~\ref{fig:config}). A bimodal distribution of cluster members is
+(See Figure~\ref{fig:config}). A bimodal distribution of cluster member galaxies is
 also observed \citep{M12}. In addition, El Gordo has an interesting X-ray morphology. In the northwest, it shows a wake feature, i.e.,
 turbulent flow due to object of higher density moving through fluids, while
 in the southeast, it shows the highest X-ray emissivity indicative of a
@@ -324,17 +324,30 @@ since we discarded all the variables of the problematic
 realizations.\par 
 \begin{table}
 	\caption{Properties of the input sampling PDFs ($\vec{D}$) of the Monte Carlo
-simulation.} 
+simulation. We obtained estimates of the inputs via different methods. $^a$We
+made used of the MCMC chains from \citetalias{Jee13} for mass-related
+estimates (See Section \ref{subsubsec:WL_mass_estimate}
+). $^b$The redshift distributions were obtained from bootstrapping (See Section 
+\ref{subsubsec:membership_and_redshift}).
+$^c$We approximated the positions of the centroids with 2D Gaussians before we
+calculated the projected separations of the subclusters (See Section 
+\ref{subsubsec:proj_sep}). Even though the distributions of the mass estimates 
+and the redshift were not estimated via parametric methods (e.g. fitting mean
+and variances of Gaussians), they
+resemble Gaussian distributions due to the Central Limit Theorem.
+} 
 \begin{center} 
-\begin{tabular}{@{}lcccc}
-\hline \hline Data & Units & Location & Scale & Ref\\ \hline
-$M_{200c_{\mathrm{NW}}}$ & $10^{14} h_{70}^{-1}$ M$_{\odot}$ &13.0&1.6& \citetalias{Jee13}\\ 
-c$_{\mathrm{NW}}$ &  & 2.50& 0.02& \citetalias{{Jee13}} \\ 
-$M_{200c_{\mathrm{SE}}}$ & $10^{14} h_{70}^{-1}$ M$_{\odot}$ &7.6&1.2 & \citetalias{Jee13}\\ 
-$c_{\mathrm{SE}}$ &  & 2.70 & 0.04& \citetalias{Jee13}\\ 
-$z_{\mathrm{NW}}$ &  & 0.86842 & 0.00109& \citetalias{M12}\\ 
-$z_{\mathrm{SE}}$ &  & 0.87110 & 0.00117& \citetalias{M12}\\ 
-d$_{\mathrm{proj}}$ & Mpc & 0.74 &0.007 & \citetalias{Jee13} \\ 
+\begin{tabular}{@{}lccccc}
+\hline \hline Data & Units & Location & Scale & Ref \\ \hline
+$M_{200c_{\mathrm{NW}}}$ & $10^{14} h_{70}^{-1}$ M$_{\odot}$ &13.0&1.6&
+\citetalias{Jee13}$^a$\\ 
+c$_{\mathrm{NW}}$ &  & 2.50& 0.02& \citetalias{{Jee13}}$^a$ \\ 
+$M_{200c_{\mathrm{SE}}}$ & $10^{14} h_{70}^{-1}$ M$_{\odot}$ &7.6&1.2 &
+\citetalias{Jee13}$^a$\\ 
+$c_{\mathrm{SE}}$ &  & 2.70 & 0.04& \citetalias{Jee13}$^a$\\ 
+$z_{\mathrm{NW}}$ &  & 0.86842 & 0.00109& \citetalias{M12}$^b$\\ 
+$z_{\mathrm{SE}}$ &  & 0.87110 & 0.00117& \citetalias{M12}$^b$\\ 
+d$_{\mathrm{proj}}$ & Mpc & 0.74 &0.007 & \citetalias{Jee13}$^c$\\ 
 \hline 
 \end{tabular} 
 \end{center} 
@@ -378,7 +391,9 @@ of dark matter. Discussion of the effects of each of these assumptions is
 included in \citetalias{D13}.  
 \subsection{Inputs of the Monte Carlo simulation} \label{sec:inputs}
 \subsubsection{Membership selection and redshift estimation of subclusters}
-After identifying members of each subcluster, we performed 10, 000 bootstrap realizations to estimate the biweight
+\label{subsubsec:membership_and_redshift}
+After identifying members of each subcluster, 
+we performed 10, 000 bootstrap realizations to estimate the biweight
 locations of the spectroscopic redshifts of the respective members in order
 to obtain the samples of the PDFs of the redshifts of each subcluster. 
 The spectroscopic redshift of the subclusters were
@@ -388,7 +403,8 @@ $z_{\mathrm{SE}} = 0.87131 \pm 0.0012$, where the quoted numbers represent the
 biweight location and 1$\sigma$ bias-corrected confidence level
 respectively \citep{Beers90}.  
 Both the estimated redshifts of the subclusters and the uncertainties are
-consistent with estimates of $z=0.8701 \pm 0.0009$ for El Gordo given by \citealt{Sifon13}, and the fact that the
+consistent with estimates of $z=0.8701 \pm 0.0009$ for El Gordo given by 
+\citealt{Sifon13}, and the fact that the
 member galaxies of El
 Gordo shows large velocity dispersion, i.e.\ the largest velocity
 dispersion among all the ACT galaxy clusters, as reported by
@@ -419,15 +435,17 @@ is higher than our estimates but within the 68\% bias-corrected
 confidence interval.\footnote{bias from the location estimator of
 	the bootstrapped distribution not giving the maximum likelihood value was
 corrected for.} 
-%Limitations and possible improvements of this analysis
-%of $v_{rad}$ are provided in the discussion. 
+% Limitations and possible improvements of this analysis
+% of $v_{rad}$ are provided in the discussion. 
 \subsubsection{Weak lensing mass estimation} 
+\label{subsubsec:WL_mass_estimate}
 We obtained 40, 000 samples of the joint PDFs of the masses of the two dark
 matter halos as the outputs of the Monte Carlo Markov Chain (MCMC)
 procedure from \citealt{Jee13}. Discussion of the handling of the weak
 lensing source galaxies and the details of the MCMC procedure for mass
 estimation can be found in \citealt{Jee13}. 
 \subsubsection{Estimation of projected separation ($d_{\rm proj}$)} 
+\label{subsubsec:proj_sep}
 To be consistent with our MCMC mass inference, our Monte Carlo simulation takes 
 the projected separation of the NFW halos to be those of the inferred
 DM centroid locations in \citealt{Jee13}. We drew random samples
@@ -583,6 +601,32 @@ this polarization weight in addition to the default weights.
 
 \subsection{Extension to the Monte Carlo simulation - Determining merger
 scenario with radio relic position by model comparison}
+\begin{table*}
+	\begin{minipage}{170mm} 
+	\caption{List of variables that provide quantitative constraints for the merger
+		scenario. For details of each variable see the corresponding
+	$^\dagger$Section.}
+\begin{center} 
+\begin{tabular}{@{}lccccc}
+	\hline \hline Variable & Best estimate value & Unit & Section$^{\dagger}$ \\ 
+	\hline
+Time averaged speed of SE relic in the CM frame ($\langle v_{relic} \rangle$) 
+& 3.4 &  km~$s^{-1}$  & 4.1 \\
+Time averaged speed of NW relic in the CM frame ($\langle v_{relic} \rangle$) &
+ 3.4 &  km~s$^{-1} $ & 4.1 \\ 
+Projected separation of SE relic from the CM ($s_{proj}$)  & 1.1  & Mpc & 3.4 \\ 
+Projected separation of NW relic from the CM ($s_{proj}$)  & 0.63 & kpc & 3.4 \\ 
+Outgoing time-since-pericenter ($TSP_{out}$)  &  0.61 & Gyr & 3.2, 4.1 \\ 
+Returning time-since-pericenter ($TSP_{ret}$)  & 1.0 & Gyr & 3.2, 4.1 \\ 
+Age of the universe at z = 0.87 & 6.30 & Gyr&  \\ 
+Free fall velocity of subclusters & 4500 & km~s$^{-1}$ & 3\\  
+Polarization fraction of NW relic ($\langle P_{strong} \rangle$) & 33\% &  & 3.3.1 \\ 
+\hline 
+\end{tabular} 
+\end{center} 
+\label{tab:inputs} 
+\end{minipage}
+\end{table*} 
 
 One of the biggest questions involving the merger is whether El Gordo is
 observed during a returning or outgoing phase. We compared the two merger
@@ -1090,12 +1134,12 @@ We would also like to thank
 GitHub for providing free repository for version control for our data and
 analyses. This research made use of APLpy, an open-source plotting package for Python
 hosted at http://aplpy.github.com; Astropy, a community-developed core
-Python package for Astronomy \citep{astropy}, AstroM{https://github.com/karenyyng/ElGordo_paper1}L, a
+Python package for Astronomy \citep{astropy}; AstroML, a
 machine learning library for astrophysics \citep{VanderPlas2012}, and IPython, a system for
 interactive scientific computing, computing in science and engineering
 \citep{Perez2007}.\par
 Note: The authors have made the Python code for most of the analyses openly
-available on \href{https://github.com/karenyyng/ElGordo_paper1}{https://github.com/karenyyng/ElGordo_paper1}. 
+available at \href{https://github.com/karenyyng/ElGordo\_paper1}{https://github.com/karenyyng/ElGordo_paper1}. 
 
 \bibliographystyle{mn2e}
 \bibliography{ElGordo1}
@@ -1154,8 +1198,9 @@ indicates the corresponding figure number in this appendix.
 	\begin{minipage}{180mm}
 	\begin{center}
 	\includegraphics[width=0.65\linewidth]{TwoMnWBSG_inputsVsinput.png}
-	\caption{Marginalized 2-dimensional PDFs of original inputs (vertical axis) and the inputs after
-applying polarization weight and default weights (horizontal axis). The inner and outer contour
+	\caption{Marginalized 2-dimensional PDFs of original inputs (vertical axis) 
+		and the inputs after applying polarization weight and default weights 
+		(horizontal axis). The inner and outer contour
 denote the central 68\% and 95\% confidence regions respectively.
 The circular contours show that the application of weights did not introduce
 uneven sampling of inputs. }
