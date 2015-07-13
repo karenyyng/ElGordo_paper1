@@ -280,6 +280,7 @@ was found to overlap with a point source \citep{L13}. Both the E and SE
 relic are closer to the SE DM subcluster, so we considered them to
 originate from the same merger shock in the following work.
 \section{METHOD -- Monte Carlo simulation} 
+\label{sec:method}
 We used the collisionless 
 dark-matter-only Monte Carlo modeling code written by \citetalias{D13}, to
 model the dynamics of the DM subclusters of their first core-passage.
@@ -503,6 +504,7 @@ based on the polarization fraction of the radio relic.
 %---------------------------------------------------------------------------
 
 \subsubsection{Monte Carlo weights based on the polarization fraction of the radio relic}
+\label{subsubsec:polar_frac}
 %\input{2.3_1_polarization_prior}
 
 We can relate the polarization fraction of the radio relic to the
@@ -604,23 +606,30 @@ scenario with radio relic position by model comparison}
 \begin{table*}
 	\begin{minipage}{170mm} 
 	\caption{List of variables that provide quantitative constraints for the merger
-		scenario. For details of each variable see the corresponding
-	$^\dagger$Section.}
+		scenario. For details of the distribution of each variable see the corresponding
+	$^\dagger$Section. Calculations were done with all available realizations
+instead of the best estimate value listed here.}
 \begin{center} 
 \begin{tabular}{@{}lccccc}
 	\hline \hline Variable & Best estimate value & Unit & Section$^{\dagger}$ \\ 
 	\hline
 Time averaged speed of SE relic in the CM frame ($\langle v_{relic} \rangle$) 
-& 3.4 &  km~$s^{-1}$  & 4.1 \\
+& 530 &  km~s$^{-1}$  & \ref{sec:merger_scenario}\\
 Time averaged speed of NW relic in the CM frame ($\langle v_{relic} \rangle$) &
- 3.4 &  km~s$^{-1} $ & 4.1 \\ 
-Projected separation of SE relic from the CM ($s_{proj}$)  & 1.1  & Mpc & 3.4 \\ 
-Projected separation of NW relic from the CM ($s_{proj}$)  & 0.63 & kpc & 3.4 \\ 
-Outgoing time-since-pericenter ($TSP_{out}$)  &  0.61 & Gyr & 3.2, 4.1 \\ 
-Returning time-since-pericenter ($TSP_{ret}$)  & 1.0 & Gyr & 3.2, 4.1 \\ 
+  310 &  km~s$^{-1} $ & \ref{sec:merger_scenario}\\
+Projected separation of SE relic from the CM ($s_{proj}$)  & 1.1  & Mpc & \ref{sec:positionprior} \\ 
+Projected separation of NW relic from the CM ($s_{proj}$)  & 0.63 & Mpc & \ref{sec:positionprior} \\ 
+Outgoing time-since-pericenter ($TSP_{out}$)  &  0.61 & Gyr &
+\ref{sec:outputs}, 
+\ref{sec:merger_scenario}
+\\ 
+Returning time-since-pericenter ($TSP_{ret}$)  & 1.0 & Gyr & \ref{sec:outputs}, 
+\ref{sec:merger_scenario}
+\\ 
 Age of the universe at z = 0.87 & 6.30 & Gyr&  \\ 
-Free fall velocity of subclusters & 4500 & km~s$^{-1}$ & 3\\  
-Polarization fraction of NW relic ($\langle P_{strong} \rangle$) & 33\% &  & 3.3.1 \\ 
+Free fall velocity of subclusters & 4500 & km~s$^{-1}$ & \ref{sec:method}\\  
+Polarization fraction of NW relic ($\langle P_{strong} \rangle$) & 33\% &  &
+\ref{subsubsec:polar_frac}\\ 
 \hline 
 \end{tabular} 
 \end{center} 
