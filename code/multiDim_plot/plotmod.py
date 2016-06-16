@@ -13,7 +13,6 @@ al. 2015 (a.k.a. http://arxiv.org/abs/1412.1826v1)
 from __future__ import division
 import pylab
 import numpy as np
-import numpy
 import pickle
 import warnings
 from astrostats import biweightLoc, bcpcl
@@ -44,7 +43,7 @@ def loadcombo(prefix, index, suffix):
 
     Returns
     =======
-    numpy array
+    np array
         data
     """
     array = []
@@ -54,14 +53,14 @@ def loadcombo(prefix, index, suffix):
         F = open(filename)
         tmp = pickle.load(F)
         F.close()
-        array = numpy.append(array, tmp)
+        array = np.append(array, tmp)
 
     #filename = prefix+suffix+'.pickle'
     # read in the pickled array
     #F = open(filename)
     #tmp = pickle.load(F)
     # F.close()
-    #array = numpy.append(array,tmp)
+    #array = np.append(array,tmp)
     return array
 
 
@@ -144,7 +143,7 @@ def mask_bigger_than_age_of_universe(
 
     Returns
     ======
-    combined mask = numpy array
+    combined mask = np array
     age = float - age of the universe at corresponding redshift in Gyrs
     """
     assert T is not None or TSM_0 is not None or TSM_1 is not None, \
@@ -176,11 +175,11 @@ def radio_dist_prior(d_3D, d_3Dmax=3.0, d_3Dmin=1.0):
     '''
     Stability: to be tested
     input:
-    d_3D = numpy array to be masked, in unit of Mpc
+    d_3D = np array to be masked, in unit of Mpc
     d_3Dmax = float, the upper limit to be masked out, in unit of Mpc
     d_3Dmin = float, the lower limit to be masked out, in unit of Mpc
     output:
-    mask = numpy array that gives 1 if it is within the range
+    mask = np array that gives 1 if it is within the range
             0 if it is NOT within the specified range
     count = number of entries along the array that has value 1
     '''
@@ -193,13 +192,13 @@ def radio_polar_prior(alpha, alpha_min=0, alpha_max=35):
     '''smooth cut off of prior
     input:
     =====
-    alpha = numpy array to be masked, in units of degrees
+    alpha = np array to be masked, in units of degrees
     alpha_min = float, if alpha is smaller than this value it's masked out
     alpha_max = float, if alpha is bigger than this value, it's masked out
 
     output:
     ======
-    mask = numpy array that gives 1 if it is within the range and 0
+    mask = np array that gives 1 if it is within the range and 0
             otherwise
     Stability: to be tested
     '''
@@ -220,8 +219,8 @@ def apply_radioprior(radiomask, dataarray):
     starts examine if the length of mask is the same
     as the length of the array to be masked
     input:
-    mask = numpy array with true or false as the values
-    dataarray = numpy data array to be masked
+    mask = np array with true or false as the values
+    dataarray = np data array to be masked
     '''
     if len(radiomask) != len(dataarray):
         print 'length of mask and data array does not match!'
@@ -238,7 +237,7 @@ def apply_radioprior(radiomask, dataarray):
                 counter += 1
         # print 'number of non-zero entries after masking is', counter
 
-        dataarray = numpy.zeros(counter)
+        dataarray = np.zeros(counter)
         ncounter = 0
         for n in range(len(temp)):
             if temp[n] != 0.0:
@@ -253,7 +252,7 @@ def apply_radioprior(radiomask, dataarray):
 #-------helper functions-------------------------------------------------
 
 def find_bin_ix(binedges, loc):
-    """find the index in the numpy array binedges that corresponds to loc"""
+    """find the index in the np array binedges that corresponds to loc"""
     find_loc_i = binedges < loc
     return np.sum(find_loc_i)
 
@@ -278,18 +277,18 @@ def histplot1d_pdf(x, prefix=None, prob=None, N_bins='knuth', histrange=None,
     plot the pdf of the histograms
     might want to return the pdf later on
 
-    x = numpy array like object, can be dataframe columns
+    x = np array like object, can be dataframe columns
         data to be plotted on the x-axis
     prefix = string
         denotes the output file prefix
-    prob = numpy array with same size as x
+    prob = np array with same size as x
         denotes the weight to be put for correcting bias
     N_bins = integer
         denotes the number of bins
-    histrange = a size 2 numpy array / list
+    histrange = a size 2 np array / list
         denotes the lower and upper range for making the histogram
-    x_lim = a size 2 numpy array
-    y_lim = a size 2 numpy array
+    x_lim = a size 2 np array
+    y_lim = a size 2 np array
     x_label = string
     y_label = string
     legend = string
@@ -323,13 +322,13 @@ def histplot1d_pdf(x, prefix=None, prob=None, N_bins='knuth', histrange=None,
     # Calculate the location and %confidence intervals
     # Since my location and confidence calculations can't take weighted
     # data I need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
             x_binned = \
-                numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+                np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
         else:
-            x_temp = numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
-            x_binned = numpy.concatenate((x_binned, x_temp))
+            x_temp = np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+            x_binned = np.concatenate((x_binned, x_temp))
 
     loc = biweightLoc(x_binned)
     ll_68, ul_68 = bcpcl(loc, x_binned, 1)
@@ -421,13 +420,13 @@ def histplot1d(x, prefix=None, prob=None, norm=False, N_bins='knuth',
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
 
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
-            x_binned = numpy.ones(
+            x_binned = np.ones(
                 hist[i]) * (binedges[i] + binedges[i + 1]) / 2
         else:
-            x_temp = numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
-            x_binned = numpy.concatenate((x_binned, x_temp))
+            x_temp = np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+            x_binned = np.concatenate((x_binned, x_temp))
 
     loc = biweightLoc(x_binned)
     ll_68, ul_68 = bcpcl(loc, x_binned, 1)
@@ -512,17 +511,17 @@ def histplot1d_part(ax, x, prob=None, N_bins='knuth', histrange=None,
     # Calculate the location and %confidence intervals
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
             x_binned = \
-                numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
-        elif numpy.size(x_binned) == 0:
+                np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+        elif np.size(x_binned) == 0:
             x_binned = \
-                numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+                np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
         else:
             x_temp = \
-                numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
-            x_binned = numpy.concatenate((x_binned, x_temp))
+                np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+            x_binned = np.concatenate((x_binned, x_temp))
     loc = biweightLoc(x_binned)
     ll_68, ul_68 = bcpcl(loc, x_binned, 1)
     ll_95, ul_95 = bcpcl(loc, x_binned, 2)
@@ -580,31 +579,31 @@ def histplot2d(x, y, prefix, prob=None, N_bins=100, histrange=None,
     # Create the confidence interval plot
     if histrange is None:
         if prob is not None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins, weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(x, y, bins=N_bins)
+            H, xedges, yedges = np.histogram2d(x, y, bins=N_bins)
     else:
         if prob is not None:
             H, xedges, yedges = \
-                numpy.histogram2d(x, y, bins=N_bins,
+                np.histogram2d(x, y, bins=N_bins,
                                   range=[[histrange[0], histrange[1]],
                                          [histrange[2], histrange[3]]],
                                   weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins,
                 range=[[histrange[0], histrange[1]],
                        [histrange[2], histrange[3]]])
-    H = numpy.transpose(H)
+    H = np.transpose(H)
     # Flatten H
-    h = numpy.reshape(H, (N_bins**2))
+    h = np.reshape(H, (N_bins**2))
     # Sort h from smallest to largest
-    index = numpy.argsort(h)
+    index = np.argsort(h)
     h = h[index]
-    h_sum = numpy.sum(h)
+    h_sum = np.sum(h)
     # Find the 2 and 1 sigma levels of the MC hist
-    for j in numpy.arange(numpy.size(h)):
+    for j in np.arange(np.size(h)):
         if j == 0:
             runsum = h[j]
         else:
@@ -619,7 +618,7 @@ def histplot2d(x, y, prefix, prob=None, N_bins=100, histrange=None,
     # define pixel values to be at the center of the bins
     x = xedges[:-1] + (xedges[1] - xedges[0]) / 2
     y = yedges[:-1] + (yedges[1] - yedges[0]) / 2
-    X, Y = numpy.meshgrid(x, y)
+    X, Y = np.meshgrid(x, y)
 
     fig = pylab.figure()
     # Contours
@@ -689,29 +688,29 @@ def histplot2d_part(ax, x, y, prob=None, N_bins=100, histrange=None,
     if histrange is None:
         if prob is not None:
             H, xedges, yedges = \
-                numpy.histogram2d(x, y, bins=N_bins, weights=prob)
+                np.histogram2d(x, y, bins=N_bins, weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(x, y, bins=N_bins)
+            H, xedges, yedges = np.histogram2d(x, y, bins=N_bins)
     else:
         if prob is not None:
             H, xedges, yedges = \
-                numpy.histogram2d(x, y, bins=N_bins,
+                np.histogram2d(x, y, bins=N_bins,
                                   range=[[histrange[0], histrange[1]],
                                          [histrange[2], histrange[3]]],
                                   weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins, range=[[histrange[0], histrange[1]],
                                           [histrange[2], histrange[3]]])
-    H = numpy.transpose(H)
+    H = np.transpose(H)
     # Flatten H
-    h = numpy.reshape(H, (N_bins ** 2))
+    h = np.reshape(H, (N_bins ** 2))
     # Sort h from smallest to largest
-    index = numpy.argsort(h)
+    index = np.argsort(h)
     h = h[index]
-    h_sum = numpy.sum(h)
+    h_sum = np.sum(h)
     # Find the 2 and 1 sigma levels of the MC hist
-    for j in numpy.arange(numpy.size(h)):
+    for j in np.arange(np.size(h)):
         if j == 0:
             runsum = h[j]
         else:
@@ -727,7 +726,7 @@ def histplot2d_part(ax, x, y, prob=None, N_bins=100, histrange=None,
     # define pixel values to be at the center of the bins
     x = xedges[:-1] + (xedges[1] - xedges[0]) / 2
     y = yedges[:-1] + (yedges[1] - yedges[0]) / 2
-    X, Y = numpy.meshgrid(x, y)
+    X, Y = np.meshgrid(x, y)
 
     # can use pcolor or imshow to show the shading instead
     ax.pcolormesh(X, Y, H, cmap=pylab.cm.gray_r, shading='gouraud')
@@ -782,30 +781,30 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
     # Create the confidence interval plot
     if histrange is None:
         if prob is not None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins, weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(x, y, bins=N_bins)
+            H, xedges, yedges = np.histogram2d(x, y, bins=N_bins)
     else:
         if prob is not None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins,
                 range=[[histrange[0], histrange[1]],
                        [histrange[2], histrange[3]]],
                 weights=prob)
         elif prob is None:
-            H, xedges, yedges = numpy.histogram2d(
+            H, xedges, yedges = np.histogram2d(
                 x, y, bins=N_bins, range=[[histrange[0], histrange[1]],
                                           [histrange[2], histrange[3]]])
-    H = numpy.transpose(H)
+    H = np.transpose(H)
     # Flatten H
-    h = numpy.reshape(H, (N_bins ** 2))
+    h = np.reshape(H, (N_bins ** 2))
     # Sort h from smallest to largest
-    index = numpy.argsort(h)
+    index = np.argsort(h)
     h = h[index]
-    h_sum = numpy.sum(h)
+    h_sum = np.sum(h)
     # Find the 2 and 1 sigma levels of the MC hist
-    for j in numpy.arange(numpy.size(h)):
+    for j in np.arange(np.size(h)):
         if j == 0:
             runsum = h[j]
         else:
@@ -820,7 +819,7 @@ def histplot2dTSC(x, y, prefix, prob=None, N_bins=100, histrange=None,
     # define pixel values to be at the center of the bins
     x = xedges[:-1] + (xedges[1] - xedges[0]) / 2
     y = yedges[:-1] + (yedges[1] - yedges[0]) / 2
-    X, Y = numpy.meshgrid(x, y)
+    X, Y = np.meshgrid(x, y)
 
     fig = pylab.figure()
     # Countours
@@ -876,8 +875,8 @@ def kde1d(x, plotObj, prob=None, kernel="gau", bw="scott", fft=True,
     ==========
     plotObj = matplotlib axis object, e.g. ax created by plt.subplots() or
         matplotlib.pyplot
-    x = numpy array, the data that you try to visualize
-    prob = numpy array, has the same as x
+    x = np array, the data that you try to visualize
+    prob = np array, has the same as x
     kernel = string, what kernel to use, see KDEUnivariate() documentation
         for options
     bw = string or integer, denotes the binwidth
@@ -890,9 +889,9 @@ def kde1d(x, plotObj, prob=None, kernel="gau", bw="scott", fft=True,
 
     returns
     =======
-    support = numpy array
+    support = np array
         the corresponding x value of each element of the returned pdf
-    pdf = numpy array, the corresponding pdf
+    pdf = np array, the corresponding pdf
     """
     kde = nonparametric.KDEUnivariate(x)
     kde.fit(kernel, bw, fft, gridsize=gridsize, cut=cut, clip=clip,
@@ -922,8 +921,8 @@ def central_CI(support, density, level=68, lim=None):
     of a posterior
     parameters
     ==========
-    support = numpy array
-    density = numpy array that has the same length as the support
+    support = np array
+    density = np array that has the same length as the support
     level = float, indicates what percentile to include between
     lim = tuple of float of length 2
 
@@ -1008,8 +1007,8 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
     nparts = 101
     d = (nparts - 1, 5)
     reduced_d = (nparts - 2, 5)
-    data = numpy.zeros(d)
-    x_perdiff = numpy.zeros(reduced_d)
+    data = np.zeros(d)
+    x_perdiff = np.zeros(reduced_d)
 
     # iterate from 1 to nparts-1
     for n in range(1, nparts):
@@ -1024,14 +1023,14 @@ def percentdiff(x, prefix, prob=None, N_bins=100, histrange=None, x_lim=None,
         # Calculate the location and confidence intervals
         # Since my location and confidence calculations can't take weighted data I
         # need to use the weighted histogram data in the calculations
-        for i in numpy.arange(N_bins):
+        for i in np.arange(N_bins):
             if i == 0:
                 x_binned = \
-                    numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+                    np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
             else:
                 x_temp = \
-                    numpy.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
-                x_binned = numpy.concatenate((x_binned, x_temp))
+                    np.ones(hist[i]) * (binedges[i] + binedges[i + 1]) / 2
+                x_binned = np.concatenate((x_binned, x_temp))
         # print 'len of x_binned is ',len(x_binned)
         loc = biweightLoc(x_binned)
         ll_68, ul_68 = bcpcl(loc, x_binned, 1)
@@ -1842,14 +1841,14 @@ def prior_diff(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # Calculate the location and %confidence intervals for data 1
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
-            x_binned1 = numpy.ones(
+            x_binned1 = np.ones(
                 hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
         else:
-            x_temp1 = numpy.ones(
+            x_temp1 = np.ones(
                 hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
-            x_binned1 = numpy.concatenate((x_binned1, x_temp1))
+            x_binned1 = np.concatenate((x_binned1, x_temp1))
     loc1 = biweightLoc(x_binned1)
     ll_68_1, ul_68_1 = bcpcl(loc1, x_binned1, 1)
     ll_95_1, ul_95_1 = bcpcl(loc1, x_binned1, 2)
@@ -1882,14 +1881,14 @@ def prior_diff(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # Calculate the location and %confidence intervals for data 2
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
-            x_binned2 = numpy.ones(
+            x_binned2 = np.ones(
                 hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
         else:
-            x_temp2 = numpy.ones(
+            x_temp2 = np.ones(
                 hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
-            x_binned2 = numpy.concatenate((x_binned2, x_temp2))
+            x_binned2 = np.concatenate((x_binned2, x_temp2))
     loc2 = biweightLoc(x_binned2)
     ll_68_2, ul_68_2 = bcpcl(loc2, x_binned2, 1)
     ll_95_2, ul_95_2 = bcpcl(loc2, x_binned2, 2)
@@ -1979,14 +1978,14 @@ def prior_diff_pdf(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # Calculate the location and %confidence intervals for data 1
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
-            x_binned1 = numpy.ones(histbin1[i]) *\
+            x_binned1 = np.ones(histbin1[i]) *\
                 (binedges1[i] + binedges1[i + 1]) / 2
         else:
-            x_temp1 = numpy.ones(
+            x_temp1 = np.ones(
                 hist1[i]) * (binedges1[i] + binedges1[i + 1]) / 2
-            x_binned1 = numpy.concatenate((x_binned1, x_temp1))
+            x_binned1 = np.concatenate((x_binned1, x_temp1))
     loc1 = biweightLoc(x_binned1)
     ll_68_1, ul_68_1 = bcpcl(loc1, x_binned1, 1)
     ll_95_1, ul_95_1 = bcpcl(loc1, x_binned1, 2)
@@ -2009,14 +2008,14 @@ def prior_diff_pdf(data1, data2, prefix, prob1=None, prob2=None, N_bins=100,
     # Calculate the location and %confidence intervals for data 2
     # Since my location and confidence calculations can't take weighted data I
     # need to use the weighted histogram data in the calculations
-    for i in numpy.arange(N_bins):
+    for i in np.arange(N_bins):
         if i == 0:
-            x_binned2 = numpy.ones(
+            x_binned2 = np.ones(
                 hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
         else:
-            x_temp2 = numpy.ones(
+            x_temp2 = np.ones(
                 hist2[i]) * (binedges2[i] + binedges2[i + 1]) / 2
-            x_binned2 = numpy.concatenate((x_binned2, x_temp2))
+            x_binned2 = np.concatenate((x_binned2, x_temp2))
     loc2 = biweightLoc(x_binned2)
     ll_68_2, ul_68_2 = bcpcl(loc2, x_binned2, 1)
     ll_95_2, ul_95_2 = bcpcl(loc2, x_binned2, 2)
@@ -2081,13 +2080,13 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
     to create the confidence interval plot
     see plt.hist2d for detailed documentation
 
-    x1 = numpy array, what's plotted on the x axis of the greyed out
+    x1 = np array, what's plotted on the x axis of the greyed out
         contour, or the values from default priors
-    y1 = numpy array, what's plotted on the y axis of the greyed out
+    y1 = np array, what's plotted on the y axis of the greyed out
         contour, or the values from default priors
-    x = numpy array, what's plotted on the x axis of the greyed out
+    x = np array, what's plotted on the x axis of the greyed out
         contour, or the values from additional priors
-    y = numpy array, what's plotted on the y axis of the greyed out
+    y = np array, what's plotted on the y axis of the greyed out
         contour, or the values from additional priors
     ls1 = linestyle of contour plot 1 for default arguments
     prefix =
@@ -2104,17 +2103,17 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
             [[histrange[0], histrange[1]], [histrange[2], histrange[3]]]
 
     H1, xedges1, yedges1 = \
-        numpy.histogram2d(x1, y1, bins=N_bins, weights=prob1, range=histrange)
+        np.histogram2d(x1, y1, bins=N_bins, weights=prob1, range=histrange)
 
-    H1 = numpy.transpose(H1)
+    H1 = np.transpose(H1)
     # Flatten H
-    h = numpy.reshape(H1, (N_bins ** 2))
+    h = np.reshape(H1, (N_bins ** 2))
     # Sort h from smallest to largest
-    index = numpy.argsort(h)
+    index = np.argsort(h)
     h = h[index]
-    h_sum = numpy.sum(h)
+    h_sum = np.sum(h)
     # Find the 2 and 1 sigma levels of the MC hist
-    for j in numpy.arange(numpy.size(h)):
+    for j in np.arange(np.size(h)):
         if j == 0:
             runsum = h[j]
         else:
@@ -2130,7 +2129,7 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
     # define pixel values to be at the center of the bins
     x1 = xedges1[:-1] + (xedges1[1] - xedges1[0]) / 2
     y1 = yedges1[:-1] + (yedges1[1] - yedges1[0]) / 2
-    X1, Y1 = numpy.meshgrid(x1, y1)
+    X1, Y1 = np.meshgrid(x1, y1)
 
     fig = pylab.figure()
     # Countours
@@ -2167,17 +2166,17 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
     # second contour
     # Create the confidence interval plot for the second sets of contour
     H, xedges, yedges = \
-        numpy.histogram2d(x, y, bins=N_bins, range=histrange, weights=prob)
+        np.histogram2d(x, y, bins=N_bins, range=histrange, weights=prob)
 
-    H = numpy.transpose(H)
+    H = np.transpose(H)
     # Flatten H
-    h = numpy.reshape(H, (N_bins ** 2))
+    h = np.reshape(H, (N_bins ** 2))
     # Sort h from smallest to largest
-    index = numpy.argsort(h)
+    index = np.argsort(h)
     h = h[index]
-    h_sum = numpy.sum(h)
+    h_sum = np.sum(h)
     # Find the 2 and 1 sigma levels of the MC hist
-    for j in numpy.arange(numpy.size(h)):
+    for j in np.arange(np.size(h)):
         if j == 0:
             runsum = h[j]
         else:
@@ -2192,7 +2191,7 @@ def histplot2d_2contour(x1, y1, x, y, prefix, prob1=None, prob=None,
     # define pixel values to be at the center of the bins
     x = xedges[:-1] + (xedges[1] - xedges[0]) / 2
     y = yedges[:-1] + (yedges[1] - yedges[0]) / 2
-    X, Y = numpy.meshgrid(x, y)
+    X, Y = np.meshgrid(x, y)
 
     # Coutours
     pylab.contour(X, Y, H, (h_2sigma, h_1sigma), linewidths=(2, 2))
@@ -2377,8 +2376,8 @@ def hist_scenario(this_ax, data1, data2, data1_mean, data2_mean, beta, i,
 #    also return how many non-zero entries
 #    to be modified such that this takes in the range for the uniform prior
 #    input:
-#    d_3D = numpy array to be masked
-#    radiomask = numpy array that is contains either 1 or 0
+#    d_3D = np array to be masked
+#    radiomask = np array that is contains either 1 or 0
 #    d_3Dmax = float, the upper limit to be masked out
 #    d_3Dmin = float, the lower limit to be masked out
 #    '''
